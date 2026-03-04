@@ -167,9 +167,9 @@ export default function Home() {
             animate={{ scale: 1 }}
             transition={{ duration: 8, ease: "easeOut" }}
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: "url('/images/hero-gym.png')" }}
+            style={{ backgroundImage: "url('/images/hero-deepfit.png')" }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#4D5058]/80 via-[#4D5058]/70 to-[#4D5058]/90" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#4D5058]/50 via-[#4D5058]/40 to-[#4D5058]/75" />
         </motion.div>
 
         <motion.div
