@@ -30,7 +30,7 @@ export const gymConfig = {
   sns: {
     instagram: "https://instagram.com",
     twitter: "https://x.com",
-    line: "https://line.me",
+    line: "https://lin.ee/uqfaBm6",
   },
   googleMapsUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.4!2d135.4!3d34.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e8d!2sAmagasaki!5e0!3m2!1sja!2sjp",
   trialLesson: {
