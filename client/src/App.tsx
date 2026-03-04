@@ -7,6 +7,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { HelmetProvider } from "react-helmet-async";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import MobileContactBar from "@/components/MobileContactBar";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Schedule from "@/pages/Schedule";
@@ -42,10 +43,11 @@ function App() {
         <TooltipProvider>
           <ScrollToTop />
           <Navigation />
-          <main>
+          <main className="pb-16 lg:pb-0">
             <Router />
           </main>
           <Footer />
+          <MobileContactBar />
           <Toaster />
         </TooltipProvider>
       </QueryClientProvider>
