@@ -556,15 +556,10 @@ export default function Home() {
               </p>
               <div className="bg-white/10 border border-white/20 rounded-xl p-5 mb-6 space-y-2 text-sm text-white/90">
                 <p className="font-bold text-white mb-3">📅 体験可能時間</p>
-                <div className="grid grid-cols-2 gap-2 text-xs">
+                <div className="grid grid-cols-1 gap-2 text-xs">
                   <div className="bg-white/10 rounded-lg px-3 py-2">
-                    <p className="font-semibold text-white">月〜金曜日</p>
-                    <p className="text-white/70">10:00 〜 13:00</p>
-                    <p className="text-white/70">17:00 〜 22:00</p>
-                  </div>
-                  <div className="bg-white/10 rounded-lg px-3 py-2">
-                    <p className="font-semibold text-white">土・日曜日</p>
-                    <p className="text-white/70">10:00 〜 14:00</p>
+                    <p className="font-semibold text-white">月〜日曜日（木曜定休）</p>
+                    <p className="text-white/70">10:00 〜 22:00</p>
                   </div>
                 </div>
               </div>
@@ -680,11 +675,28 @@ export default function Home() {
         >
           <p className="text-white/70 text-xs tracking-[0.3em] uppercase mb-3">Trial Lesson</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">体験レッスン受付中</h2>
-          <p className="text-white/80 mb-2">まずは一度、DEEP.FITを体験してみてください。</p>
-          <div className="text-5xl sm:text-6xl font-heading font-bold text-white mb-2">
-            {gymConfig.trialLesson.price}
+          <p className="text-white/80 mb-5">まずは一度、DEEP.FITを体験してみてください。</p>
+
+          {/* Price with slash */}
+          <div className="flex flex-col items-center mb-2">
+            <div className="relative inline-block">
+              <span className="font-heading font-bold text-5xl sm:text-6xl text-white/40 line-through decoration-white/60 decoration-[3px]">
+                {gymConfig.trialLesson.priceOriginal}
+              </span>
+              {/* diagonal slash overlay */}
+              <span className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <span className="block w-full h-[3px] bg-white/70 rotate-[-18deg] rounded-full" />
+              </span>
+            </div>
+            <div className="mt-1 flex items-center gap-3">
+              <span className="font-heading font-bold text-6xl sm:text-7xl text-white">無料</span>
+            </div>
           </div>
-          <p className="text-white/70 text-sm mb-8">（税込）初回体験レッスン</p>
+
+          <div className="inline-flex items-center gap-2 bg-white/20 border border-white/30 rounded-full px-5 py-2 mb-8">
+            <SiInstagram className="w-4 h-4 text-white" />
+            <span className="text-white text-sm font-medium">インスタフォロワー限定</span>
+          </div>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <div className="relative group inline-block">
               <div className="absolute inset-0 bg-white/30 blur-md rounded-full scale-0 group-hover:scale-100 transition-transform duration-300 pointer-events-none" />
