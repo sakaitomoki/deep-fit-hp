@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 import { motion, useScroll, useSpring, useTransform, AnimatePresence } from "framer-motion";
-import { Users, Trophy, Dumbbell, Clock, ChevronLeft, ChevronRight, Star, ArrowRight } from "lucide-react";
+import { Users, Trophy, Dumbbell, Clock, ChevronLeft, ChevronRight, Star, ArrowRight, MessageCircle } from "lucide-react";
+import { SiInstagram, SiLine } from "react-icons/si";
 import SEO from "@/components/SEO";
 import { gymConfig, seoConfig } from "@/lib/gymConfig";
 
@@ -480,6 +481,182 @@ export default function Home() {
             >
               <ChevronRight className="w-5 h-5" />
             </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Instagram Section */}
+      <section className="py-20 lg:py-28 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="relative rounded-2xl overflow-hidden"
+            style={{ background: "linear-gradient(135deg, #833ab4 0%, #fd1d1d 40%, #fcb045 100%)" }}
+          >
+            <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)", backgroundSize: "20px 20px" }} />
+            <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 p-8 sm:p-12">
+              <div className="flex items-center gap-6">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center shrink-0">
+                  <SiInstagram className="w-9 h-9 sm:w-11 sm:h-11 text-white" />
+                </div>
+                <div>
+                  <p className="text-white/70 text-xs tracking-[0.2em] uppercase mb-1">Follow Us</p>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-white leading-tight">
+                    練習風景・日常を<br className="sm:hidden" />公開中！！
+                  </h2>
+                  <p className="text-white/80 text-sm mt-1">@deep.amagasaki</p>
+                </div>
+              </div>
+              <div className="flex flex-col items-center gap-4 text-center">
+                <div className="bg-white/10 border border-white/20 rounded-xl px-6 py-4 backdrop-blur-sm">
+                  <p className="text-white font-bold text-sm mb-1">
+                    🎉 インスタフォローで体験<span className="text-yellow-300 text-xl font-heading ml-1">無料</span>
+                  </p>
+                  <p className="text-white/70 text-xs">フォロー後、DMまたはLINEでご連絡ください</p>
+                </div>
+                <a
+                  href={gymConfig.sns.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid="button-instagram"
+                  className="inline-flex items-center gap-2 bg-white text-[#fd1d1d] font-bold px-7 py-3 rounded-full text-sm transition-all duration-200 hover:scale-105"
+                >
+                  <SiInstagram className="w-4 h-4" />
+                  Instagramを見る
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* LINE Section */}
+      <section className="py-20 lg:py-28 overflow-hidden" style={{ background: "linear-gradient(135deg, #06C755 0%, #04A344 100%)" }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left: Text */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInLeft}
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <SiLine className="w-8 h-8 text-white" />
+                <p className="text-white/70 text-xs tracking-[0.3em] uppercase">Official LINE</p>
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 leading-tight">
+                LINEで簡単に<br />お申し込み可能
+              </h2>
+              <p className="text-white/80 mb-6 leading-relaxed text-sm sm:text-base">
+                友だち追加後、「体験希望」とお送りいただければこちらからご案内いたします。
+              </p>
+              <div className="bg-white/10 border border-white/20 rounded-xl p-5 mb-6 space-y-2 text-sm text-white/90">
+                <p className="font-bold text-white mb-3">📅 体験可能時間</p>
+                <div className="grid grid-cols-2 gap-2 text-xs">
+                  <div className="bg-white/10 rounded-lg px-3 py-2">
+                    <p className="font-semibold text-white">月〜金曜日</p>
+                    <p className="text-white/70">10:00 〜 13:00</p>
+                    <p className="text-white/70">17:00 〜 22:00</p>
+                  </div>
+                  <div className="bg-white/10 rounded-lg px-3 py-2">
+                    <p className="font-semibold text-white">土・日曜日</p>
+                    <p className="text-white/70">10:00 〜 14:00</p>
+                  </div>
+                </div>
+              </div>
+              <a
+                href={gymConfig.sns.line}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="button-line-add"
+                className="inline-flex items-center gap-2 bg-white text-[#06C755] font-bold px-7 py-3 rounded-full text-sm transition-all duration-200 hover:scale-105 shadow-lg"
+              >
+                <SiLine className="w-5 h-5" />
+                友だち追加する
+              </a>
+            </motion.div>
+
+            {/* Right: LINE Chat Mockup */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInRight}
+              className="flex justify-center"
+            >
+              <div className="w-full max-w-sm">
+                {/* Phone frame */}
+                <div className="bg-[#BEE3CD] rounded-3xl p-4 shadow-2xl">
+                  {/* Chat header */}
+                  <div className="bg-[#06C755] rounded-2xl px-4 py-3 flex items-center gap-3 mb-3">
+                    <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center shrink-0">
+                      <SiLine className="w-5 h-5 text-[#06C755]" />
+                    </div>
+                    <div>
+                      <p className="text-white font-bold text-sm">DEEP.FIT</p>
+                      <p className="text-white/70 text-xs">公式アカウント</p>
+                    </div>
+                  </div>
+                  {/* Messages */}
+                  <div className="space-y-3 px-1 max-h-80 overflow-hidden">
+                    {/* User sends */}
+                    <div className="flex justify-end">
+                      <div className="bg-[#06C755] text-white text-xs px-3 py-2 rounded-2xl rounded-tr-sm max-w-[70%]">
+                        体験希望
+                      </div>
+                    </div>
+                    {/* Bot reply */}
+                    <div className="flex items-start gap-2">
+                      <div className="w-7 h-7 rounded-full bg-[#06C755] flex items-center justify-center shrink-0 mt-1">
+                        <SiLine className="w-4 h-4 text-white" />
+                      </div>
+                      <div className="bg-white text-[#333] text-xs px-3 py-2.5 rounded-2xl rounded-tl-sm max-w-[80%] leading-relaxed shadow-sm">
+                        <p className="font-bold text-[#06C755] mb-1">DEEP.FIT です！</p>
+                        <p>友だち追加ありがとうございます😊</p>
+                        <p className="mt-1">当ジムはダイエット・運動不足などが目的のジムです。20歳〜70歳まで女性の方でも気軽にご利用できます。</p>
+                        <p className="mt-2 text-[#06C755] font-semibold">📸 インスタフォローで体験無料！</p>
+                      </div>
+                    </div>
+                    {/* Booking form hint */}
+                    <div className="flex items-start gap-2">
+                      <div className="w-7 h-7 rounded-full bg-[#06C755] flex items-center justify-center shrink-0 mt-1">
+                        <SiLine className="w-4 h-4 text-white" />
+                      </div>
+                      <div className="bg-white text-[#333] text-xs px-3 py-2.5 rounded-2xl rounded-tl-sm max-w-[80%] leading-relaxed shadow-sm">
+                        <p className="font-semibold mb-1.5">体験予約の場合は↓</p>
+                        <p>📅 希望日時</p>
+                        <p>👤 性別・年齢</p>
+                        <p>🏃 スポーツ経験</p>
+                        <p className="mt-1.5 text-[#4D5058]/60">※近隣に駐車場あり🅿️</p>
+                      </div>
+                    </div>
+                    {/* User reply */}
+                    <div className="flex justify-end">
+                      <div className="bg-[#06C755] text-white text-xs px-3 py-2 rounded-2xl rounded-tr-sm max-w-[70%]">
+                        ○月○日 17時希望です！
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <div className="w-7 h-7 rounded-full bg-[#06C755] flex items-center justify-center shrink-0 mt-1">
+                        <SiLine className="w-4 h-4 text-white" />
+                      </div>
+                      <div className="bg-white text-[#333] text-xs px-3 py-2.5 rounded-2xl rounded-tl-sm max-w-[75%] shadow-sm">
+                        ありがとうございます♪ 大丈夫です！動きやすい格好でお越しください😊
+                      </div>
+                    </div>
+                  </div>
+                  {/* Input bar */}
+                  <div className="mt-3 bg-white/60 rounded-full px-4 py-2 flex items-center gap-2">
+                    <MessageCircle className="w-4 h-4 text-[#06C755]/60" />
+                    <p className="text-[#333]/40 text-xs">メッセージを入力...</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>

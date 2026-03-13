@@ -27,7 +27,7 @@ export const gymConfig = {
     { label: "定休日", time: "木曜日・祝日" },
   ],
   sns: {
-    instagram: "https://instagram.com",
+    instagram: "https://www.instagram.com/deep.amagasaki/",
     twitter: "https://x.com",
     line: "https://lin.ee/uqfaBm6",
   },
