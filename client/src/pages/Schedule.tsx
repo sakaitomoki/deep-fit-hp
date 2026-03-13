@@ -306,112 +306,125 @@ export default function Schedule() {
 
       {/* Pricing */}
       <section className="py-20 lg:py-28 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeInUp}
-            className="text-center mb-10"
+            className="text-center mb-12"
           >
             <p className="text-[#F2AC55] text-xs tracking-[0.3em] uppercase mb-3">Pricing</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#4D5058]">料金プラン</h2>
-            <p className="text-[#4D5058]/50 text-sm mt-2">入会金 {gymConfig.joinFee}（税込）　※税込み価格で表示</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#4D5058]">PRICE LIST</h2>
+            <p className="text-[#4D5058]/50 text-sm mt-3">入会金 {gymConfig.joinFee}（税込）　※税込み価格で表示</p>
           </motion.div>
 
-          {/* Pricing Table */}
+          {/* Category Cards */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            variants={fadeInUp}
-            className="overflow-x-auto rounded-xl border border-gray-200 shadow-sm"
+            variants={staggerContainer}
+            className="grid sm:grid-cols-2 gap-6 mb-8"
           >
-            <table className="w-full" style={{ minWidth: "560px" }}>
-              <thead>
-                <tr className="bg-[#4D5058] text-white">
-                  <th className="px-6 py-4 text-sm font-medium text-left">種　別</th>
-                  <th className="px-6 py-4 text-sm font-medium text-center">利用可能時間</th>
-                  <th className="px-6 py-4 text-sm font-medium text-center">
-                    <span className="inline-flex items-center gap-1">女　性</span>
-                  </th>
-                  <th className="px-6 py-4 text-sm font-medium text-center">
-                    <span className="inline-flex items-center gap-1">男　性</span>
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
+            {/* Female */}
+            <motion.div variants={fadeInUp} className="rounded-xl overflow-hidden border border-gray-200 shadow-sm">
+              <div className="bg-[#4D5058] px-6 py-4">
+                <p className="text-white text-lg font-bold tracking-wide">女性会員</p>
+              </div>
+              <div className="bg-white divide-y divide-gray-100">
                 {gymConfig.membership.map((plan, i) => (
-                  <tr key={i} className={`${i % 2 === 0 ? "bg-white" : "bg-[#F2F3F5]"} border-b border-gray-100`}>
-                    <td className="px-6 py-5">
-                      <div className="flex items-center gap-3">
-                        {plan.popular && (
-                          <span className="bg-[#F2AC55] text-white text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-0.5 shrink-0">
-                            <Star className="w-2.5 h-2.5 fill-white" /> 人気
-                          </span>
-                        )}
-                        <div>
-                          <p className="font-bold text-[#4D5058]">{plan.name}</p>
-                          <p className="text-[#4D5058]/40 text-xs">{plan.subtitle}</p>
-                        </div>
-                      </div>
-                      <ul className="mt-3 space-y-1">
-                        {plan.benefits.map((b, j) => (
-                          <li key={j} className="flex items-center gap-1.5 text-xs text-[#4D5058]/60">
-                            <CheckCircle2 className="w-3.5 h-3.5 text-[#F2AC55] shrink-0" />
-                            {b}
-                          </li>
-                        ))}
-                      </ul>
-                    </td>
-                    <td className="px-6 py-5 text-center text-sm text-[#4D5058]/70">全時間帯</td>
-                    <td className="px-6 py-5 text-center">
-                      <span className="font-heading font-bold text-2xl text-[#D99A40]">{plan.femalePrice}</span>
-                      <p className="text-[#4D5058]/40 text-xs mt-0.5">{plan.priceNote}</p>
-                    </td>
-                    <td className="px-6 py-5 text-center">
-                      <span className="font-heading font-bold text-2xl text-[#4D5058]">{plan.malePrice}</span>
-                      <p className="text-[#4D5058]/40 text-xs mt-0.5">{plan.priceNote}</p>
-                    </td>
-                  </tr>
-                ))}
-                {/* Trial row */}
-                <tr className="bg-[#F2F3F5]">
-                  <td className="px-6 py-5">
+                  <div key={i} className="flex items-center justify-between px-6 py-4">
                     <div>
-                      <p className="font-bold text-[#4D5058]">体験レッスン</p>
-                      <p className="text-[#4D5058]/40 text-xs">Trial Lesson　※初回限り・要予約</p>
+                      <p className="font-medium text-[#4D5058]">{plan.name}</p>
+                      <p className="text-xs text-[#4D5058]/40 mt-0.5">{plan.subtitle}</p>
                     </div>
-                  </td>
-                  <td className="px-6 py-5 text-center text-sm text-[#4D5058]/70">営業時間内</td>
-                  <td className="px-6 py-5 text-center">
-                    <span className="font-heading font-bold text-2xl text-[#D99A40]">{gymConfig.trialLesson.price}</span>
-                    <p className="text-[#4D5058]/40 text-xs mt-0.5">（税込）</p>
-                  </td>
-                  <td className="px-6 py-5 text-center">
-                    <span className="font-heading font-bold text-2xl text-[#4D5058]">{gymConfig.trialLesson.price}</span>
-                    <p className="text-[#4D5058]/40 text-xs mt-0.5">（税込）</p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+                    <div className="text-right">
+                      <p className="font-heading font-bold text-2xl text-[#D99A40]">{plan.femalePrice}</p>
+                      <p className="text-[#4D5058]/40 text-xs">/ 月（税込）</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Male */}
+            <motion.div variants={fadeInUp} className="rounded-xl overflow-hidden border border-gray-200 shadow-sm">
+              <div className="bg-[#4D5058] px-6 py-4">
+                <p className="text-white text-lg font-bold tracking-wide">男性会員</p>
+              </div>
+              <div className="bg-white divide-y divide-gray-100">
+                {gymConfig.membership.map((plan, i) => (
+                  <div key={i} className="flex items-center justify-between px-6 py-4">
+                    <div>
+                      <p className="font-medium text-[#4D5058]">{plan.name}</p>
+                      <p className="text-xs text-[#4D5058]/40 mt-0.5">{plan.subtitle}</p>
+                    </div>
+                    <div className="text-right">
+                      <p className="font-heading font-bold text-2xl text-[#4D5058]">{plan.malePrice}</p>
+                      <p className="text-[#4D5058]/40 text-xs">/ 月（税込）</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
           </motion.div>
 
+          {/* Benefits note */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeInUp}
-            className="text-center mt-10"
+            className="flex flex-wrap gap-x-6 gap-y-2 mb-10"
           >
-            <p className="text-[#4D5058]/60 text-sm mb-5">まずは体験レッスンからお気軽にどうぞ</p>
-            <Link
-              href="/contact"
-              data-testid="button-contact-schedule"
-              className="inline-block bg-[#F2AC55] text-white px-8 py-3 rounded-full text-base font-medium transition-all duration-200"
-            >
-              体験レッスンを予約する（{gymConfig.trialLesson.price}）
-            </Link>
+            {gymConfig.membership[0].benefits.map((b, i) => (
+              <span key={i} className="flex items-center gap-1.5 text-sm text-[#4D5058]/60">
+                <CheckCircle2 className="w-4 h-4 text-[#F2AC55] shrink-0" />
+                {b}
+              </span>
+            ))}
+          </motion.div>
+
+          {/* Trial Lesson highlight */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="rounded-xl border-2 border-[#F2AC55] overflow-hidden"
+          >
+            <div className="bg-[#F2AC55] px-6 py-4 flex items-center justify-between">
+              <p className="text-white text-lg font-bold tracking-wide">体験レッスン</p>
+              <p className="text-white/80 text-xs">Trial Lesson　※初回限り・要予約</p>
+            </div>
+            <div className="bg-white px-6 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div>
+                <p className="font-heading font-bold text-3xl text-[#D99A40]">{gymConfig.trialLesson.price}
+                  <span className="text-base font-sans font-normal text-[#4D5058]/40 ml-2">（税込）</span>
+                </p>
+                <p className="text-sm text-[#4D5058]/60 mt-1">
+                  Instagramフォローで
+                  <span className="text-[#D99A40] font-bold ml-1">無料</span>
+                  　→
+                  <a
+                    href={gymConfig.sns.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#4D5058]/50 underline underline-offset-2 ml-1 text-xs"
+                  >
+                    @deep.amagasaki
+                  </a>
+                </p>
+              </div>
+              <Link
+                href="/contact"
+                data-testid="button-contact-schedule"
+                className="inline-block bg-[#F2AC55] text-white px-8 py-3 rounded-full text-base font-medium transition-all duration-200 text-center whitespace-nowrap"
+              >
+                体験予約はこちら
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>
