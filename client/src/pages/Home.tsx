@@ -604,43 +604,33 @@ export default function Home() {
                         体験希望
                       </div>
                     </div>
-                    {/* Bot reply */}
+                    {/* Auto-reply message */}
                     <div className="flex items-start gap-2">
                       <div className="w-7 h-7 rounded-full bg-[#06C755] flex items-center justify-center shrink-0 mt-1">
                         <SiLine className="w-4 h-4 text-white" />
                       </div>
-                      <div className="bg-white text-[#333] text-xs px-3 py-2.5 rounded-2xl rounded-tl-sm max-w-[80%] leading-relaxed shadow-sm">
-                        <p className="font-bold text-[#06C755] mb-1">DEEP.FIT です！</p>
-                        <p>友だち追加ありがとうございます😊</p>
-                        <p className="mt-1">当ジムはダイエット・運動不足などが目的のジムです。20歳〜70歳まで女性の方でも気軽にご利用できます。</p>
-                        <p className="mt-2 text-[#06C755] font-semibold">📸 インスタフォローで体験無料！</p>
+                      <div className="bg-white text-[#333] text-xs px-3 py-2.5 rounded-2xl rounded-tl-sm max-w-[85%] leading-relaxed shadow-sm space-y-1">
+                        <p>○○さん</p>
+                        <p>はじめまして！DEEP.FITです。</p>
+                        <p>友だち追加ありがとうございます😉</p>
+                        <p className="mt-1">当ジムはダイエット・運動不足などが目的のジムです！😆</p>
+                        <p>20歳から70歳までの会員様が在籍しております</p>
+                        <p>女性の方でも気軽にご利用できます😇</p>
+                        <p className="mt-1">運動経験なくてもスタートできるようになってますので、お気軽にご連絡ください😆</p>
                       </div>
                     </div>
-                    {/* Booking form hint */}
+                    {/* Second message */}
                     <div className="flex items-start gap-2">
                       <div className="w-7 h-7 rounded-full bg-[#06C755] flex items-center justify-center shrink-0 mt-1">
                         <SiLine className="w-4 h-4 text-white" />
                       </div>
-                      <div className="bg-white text-[#333] text-xs px-3 py-2.5 rounded-2xl rounded-tl-sm max-w-[80%] leading-relaxed shadow-sm">
-                        <p className="font-semibold mb-1.5">体験予約の場合は↓</p>
-                        <p>📅 希望日時</p>
-                        <p>👤 性別・年齢</p>
+                      <div className="bg-white text-[#333] text-xs px-3 py-2.5 rounded-2xl rounded-tl-sm max-w-[85%] leading-relaxed shadow-sm space-y-1">
+                        <p className="font-semibold text-[#06C755]">📸 インスタフォローで体験無料！</p>
+                        <p>体験・見学希望の方は↓</p>
+                        <p>📅 体験予約希望日</p>
+                        <p>👤 性別 / 年齢（任意）</p>
                         <p>🏃 スポーツ経験</p>
-                        <p className="mt-1.5 text-[#4D5058]/60">※近隣に駐車場あり🅿️</p>
-                      </div>
-                    </div>
-                    {/* User reply */}
-                    <div className="flex justify-end">
-                      <div className="bg-[#06C755] text-white text-xs px-3 py-2 rounded-2xl rounded-tr-sm max-w-[70%]">
-                        ○月○日 17時希望です！
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <div className="w-7 h-7 rounded-full bg-[#06C755] flex items-center justify-center shrink-0 mt-1">
-                        <SiLine className="w-4 h-4 text-white" />
-                      </div>
-                      <div className="bg-white text-[#333] text-xs px-3 py-2.5 rounded-2xl rounded-tl-sm max-w-[75%] shadow-sm">
-                        ありがとうございます♪ 大丈夫です！動きやすい格好でお越しください😊
+                        <p className="text-[#4D5058]/50 mt-1">近隣に駐車場あり🅿️</p>
                       </div>
                     </div>
                   </div>
