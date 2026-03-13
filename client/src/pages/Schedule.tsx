@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Heart, Flame, Users, CheckCircle2, Star, Dumbbell, Zap, MapPin } from "lucide-react";
+import { Heart, Flame, Users, CheckCircle2, Star, Dumbbell, Zap, MapPin, MessageCircle } from "lucide-react";
+import { SiLine, SiInstagram } from "react-icons/si";
 import { Link } from "wouter";
 import SEO from "@/components/SEO";
 import { seoConfig, gymConfig } from "@/lib/gymConfig";
@@ -316,9 +317,12 @@ export default function Schedule() {
       </section>
 
       {/* Opening Campaign */}
-      <section className="py-16 lg:py-20 bg-[#4D5058] relative overflow-hidden">
-        {/* Background pattern */}
-        <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "radial-gradient(circle, white 1.5px, transparent 1.5px)", backgroundSize: "28px 28px" }} />
+      <section
+        className="py-20 lg:py-28 relative overflow-hidden"
+        style={{ background: "linear-gradient(135deg, #D99A40 0%, #F2AC55 50%, #E8954A 100%)" }}
+      >
+        {/* Diagonal stripe pattern */}
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "repeating-linear-gradient(45deg, white 0, white 1px, transparent 0, transparent 50%)", backgroundSize: "20px 20px" }} />
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial="hidden"
@@ -327,55 +331,82 @@ export default function Schedule() {
             variants={fadeInUp}
             className="text-center"
           >
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-[#F2AC55] text-white text-sm font-bold px-5 py-2 rounded-full mb-4 tracking-wide">
-              <Star className="w-4 h-4 fill-white" />
-              オープニングキャンペーン実施中　４月末まで
-              <Star className="w-4 h-4 fill-white" />
+            {/* TOP badge */}
+            <div className="inline-flex items-center gap-2 bg-white text-[#D99A40] text-sm font-bold px-6 py-2.5 rounded-full mb-5 shadow-lg tracking-wide">
+              <Star className="w-4 h-4 fill-[#F2AC55] text-[#F2AC55]" />
+              無料キャンペーン実施中
+              <Star className="w-4 h-4 fill-[#F2AC55] text-[#F2AC55]" />
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2">
-              <span className="text-[#F2AC55]">３大特典</span>　すべて無料！
-            </h2>
-            <p className="text-white/50 text-sm mb-8">※すべて税込価格　※キャンペーンは予告なく終了する場合があります</p>
 
-            {/* Benefits */}
-            <div className="space-y-3 mb-8 max-w-xl mx-auto">
+            <div className="mb-2">
+              <span className="text-white/80 text-sm tracking-[0.2em] uppercase block mb-1">Opening Campaign</span>
+              <h2 className="text-5xl sm:text-6xl font-bold text-white drop-shadow-lg">
+                ３大特典
+              </h2>
+            </div>
+            <p className="text-white/90 font-bold text-xl mb-1">４月末まで限定！</p>
+            <p className="text-white/60 text-xs mb-10">※すべて税込価格　※キャンペーンは予告なく終了する場合があります</p>
+
+            {/* Benefits rows */}
+            <div className="space-y-4 mb-10 max-w-lg mx-auto">
               {[
-                { num: "特典１", label: "体験料金", price: "¥1,500", note: "" },
-                { num: "特典２", label: "入会金", price: "¥10,000", note: "" },
-                { num: "特典３", label: "初月会費", price: "¥11,000〜¥13,200", note: "女性¥11,000 / 男性¥13,200" },
+                { num: "特典１", label: "体験料金", price: "¥1,500" },
+                { num: "特典２", label: "入会金", price: "¥10,000" },
+                { num: "特典３", label: "初月会費", price: "¥11,000〜¥13,200" },
               ].map((item) => (
-                <div key={item.num} className="flex items-center gap-3 bg-white/10 border border-white/10 rounded-xl px-5 py-4">
-                  <span className="bg-[#F2AC55] text-white text-xs font-bold px-3 py-1 rounded-full shrink-0 whitespace-nowrap">{item.num}</span>
-                  <span className="text-white font-medium text-base flex-1 text-left">{item.label}</span>
-                  <div className="text-right">
-                    <span className="text-white/40 line-through text-sm font-mono">{item.price}</span>
-                    {item.note && <p className="text-white/30 text-[10px]">{item.note}</p>}
+                <div key={item.num} className="bg-white rounded-2xl overflow-hidden shadow-lg">
+                  <div className="flex items-center px-5 py-4 gap-4">
+                    <span className="bg-[#4D5058] text-white text-xs font-bold px-3 py-1.5 rounded-full shrink-0">{item.num}</span>
+                    <span className="text-[#4D5058] font-bold text-lg flex-1 text-left">{item.label}</span>
+                    {/* Strikethrough price with slash */}
+                    <div className="relative shrink-0">
+                      <span className="font-heading font-bold text-xl text-gray-400">{item.price}</span>
+                      <span className="absolute inset-0 flex items-center pointer-events-none">
+                        <span className="block w-full h-[2.5px] bg-[#E74C3C] rotate-[-10deg] rounded-full" />
+                      </span>
+                    </div>
+                    <span className="font-heading font-bold text-3xl text-[#F2AC55] shrink-0">無料</span>
                   </div>
-                  <span className="text-[#F2AC55] font-heading font-bold text-2xl ml-1">無料</span>
                 </div>
               ))}
             </div>
 
-            {/* Total savings */}
-            <div className="bg-white/5 border border-white/10 rounded-2xl px-8 py-5 inline-block mb-8">
-              <p className="text-white/50 text-xs mb-1">特典合計（最大）</p>
-              <div className="flex items-center justify-center gap-4">
-                <span className="text-white/30 line-through font-heading font-bold text-3xl">¥24,700〜</span>
-                <span className="text-[#F2AC55] font-heading font-bold text-5xl">¥０</span>
+            {/* Total */}
+            <div className="bg-white/20 border-2 border-white/50 rounded-3xl px-8 py-6 inline-flex flex-col items-center mb-10 shadow-xl">
+              <p className="text-white/80 text-sm font-medium mb-2">特典合計（最大）</p>
+              <div className="flex items-center gap-5">
+                <div className="relative">
+                  <span className="font-heading font-bold text-3xl text-white/40">¥24,700〜</span>
+                  <span className="absolute inset-0 flex items-center pointer-events-none">
+                    <span className="block w-full h-[3px] bg-white/70 rotate-[-8deg] rounded-full" />
+                  </span>
+                </div>
+                <span className="font-heading font-bold text-6xl text-white drop-shadow-lg">¥０</span>
               </div>
             </div>
 
-            <div>
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href={gymConfig.sns.line}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="button-campaign-line"
+                className="inline-flex items-center gap-3 bg-[#06C755] text-white font-bold px-8 py-4 rounded-full text-base transition-all duration-200 shadow-xl hover:scale-105"
+              >
+                <SiLine className="w-5 h-5" />
+                LINEで体験予約する
+              </a>
               <Link
                 href="/contact"
                 data-testid="button-campaign-contact"
-                className="inline-block bg-[#F2AC55] hover:bg-[#D99A40] text-white font-bold px-10 py-4 rounded-full text-base transition-all duration-200 shadow-lg"
+                className="inline-flex items-center gap-2 bg-white/20 border-2 border-white/60 text-white font-medium px-7 py-4 rounded-full text-base transition-all duration-200 hover:bg-white/30"
               >
-                今すぐ体験レッスンを予約する
+                <MessageCircle className="w-4 h-4" />
+                お問い合わせフォーム
               </Link>
-              <p className="text-white/30 text-xs mt-3">体験後、当日入会でキャンペーン適用</p>
             </div>
+            <p className="text-white/50 text-xs mt-4">体験後、当日入会でキャンペーン適用</p>
           </motion.div>
         </div>
       </section>
@@ -462,44 +493,106 @@ export default function Schedule() {
             ))}
           </motion.div>
 
+          {/* Kids & Personal Training */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="grid sm:grid-cols-2 gap-6 mb-6"
+          >
+            {/* Kids */}
+            <motion.div variants={fadeInUp} className="rounded-xl overflow-hidden border border-gray-200 shadow-sm">
+              <div className="bg-[#4D5058] px-6 py-4">
+                <p className="text-white text-lg font-bold tracking-wide">キッズクラス</p>
+                <p className="text-white/50 text-xs mt-0.5">小学生以下対象</p>
+              </div>
+              <div className="bg-white divide-y divide-gray-100">
+                {gymConfig.kidsMembership.map((plan, i) => (
+                  <div key={i} className="flex items-center justify-between px-6 py-4">
+                    <p className="font-medium text-[#4D5058]">{plan.name}</p>
+                    <div className="text-right">
+                      <p className="font-heading font-bold text-2xl text-[#1F7A3A]">{plan.price}</p>
+                      <p className="text-[#4D5058]/40 text-xs">{plan.note}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Personal Training */}
+            <motion.div variants={fadeInUp} className="rounded-xl overflow-hidden border border-gray-200 shadow-sm">
+              <div className="bg-[#4D5058] px-6 py-4">
+                <p className="text-white text-lg font-bold tracking-wide">パーソナルトレーニング</p>
+                <p className="text-white/50 text-xs mt-0.5">完全マンツーマン・予約制</p>
+              </div>
+              <div className="bg-white px-6 py-6 flex items-center justify-between">
+                <div>
+                  <p className="font-medium text-[#4D5058]">{gymConfig.personalTraining.duration} / 1セッション</p>
+                  <p className="text-xs text-[#4D5058]/50 mt-1">👥 {gymConfig.personalTraining.note}</p>
+                </div>
+                <div className="text-right">
+                  <p className="font-heading font-bold text-2xl text-[#2563A8]">{gymConfig.personalTraining.price}</p>
+                  <p className="text-[#4D5058]/40 text-xs">（税込）</p>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+
           {/* Trial Lesson highlight */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeInUp}
-            className="rounded-xl border-2 border-[#F2AC55] overflow-hidden"
+            className="rounded-2xl border-2 border-[#F2AC55] overflow-hidden shadow-lg"
           >
             <div className="bg-[#F2AC55] px-6 py-4 flex items-center justify-between">
               <p className="text-white text-lg font-bold tracking-wide">体験レッスン</p>
               <p className="text-white/80 text-xs">Trial Lesson　※初回限り・要予約</p>
             </div>
-            <div className="bg-white px-6 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-              <div>
-                <p className="font-heading font-bold text-3xl text-[#D99A40]">{gymConfig.trialLesson.price}
-                  <span className="text-base font-sans font-normal text-[#4D5058]/40 ml-2">（税込）</span>
-                </p>
-                <p className="text-sm text-[#4D5058]/60 mt-1">
-                  Instagramフォローで
-                  <span className="text-[#D99A40] font-bold ml-1">無料</span>
-                  　→
-                  <a
-                    href={gymConfig.sns.instagram}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#4D5058]/50 underline underline-offset-2 ml-1 text-xs"
-                  >
-                    @deep.amagasaki
-                  </a>
-                </p>
+            <div className="bg-white px-6 py-6">
+              {/* Instagram free - prominent */}
+              <div className="flex flex-col sm:flex-row sm:items-center gap-6 mb-5">
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 mb-2">
+                    {/* Price with slash */}
+                    <div className="relative inline-block">
+                      <span className="font-heading font-bold text-3xl text-gray-300">{gymConfig.trialLesson.price}</span>
+                      <span className="absolute inset-0 flex items-center pointer-events-none">
+                        <span className="block w-full h-[3px] bg-[#E74C3C] rotate-[-12deg] rounded-full" />
+                      </span>
+                    </div>
+                    <span className="font-heading font-bold text-4xl text-[#F2AC55]">無料</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-gradient-to-r from-[#833AB4]/10 via-[#FD1D1D]/10 to-[#F77737]/10 border border-[#F77737]/20 rounded-full px-4 py-1.5 inline-flex">
+                    <SiInstagram className="w-4 h-4 text-[#E1306C]" />
+                    <span className="text-sm font-bold text-[#4D5058]">インスタフォロワー限定</span>
+                    <a href={gymConfig.sns.instagram} target="_blank" rel="noopener noreferrer" className="text-[#E1306C] text-xs underline underline-offset-2">@deep.amagasaki</a>
+                  </div>
+                </div>
               </div>
-              <Link
-                href="/contact"
-                data-testid="button-contact-schedule"
-                className="inline-block bg-[#F2AC55] text-white px-8 py-3 rounded-full text-base font-medium transition-all duration-200 text-center whitespace-nowrap"
-              >
-                体験予約はこちら
-              </Link>
+              {/* CTA buttons */}
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a
+                  href={gymConfig.sns.line}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid="button-trial-line"
+                  className="flex-1 inline-flex items-center justify-center gap-2 bg-[#06C755] text-white font-bold px-6 py-3.5 rounded-full text-base transition-all duration-200 hover:bg-[#04A344] shadow-md"
+                >
+                  <SiLine className="w-5 h-5" />
+                  LINEで体験予約（おすすめ）
+                </a>
+                <Link
+                  href="/contact"
+                  data-testid="button-contact-schedule"
+                  className="flex-1 inline-flex items-center justify-center gap-2 bg-white border-2 border-[#F2AC55] text-[#D99A40] font-medium px-6 py-3.5 rounded-full text-base transition-all duration-200 hover:bg-[#FFF8EC]"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  お問い合わせフォーム
+                </Link>
+              </div>
             </div>
           </motion.div>
         </div>

@@ -58,6 +58,15 @@ export const gymConfig = {
       benefits: ["全時間帯利用可能", "月8回まで", "グローブ無料貸出", "パワーラック使用可"],
     },
   ],
+  kidsMembership: [
+    { name: "月4回", price: "¥6,600", note: "/ 月（税込）" },
+    { name: "月8回", price: "¥8,800", note: "/ 月（税込）" },
+  ],
+  personalTraining: {
+    duration: "60分",
+    price: "¥5,500",
+    note: "ペアでも同料金（税込）",
+  },
   equipment: [
     "オールインパワーラック",
     "サンドバック 4本",
