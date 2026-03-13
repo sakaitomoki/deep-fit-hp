@@ -49,9 +49,9 @@ const classTypes = [
 
 const scheduleData = [
   { time: "10:00-13:00", mon: "フィットネス", tue: "フィットネス", wed: "フィットネス", thu: "-", fri: "フィットネス", sat: "フィットネス", sun: "フィットネス" },
-  { time: "13:00-17:00", mon: "パーソナル", tue: "パーソナル", wed: "パーソナル", thu: "-", fri: "パーソナル", sat: "-", sun: "-" },
-  { time: "14:00〜", mon: "-", tue: "-", wed: "-", thu: "-", fri: "-", sat: "パーソナル", sun: "パーソナル" },
-  { time: "17:00-18:00", mon: "フィットネス", tue: "キッズ", wed: "フィットネス", thu: "-", fri: "キッズ", sat: "-", sun: "-" },
+  { time: "13:00-14:00", mon: "パーソナル", tue: "パーソナル", wed: "パーソナル", thu: "-", fri: "パーソナル", sat: "フィットネス", sun: "フィットネス" },
+  { time: "14:00-17:00", mon: "パーソナル", tue: "パーソナル", wed: "パーソナル", thu: "-", fri: "パーソナル", sat: "キッズ(〜15:00)", sun: "-" },
+  { time: "17:00-18:00", mon: "フィットネス", tue: "キッズ", wed: "フィットネス", thu: "-", fri: "フィットネス", sat: "-", sun: "-" },
   { time: "18:00-22:00", mon: "フィットネス", tue: "フィットネス", wed: "フィットネス", thu: "-", fri: "フィットネス", sat: "-", sun: "-" },
 ];
 
@@ -61,8 +61,8 @@ const dayLabels: Record<typeof days[number], string> = { time: "時間", mon: "�
 function CellStyle({ value }: { value: string }) {
   if (value === "-") return <span className="text-[#4D5058]/20">—</span>;
   if (value === "フィットネス") return <span className="text-[#D99A40] bg-[#F2AC55]/10 px-2 py-0.5 rounded text-xs font-medium whitespace-nowrap">{value}</span>;
-  if (value.startsWith("パーソナル")) return <span className="text-[#4D5058] bg-[#4D5058]/10 px-2 py-0.5 rounded text-xs font-medium whitespace-nowrap">パーソナル</span>;
-  if (value === "キッズ") return <span className="text-[#53565E] bg-[#53565E]/10 px-2 py-0.5 rounded text-xs font-medium whitespace-nowrap">{value}</span>;
+  if (value.startsWith("パーソナル")) return <span className="text-[#4D5058] bg-[#4D5058]/10 px-2 py-0.5 rounded text-xs font-medium whitespace-nowrap">パーソナル<span className="text-[8px] ml-0.5 opacity-60">予約制</span></span>;
+  if (value === "キッズ" || value.startsWith("キッズ")) return <span className="text-[#53565E] bg-[#53565E]/10 px-2 py-0.5 rounded text-xs font-medium whitespace-nowrap">{value}</span>;
   return <span>{value}</span>;
 }
 
@@ -187,7 +187,7 @@ export default function Schedule() {
           </motion.div>
 
           <p className="text-[#4D5058]/50 text-xs mt-3">
-            ※ 木曜日・祝日は定休日です。祝日はパーソナルのみ対応の場合があります。
+            ※ 木曜日・祝日は定休日です。パーソナルトレーニング（13:00〜17:00）は予約制です。火曜17:00〜18:00・土曜14:00〜15:00はキッズクラス開催。
           </p>
         </div>
       </section>
