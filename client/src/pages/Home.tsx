@@ -546,7 +546,9 @@ export default function Home() {
               variants={fadeInLeft}
             >
               <div className="flex items-center gap-3 mb-4">
-                <SiLine className="w-8 h-8 text-white" />
+                <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 shadow-md">
+                  <SiLine className="w-6 h-6 text-[#06C755]" />
+                </div>
                 <p className="text-white/70 text-xs tracking-[0.3em] uppercase">Official LINE</p>
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 leading-tight">
