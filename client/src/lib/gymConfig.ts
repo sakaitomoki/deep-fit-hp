@@ -2,7 +2,7 @@ export const gymConfig = {
   name: "DEEP.FIT",
   nameJa: "ディープフィット",
   tagline: "動いて、整えて、気づけば続く。",
-  subtitle: "CIRCUIT × KICKBOXING GYM",
+  subtitle: "サーキット×キックボクシングフィットネスジム",
   phone: "06-7777-7853",
   email: "sakitomokideep@icloud.com",
   address: "〒660-0001 兵庫県尼崎市長洲東通1–9-25 2F DEEP.FIT",

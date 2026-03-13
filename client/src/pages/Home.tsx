@@ -183,7 +183,7 @@ export default function Home() {
             transition={{ delay: 0.2, duration: 0.6 }}
           >
             <span className="inline-block border border-white/40 text-white/80 text-xs sm:text-sm tracking-[0.3em] uppercase px-5 py-2 rounded-full mb-6">
-              CIRCUIT × KICKBOXING GYM
+              サーキット×キックボクシングフィットネスジム
             </span>
           </motion.div>
 
@@ -606,8 +606,8 @@ export default function Home() {
                     </div>
                     {/* Auto-reply message */}
                     <div className="flex items-start gap-2">
-                      <div className="w-7 h-7 rounded-full bg-[#06C755] flex items-center justify-center shrink-0 mt-1">
-                        <SiLine className="w-4 h-4 text-white" />
+                      <div className="w-7 h-7 rounded-full bg-white flex items-center justify-center shrink-0 mt-1 shadow-sm">
+                        <SiLine className="w-4 h-4 text-[#06C755]" />
                       </div>
                       <div className="bg-white text-[#333] text-xs px-3 py-2.5 rounded-2xl rounded-tl-sm max-w-[85%] leading-relaxed shadow-sm space-y-1">
                         <p>○○さん</p>
@@ -621,8 +621,8 @@ export default function Home() {
                     </div>
                     {/* Second message */}
                     <div className="flex items-start gap-2">
-                      <div className="w-7 h-7 rounded-full bg-[#06C755] flex items-center justify-center shrink-0 mt-1">
-                        <SiLine className="w-4 h-4 text-white" />
+                      <div className="w-7 h-7 rounded-full bg-white flex items-center justify-center shrink-0 mt-1 shadow-sm">
+                        <SiLine className="w-4 h-4 text-[#06C755]" />
                       </div>
                       <div className="bg-white text-[#333] text-xs px-3 py-2.5 rounded-2xl rounded-tl-sm max-w-[85%] leading-relaxed shadow-sm space-y-1">
                         <p className="font-semibold text-[#06C755]">📸 インスタフォローで体験無料！</p>

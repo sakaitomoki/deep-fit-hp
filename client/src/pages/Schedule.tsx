@@ -47,24 +47,64 @@ const classTypes = [
   },
 ];
 
-const scheduleData = [
-  { time: "10:00-13:00", mon: "フィットネス", tue: "フィットネス", wed: "フィットネス", thu: "-", fri: "フィットネス", sat: "フィットネス", sun: "フィットネス" },
-  { time: "13:00-14:00", mon: "パーソナル", tue: "パーソナル", wed: "パーソナル", thu: "-", fri: "パーソナル", sat: "フィットネス", sun: "フィットネス" },
-  { time: "14:00-17:00", mon: "パーソナル", tue: "パーソナル", wed: "パーソナル", thu: "-", fri: "パーソナル", sat: "キッズ(〜15:00)", sun: "-" },
-  { time: "17:00-18:00", mon: "フィットネス", tue: "キッズ", wed: "フィットネス", thu: "-", fri: "フィットネス", sat: "-", sun: "-" },
-  { time: "18:00-22:00", mon: "フィットネス", tue: "フィットネス", wed: "フィットネス", thu: "-", fri: "フィットネス", sat: "-", sun: "-" },
-];
+type ScheduleBlock = {
+  start: number;
+  end: number;
+  label: string;
+  sublabel?: string;
+  color: "fitness" | "personal" | "kids" | "closed";
+};
 
-const days = ["time", "mon", "tue", "wed", "thu", "fri", "sat", "sun"] as const;
-const dayLabels: Record<typeof days[number], string> = { time: "時間", mon: "月", tue: "火", wed: "水", thu: "木", fri: "金", sat: "土", sun: "日" };
+const dayOrder = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"] as const;
+const dayLabelsMap: Record<typeof dayOrder[number], string> = {
+  mon: "月", tue: "火", wed: "水", thu: "木", fri: "金", sat: "土", sun: "日",
+};
 
-function CellStyle({ value }: { value: string }) {
-  if (value === "-") return <span className="text-[#4D5058]/20">—</span>;
-  if (value === "フィットネス") return <span className="text-[#D99A40] bg-[#F2AC55]/10 px-2 py-0.5 rounded text-xs font-medium whitespace-nowrap">{value}</span>;
-  if (value.startsWith("パーソナル")) return <span className="text-[#4D5058] bg-[#4D5058]/10 px-2 py-0.5 rounded text-xs font-medium whitespace-nowrap">パーソナル<span className="text-[8px] ml-0.5 opacity-60">予約制</span></span>;
-  if (value === "キッズ" || value.startsWith("キッズ")) return <span className="text-[#53565E] bg-[#53565E]/10 px-2 py-0.5 rounded text-xs font-medium whitespace-nowrap">{value}</span>;
-  return <span>{value}</span>;
-}
+const scheduleBlocks: Record<string, ScheduleBlock[]> = {
+  mon: [
+    { start: 10, end: 13, label: "フィットネス", color: "fitness" },
+    { start: 13, end: 17, label: "パーソナル", sublabel: "予約制", color: "personal" },
+    { start: 17, end: 22, label: "フィットネス", color: "fitness" },
+  ],
+  tue: [
+    { start: 10, end: 13, label: "フィットネス", color: "fitness" },
+    { start: 13, end: 17, label: "パーソナル", sublabel: "予約制", color: "personal" },
+    { start: 17, end: 18, label: "キッズ", color: "kids" },
+    { start: 18, end: 22, label: "フィットネス", color: "fitness" },
+  ],
+  wed: [
+    { start: 10, end: 13, label: "フィットネス", color: "fitness" },
+    { start: 13, end: 17, label: "パーソナル", sublabel: "予約制", color: "personal" },
+    { start: 17, end: 22, label: "フィットネス", color: "fitness" },
+  ],
+  thu: [
+    { start: 10, end: 22, label: "定休日", color: "closed" },
+  ],
+  fri: [
+    { start: 10, end: 13, label: "フィットネス", color: "fitness" },
+    { start: 13, end: 17, label: "パーソナル", sublabel: "予約制", color: "personal" },
+    { start: 17, end: 22, label: "フィットネス", color: "fitness" },
+  ],
+  sat: [
+    { start: 10, end: 14, label: "フィットネス", color: "fitness" },
+    { start: 14, end: 15, label: "キッズ", color: "kids" },
+  ],
+  sun: [
+    { start: 10, end: 14, label: "フィットネス", color: "fitness" },
+  ],
+};
+
+const START_HOUR = 10;
+const END_HOUR = 22;
+const TOTAL_HOURS = END_HOUR - START_HOUR;
+const HOUR_PX = 52;
+
+const colorStyles: Record<string, { bg: string; text: string; border: string }> = {
+  fitness: { bg: "bg-[#FFF0D6]", text: "text-[#C47F1A]", border: "border-[#F2AC55]/50" },
+  personal: { bg: "bg-[#DDEEFF]", text: "text-[#2563A8]", border: "border-[#4D90D9]/40" },
+  kids:     { bg: "bg-[#D6F5E0]", text: "text-[#1F7A3A]", border: "border-[#4CAF50]/40" },
+  closed:   { bg: "bg-gray-100",  text: "text-gray-400",  border: "border-gray-200" },
+};
 
 export default function Schedule() {
   return (
@@ -151,7 +191,7 @@ export default function Schedule() {
             className="text-center mb-12"
           >
             <p className="text-[#F2AC55] text-xs tracking-[0.3em] uppercase mb-3">Weekly Schedule</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#4D5058]">週間スケジュール</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#4D5058]">タイムスケジュール</h2>
           </motion.div>
 
           <motion.div
@@ -159,35 +199,107 @@ export default function Schedule() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeInUp}
-            className="overflow-x-auto rounded-md border border-gray-200 shadow-sm"
+            className="overflow-x-auto"
           >
-            <table className="w-full" style={{ minWidth: "800px" }}>
-              <thead>
-                <tr className="bg-[#4D5058] text-white">
-                  {days.map((day) => (
-                    <th key={day} className="px-4 py-4 text-sm font-medium text-left">
-                      {dayLabels[day]}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {scheduleData.map((row, i) => (
-                  <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-[#F2F3F5]"}>
-                    <td className="px-4 py-3 text-xs font-medium text-[#4D5058]/70 whitespace-nowrap">{row.time}</td>
-                    {(["mon", "tue", "wed", "thu", "fri", "sat", "sun"] as const).map((day) => (
-                      <td key={day} className="px-4 py-3 text-center">
-                        <CellStyle value={row[day]} />
-                      </td>
-                    ))}
-                  </tr>
+            <div style={{ minWidth: "640px" }}>
+              {/* Day header row */}
+              <div className="flex mb-2">
+                <div className="w-12 shrink-0" />
+                {dayOrder.map((day) => (
+                  <div
+                    key={day}
+                    className={`flex-1 text-center text-sm font-bold py-2 rounded-lg mx-0.5 ${
+                      day === "thu" ? "bg-gray-200 text-gray-400" : "bg-[#4D5058] text-white"
+                    }`}
+                  >
+                    {dayLabelsMap[day]}
+                  </div>
                 ))}
-              </tbody>
-            </table>
+              </div>
+
+              {/* Time grid */}
+              <div className="flex">
+                {/* Time axis */}
+                <div className="w-12 shrink-0 relative" style={{ height: TOTAL_HOURS * HOUR_PX }}>
+                  {Array.from({ length: TOTAL_HOURS + 1 }, (_, i) => (
+                    <div
+                      key={i}
+                      className="absolute left-0 right-0 flex items-center"
+                      style={{ top: i * HOUR_PX - 8 }}
+                    >
+                      <span className="text-[10px] text-[#4D5058]/50 font-medium w-full text-right pr-2">
+                        {START_HOUR + i}:00
+                      </span>
+                    </div>
+                  ))}
+                  {/* Horizontal grid lines */}
+                  {Array.from({ length: TOTAL_HOURS + 1 }, (_, i) => (
+                    <div
+                      key={`line-${i}`}
+                      className="absolute left-10 right-0 border-t border-gray-200"
+                      style={{ top: i * HOUR_PX }}
+                    />
+                  ))}
+                </div>
+
+                {/* Day columns */}
+                {dayOrder.map((day) => (
+                  <div
+                    key={day}
+                    className="flex-1 relative mx-0.5 bg-white/60 rounded-lg"
+                    style={{ height: TOTAL_HOURS * HOUR_PX }}
+                  >
+                    {/* Horizontal lines */}
+                    {Array.from({ length: TOTAL_HOURS + 1 }, (_, i) => (
+                      <div
+                        key={i}
+                        className="absolute left-0 right-0 border-t border-gray-100"
+                        style={{ top: i * HOUR_PX }}
+                      />
+                    ))}
+                    {/* Schedule blocks */}
+                    {scheduleBlocks[day].map((block, i) => {
+                      const s = colorStyles[block.color];
+                      const topPx = (block.start - START_HOUR) * HOUR_PX;
+                      const heightPx = (block.end - block.start) * HOUR_PX - 3;
+                      return (
+                        <div
+                          key={i}
+                          className={`absolute left-1 right-1 rounded-lg border flex flex-col items-center justify-center text-center px-1 ${s.bg} ${s.border}`}
+                          style={{ top: topPx + 2, height: heightPx }}
+                        >
+                          <p className={`text-xs font-bold leading-tight ${s.text}`}>{block.label}</p>
+                          {block.sublabel && (
+                            <p className={`text-[10px] ${s.text} opacity-70`}>{block.sublabel}</p>
+                          )}
+                          <p className={`text-[9px] mt-0.5 ${s.text} opacity-60`}>
+                            {block.start}:00〜{block.end}:00
+                          </p>
+                        </div>
+                      );
+                    })}
+                  </div>
+                ))}
+              </div>
+            </div>
           </motion.div>
 
-          <p className="text-[#4D5058]/50 text-xs mt-3">
-            ※ 木曜日・祝日は定休日です。パーソナルトレーニング（13:00〜17:00）は予約制です。火曜17:00〜18:00・土曜14:00〜15:00はキッズクラス開催。
+          {/* Legend */}
+          <div className="flex flex-wrap items-center gap-4 mt-6">
+            {[
+              { color: "fitness", label: "フィットネス" },
+              { color: "personal", label: "パーソナル（予約制）" },
+              { color: "kids", label: "キッズクラス" },
+              { color: "closed", label: "定休日" },
+            ].map(({ color, label }) => (
+              <div key={color} className="flex items-center gap-2">
+                <div className={`w-4 h-4 rounded border ${colorStyles[color].bg} ${colorStyles[color].border}`} />
+                <span className="text-xs text-[#4D5058]/60">{label}</span>
+              </div>
+            ))}
+          </div>
+          <p className="text-[#4D5058]/40 text-xs mt-2">
+            ※ 木曜日・祝日は定休日。パーソナルトレーニングは要予約。
           </p>
         </div>
       </section>
