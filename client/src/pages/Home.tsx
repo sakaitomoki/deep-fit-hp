@@ -5,6 +5,7 @@ import { Users, Trophy, Dumbbell, Clock, ChevronLeft, ChevronRight, Star, ArrowR
 import { SiInstagram, SiLine } from "react-icons/si";
 import SEO from "@/components/SEO";
 import { gymConfig, seoConfig } from "@/lib/gymConfig";
+import deepFitLogo from "@assets/image0_1773383672040.png";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -588,8 +589,8 @@ export default function Home() {
                 <div className="bg-[#BEE3CD] rounded-3xl p-4 shadow-2xl">
                   {/* Chat header */}
                   <div className="bg-[#06C755] rounded-2xl px-4 py-3 flex items-center gap-3 mb-3">
-                    <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center shrink-0">
-                      <SiLine className="w-5 h-5 text-[#06C755]" />
+                    <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center shrink-0 overflow-hidden">
+                      <img src={deepFitLogo} alt="DEEP.FIT" className="w-full h-full object-contain p-0.5" />
                     </div>
                     <div>
                       <p className="text-white font-bold text-sm">DEEP.FIT</p>
@@ -606,8 +607,8 @@ export default function Home() {
                     </div>
                     {/* Auto-reply message */}
                     <div className="flex items-start gap-2">
-                      <div className="w-7 h-7 rounded-full bg-white flex items-center justify-center shrink-0 mt-1 shadow-sm">
-                        <SiLine className="w-4 h-4 text-[#06C755]" />
+                      <div className="w-7 h-7 rounded-full bg-white flex items-center justify-center shrink-0 mt-1 shadow-sm overflow-hidden">
+                        <img src={deepFitLogo} alt="DEEP.FIT" className="w-full h-full object-contain p-0.5" />
                       </div>
                       <div className="bg-white text-[#333] text-xs px-3 py-2.5 rounded-2xl rounded-tl-sm max-w-[85%] leading-relaxed shadow-sm space-y-1">
                         <p>○○さん</p>
@@ -621,8 +622,8 @@ export default function Home() {
                     </div>
                     {/* Second message */}
                     <div className="flex items-start gap-2">
-                      <div className="w-7 h-7 rounded-full bg-white flex items-center justify-center shrink-0 mt-1 shadow-sm">
-                        <SiLine className="w-4 h-4 text-[#06C755]" />
+                      <div className="w-7 h-7 rounded-full bg-white flex items-center justify-center shrink-0 mt-1 shadow-sm overflow-hidden">
+                        <img src={deepFitLogo} alt="DEEP.FIT" className="w-full h-full object-contain p-0.5" />
                       </div>
                       <div className="bg-white text-[#333] text-xs px-3 py-2.5 rounded-2xl rounded-tl-sm max-w-[85%] leading-relaxed shadow-sm space-y-1">
                         <p className="font-semibold text-[#06C755]">📸 インスタフォローで体験無料！</p>
