@@ -82,16 +82,23 @@ export default function About() {
               <h2 className="text-3xl sm:text-4xl font-bold text-[#4D5058] mb-6">ジムの歩み</h2>
               <div className="space-y-4 text-[#4D5058]/70 leading-relaxed text-sm sm:text-base">
                 <p>
-                  DEEP.FITは2015年、兵庫県尼崎市に設立しました。「誰もが気軽に格闘技を楽しめる場所を作りたい」という想いからスタートしました。
+                  DEEP.FITは、2026年に尼崎市長洲東通りにオープン予定のキックボクシングフィットネスジムです。
+                </p>
+                <p className="text-[#4D5058] font-medium italic border-l-4 border-[#F2AC55] pl-4 py-1">
+                  「運動が苦手でも、楽しく続けられる場所を作りたい」<br />
+                  そんな想いからこのジムは生まれました。
                 </p>
                 <p>
-                  設立当初は小さなジムでしたが、地域の皆様のご支持をいただき、今では500名以上の会員様にご利用いただけるジムに成長しました。
+                  キックボクシングとサーキットトレーニングを組み合わせたプログラムで、効率よく脂肪燃焼しながら、楽しくダイエットができるトレーニングを提供しています。
                 </p>
                 <p>
-                  キックボクシングとサーキットトレーニングを組み合わせたユニークなプログラムは、「楽しく続けられる」と好評をいただいています。初心者の方から本格的に競技を目指す方まで、幅広く対応できる環境を整えています。
+                  運動初心者の方や女性の方でも、安心して通える環境づくりを大切にしています。無理なく自分のペースでトレーニングできるので、初めての方でも安心です。
                 </p>
                 <p>
-                  「運動は初めてで不安」「ジムに入っても続かなかった」そんな経験を持つ方こそ、DEEP.FITへ。インストラクター一同、心よりお待ちしています。
+                  また、本格的にトレーニングをしたい方のために、パワーラックなどの本格的な設備もご用意しています。
+                </p>
+                <p>
+                  ダイエット、体力づくり、ストレス発散まで。あなたの目的に合わせて、楽しく続けられるジムを目指しています。
                 </p>
               </div>
             </motion.div>
@@ -110,8 +117,8 @@ export default function About() {
               />
               <div className="hidden md:flex absolute -bottom-4 -left-4 bg-[#F2AC55] text-white rounded-md px-5 py-4 items-center gap-3 shadow-lg">
                 <div>
-                  <div className="font-heading font-bold text-3xl">2015</div>
-                  <div className="text-white/80 text-xs">設立</div>
+                  <div className="font-heading font-bold text-3xl">2026</div>
+                  <div className="text-white/80 text-xs">オープン予定</div>
                 </div>
               </div>
             </motion.div>

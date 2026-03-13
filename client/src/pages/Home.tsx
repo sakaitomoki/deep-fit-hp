@@ -649,6 +649,89 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Opening Campaign */}
+      <section
+        className="py-20 lg:py-28 relative overflow-hidden"
+        style={{ background: "linear-gradient(135deg, #D99A40 0%, #F2AC55 50%, #E8954A 100%)" }}
+      >
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "repeating-linear-gradient(45deg, white 0, white 1px, transparent 0, transparent 50%)", backgroundSize: "20px 20px" }} />
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="text-center"
+          >
+            <div className="inline-flex items-center gap-2 bg-white text-[#D99A40] text-sm font-bold px-6 py-2.5 rounded-full mb-5 shadow-lg tracking-wide">
+              <Star className="w-4 h-4 fill-[#F2AC55] text-[#F2AC55]" />
+              無料キャンペーン実施中
+              <Star className="w-4 h-4 fill-[#F2AC55] text-[#F2AC55]" />
+            </div>
+            <span className="text-white/80 text-sm tracking-[0.2em] uppercase block mb-1">Opening Campaign</span>
+            <h2 className="text-5xl sm:text-6xl font-bold text-white drop-shadow-lg mb-1">３大特典</h2>
+            <p className="text-white/90 font-bold text-xl mb-1">４月末まで限定！</p>
+            <p className="text-white/60 text-xs mb-10">※すべて税込価格</p>
+
+            <div className="space-y-4 mb-10 max-w-lg mx-auto">
+              {[
+                { num: "特典１", label: "体験料金", price: "¥1,500" },
+                { num: "特典２", label: "入会金", price: "¥10,000" },
+                { num: "特典３", label: "初月会費", price: "¥11,000〜¥13,200" },
+              ].map((item) => (
+                <div key={item.num} className="bg-white rounded-2xl overflow-hidden shadow-lg">
+                  <div className="flex items-center px-5 py-4 gap-4">
+                    <span className="bg-[#4D5058] text-white text-xs font-bold px-3 py-1.5 rounded-full shrink-0">{item.num}</span>
+                    <span className="text-[#4D5058] font-bold text-lg flex-1 text-left">{item.label}</span>
+                    <div className="relative shrink-0">
+                      <span className="font-heading font-bold text-xl text-gray-400">{item.price}</span>
+                      <span className="absolute inset-0 flex items-center pointer-events-none">
+                        <span className="block w-full h-[2.5px] bg-[#E74C3C] rotate-[-10deg] rounded-full" />
+                      </span>
+                    </div>
+                    <span className="font-heading font-bold text-3xl text-[#F2AC55] shrink-0">無料</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="bg-white/20 border-2 border-white/50 rounded-3xl px-8 py-6 inline-flex flex-col items-center mb-10 shadow-xl">
+              <p className="text-white/80 text-sm font-medium mb-2">特典合計（最大）</p>
+              <div className="flex items-center gap-5">
+                <div className="relative">
+                  <span className="font-heading font-bold text-3xl text-white/40">¥24,700〜</span>
+                  <span className="absolute inset-0 flex items-center pointer-events-none">
+                    <span className="block w-full h-[3px] bg-white/70 rotate-[-8deg] rounded-full" />
+                  </span>
+                </div>
+                <span className="font-heading font-bold text-6xl text-white drop-shadow-lg">¥０</span>
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href={gymConfig.sns.line}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="button-home-campaign-line"
+                className="inline-flex items-center gap-3 bg-[#06C755] text-white font-bold px-8 py-4 rounded-full text-base transition-all duration-200 shadow-xl hover:scale-105"
+              >
+                <SiLine className="w-5 h-5" />
+                LINEで体験予約する
+              </a>
+              <Link
+                href="/contact"
+                data-testid="button-home-campaign-contact"
+                className="inline-flex items-center gap-2 bg-white/20 border-2 border-white/60 text-white font-medium px-7 py-4 rounded-full text-base transition-all duration-200 hover:bg-white/30"
+              >
+                お問い合わせフォーム
+              </Link>
+            </div>
+            <p className="text-white/50 text-xs mt-4">体験後、当日入会でキャンペーン適用</p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 lg:py-28 relative overflow-hidden bg-gradient-to-br from-[#F2AC55] via-[#F2AC55] to-[#D99A40]">
         <div
