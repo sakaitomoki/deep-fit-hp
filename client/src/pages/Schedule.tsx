@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Heart, Flame, Users, CheckCircle2, Star } from "lucide-react";
+import { Heart, Flame, Users, CheckCircle2, Star, Dumbbell, Zap, MapPin } from "lucide-react";
 import { Link } from "wouter";
 import SEO from "@/components/SEO";
 import { seoConfig, gymConfig } from "@/lib/gymConfig";
@@ -194,54 +194,95 @@ export default function Schedule() {
 
       {/* Pricing */}
       <section className="py-20 lg:py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeInUp}
-            className="text-center mb-5"
+            className="text-center mb-10"
           >
             <p className="text-[#F2AC55] text-xs tracking-[0.3em] uppercase mb-3">Pricing</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-[#4D5058]">料金プラン</h2>
-            <p className="text-[#4D5058]/50 text-sm mt-2">入会金 {gymConfig.joinFee}（税込）</p>
+            <p className="text-[#4D5058]/50 text-sm mt-2">入会金 {gymConfig.joinFee}（税込）　※税込み価格で表示</p>
           </motion.div>
 
+          {/* Pricing Table */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            variants={staggerContainer}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10"
+            variants={fadeInUp}
+            className="overflow-x-auto rounded-xl border border-gray-200 shadow-sm"
           >
-            {gymConfig.membership.map((plan, i) => (
-              <motion.div
-                key={i}
-                variants={fadeInUp}
-                className={`relative rounded-md p-7 border ${plan.popular ? "bg-[#4D5058] border-[#F2AC55] ring-2 ring-[#F2AC55]/30" : "bg-white border-gray-100"}`}
-              >
-                {plan.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="bg-[#F2AC55] text-white text-xs font-bold px-4 py-1 rounded-full flex items-center gap-1">
-                      <Star className="w-3 h-3 fill-white" /> 人気No.1
-                    </span>
-                  </div>
-                )}
-                <h3 className={`font-bold text-lg mb-1 ${plan.popular ? "text-white" : "text-[#4D5058]"}`}>{plan.name}</h3>
-                <div className="flex items-end gap-1 mb-5 mt-3">
-                  <span className={`font-heading font-bold text-3xl ${plan.popular ? "text-[#F2AC55]" : "text-[#4D5058]"}`}>{plan.price}</span>
-                  <span className={`text-xs mb-1 ${plan.popular ? "text-white/60" : "text-[#4D5058]/50"}`}>{plan.priceNote}</span>
-                </div>
-                <ul className="space-y-2">
-                  {plan.benefits.map((b, j) => (
-                    <li key={j} className="flex items-center gap-2">
-                      <CheckCircle2 className={`w-4 h-4 shrink-0 ${plan.popular ? "text-[#F2AC55]" : "text-[#F2AC55]"}`} />
-                      <span className={`text-sm ${plan.popular ? "text-white/80" : "text-[#4D5058]/70"}`}>{b}</span>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
+            <table className="w-full" style={{ minWidth: "560px" }}>
+              <thead>
+                <tr className="bg-[#4D5058] text-white">
+                  <th className="px-6 py-4 text-sm font-medium text-left">種　別</th>
+                  <th className="px-6 py-4 text-sm font-medium text-center">利用可能時間</th>
+                  <th className="px-6 py-4 text-sm font-medium text-center">
+                    <span className="inline-flex items-center gap-1">女　性</span>
+                  </th>
+                  <th className="px-6 py-4 text-sm font-medium text-center">
+                    <span className="inline-flex items-center gap-1">男　性</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {gymConfig.membership.map((plan, i) => (
+                  <tr key={i} className={`${i % 2 === 0 ? "bg-white" : "bg-[#F2F3F5]"} border-b border-gray-100`}>
+                    <td className="px-6 py-5">
+                      <div className="flex items-center gap-3">
+                        {plan.popular && (
+                          <span className="bg-[#F2AC55] text-white text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-0.5 shrink-0">
+                            <Star className="w-2.5 h-2.5 fill-white" /> 人気
+                          </span>
+                        )}
+                        <div>
+                          <p className="font-bold text-[#4D5058]">{plan.name}</p>
+                          <p className="text-[#4D5058]/40 text-xs">{plan.subtitle}</p>
+                        </div>
+                      </div>
+                      <ul className="mt-3 space-y-1">
+                        {plan.benefits.map((b, j) => (
+                          <li key={j} className="flex items-center gap-1.5 text-xs text-[#4D5058]/60">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-[#F2AC55] shrink-0" />
+                            {b}
+                          </li>
+                        ))}
+                      </ul>
+                    </td>
+                    <td className="px-6 py-5 text-center text-sm text-[#4D5058]/70">全時間帯</td>
+                    <td className="px-6 py-5 text-center">
+                      <span className="font-heading font-bold text-2xl text-[#D99A40]">{plan.femalePrice}</span>
+                      <p className="text-[#4D5058]/40 text-xs mt-0.5">{plan.priceNote}</p>
+                    </td>
+                    <td className="px-6 py-5 text-center">
+                      <span className="font-heading font-bold text-2xl text-[#4D5058]">{plan.malePrice}</span>
+                      <p className="text-[#4D5058]/40 text-xs mt-0.5">{plan.priceNote}</p>
+                    </td>
+                  </tr>
+                ))}
+                {/* Trial row */}
+                <tr className="bg-[#F2F3F5]">
+                  <td className="px-6 py-5">
+                    <div>
+                      <p className="font-bold text-[#4D5058]">体験レッスン</p>
+                      <p className="text-[#4D5058]/40 text-xs">Trial Lesson　※初回限り・要予約</p>
+                    </div>
+                  </td>
+                  <td className="px-6 py-5 text-center text-sm text-[#4D5058]/70">営業時間内</td>
+                  <td className="px-6 py-5 text-center">
+                    <span className="font-heading font-bold text-2xl text-[#D99A40]">{gymConfig.trialLesson.price}</span>
+                    <p className="text-[#4D5058]/40 text-xs mt-0.5">（税込）</p>
+                  </td>
+                  <td className="px-6 py-5 text-center">
+                    <span className="font-heading font-bold text-2xl text-[#4D5058]">{gymConfig.trialLesson.price}</span>
+                    <p className="text-[#4D5058]/40 text-xs mt-0.5">（税込）</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </motion.div>
 
           <motion.div
@@ -259,6 +300,71 @@ export default function Schedule() {
             >
               体験レッスンを予約する（{gymConfig.trialLesson.price}）
             </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Equipment & Access */}
+      <section className="py-20 lg:py-28 bg-[#4D5058]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="text-center mb-12"
+          >
+            <p className="text-[#F2AC55] text-xs tracking-[0.3em] uppercase mb-3">Facility</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white">充実の設備</h2>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-12"
+          >
+            {gymConfig.equipment.map((item, i) => (
+              <motion.div
+                key={i}
+                variants={fadeInUp}
+                className="bg-white/5 border border-white/10 rounded-xl px-5 py-4 flex items-center gap-3"
+              >
+                <Dumbbell className="w-5 h-5 text-[#F2AC55] shrink-0" />
+                <span className="text-white text-sm font-medium">{item}</span>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="border-t border-white/10 pt-10 flex flex-col sm:flex-row items-center justify-center gap-6 text-center"
+          >
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-[#F2AC55]/20 flex items-center justify-center shrink-0">
+                <MapPin className="w-5 h-5 text-[#F2AC55]" />
+              </div>
+              <div className="text-left">
+                <p className="text-white font-semibold text-sm">{gymConfig.addressShort}</p>
+                {gymConfig.access.map((a, i) => (
+                  <p key={i} className="text-white/50 text-xs">{a}</p>
+                ))}
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-[#F2AC55]/20 flex items-center justify-center shrink-0">
+                <Zap className="w-5 h-5 text-[#F2AC55]" />
+              </div>
+              <div className="text-left">
+                <p className="text-white font-semibold text-sm">営業時間</p>
+                <p className="text-white/50 text-xs">{gymConfig.hours.weekday}</p>
+                <p className="text-white/50 text-xs">定休日：{gymConfig.hours.closed}</p>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>

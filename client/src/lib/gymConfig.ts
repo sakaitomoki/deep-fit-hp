@@ -8,8 +8,8 @@ export const gymConfig = {
   address: "〒660-0001 兵庫県尼崎市長洲東通1–9-25 2F DEEP.FIT",
   addressShort: "兵庫県尼崎市長洲東通1–9-25 2F",
   access: [
-    "JR尼崎駅 徒歩5分",
-    "阪急塚口駅 徒歩10分",
+    "JR尼崎駅 徒歩10分",
+    "阪急塚口駅 徒歩15分",
   ],
   hours: {
     weekday: "10:00 - 13:00 / 17:00 - 22:00",
@@ -38,10 +38,32 @@ export const gymConfig = {
     priceNumber: 1000,
   },
   membership: [
-    { name: "レギュラー会員", price: "¥11,000", priceNote: "/ 月", popular: true, benefits: ["全クラス受け放題", "施設利用制限なし", "グローブ無料貸出", "無料体験2回"] },
-    { name: "デイタイム会員", price: "¥8,800", priceNote: "/ 月", popular: false, benefits: ["平日10:00-17:00", "土日10:00-14:00", "グローブ無料貸出", "無料体験1回"] },
-    { name: "学生会員", price: "¥7,700", priceNote: "/ 月", popular: false, benefits: ["学生証提示必要", "全クラス受け放題", "グローブ無料貸出", "無料体験1回"] },
-    { name: "ファミリー会員", price: "¥9,900", priceNote: "/ 月（お一人様）", popular: false, benefits: ["2名以上でご入会", "全クラス受け放題", "グローブ無料貸出", "無料体験2回"] },
+    {
+      name: "フルタイム会員",
+      subtitle: "Full Time",
+      femalePrice: "¥11,000",
+      malePrice: "¥13,200",
+      priceNote: "/ 月（税込）",
+      popular: true,
+      benefits: ["全時間帯利用可能", "全クラス受け放題", "グローブ無料貸出", "パワーラック使用可"],
+    },
+    {
+      name: "月8回会員",
+      subtitle: "8 Times / Month",
+      femalePrice: "¥8,800",
+      malePrice: "¥11,000",
+      priceNote: "/ 月（税込）",
+      popular: false,
+      benefits: ["全時間帯利用可能", "月8回まで", "グローブ無料貸出", "パワーラック使用可"],
+    },
+  ],
+  equipment: [
+    "オールインパワーラック",
+    "サンドバック 4本",
+    "グローブ無料貸出",
+    "更衣室完備",
+    "ウォーターサーバー",
+    "駐車場あり",
   ],
   joinFee: "¥10,000",
   stats: [
