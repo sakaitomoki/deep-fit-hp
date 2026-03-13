@@ -315,6 +315,71 @@ export default function Schedule() {
         </div>
       </section>
 
+      {/* Opening Campaign */}
+      <section className="py-16 lg:py-20 bg-[#4D5058] relative overflow-hidden">
+        {/* Background pattern */}
+        <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "radial-gradient(circle, white 1.5px, transparent 1.5px)", backgroundSize: "28px 28px" }} />
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="text-center"
+          >
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 bg-[#F2AC55] text-white text-sm font-bold px-5 py-2 rounded-full mb-4 tracking-wide">
+              <Star className="w-4 h-4 fill-white" />
+              オープニングキャンペーン実施中　４月末まで
+              <Star className="w-4 h-4 fill-white" />
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2">
+              <span className="text-[#F2AC55]">３大特典</span>　すべて無料！
+            </h2>
+            <p className="text-white/50 text-sm mb-8">※すべて税込価格　※キャンペーンは予告なく終了する場合があります</p>
+
+            {/* Benefits */}
+            <div className="space-y-3 mb-8 max-w-xl mx-auto">
+              {[
+                { num: "特典１", label: "体験料金", price: "¥1,500", note: "" },
+                { num: "特典２", label: "入会金", price: "¥10,000", note: "" },
+                { num: "特典３", label: "初月会費", price: "¥11,000〜¥13,200", note: "女性¥11,000 / 男性¥13,200" },
+              ].map((item) => (
+                <div key={item.num} className="flex items-center gap-3 bg-white/10 border border-white/10 rounded-xl px-5 py-4">
+                  <span className="bg-[#F2AC55] text-white text-xs font-bold px-3 py-1 rounded-full shrink-0 whitespace-nowrap">{item.num}</span>
+                  <span className="text-white font-medium text-base flex-1 text-left">{item.label}</span>
+                  <div className="text-right">
+                    <span className="text-white/40 line-through text-sm font-mono">{item.price}</span>
+                    {item.note && <p className="text-white/30 text-[10px]">{item.note}</p>}
+                  </div>
+                  <span className="text-[#F2AC55] font-heading font-bold text-2xl ml-1">無料</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Total savings */}
+            <div className="bg-white/5 border border-white/10 rounded-2xl px-8 py-5 inline-block mb-8">
+              <p className="text-white/50 text-xs mb-1">特典合計（最大）</p>
+              <div className="flex items-center justify-center gap-4">
+                <span className="text-white/30 line-through font-heading font-bold text-3xl">¥24,700〜</span>
+                <span className="text-[#F2AC55] font-heading font-bold text-5xl">¥０</span>
+              </div>
+            </div>
+
+            <div>
+              <Link
+                href="/contact"
+                data-testid="button-campaign-contact"
+                className="inline-block bg-[#F2AC55] hover:bg-[#D99A40] text-white font-bold px-10 py-4 rounded-full text-base transition-all duration-200 shadow-lg"
+              >
+                今すぐ体験レッスンを予約する
+              </Link>
+              <p className="text-white/30 text-xs mt-3">体験後、当日入会でキャンペーン適用</p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Pricing */}
       <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -452,6 +517,27 @@ export default function Schedule() {
           >
             <p className="text-[#F2AC55] text-xs tracking-[0.3em] uppercase mb-3">Facility</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-white">充実の設備</h2>
+          </motion.div>
+
+          {/* Smith Machine featured photo */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="mb-6 rounded-2xl overflow-hidden relative"
+          >
+            <img
+              src="/images/smith-machine.jpeg"
+              alt="オールインワン スミスマシン"
+              className="w-full h-64 sm:h-80 object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            <div className="absolute bottom-0 left-0 p-5">
+              <p className="text-[#F2AC55] text-xs tracking-widest uppercase mb-1">Equipment</p>
+              <p className="text-white font-bold text-lg">オールインワン スミスマシン</p>
+              <p className="text-white/60 text-xs">パワーラック・ケーブル・プレート全て完備</p>
+            </div>
           </motion.div>
 
           <motion.div
