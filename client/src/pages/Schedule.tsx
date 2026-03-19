@@ -53,48 +53,45 @@ type ScheduleBlock = {
   end: number;
   label: string;
   sublabel?: string;
-  color: "fitness" | "personal" | "kids" | "closed";
+  color: "fitness" | "personal" | "junior" | "jissen" | "closed";
 };
 
 const dayOrder = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"] as const;
 const dayLabelsMap: Record<typeof dayOrder[number], string> = {
-  mon: "月", tue: "火", wed: "水", thu: "木", fri: "金", sat: "土", sun: "日",
+  mon: "月", tue: "火", wed: "水", thu: "木", fri: "金", sat: "土", sun: "日/祝",
 };
 
 const scheduleBlocks: Record<string, ScheduleBlock[]> = {
   mon: [
-    { start: 10, end: 13, label: "フィットネス", color: "fitness" },
-    { start: 13, end: 17, label: "パーソナル", sublabel: "予約制", color: "personal" },
-    { start: 17, end: 22, label: "フィットネス", color: "fitness" },
+    { start: 10, end: 15, label: "パーソナル", color: "personal" },
+    { start: 15, end: 22, label: "フィットネス", color: "fitness" },
   ],
   tue: [
-    { start: 10, end: 13, label: "フィットネス", color: "fitness" },
-    { start: 13, end: 17, label: "パーソナル", sublabel: "予約制", color: "personal" },
-    { start: 17, end: 18, label: "キッズクラス", color: "kids" },
-    { start: 18, end: 22, label: "フィットネス", color: "fitness" },
+    { start: 10, end: 14, label: "フィットネス", color: "fitness" },
+    { start: 14, end: 19, label: "パーソナル", color: "personal" },
+    { start: 19, end: 22, label: "実践コース", color: "jissen" },
   ],
   wed: [
-    { start: 10, end: 13, label: "フィットネス", color: "fitness" },
-    { start: 13, end: 17, label: "パーソナル", sublabel: "予約制", color: "personal" },
-    { start: 17, end: 22, label: "フィットネス", color: "fitness" },
+    { start: 10, end: 15, label: "パーソナル", color: "personal" },
+    { start: 15, end: 22, label: "フィットネス", color: "fitness" },
   ],
   thu: [
-    { start: 10, end: 22, label: "定休日", color: "closed" },
+    { start: 10, end: 14, label: "フィットネス", color: "fitness" },
+    { start: 14, end: 19, label: "パーソナル", color: "personal" },
+    { start: 19, end: 22, label: "実践コース", color: "jissen" },
   ],
   fri: [
-    { start: 10, end: 13, label: "フィットネス", color: "fitness" },
-    { start: 13, end: 17, label: "パーソナル", sublabel: "予約制", color: "personal" },
-    { start: 17, end: 22, label: "フィットネス", color: "fitness" },
+    { start: 10, end: 15, label: "パーソナル", color: "personal" },
+    { start: 15, end: 22, label: "フィットネス", color: "fitness" },
   ],
   sat: [
-    { start: 10, end: 14, label: "フィットネス", color: "fitness" },
-    { start: 14, end: 15, label: "キッズクラス", color: "kids" },
-    { start: 15, end: 19.5, label: "パーソナル", sublabel: "予約制", color: "personal" },
-    { start: 19.5, end: 21, label: "対人クラス", sublabel: "ドロップイン可", color: "taiai" },
+    { start: 10.5, end: 11.5, label: "ジュニアコース", color: "junior" },
+    { start: 12, end: 15, label: "パーソナル", color: "personal" },
+    { start: 15, end: 22, label: "フィットネス", color: "fitness" },
   ],
   sun: [
-    { start: 10, end: 14, label: "フィットネス", color: "fitness" },
-    { start: 14, end: 22, label: "パーソナル", sublabel: "予約制", color: "personal" },
+    { start: 10, end: 12, label: "フィットネス", color: "fitness" },
+    { start: 12, end: 15, label: "パーソナル", color: "personal" },
   ],
 };
 
@@ -104,10 +101,10 @@ const TOTAL_HOURS = END_HOUR - START_HOUR;
 const HOUR_PX = 52;
 
 const colorStyles: Record<string, { bg: string; text: string; border: string }> = {
-  fitness:  { bg: "bg-[#FFF0D6]", text: "text-[#C47F1A]",  border: "border-[#F2AC55]/50" },
-  personal: { bg: "bg-[#DDEEFF]", text: "text-[#2563A8]",  border: "border-[#4D90D9]/40" },
-  kids:     { bg: "bg-[#D6F5E0]", text: "text-[#1F7A3A]",  border: "border-[#4CAF50]/40" },
-  taiai:    { bg: "bg-[#FFE0E0]", text: "text-[#C0392B]",  border: "border-[#E74C3C]/40" },
+  fitness:  { bg: "bg-[#F9B8D0]", text: "text-[#8B1A4A]",  border: "border-[#E8769A]/60" },
+  personal: { bg: "bg-[#B3E8F5]", text: "text-[#0B5F7A]",  border: "border-[#5BC0DE]/60" },
+  junior:   { bg: "bg-[#CCFFCC]", text: "text-[#1A7A1A]",  border: "border-[#66CC66]/60" },
+  jissen:   { bg: "bg-[#FFFFAA]", text: "text-[#7A7A00]",  border: "border-[#CCCC00]/60" },
   closed:   { bg: "bg-gray-100",  text: "text-gray-400",   border: "border-gray-200" },
 };
 
@@ -207,36 +204,30 @@ export default function Schedule() {
 
           {/* Mobile: Day cards */}
           <div className="md:hidden space-y-3">
-            {dayOrder.map((day) => {
-              const isClosed = day === "thu";
-              return (
-                <div key={day} className={`rounded-xl overflow-hidden border ${isClosed ? "border-gray-200 opacity-60" : "border-gray-200"} bg-white`}>
-                  <div className={`px-4 py-3 flex items-center gap-3 ${isClosed ? "bg-gray-100" : "bg-[#4D5058]"}`}>
-                    <span className={`font-bold text-lg w-8 text-center ${isClosed ? "text-gray-400" : "text-white"}`}>{dayLabelsMap[day]}</span>
-                    {isClosed && <span className="text-gray-400 text-sm">定休日</span>}
-                  </div>
-                  {!isClosed && (
-                    <div className="divide-y divide-gray-50">
-                      {scheduleBlocks[day].map((block, i) => {
-                        const s = colorStyles[block.color];
-                        return (
-                          <div key={i} className={`flex items-center gap-3 px-4 py-3 ${s.bg}`}>
-                            <div className={`w-1.5 self-stretch rounded-full ${s.border} border-2`} />
-                            <div className="flex-1">
-                              <p className={`font-bold text-sm ${s.text}`}>{block.label}</p>
-                              {block.sublabel && <p className={`text-xs ${s.text} opacity-70`}>{block.sublabel}</p>}
-                            </div>
-                            <p className={`text-xs font-medium ${s.text} opacity-70 shrink-0`}>
-                              {formatTime(block.start)}〜{formatTime(block.end)}
-                            </p>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  )}
+            {dayOrder.map((day) => (
+              <div key={day} className="rounded-xl overflow-hidden border border-gray-200 bg-white">
+                <div className="px-4 py-3 flex items-center gap-3 bg-[#4D5058]">
+                  <span className="font-bold text-lg text-white">{dayLabelsMap[day]}</span>
                 </div>
-              );
-            })}
+                <div className="divide-y divide-gray-50">
+                  {scheduleBlocks[day].map((block, i) => {
+                    const s = colorStyles[block.color];
+                    return (
+                      <div key={i} className={`flex items-center gap-3 px-4 py-3 ${s.bg}`}>
+                        <div className={`w-1.5 self-stretch rounded-full ${s.border} border-2`} />
+                        <div className="flex-1">
+                          <p className={`font-bold text-sm ${s.text}`}>{block.label}</p>
+                          {block.sublabel && <p className={`text-xs ${s.text} opacity-70`}>{block.sublabel}</p>}
+                        </div>
+                        <p className={`text-xs font-medium ${s.text} opacity-70 shrink-0`}>
+                          {formatTime(block.start)}〜{formatTime(block.end)}
+                        </p>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
           </div>
 
           {/* Desktop: Visual time grid */}
@@ -326,9 +317,8 @@ export default function Schedule() {
             {[
               { color: "fitness", label: "フィットネス" },
               { color: "personal", label: "パーソナル（予約制）" },
-              { color: "kids", label: "キッズクラス" },
-              { color: "taiai", label: "対人クラス（ドロップイン可）" },
-              { color: "closed", label: "定休日" },
+              { color: "jissen", label: "実践コース" },
+              { color: "junior", label: "ジュニアコース" },
             ].map(({ color, label }) => (
               <div key={color} className="flex items-center gap-2">
                 <div className={`w-4 h-4 rounded border ${colorStyles[color].bg} ${colorStyles[color].border}`} />
@@ -337,7 +327,7 @@ export default function Schedule() {
             ))}
           </div>
           <p className="text-[#4D5058]/40 text-xs mt-2">
-            ※ 木曜日・祝日は定休日。パーソナルトレーニングは要予約。土曜19:30〜21:00の対人クラスはドロップイン参加可能。
+            ※ パーソナルトレーニングは要予約。実践コースは火・木曜19:00〜22:00。ジュニアコースは土曜10:30〜11:30。
           </p>
         </div>
       </section>
