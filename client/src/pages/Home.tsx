@@ -166,76 +166,16 @@ export default function Home() {
         >
           <div className="absolute inset-0 bg-white" />
           <motion.div
-            initial={{ scale: 1.05, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            className="absolute inset-0 bg-contain bg-center bg-no-repeat opacity-[0.12]"
-            style={{ backgroundImage: "url('/images/hero-logo-bg.png')" }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#F2F3F5]/60 via-transparent to-[#F2F3F5]/80" />
-        </motion.div>
-
-        <motion.div
-          style={{ opacity: heroOpacity }}
-          className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto"
-        >
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-          >
-            <span className="inline-block border border-[#4D5058]/30 text-[#4D5058]/70 text-xs sm:text-sm tracking-[0.3em] uppercase px-5 py-2 rounded-full mb-6">
-              サーキット×キックボクシングフィットネスジム
-            </span>
-          </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.7 }}
-            className="font-heading font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#4D5058] tracking-wider mb-4"
-          >
-            DEEP.<span className="text-[#F2AC55]">FIT</span>
-          </motion.h1>
-
-          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.7, duration: 0.6 }}
-            className="text-[#4D5058]/60 text-sm sm:text-base tracking-[0.2em] mb-3"
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            className="absolute inset-0 flex items-center justify-center"
           >
-            サーキットトレーニング×キックボクシング
-          </motion.p>
-
-          <div className="text-[#4D5058] text-lg sm:text-xl md:text-2xl font-medium mb-8 tracking-wide">
-            {tagline.map((char, i) => (
-              <motion.span
-                key={i}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.2 + i * 0.06, duration: 0.3 }}
-              >
-                {char === " " ? "\u00A0" : char}
-              </motion.span>
-            ))}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 2.2, duration: 0.6 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
-          >
-            <GlowButton href="/contact" className="text-base">
-              体験レッスンを予約
-            </GlowButton>
-            <Link
-              href="/schedule"
-              data-testid="button-view-classes"
-              className="border-2 border-[#4D5058]/40 text-[#4D5058] px-7 py-3 rounded-full text-base font-medium hover:bg-[#4D5058]/10 transition-all duration-200"
-            >
-              クラス・料金を見る
-            </Link>
+            <img
+              src="/images/hero-logo-bg.png"
+              alt="DEEP.FIT"
+              className="w-full h-full object-contain"
+            />
           </motion.div>
         </motion.div>
 
