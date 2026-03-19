@@ -114,48 +114,6 @@ function formatTime(h: number) {
   return `${hours}:${mins}`;
 }
 
-type CellDef = {
-  row: number;
-  col: number;
-  rowspan: number;
-  label: string;
-  time: string;
-  color: string;
-};
-
-const TABLE_ROWS = 12;
-const TABLE_DAYS = 7;
-const TABLE_START = 10;
-
-const tableCells: CellDef[] = [
-  { row: 0, col: 0, rowspan: 5, label: "パーソナル",    time: "10:00〜15:00",             color: "personal" },
-  { row: 5, col: 0, rowspan: 7, label: "フィットネス",  time: "15:00〜22:00",             color: "fitness"  },
-  { row: 0, col: 1, rowspan: 4, label: "フィットネス",  time: "10:00〜14:00",             color: "fitness"  },
-  { row: 4, col: 1, rowspan: 5, label: "パーソナル",    time: "14:00〜19:00",             color: "personal" },
-  { row: 9, col: 1, rowspan: 3, label: "実践コース",    time: "19:00〜22:00",             color: "jissen"   },
-  { row: 0, col: 2, rowspan: 5, label: "パーソナル",    time: "10:00〜15:00",             color: "personal" },
-  { row: 5, col: 2, rowspan: 7, label: "フィットネス",  time: "15:00〜22:00",             color: "fitness"  },
-  { row: 0, col: 3, rowspan: 4, label: "フィットネス",  time: "10:00〜14:00",             color: "fitness"  },
-  { row: 4, col: 3, rowspan: 5, label: "パーソナル",    time: "14:00〜19:00",             color: "personal" },
-  { row: 9, col: 3, rowspan: 3, label: "実践コース",    time: "19:00〜22:00",             color: "jissen"   },
-  { row: 0, col: 4, rowspan: 5, label: "パーソナル",    time: "10:00〜15:00",             color: "personal" },
-  { row: 5, col: 4, rowspan: 7, label: "フィットネス",  time: "15:00〜22:00",             color: "fitness"  },
-  { row: 0, col: 5, rowspan: 2, label: "ジュニアコース",time: "10:30〜11:30",             color: "junior"   },
-  { row: 2, col: 5, rowspan: 3, label: "パーソナル",    time: "12:00〜15:00",             color: "personal" },
-  { row: 5, col: 5, rowspan: 7, label: "フィットネス",  time: "15:00〜18:00\n(18:00〜22:00)", color: "fitness" },
-  { row: 0, col: 6, rowspan: 2, label: "フィットネス",  time: "10:00〜12:00",             color: "fitness"  },
-  { row: 2, col: 6, rowspan: 3, label: "パーソナル",    time: "12:00〜15:00",             color: "personal" },
-];
-
-const tableOccupied: boolean[][] = Array.from({ length: TABLE_ROWS }, () => Array(TABLE_DAYS).fill(false));
-const tableCellMap: (CellDef | null)[][] = Array.from({ length: TABLE_ROWS }, () => Array(TABLE_DAYS).fill(null));
-
-for (const cell of tableCells) {
-  tableCellMap[cell.row][cell.col] = cell;
-  for (let r = cell.row; r < Math.min(cell.row + cell.rowspan, TABLE_ROWS); r++) {
-    tableOccupied[r][cell.col] = true;
-  }
-}
 
 export default function Schedule() {
   return (
@@ -245,64 +203,85 @@ export default function Schedule() {
             <h2 className="text-3xl sm:text-4xl font-bold text-[#4D5058]">タイムスケジュール</h2>
           </motion.div>
 
-          {/* Schedule HTML table */}
-          <div className="overflow-x-auto rounded-xl border border-gray-300 bg-white shadow-sm">
-            <table className="border-collapse text-xs sm:text-sm" style={{ minWidth: "560px", width: "100%" }}>
-              <thead>
-                <tr>
-                  <th className="border border-gray-300 bg-white w-14" />
-                  <th colSpan={7} className="border border-gray-300 py-1.5 text-center text-sm text-gray-500 font-medium bg-gray-50">
-                    スケジュール
-                  </th>
-                </tr>
-                <tr>
-                  <th className="border border-gray-300 bg-white w-14" />
-                  {["月", "火", "水", "木", "金", "土", "日/祝"].map((d) => (
-                    <th key={d} className="border border-gray-300 py-2 px-1 text-center font-bold text-[#4D5058] bg-[#D6EEFF]">
-                      {d}
-                    </th>
+          {/* Mobile: Day cards */}
+          <div className="md:hidden space-y-3">
+            {dayOrder.map((day) => (
+              <div key={day} className="rounded-xl overflow-hidden border border-gray-200 bg-white">
+                <div className="px-4 py-3 flex items-center gap-3 bg-[#4D5058]">
+                  <span className="font-bold text-lg text-white">{dayLabelsMap[day]}</span>
+                </div>
+                <div className="divide-y divide-gray-50">
+                  {scheduleBlocks[day].map((block, i) => {
+                    const s = colorStyles[block.color];
+                    return (
+                      <div key={i} className={`flex items-center gap-3 px-4 py-3 ${s.bg}`}>
+                        <div className={`w-1.5 self-stretch rounded-full ${s.border} border-2`} />
+                        <div className="flex-1">
+                          <p className={`font-bold text-sm ${s.text}`}>{block.label}</p>
+                          {block.sublabel && <p className={`text-xs ${s.text} opacity-70`}>{block.sublabel}</p>}
+                        </div>
+                        <p className={`text-xs font-medium ${s.text} opacity-70 shrink-0`}>
+                          {formatTime(block.start)}〜{formatTime(block.end)}
+                        </p>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Desktop: Visual time grid */}
+          <div className="hidden md:block overflow-x-auto">
+            <div style={{ minWidth: "640px" }}>
+              <div className="flex mb-2">
+                <div className="w-12 shrink-0" />
+                {dayOrder.map((day) => (
+                  <div key={day} className="flex-1 text-center text-sm font-bold py-2 rounded-lg mx-0.5 bg-[#4D5058] text-white">
+                    {dayLabelsMap[day]}
+                  </div>
+                ))}
+              </div>
+              <div className="flex">
+                <div className="w-12 shrink-0 relative" style={{ height: TOTAL_HOURS * HOUR_PX }}>
+                  {Array.from({ length: TOTAL_HOURS + 1 }, (_, i) => (
+                    <div key={i} className="absolute left-0 right-0 flex items-center" style={{ top: i * HOUR_PX - 8 }}>
+                      <span className="text-[10px] text-[#4D5058]/50 font-medium w-full text-right pr-2">
+                        {START_HOUR + i}:00
+                      </span>
+                    </div>
                   ))}
-                </tr>
-              </thead>
-              <tbody>
-                {Array.from({ length: TABLE_ROWS }, (_, rowIdx) => (
-                  <tr key={rowIdx}>
-                    <td className="border border-gray-200 text-right pr-2 text-xs text-gray-500 align-top pt-1 w-14 whitespace-nowrap">
-                      {TABLE_START + rowIdx}:00
-                    </td>
-                    {Array.from({ length: TABLE_DAYS }, (_, colIdx) => {
-                      if (tableOccupied[rowIdx][colIdx] && !tableCellMap[rowIdx][colIdx]) {
-                        return null;
-                      }
-                      const cell = tableCellMap[rowIdx][colIdx];
-                      if (!cell) {
-                        return <td key={colIdx} className="border border-gray-200 bg-white" />;
-                      }
-                      const s = colorStyles[cell.color] ?? colorStyles.closed;
+                  {Array.from({ length: TOTAL_HOURS + 1 }, (_, i) => (
+                    <div key={`line-${i}`} className="absolute left-10 right-0 border-t border-gray-200" style={{ top: i * HOUR_PX }} />
+                  ))}
+                </div>
+                {dayOrder.map((day) => (
+                  <div key={day} className="flex-1 relative mx-0.5 bg-white/60 rounded-lg" style={{ height: TOTAL_HOURS * HOUR_PX }}>
+                    {Array.from({ length: TOTAL_HOURS + 1 }, (_, i) => (
+                      <div key={i} className="absolute left-0 right-0 border-t border-gray-100" style={{ top: i * HOUR_PX }} />
+                    ))}
+                    {scheduleBlocks[day].map((block, i) => {
+                      const s = colorStyles[block.color];
+                      const topPx = (block.start - START_HOUR) * HOUR_PX;
+                      const heightPx = (block.end - block.start) * HOUR_PX - 3;
                       return (
-                        <td
-                          key={colIdx}
-                          rowSpan={cell.rowspan}
-                          className={`border border-gray-300 text-center align-middle px-1 py-1 ${s.bg} ${s.text}`}
+                        <div
+                          key={i}
+                          className={`absolute left-1 right-1 rounded-lg border flex flex-col items-center justify-center text-center px-1 ${s.bg} ${s.border}`}
+                          style={{ top: topPx + 2, height: heightPx }}
                         >
-                          <p className="font-bold leading-snug whitespace-pre-line">{cell.time}</p>
-                          <p className="mt-0.5">{cell.label}</p>
-                        </td>
+                          <p className={`text-xs font-bold leading-tight ${s.text}`}>{block.label}</p>
+                          {block.sublabel && <p className={`text-[10px] ${s.text} opacity-70`}>{block.sublabel}</p>}
+                          <p className={`text-[9px] mt-0.5 ${s.text} opacity-60`}>
+                            {formatTime(block.start)}〜{formatTime(block.end)}
+                          </p>
+                        </div>
                       );
                     })}
-                  </tr>
+                  </div>
                 ))}
-                {/* Final 22:00 boundary row */}
-                <tr>
-                  <td className="border border-gray-200 text-right pr-2 text-xs text-gray-500 align-top pt-1 w-14">
-                    22:00
-                  </td>
-                  {Array.from({ length: TABLE_DAYS }, (_, i) => (
-                    <td key={i} className="border border-gray-200 bg-white h-2" />
-                  ))}
-                </tr>
-              </tbody>
-            </table>
+              </div>
+            </div>
           </div>
 
           {/* Legend */}
