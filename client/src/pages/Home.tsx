@@ -164,14 +164,15 @@ export default function Home() {
           style={{ y: heroBgY }}
           className="absolute inset-0 z-0"
         >
+          <div className="absolute inset-0 bg-white" />
           <motion.div
-            initial={{ scale: 1.2 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 8, ease: "easeOut" }}
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: "url('/images/hero-deepfit.png')" }}
+            initial={{ scale: 1.05, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            className="absolute inset-0 bg-contain bg-center bg-no-repeat opacity-[0.12]"
+            style={{ backgroundImage: "url('/images/hero-logo-bg.png')" }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#4D5058]/50 via-[#4D5058]/40 to-[#4D5058]/75" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#F2F3F5]/60 via-transparent to-[#F2F3F5]/80" />
         </motion.div>
 
         <motion.div
@@ -183,7 +184,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
           >
-            <span className="inline-block border border-white/40 text-white/80 text-xs sm:text-sm tracking-[0.3em] uppercase px-5 py-2 rounded-full mb-6">
+            <span className="inline-block border border-[#4D5058]/30 text-[#4D5058]/70 text-xs sm:text-sm tracking-[0.3em] uppercase px-5 py-2 rounded-full mb-6">
               サーキット×キックボクシングフィットネスジム
             </span>
           </motion.div>
@@ -192,21 +193,21 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.7 }}
-            className="font-heading font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white tracking-wider mb-4"
+            className="font-heading font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#4D5058] tracking-wider mb-4"
           >
-            DEEP.FIT
+            DEEP.<span className="text-[#F2AC55]">FIT</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7, duration: 0.6 }}
-            className="text-white/80 text-sm sm:text-base tracking-[0.2em] mb-3"
+            className="text-[#4D5058]/60 text-sm sm:text-base tracking-[0.2em] mb-3"
           >
             サーキットトレーニング×キックボクシング
           </motion.p>
 
-          <div className="text-white text-lg sm:text-xl md:text-2xl font-medium mb-8 tracking-wide">
+          <div className="text-[#4D5058] text-lg sm:text-xl md:text-2xl font-medium mb-8 tracking-wide">
             {tagline.map((char, i) => (
               <motion.span
                 key={i}
@@ -231,7 +232,7 @@ export default function Home() {
             <Link
               href="/schedule"
               data-testid="button-view-classes"
-              className="border-2 border-white/60 text-white px-7 py-3 rounded-full text-base font-medium hover:bg-white/10 transition-all duration-200"
+              className="border-2 border-[#4D5058]/40 text-[#4D5058] px-7 py-3 rounded-full text-base font-medium hover:bg-[#4D5058]/10 transition-all duration-200"
             >
               クラス・料金を見る
             </Link>
@@ -242,7 +243,7 @@ export default function Home() {
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-            className="w-8 h-12 rounded-full border-2 border-white/40 flex items-start justify-center pt-2"
+            className="w-8 h-12 rounded-full border-2 border-[#4D5058]/30 flex items-start justify-center pt-2"
           >
             <div className="w-1.5 h-1.5 rounded-full bg-[#F2AC55]" />
           </motion.div>
@@ -523,7 +524,7 @@ export default function Home() {
                 <div className="bg-white/10 border border-white/15 rounded-2xl px-4 py-4 flex flex-col items-center gap-2 text-center">
                   <span className="text-2xl">🅿️</span>
                   <div>
-                    <p className="text-white font-bold text-sm">近隣駐車場</p>
+                    <p className="text-white font-bold text-sm">無料駐車場</p>
                     <p className="text-[#F2AC55] font-heading font-bold text-xl">あり</p>
                   </div>
                 </div>
