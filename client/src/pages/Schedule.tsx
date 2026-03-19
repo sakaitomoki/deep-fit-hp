@@ -292,8 +292,9 @@ export default function Schedule() {
             {[
               { color: "fitness", label: "フィットネス" },
               { color: "personal", label: "パーソナル（予約制）" },
-              { color: "jissen", label: "実践コース" },
-              { color: "junior", label: "ジュニアコース" },
+              { color: "kids", label: "キッズクラス" },
+              { color: "taiai", label: "対人クラス" },
+              { color: "closed", label: "定休日" },
             ].map(({ color, label }) => (
               <div key={color} className="flex items-center gap-2">
                 <div className={`w-4 h-4 rounded border ${colorStyles[color].bg} ${colorStyles[color].border}`} />
@@ -302,7 +303,7 @@ export default function Schedule() {
             ))}
           </div>
           <p className="text-[#4D5058]/40 text-xs mt-2">
-            ※ パーソナルトレーニングは要予約。実践コースは火・木曜19:00〜22:00。ジュニアコースは土曜10:30〜11:30。
+            ※ パーソナルトレーニングは要予約。キッズクラスは火曜17:00〜18:00・土曜14:00〜15:00。対人クラスは土曜19:30〜21:00（ドロップイン可）。木曜定休。
           </p>
         </div>
       </section>
