@@ -249,48 +249,188 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Why Choose Us */}
-      <section className="py-20 lg:py-28 bg-white relative">
-        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle, #4D5058 1px, transparent 1px)", backgroundSize: "30px 30px" }} />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      {/* Opening Campaign - moved up after hero */}
+      <section
+        className="py-16 lg:py-24 relative overflow-hidden"
+        style={{ background: "linear-gradient(135deg, #D99A40 0%, #F2AC55 50%, #E8954A 100%)" }}
+      >
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "repeating-linear-gradient(45deg, white 0, white 1px, transparent 0, transparent 50%)", backgroundSize: "20px 20px" }} />
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeInUp}
-            className="text-center mb-14"
+            className="text-center"
           >
-            <p className="text-[#F2AC55] text-xs tracking-[0.3em] uppercase mb-3">Why Choose Us</p>
+            <div className="inline-flex items-center gap-2 bg-white text-[#D99A40] text-sm font-bold px-6 py-2.5 rounded-full mb-5 shadow-lg tracking-wide">
+              <Star className="w-4 h-4 fill-[#F2AC55] text-[#F2AC55]" />
+              無料キャンペーン実施中
+              <Star className="w-4 h-4 fill-[#F2AC55] text-[#F2AC55]" />
+            </div>
+            <span className="text-white/80 text-sm tracking-[0.2em] uppercase block mb-1">Opening Campaign</span>
+            <h2 className="text-5xl sm:text-6xl font-bold text-white drop-shadow-lg mb-1">３大特典</h2>
+            <p className="text-white/90 font-bold text-xl mb-1">４月末まで限定！</p>
+            <p className="text-white/60 text-xs mb-8">※すべて税込価格</p>
+
+            <div className="space-y-3 mb-8 w-full max-w-sm mx-auto">
+              {[
+                { num: "特典１", label: "体験料金", price: "¥1,500" },
+                { num: "特典２", label: "入会金", price: "¥10,000" },
+                { num: "特典３", label: "初月会費", price: "¥11,000〜¥13,200" },
+              ].map((item) => (
+                <div key={item.num} className="bg-white rounded-2xl overflow-hidden shadow-lg">
+                  <div className="flex items-center px-4 py-3.5 gap-3">
+                    <span className="bg-[#4D5058] text-white text-xs font-bold px-2.5 py-1 rounded-full shrink-0">{item.num}</span>
+                    <span className="text-[#4D5058] font-bold text-base flex-1 text-left">{item.label}</span>
+                    <div className="flex items-center gap-2 shrink-0">
+                      <div className="relative">
+                        <span className="font-heading font-bold text-base text-gray-300">{item.price}</span>
+                        <span className="absolute inset-0 flex items-center pointer-events-none">
+                          <span className="block w-full h-[2px] bg-[#E74C3C] rotate-[-10deg] rounded-full" />
+                        </span>
+                      </div>
+                      <span className="font-heading font-bold text-2xl text-[#F2AC55]">無料</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="bg-white/20 border-2 border-white/50 rounded-3xl px-6 py-5 w-full max-w-sm mx-auto flex flex-col items-center mb-8 shadow-xl">
+              <p className="text-white/80 text-sm font-medium mb-2">特典合計（最大）</p>
+              <div className="flex items-center gap-4">
+                <div className="relative">
+                  <span className="font-heading font-bold text-2xl text-white/40">¥24,700〜</span>
+                  <span className="absolute inset-0 flex items-center pointer-events-none">
+                    <span className="block w-full h-[3px] bg-white/70 rotate-[-8deg] rounded-full" />
+                  </span>
+                </div>
+                <span className="font-heading font-bold text-5xl text-white drop-shadow-lg">¥０</span>
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href={gymConfig.sns.line}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="button-home-campaign-line"
+                className="inline-flex items-center gap-3 bg-[#06C755] text-white font-bold px-8 py-4 rounded-full text-base transition-all duration-200 shadow-xl hover:scale-105"
+              >
+                <SiLine className="w-5 h-5" />
+                LINEで体験予約する
+              </a>
+              <Link
+                href="/contact"
+                data-testid="button-home-campaign-contact"
+                className="inline-flex items-center gap-2 bg-white/20 border-2 border-white/60 text-white font-medium px-7 py-4 rounded-full text-base transition-all duration-200 hover:bg-white/30"
+              >
+                お問い合わせフォーム
+              </Link>
+            </div>
+            <p className="text-white/50 text-xs mt-4">体験後、当日入会でキャンペーン適用</p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Why Choose Us - リフィナス風リデザイン */}
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          {/* POINT 01 header */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="text-center mb-12"
+          >
+            <span className="inline-block bg-[#4D5058] text-[#F2AC55] text-xs font-bold px-5 py-2 rounded-full mb-4 tracking-[0.2em] uppercase">POINT 01</span>
+            <p className="text-[#F2AC55] text-xs tracking-[0.3em] uppercase mb-2">Why Choose Us</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-[#4D5058]">選ばれる理由</h2>
+            <p className="text-[#4D5058]/50 text-base mt-3">なぜ今、キックボクシングが人気なのか？</p>
           </motion.div>
 
+          {/* 2x2 popularity reasons */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={staggerContainer}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+            className="grid grid-cols-2 gap-4 mb-16"
           >
-            {reasons.map((reason, i) => {
-              const Icon = reason.icon;
-              return (
-                <motion.div
-                  key={i}
-                  variants={scaleIn}
-                  className="group relative bg-white rounded-2xl p-7 border border-gray-100 shadow-sm cursor-default transition-transform duration-300 hover:-translate-y-2"
-                >
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#F2AC55]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                  <div className="relative">
-                    <div className="w-12 h-12 rounded-xl bg-[#F2F3F5] flex items-center justify-center mb-4 transition-all duration-300 group-hover:bg-[#F2AC55]">
-                      <Icon className="w-6 h-6 text-[#4D5058] group-hover:text-white transition-colors duration-300" />
-                    </div>
-                    <h3 className="font-bold text-[#4D5058] text-lg mb-2">{reason.title}</h3>
-                    <p className="text-[#4D5058]/60 text-sm leading-relaxed">{reason.text}</p>
-                  </div>
-                </motion.div>
-              );
-            })}
+            {[
+              { emoji: "💥", title: "ストレス発散になる！", sub: "仕事や日常のモヤモヤをスッキリ解消" },
+              { emoji: "😄", title: "楽しく続けられる！", sub: "飽きずに夢中になれる唯一の有酸素運動" },
+              { emoji: "🔥", title: "全身の脂肪燃焼！", sub: "ダイエットに最適な全身有酸素運動" },
+              { emoji: "👥", title: "男女・年齢問わず！", sub: "初心者から上級者まで一緒に楽しめる" },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                variants={scaleIn}
+                className="rounded-2xl bg-[#F2F3F5] p-5 sm:p-6 text-center border border-gray-100"
+              >
+                <div className="text-3xl sm:text-4xl mb-3">{item.emoji}</div>
+                <p className="font-bold text-[#4D5058] text-sm sm:text-base leading-snug mb-1">{item.title}</p>
+                <p className="text-[#4D5058]/50 text-xs leading-relaxed hidden sm:block">{item.sub}</p>
+              </motion.div>
+            ))}
           </motion.div>
+
+          {/* POINT 02 - こんな方におすすめ + DEEP.FIT特徴 */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+          >
+            {/* Left: recommended for */}
+            <div>
+              <span className="inline-block bg-[#4D5058] text-[#F2AC55] text-xs font-bold px-5 py-2 rounded-full mb-5 tracking-[0.2em] uppercase">POINT 02</span>
+              <h3 className="text-2xl sm:text-3xl font-bold text-[#4D5058] mb-6">
+                こんな方に<br />おすすめです！
+              </h3>
+              <div className="space-y-3">
+                {[
+                  "スポーツジムだと続かない！",
+                  "ストレスを発散したい！",
+                  "運動不足から何かチャレンジしたい！",
+                  "ダイエットしながら筋肉もつけたい！",
+                  "楽しくトレーニングを続けたい！",
+                ].map((text, i) => (
+                  <div key={i} className="flex items-center gap-3 bg-[#F2F3F5] rounded-xl px-4 py-3.5">
+                    <div className="w-6 h-6 rounded-full bg-[#F2AC55] text-white text-xs font-bold flex items-center justify-center shrink-0">{i + 1}</div>
+                    <p className="font-bold text-[#4D5058] text-sm sm:text-base">{text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right: DEEP.FIT reasons */}
+            <div className="bg-[#4D5058] rounded-3xl p-7 sm:p-8 text-white">
+              <p className="text-[#F2AC55] text-xs tracking-[0.2em] uppercase mb-2">DEEP.FIT's Strengths</p>
+              <h3 className="text-xl sm:text-2xl font-bold mb-7">DEEP.FITが<br />選ばれる理由</h3>
+              <div className="space-y-5">
+                {reasons.map((r, i) => {
+                  const Icon = r.icon;
+                  return (
+                    <div key={i} className="flex items-start gap-4">
+                      <div className="w-10 h-10 rounded-xl bg-[#F2AC55]/20 flex items-center justify-center shrink-0">
+                        <Icon className="w-5 h-5 text-[#F2AC55]" />
+                      </div>
+                      <div>
+                        <p className="font-bold text-white text-sm">{r.title}</p>
+                        <p className="text-white/55 text-xs mt-0.5 leading-relaxed">{r.text}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </motion.div>
+
         </div>
       </section>
 
@@ -646,91 +786,6 @@ export default function Home() {
               </div>
             </motion.div>
           </div>
-        </div>
-      </section>
-
-      {/* Opening Campaign */}
-      <section
-        className="py-20 lg:py-28 relative overflow-hidden"
-        style={{ background: "linear-gradient(135deg, #D99A40 0%, #F2AC55 50%, #E8954A 100%)" }}
-      >
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "repeating-linear-gradient(45deg, white 0, white 1px, transparent 0, transparent 50%)", backgroundSize: "20px 20px" }} />
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            className="text-center"
-          >
-            <div className="inline-flex items-center gap-2 bg-white text-[#D99A40] text-sm font-bold px-6 py-2.5 rounded-full mb-5 shadow-lg tracking-wide">
-              <Star className="w-4 h-4 fill-[#F2AC55] text-[#F2AC55]" />
-              無料キャンペーン実施中
-              <Star className="w-4 h-4 fill-[#F2AC55] text-[#F2AC55]" />
-            </div>
-            <span className="text-white/80 text-sm tracking-[0.2em] uppercase block mb-1">Opening Campaign</span>
-            <h2 className="text-5xl sm:text-6xl font-bold text-white drop-shadow-lg mb-1">３大特典</h2>
-            <p className="text-white/90 font-bold text-xl mb-1">４月末まで限定！</p>
-            <p className="text-white/60 text-xs mb-10">※すべて税込価格</p>
-
-            <div className="space-y-3 mb-10 w-full max-w-sm mx-auto">
-              {[
-                { num: "特典１", label: "体験料金", price: "¥1,500" },
-                { num: "特典２", label: "入会金", price: "¥10,000" },
-                { num: "特典３", label: "初月会費", price: "¥11,000〜¥13,200" },
-              ].map((item) => (
-                <div key={item.num} className="bg-white rounded-2xl overflow-hidden shadow-lg">
-                  <div className="flex items-center px-4 py-3.5 gap-3">
-                    <span className="bg-[#4D5058] text-white text-xs font-bold px-2.5 py-1 rounded-full shrink-0">{item.num}</span>
-                    <span className="text-[#4D5058] font-bold text-base flex-1 text-left">{item.label}</span>
-                    <div className="flex items-center gap-2 shrink-0">
-                      <div className="relative">
-                        <span className="font-heading font-bold text-base text-gray-300">{item.price}</span>
-                        <span className="absolute inset-0 flex items-center pointer-events-none">
-                          <span className="block w-full h-[2px] bg-[#E74C3C] rotate-[-10deg] rounded-full" />
-                        </span>
-                      </div>
-                      <span className="font-heading font-bold text-2xl text-[#F2AC55]">無料</span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="bg-white/20 border-2 border-white/50 rounded-3xl px-6 py-6 w-full max-w-sm mx-auto flex flex-col items-center mb-10 shadow-xl">
-              <p className="text-white/80 text-sm font-medium mb-2">特典合計（最大）</p>
-              <div className="flex items-center gap-4">
-                <div className="relative">
-                  <span className="font-heading font-bold text-2xl text-white/40">¥24,700〜</span>
-                  <span className="absolute inset-0 flex items-center pointer-events-none">
-                    <span className="block w-full h-[3px] bg-white/70 rotate-[-8deg] rounded-full" />
-                  </span>
-                </div>
-                <span className="font-heading font-bold text-5xl text-white drop-shadow-lg">¥０</span>
-              </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
-                href={gymConfig.sns.line}
-                target="_blank"
-                rel="noopener noreferrer"
-                data-testid="button-home-campaign-line"
-                className="inline-flex items-center gap-3 bg-[#06C755] text-white font-bold px-8 py-4 rounded-full text-base transition-all duration-200 shadow-xl hover:scale-105"
-              >
-                <SiLine className="w-5 h-5" />
-                LINEで体験予約する
-              </a>
-              <Link
-                href="/contact"
-                data-testid="button-home-campaign-contact"
-                className="inline-flex items-center gap-2 bg-white/20 border-2 border-white/60 text-white font-medium px-7 py-4 rounded-full text-base transition-all duration-200 hover:bg-white/30"
-              >
-                お問い合わせフォーム
-              </Link>
-            </div>
-            <p className="text-white/50 text-xs mt-4">体験後、当日入会でキャンペーン適用</p>
-          </motion.div>
         </div>
       </section>
 
