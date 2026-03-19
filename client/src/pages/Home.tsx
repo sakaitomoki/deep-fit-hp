@@ -673,38 +673,40 @@ export default function Home() {
             <p className="text-white/90 font-bold text-xl mb-1">４月末まで限定！</p>
             <p className="text-white/60 text-xs mb-10">※すべて税込価格</p>
 
-            <div className="space-y-4 mb-10 max-w-lg mx-auto">
+            <div className="space-y-3 mb-10 w-full max-w-sm mx-auto">
               {[
                 { num: "特典１", label: "体験料金", price: "¥1,500" },
                 { num: "特典２", label: "入会金", price: "¥10,000" },
                 { num: "特典３", label: "初月会費", price: "¥11,000〜¥13,200" },
               ].map((item) => (
                 <div key={item.num} className="bg-white rounded-2xl overflow-hidden shadow-lg">
-                  <div className="flex items-center px-5 py-4 gap-4">
-                    <span className="bg-[#4D5058] text-white text-xs font-bold px-3 py-1.5 rounded-full shrink-0">{item.num}</span>
-                    <span className="text-[#4D5058] font-bold text-lg flex-1 text-left">{item.label}</span>
-                    <div className="relative shrink-0">
-                      <span className="font-heading font-bold text-xl text-gray-400">{item.price}</span>
-                      <span className="absolute inset-0 flex items-center pointer-events-none">
-                        <span className="block w-full h-[2.5px] bg-[#E74C3C] rotate-[-10deg] rounded-full" />
-                      </span>
+                  <div className="flex items-center px-4 py-3.5 gap-3">
+                    <span className="bg-[#4D5058] text-white text-xs font-bold px-2.5 py-1 rounded-full shrink-0">{item.num}</span>
+                    <span className="text-[#4D5058] font-bold text-base flex-1 text-left">{item.label}</span>
+                    <div className="flex items-center gap-2 shrink-0">
+                      <div className="relative">
+                        <span className="font-heading font-bold text-base text-gray-300">{item.price}</span>
+                        <span className="absolute inset-0 flex items-center pointer-events-none">
+                          <span className="block w-full h-[2px] bg-[#E74C3C] rotate-[-10deg] rounded-full" />
+                        </span>
+                      </div>
+                      <span className="font-heading font-bold text-2xl text-[#F2AC55]">無料</span>
                     </div>
-                    <span className="font-heading font-bold text-3xl text-[#F2AC55] shrink-0">無料</span>
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="bg-white/20 border-2 border-white/50 rounded-3xl px-8 py-6 inline-flex flex-col items-center mb-10 shadow-xl">
+            <div className="bg-white/20 border-2 border-white/50 rounded-3xl px-6 py-6 w-full max-w-sm mx-auto flex flex-col items-center mb-10 shadow-xl">
               <p className="text-white/80 text-sm font-medium mb-2">特典合計（最大）</p>
-              <div className="flex items-center gap-5">
+              <div className="flex items-center gap-4">
                 <div className="relative">
-                  <span className="font-heading font-bold text-3xl text-white/40">¥24,700〜</span>
+                  <span className="font-heading font-bold text-2xl text-white/40">¥24,700〜</span>
                   <span className="absolute inset-0 flex items-center pointer-events-none">
                     <span className="block w-full h-[3px] bg-white/70 rotate-[-8deg] rounded-full" />
                   </span>
                 </div>
-                <span className="font-heading font-bold text-6xl text-white drop-shadow-lg">¥０</span>
+                <span className="font-heading font-bold text-5xl text-white drop-shadow-lg">¥０</span>
               </div>
             </div>
 

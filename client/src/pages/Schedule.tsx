@@ -205,13 +205,42 @@ export default function Schedule() {
             <h2 className="text-3xl sm:text-4xl font-bold text-[#4D5058]">タイムスケジュール</h2>
           </motion.div>
 
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            className="overflow-x-auto"
-          >
+          {/* Mobile: Day cards */}
+          <div className="md:hidden space-y-3">
+            {dayOrder.map((day) => {
+              const isClosed = day === "thu";
+              return (
+                <div key={day} className={`rounded-xl overflow-hidden border ${isClosed ? "border-gray-200 opacity-60" : "border-gray-200"} bg-white`}>
+                  <div className={`px-4 py-3 flex items-center gap-3 ${isClosed ? "bg-gray-100" : "bg-[#4D5058]"}`}>
+                    <span className={`font-bold text-lg w-8 text-center ${isClosed ? "text-gray-400" : "text-white"}`}>{dayLabelsMap[day]}</span>
+                    {isClosed && <span className="text-gray-400 text-sm">定休日</span>}
+                  </div>
+                  {!isClosed && (
+                    <div className="divide-y divide-gray-50">
+                      {scheduleBlocks[day].map((block, i) => {
+                        const s = colorStyles[block.color];
+                        return (
+                          <div key={i} className={`flex items-center gap-3 px-4 py-3 ${s.bg}`}>
+                            <div className={`w-1.5 self-stretch rounded-full ${s.border} border-2`} />
+                            <div className="flex-1">
+                              <p className={`font-bold text-sm ${s.text}`}>{block.label}</p>
+                              {block.sublabel && <p className={`text-xs ${s.text} opacity-70`}>{block.sublabel}</p>}
+                            </div>
+                            <p className={`text-xs font-medium ${s.text} opacity-70 shrink-0`}>
+                              {formatTime(block.start)}〜{formatTime(block.end)}
+                            </p>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Desktop: Visual time grid */}
+          <div className="hidden md:block overflow-x-auto">
             <div style={{ minWidth: "640px" }}>
               {/* Day header row */}
               <div className="flex mb-2">
@@ -243,7 +272,6 @@ export default function Schedule() {
                       </span>
                     </div>
                   ))}
-                  {/* Horizontal grid lines */}
                   {Array.from({ length: TOTAL_HOURS + 1 }, (_, i) => (
                     <div
                       key={`line-${i}`}
@@ -260,7 +288,6 @@ export default function Schedule() {
                     className="flex-1 relative mx-0.5 bg-white/60 rounded-lg"
                     style={{ height: TOTAL_HOURS * HOUR_PX }}
                   >
-                    {/* Horizontal lines */}
                     {Array.from({ length: TOTAL_HOURS + 1 }, (_, i) => (
                       <div
                         key={i}
@@ -268,7 +295,6 @@ export default function Schedule() {
                         style={{ top: i * HOUR_PX }}
                       />
                     ))}
-                    {/* Schedule blocks */}
                     {scheduleBlocks[day].map((block, i) => {
                       const s = colorStyles[block.color];
                       const topPx = (block.start - START_HOUR) * HOUR_PX;
@@ -293,7 +319,7 @@ export default function Schedule() {
                 ))}
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Legend */}
           <div className="flex flex-wrap items-center gap-4 mt-6">
@@ -348,40 +374,41 @@ export default function Schedule() {
             <p className="text-white/60 text-xs mb-10">※すべて税込価格　※キャンペーンは予告なく終了する場合があります</p>
 
             {/* Benefits rows */}
-            <div className="space-y-4 mb-10 max-w-lg mx-auto">
+            <div className="space-y-3 mb-10 w-full max-w-sm mx-auto">
               {[
                 { num: "特典１", label: "体験料金", price: "¥1,500" },
                 { num: "特典２", label: "入会金", price: "¥10,000" },
                 { num: "特典３", label: "初月会費", price: "¥11,000〜¥13,200" },
               ].map((item) => (
                 <div key={item.num} className="bg-white rounded-2xl overflow-hidden shadow-lg">
-                  <div className="flex items-center px-5 py-4 gap-4">
-                    <span className="bg-[#4D5058] text-white text-xs font-bold px-3 py-1.5 rounded-full shrink-0">{item.num}</span>
-                    <span className="text-[#4D5058] font-bold text-lg flex-1 text-left">{item.label}</span>
-                    {/* Strikethrough price with slash */}
-                    <div className="relative shrink-0">
-                      <span className="font-heading font-bold text-xl text-gray-400">{item.price}</span>
-                      <span className="absolute inset-0 flex items-center pointer-events-none">
-                        <span className="block w-full h-[2.5px] bg-[#E74C3C] rotate-[-10deg] rounded-full" />
-                      </span>
+                  <div className="flex items-center px-4 py-3.5 gap-3">
+                    <span className="bg-[#4D5058] text-white text-xs font-bold px-2.5 py-1 rounded-full shrink-0">{item.num}</span>
+                    <span className="text-[#4D5058] font-bold text-base flex-1 text-left">{item.label}</span>
+                    <div className="flex items-center gap-2 shrink-0">
+                      <div className="relative">
+                        <span className="font-heading font-bold text-base text-gray-300">{item.price}</span>
+                        <span className="absolute inset-0 flex items-center pointer-events-none">
+                          <span className="block w-full h-[2px] bg-[#E74C3C] rotate-[-10deg] rounded-full" />
+                        </span>
+                      </div>
+                      <span className="font-heading font-bold text-2xl text-[#F2AC55]">無料</span>
                     </div>
-                    <span className="font-heading font-bold text-3xl text-[#F2AC55] shrink-0">無料</span>
                   </div>
                 </div>
               ))}
             </div>
 
             {/* Total */}
-            <div className="bg-white/20 border-2 border-white/50 rounded-3xl px-8 py-6 inline-flex flex-col items-center mb-10 shadow-xl">
+            <div className="bg-white/20 border-2 border-white/50 rounded-3xl px-6 py-6 w-full max-w-sm mx-auto flex flex-col items-center mb-10 shadow-xl">
               <p className="text-white/80 text-sm font-medium mb-2">特典合計（最大）</p>
-              <div className="flex items-center gap-5">
+              <div className="flex items-center gap-4">
                 <div className="relative">
-                  <span className="font-heading font-bold text-3xl text-white/40">¥24,700〜</span>
+                  <span className="font-heading font-bold text-2xl text-white/40">¥24,700〜</span>
                   <span className="absolute inset-0 flex items-center pointer-events-none">
                     <span className="block w-full h-[3px] bg-white/70 rotate-[-8deg] rounded-full" />
                   </span>
                 </div>
-                <span className="font-heading font-bold text-6xl text-white drop-shadow-lg">¥０</span>
+                <span className="font-heading font-bold text-5xl text-white drop-shadow-lg">¥０</span>
               </div>
             </div>
 
