@@ -450,9 +450,9 @@ export default function Home() {
             >
               <p className="text-[#F2AC55] text-xs tracking-[0.3em] uppercase mb-3">About Us</p>
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-5">ジムについて</h2>
-              <p className="text-[#4D5058] font-medium text-xl italic mb-5 text-white/90">「動いて、整えて、気づけば続く。」</p>
+              <p className="text-white/90 font-medium text-xl italic mb-5">「動いて、整えて、気づけば続く。」</p>
               <p className="text-white/70 leading-relaxed mb-6 text-sm sm:text-base">
-                DEEP.FITは2015年に尼崎市に設立したサーキット×キックボクシングジムです。「運動は初めてで不安」「ジムに入っても続かなかった」そんな方こそ、安心して始められる環境づくりを大切にしています。プロ在籍のインストラクターが、あなたのペースに合わせて丁寧に指導します。
+                DEEP.FITは2026年オープン予定のサーキット×キックボクシングジムです。「運動が苦手でも、楽しく続けられる場所を作りたい」という想いから生まれました。初心者の方や女性の方でも、安心して通える環境づくりを大切にしています。
               </p>
               <GlowButton href="/about">
                 ジムについて詳しく <ArrowRight className="w-4 h-4 inline ml-1" />
@@ -463,21 +463,40 @@ export default function Home() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              variants={staggerContainer}
-              className="grid grid-cols-2 gap-4"
+              variants={fadeInRight}
+              className="flex flex-col gap-5"
             >
-              {gymConfig.stats.map((stat, i) => (
-                <motion.div
-                  key={i}
-                  variants={scaleIn}
-                  className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-5 text-center transition-transform duration-300 hover:scale-105"
-                >
-                  <div className="text-3xl sm:text-4xl font-heading font-bold text-[#F2AC55] mb-1">
-                    <CountUp target={stat.value} suffix={stat.suffix} />
+              {/* Main announcement card */}
+              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-7 text-center shadow-xl">
+                <div className="inline-flex items-center gap-2 bg-[#F2AC55] text-white text-xs font-bold px-4 py-1.5 rounded-full mb-4 tracking-widest uppercase shadow">
+                  <Star className="w-3.5 h-3.5 fill-white text-white" />
+                  エリア初
+                </div>
+                <p className="text-white/60 text-xs tracking-[0.2em] uppercase mb-2">New Open 2026</p>
+                <h3 className="text-white font-bold text-xl sm:text-2xl leading-snug mb-1">
+                  JR尼崎エリア初<br />
+                  <span className="text-[#F2AC55]">キックボクシング</span><br />
+                  フィットネスジム誕生
+                </h3>
+              </div>
+
+              {/* Access badges */}
+              <div className="grid grid-cols-2 gap-3">
+                <div className="bg-white/10 border border-white/15 rounded-2xl px-4 py-4 flex flex-col items-center gap-2 text-center">
+                  <span className="text-2xl">🚉</span>
+                  <div>
+                    <p className="text-white font-bold text-sm">JR尼崎駅</p>
+                    <p className="text-[#F2AC55] font-heading font-bold text-xl">徒歩10分</p>
                   </div>
-                  <div className="text-white/60 text-xs sm:text-sm">{stat.label}</div>
-                </motion.div>
-              ))}
+                </div>
+                <div className="bg-white/10 border border-white/15 rounded-2xl px-4 py-4 flex flex-col items-center gap-2 text-center">
+                  <span className="text-2xl">🅿️</span>
+                  <div>
+                    <p className="text-white font-bold text-sm">近隣駐車場</p>
+                    <p className="text-[#F2AC55] font-heading font-bold text-xl">あり</p>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
