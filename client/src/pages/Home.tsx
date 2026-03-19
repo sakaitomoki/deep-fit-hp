@@ -408,25 +408,56 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right: DEEP.FIT reasons */}
-            <div className="bg-[#4D5058] rounded-3xl p-7 sm:p-8 text-white">
-              <p className="text-[#F2AC55] text-xs tracking-[0.2em] uppercase mb-2">DEEP.FIT's Strengths</p>
-              <h3 className="text-xl sm:text-2xl font-bold mb-7">DEEP.FITが<br />選ばれる理由</h3>
-              <div className="space-y-5">
-                {reasons.map((r, i) => {
-                  const Icon = r.icon;
-                  return (
-                    <div key={i} className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-xl bg-[#F2AC55]/20 flex items-center justify-center shrink-0">
-                        <Icon className="w-5 h-5 text-[#F2AC55]" />
-                      </div>
-                      <div>
-                        <p className="font-bold text-white text-sm">{r.title}</p>
-                        <p className="text-white/55 text-xs mt-0.5 leading-relaxed">{r.text}</p>
-                      </div>
-                    </div>
-                  );
-                })}
+            {/* Right: Calorie chart + female ratio */}
+            <div className="bg-[#F2F3F5] rounded-3xl p-6 sm:p-8 border border-gray-100">
+              <p className="text-[#E8954A] text-xs tracking-[0.2em] uppercase mb-2 font-bold">Why Kickboxing?</p>
+              <h3 className="text-lg sm:text-xl font-bold text-[#4D5058] mb-1 leading-snug">
+                圧倒的な<span className="text-[#E8954A]">消費カロリー</span>だから<br />
+                効率的にカラダが変わる
+              </h3>
+              <p className="text-[#4D5058]/55 text-xs mb-5 leading-relaxed">
+                キックボクシングの消費カロリーはヨガの<span className="text-[#E74C3C] font-bold">6倍！</span><br />
+                全身を大きく動かすから、短時間で高い脂肪燃焼効果。
+              </p>
+
+              {/* Bar chart */}
+              <div className="flex items-end justify-around gap-1.5 mb-3" style={{ height: "140px" }}>
+                {[
+                  { label: "キックボクシング", kcal: 387, pct: 100, highlight: true },
+                  { label: "ボクシング", kcal: 187, pct: 48, highlight: false },
+                  { label: "フィットネスクラブ", kcal: 187, pct: 48, highlight: false },
+                  { label: "ウォーキング", kcal: 119, pct: 31, highlight: false },
+                  { label: "ヨガ", kcal: 65, pct: 17, highlight: false },
+                ].map((item, i) => (
+                  <div key={i} className="flex flex-col items-center justify-end gap-1 flex-1 h-full">
+                    <span className={`font-bold leading-none ${item.highlight ? "text-[#E74C3C] text-sm" : "text-[10px] text-[#4D5058]/70"}`}>
+                      {item.kcal}<span className="text-[9px] font-normal">kcal</span>
+                    </span>
+                    <div
+                      className="w-full rounded-t-lg"
+                      style={{
+                        height: `${item.pct}%`,
+                        background: item.highlight
+                          ? "linear-gradient(to top, #E74C3C 0%, #F77F00 50%, #F2AC55 100%)"
+                          : "linear-gradient(to top, #F2AC55 0%, #F5CFA0 100%)",
+                      }}
+                    />
+                    <span className="text-[8px] text-[#4D5058]/60 text-center leading-tight w-full" style={{ fontSize: "8px" }}>
+                      {item.label.replace("キックボクシング", "キック\nボクシング").replace("フィットネスクラブ", "フィット\nネスクラブ").split("\n").map((l, j) => <span key={j} className="block">{l}</span>)}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              {/* 7割女性 */}
+              <div className="mt-4 bg-white rounded-2xl px-4 py-3.5 flex items-center gap-3 border border-gray-100 shadow-sm">
+                <span className="text-3xl shrink-0">👩</span>
+                <div>
+                  <p className="font-bold text-[#4D5058] text-sm">
+                    会員様の<span className="text-[#E8954A] font-heading font-bold text-xl mx-1">約7割</span>が女性
+                  </p>
+                  <p className="text-[#4D5058]/50 text-xs mt-0.5">主婦や仕事帰りのOLさんに大人気です</p>
+                </div>
               </div>
             </div>
           </motion.div>
