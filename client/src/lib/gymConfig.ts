@@ -9,7 +9,6 @@ export const gymConfig = {
   addressShort: "兵庫県尼崎市長洲東通1–9-25 2F",
   access: [
     "JR尼崎駅 徒歩10分",
-    "阪急塚口駅 徒歩15分",
   ],
   hours: {
     weekday: "10:00 - 13:00 / 17:00 - 22:00（パーソナル 13:00 - 17:00）",
