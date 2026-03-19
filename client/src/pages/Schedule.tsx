@@ -98,10 +98,27 @@ const scheduleBlocks: Record<string, ScheduleBlock[]> = {
   ],
 };
 
-const START_HOUR = 10;
-const END_HOUR = 22;
-const TOTAL_HOURS = END_HOUR - START_HOUR;
-const HOUR_PX = 52;
+const TABLE_START = 10;
+const TABLE_END = 22;
+const TABLE_STEP = 0.5;
+const TABLE_ROW_COUNT = (TABLE_END - TABLE_START) / TABLE_STEP; // 24 rows
+
+type TableCell = { rowspan: number; block: ScheduleBlock } | "skip" | null;
+
+const tableGrid: TableCell[][] = Array.from({ length: TABLE_ROW_COUNT }, () =>
+  Array(dayOrder.length).fill(null)
+);
+
+dayOrder.forEach((day, ci) => {
+  scheduleBlocks[day].forEach((block) => {
+    const startRow = Math.round((block.start - TABLE_START) / TABLE_STEP);
+    const rowspan = Math.round((block.end - block.start) / TABLE_STEP);
+    tableGrid[startRow][ci] = { rowspan, block };
+    for (let r = startRow + 1; r < startRow + rowspan; r++) {
+      if (r < TABLE_ROW_COUNT) tableGrid[r][ci] = "skip";
+    }
+  });
+});
 
 const colorStyles: Record<string, { bg: string; text: string; border: string }> = {
   fitness:  { bg: "bg-[#FFF0D6]", text: "text-[#C47F1A]",  border: "border-[#F2AC55]/50" },
@@ -206,85 +223,64 @@ export default function Schedule() {
             <h2 className="text-3xl sm:text-4xl font-bold text-[#4D5058]">タイムスケジュール</h2>
           </motion.div>
 
-          {/* Mobile: Day cards */}
-          <div className="md:hidden space-y-3">
-            {dayOrder.map((day) => (
-              <div key={day} className="rounded-xl overflow-hidden border border-gray-200 bg-white">
-                <div className="px-4 py-3 flex items-center gap-3 bg-[#4D5058]">
-                  <span className="font-bold text-lg text-white">{dayLabelsMap[day]}</span>
-                </div>
-                <div className="divide-y divide-gray-50">
-                  {scheduleBlocks[day].map((block, i) => {
-                    const s = colorStyles[block.color];
-                    return (
-                      <div key={i} className={`flex items-center gap-3 px-4 py-3 ${s.bg}`}>
-                        <div className={`w-1.5 self-stretch rounded-full ${s.border} border-2`} />
-                        <div className="flex-1">
-                          <p className={`font-bold text-sm ${s.text}`}>{block.label}</p>
-                          {block.sublabel && <p className={`text-xs ${s.text} opacity-70`}>{block.sublabel}</p>}
-                        </div>
-                        <p className={`text-xs font-medium ${s.text} opacity-70 shrink-0`}>
-                          {formatTime(block.start)}〜{formatTime(block.end)}
-                        </p>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Desktop: Visual time grid */}
-          <div className="hidden md:block overflow-x-auto">
-            <div style={{ minWidth: "640px" }}>
-              <div className="flex mb-2">
-                <div className="w-12 shrink-0" />
-                {dayOrder.map((day) => (
-                  <div key={day} className="flex-1 text-center text-sm font-bold py-2 rounded-lg mx-0.5 bg-[#4D5058] text-white">
-                    {dayLabelsMap[day]}
-                  </div>
-                ))}
-              </div>
-              <div className="flex">
-                <div className="w-12 shrink-0 relative" style={{ height: TOTAL_HOURS * HOUR_PX }}>
-                  {Array.from({ length: TOTAL_HOURS + 1 }, (_, i) => (
-                    <div key={i} className="absolute left-0 right-0 flex items-center" style={{ top: i * HOUR_PX - 8 }}>
-                      <span className="text-[10px] text-[#4D5058]/50 font-medium w-full text-right pr-2">
-                        {START_HOUR + i}:00
-                      </span>
-                    </div>
+          {/* Schedule Table */}
+          <div className="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+            <table className="border-collapse w-full text-sm" style={{ minWidth: "560px" }}>
+              <thead>
+                <tr>
+                  <th className="border border-gray-200 bg-[#4D5058] text-white font-bold px-3 py-2 text-center w-16">時間</th>
+                  {dayOrder.map((day) => (
+                    <th key={day} className="border border-gray-200 bg-[#4D5058] text-white font-bold px-3 py-2 text-center">
+                      {dayLabelsMap[day]}
+                    </th>
                   ))}
-                  {Array.from({ length: TOTAL_HOURS + 1 }, (_, i) => (
-                    <div key={`line-${i}`} className="absolute left-10 right-0 border-t border-gray-200" style={{ top: i * HOUR_PX }} />
+                </tr>
+              </thead>
+              <tbody>
+                {tableGrid.map((row, ri) => {
+                  const timeVal = TABLE_START + ri * TABLE_STEP;
+                  const isHour = timeVal % 1 === 0;
+                  return (
+                    <tr key={ri} className={isHour ? "" : "border-t-0"}>
+                      <td className={`border border-gray-200 bg-white text-right pr-2 text-xs font-medium whitespace-nowrap align-top pt-1 ${isHour ? "text-[#4D5058]/70" : "text-[#4D5058]/30"}`}>
+                        {formatTime(timeVal)}
+                      </td>
+                      {row.map((cell, ci) => {
+                        if (cell === "skip") return null;
+                        if (cell === null) {
+                          return <td key={ci} className={`border border-gray-100 bg-white ${isHour ? "border-t-gray-200" : ""}`} />;
+                        }
+                        const s = colorStyles[cell.block.color];
+                        return (
+                          <td
+                            key={ci}
+                            rowSpan={cell.rowspan}
+                            className={`border border-gray-200 text-center align-middle px-2 py-1 ${s.bg}`}
+                          >
+                            <p className={`font-bold text-xs leading-snug ${s.text}`}>{cell.block.label}</p>
+                            {cell.block.sublabel && (
+                              <p className={`text-[10px] ${s.text} opacity-70`}>{cell.block.sublabel}</p>
+                            )}
+                            <p className={`text-[10px] mt-0.5 ${s.text} opacity-60`}>
+                              {formatTime(cell.block.start)}〜{formatTime(cell.block.end)}
+                            </p>
+                          </td>
+                        );
+                      })}
+                    </tr>
+                  );
+                })}
+                {/* 22:00 closing row */}
+                <tr>
+                  <td className="border border-gray-200 bg-white text-right pr-2 text-xs font-medium text-[#4D5058]/70 whitespace-nowrap align-top pt-1">
+                    22:00
+                  </td>
+                  {dayOrder.map((_, ci) => (
+                    <td key={ci} className="border border-gray-200 bg-white h-2" />
                   ))}
-                </div>
-                {dayOrder.map((day) => (
-                  <div key={day} className="flex-1 relative mx-0.5 bg-white/60 rounded-lg" style={{ height: TOTAL_HOURS * HOUR_PX }}>
-                    {Array.from({ length: TOTAL_HOURS + 1 }, (_, i) => (
-                      <div key={i} className="absolute left-0 right-0 border-t border-gray-100" style={{ top: i * HOUR_PX }} />
-                    ))}
-                    {scheduleBlocks[day].map((block, i) => {
-                      const s = colorStyles[block.color];
-                      const topPx = (block.start - START_HOUR) * HOUR_PX;
-                      const heightPx = (block.end - block.start) * HOUR_PX - 3;
-                      return (
-                        <div
-                          key={i}
-                          className={`absolute left-1 right-1 rounded-lg border flex flex-col items-center justify-center text-center px-1 ${s.bg} ${s.border}`}
-                          style={{ top: topPx + 2, height: heightPx }}
-                        >
-                          <p className={`text-xs font-bold leading-tight ${s.text}`}>{block.label}</p>
-                          {block.sublabel && <p className={`text-[10px] ${s.text} opacity-70`}>{block.sublabel}</p>}
-                          <p className={`text-[9px] mt-0.5 ${s.text} opacity-60`}>
-                            {formatTime(block.start)}〜{formatTime(block.end)}
-                          </p>
-                        </div>
-                      );
-                    })}
-                  </div>
-                ))}
-              </div>
-            </div>
+                </tr>
+              </tbody>
+            </table>
           </div>
 
           {/* Legend */}
