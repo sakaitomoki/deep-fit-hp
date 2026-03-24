@@ -465,7 +465,7 @@ export default function Home() {
                 <div className="bg-white/10 border border-white/15 rounded-2xl px-4 py-4 flex flex-col items-center gap-2 text-center">
                   <span className="text-2xl">🅿️</span>
                   <div>
-                    <p className="text-white font-bold text-sm">無料駐車場</p>
+                    <p className="text-white font-bold text-sm">近隣駐車場</p>
                     <p className="text-[#F2AC55] font-heading font-bold text-xl">あり</p>
                   </div>
                 </div>
