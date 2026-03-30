@@ -75,53 +75,42 @@ export default function Instructors() {
       <SEO title={seoConfig.pages.instructors.title} description={seoConfig.pages.instructors.description} path="/instructors" />
 
       {/* Hero */}
-      <div className="relative overflow-hidden" style={{ height: "55vh", minHeight: "420px", background: "linear-gradient(135deg, #3a3d44 0%, #4D5058 50%, #5a5e68 100%)" }}>
-        {/* Logo watermark — large, right side */}
-        <div className="absolute -right-16 top-1/2 -translate-y-1/2 w-[55%] max-w-[480px] opacity-[0.07] pointer-events-none select-none">
-          <img src={instructorsHeroBg} alt="" className="w-full h-full object-contain" />
+      <div className="relative overflow-hidden" style={{ height: "52vh", minHeight: "400px" }}>
+        {/* Background: class photo with dark overlay */}
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/class-kickboxing.png')" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(30,32,37,0.92) 40%, rgba(30,32,37,0.65) 100%)" }} />
+
+        {/* Orange left border accent */}
+        <div className="absolute left-0 top-0 h-full w-1 bg-[#F2AC55]" />
+
+        {/* Logo — right side, subtle */}
+        <div className="absolute right-0 top-0 h-full w-1/2 flex items-center justify-center opacity-[0.06] pointer-events-none select-none">
+          <img src={instructorsHeroBg} alt="" className="w-4/5 object-contain" />
         </div>
-        {/* Diagonal accent stripe */}
-        <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(120deg, rgba(242,172,85,0.07) 0%, transparent 55%)" }} />
-        {/* Bottom orange line */}
-        <motion.div
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: 1 }}
-          transition={{ delay: 0.6, duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="absolute bottom-0 left-0 h-[3px] w-full bg-gradient-to-r from-[#F2AC55] via-[#F2AC55]/60 to-transparent origin-left"
-        />
 
-        <div className="relative z-10 h-full flex flex-col justify-center px-8 sm:px-16 lg:px-24 max-w-7xl mx-auto">
-          {/* Eyebrow */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.1, duration: 0.6 }}
-            className="flex items-center gap-3 mb-5"
+        <div className="relative z-10 h-full flex flex-col justify-center pl-10 sm:pl-20 lg:pl-32 max-w-7xl mx-auto w-full">
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.15, duration: 0.55 }}
+            className="text-[#F2AC55] text-xs tracking-[0.4em] uppercase mb-4 font-medium"
           >
-            <span className="block w-8 h-[2px] bg-[#F2AC55]" />
-            <span className="text-[#F2AC55] text-xs tracking-[0.35em] uppercase font-medium">Our Instructors</span>
-          </motion.div>
-
-          {/* Heading */}
+            Our Instructors
+          </motion.p>
           <motion.h1
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.25, duration: 0.7 }}
-            className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight mb-4"
-            style={{ letterSpacing: "-0.01em" }}
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.65 }}
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight"
           >
             インストラクター
           </motion.h1>
-
-          {/* Sub line */}
-          <motion.p
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-            className="text-white/40 text-sm tracking-widest uppercase"
-          >
-            Qualified &amp; Experienced Trainers
-          </motion.p>
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ delay: 0.5, duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="h-[2px] w-16 bg-[#F2AC55] origin-left"
+          />
         </div>
       </div>
 
