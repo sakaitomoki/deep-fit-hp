@@ -77,7 +77,7 @@ export default function Instructors() {
       {/* Hero */}
       <div className="relative overflow-hidden" style={{ height: "52vh", minHeight: "400px" }}>
         {/* Background: class photo with dark overlay */}
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/class-kickboxing.png')" }} />
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/class-personal.png')" }} />
         <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(30,32,37,0.92) 40%, rgba(30,32,37,0.65) 100%)" }} />
 
         {/* Orange left border accent */}
