@@ -75,27 +75,53 @@ export default function Instructors() {
       <SEO title={seoConfig.pages.instructors.title} description={seoConfig.pages.instructors.description} path="/instructors" />
 
       {/* Hero */}
-      <div className="relative bg-[#4D5058]" style={{ height: "50vh", minHeight: "400px" }}>
-        <div className="absolute inset-0 flex items-center justify-center opacity-10">
+      <div className="relative overflow-hidden" style={{ height: "55vh", minHeight: "420px", background: "linear-gradient(135deg, #3a3d44 0%, #4D5058 50%, #5a5e68 100%)" }}>
+        {/* Logo watermark — large, right side */}
+        <div className="absolute -right-16 top-1/2 -translate-y-1/2 w-[55%] max-w-[480px] opacity-[0.07] pointer-events-none select-none">
           <img src={instructorsHeroBg} alt="" className="w-full h-full object-contain" />
         </div>
-        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="text-[#F2AC55] text-xs tracking-[0.3em] uppercase mb-3"
+        {/* Diagonal accent stripe */}
+        <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(120deg, rgba(242,172,85,0.07) 0%, transparent 55%)" }} />
+        {/* Bottom orange line */}
+        <motion.div
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ delay: 0.6, duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="absolute bottom-0 left-0 h-[3px] w-full bg-gradient-to-r from-[#F2AC55] via-[#F2AC55]/60 to-transparent origin-left"
+        />
+
+        <div className="relative z-10 h-full flex flex-col justify-center px-8 sm:px-16 lg:px-24 max-w-7xl mx-auto">
+          {/* Eyebrow */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.1, duration: 0.6 }}
+            className="flex items-center gap-3 mb-5"
           >
-            Instructors
-          </motion.p>
+            <span className="block w-8 h-[2px] bg-[#F2AC55]" />
+            <span className="text-[#F2AC55] text-xs tracking-[0.35em] uppercase font-medium">Our Instructors</span>
+          </motion.div>
+
+          {/* Heading */}
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-            className="text-4xl sm:text-5xl font-bold text-white"
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.25, duration: 0.7 }}
+            className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight mb-4"
+            style={{ letterSpacing: "-0.01em" }}
           >
             インストラクター
           </motion.h1>
+
+          {/* Sub line */}
+          <motion.p
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            className="text-white/40 text-sm tracking-widest uppercase"
+          >
+            Qualified &amp; Experienced Trainers
+          </motion.p>
         </div>
       </div>
 
