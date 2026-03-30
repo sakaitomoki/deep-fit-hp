@@ -118,7 +118,7 @@ export default function Instructors() {
                       <img
                         src={inst.image}
                         alt={inst.nameJa}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover object-top"
                       />
                       <div className="absolute bottom-0 left-0 right-0 bg-[#4D5058]/80 backdrop-blur-sm px-5 py-4">
                         <p className="text-[#F2AC55] text-xs tracking-wider font-medium">{inst.nameEn}</p>
