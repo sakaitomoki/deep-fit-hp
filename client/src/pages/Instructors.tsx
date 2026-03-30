@@ -75,9 +75,10 @@ export default function Instructors() {
       <SEO title={seoConfig.pages.instructors.title} description={seoConfig.pages.instructors.description} path="/instructors" />
 
       {/* Hero */}
-      <div className="relative" style={{ height: "50vh", minHeight: "400px" }}>
-        <div className="absolute inset-0 bg-cover bg-center bg-white" style={{ backgroundImage: `url(${instructorsHeroBg})`, backgroundSize: "contain", backgroundRepeat: "no-repeat" }} />
-        <div className="absolute inset-0 bg-white/60" />
+      <div className="relative bg-[#4D5058]" style={{ height: "50vh", minHeight: "400px" }}>
+        <div className="absolute inset-0 flex items-center justify-center opacity-10">
+          <img src={instructorsHeroBg} alt="" className="w-full h-full object-contain" />
+        </div>
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -91,7 +92,7 @@ export default function Instructors() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="text-4xl sm:text-5xl font-bold text-[#4D5058]"
+            className="text-4xl sm:text-5xl font-bold text-white"
           >
             インストラクター
           </motion.h1>
