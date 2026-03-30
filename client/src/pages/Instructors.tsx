@@ -4,6 +4,7 @@ import { Link } from "wouter";
 import SEO from "@/components/SEO";
 import { seoConfig } from "@/lib/gymConfig";
 import natsukiImg from "@assets/image2_1774836824150.jpeg";
+import sakaiImg from "@assets/image0_1774837724133.jpeg";
 import moritaImg from "@assets/image0_1774837407598.jpeg";
 
 const fadeInUp = {
@@ -23,19 +24,18 @@ const fadeInRight = {
 
 const instructors = [
   {
-    nameJa: "中村 拓也",
-    nameEn: "TAKUYA NAKAMURA",
+    nameJa: "坂井 友貴",
+    nameEn: "YUKI SAKAI",
     role: "代表 / ヘッドトレーナー",
-    specialties: ["キックボクシング", "ムエタイ"],
-    record: "プロ戦績 32戦25勝",
-    bio: "15年以上のキックボクシング指導経験を持つDEEP.FITの代表。WBCムエタイ日本ランキング3位の実績を持ち、現役時代の経験を活かした実践的な指導が好評。初心者から選手まで、一人ひとりに合わせた丁寧な指導を信条とする。「どんな方でも楽しく続けられる環境を作ることが私の使命です。」",
+    specialties: ["キックボクシング", "ボクシング"],
+    record: "指導歴20年以上",
+    bio: "20年以上のキックボクシング・ボクシング指導経験を持つDEEP.FITの代表。元プロボクサーとして培った技術と経験を活かし、初心者からベテランまで幅広い層に対応した実践的な指導を行う。「楽しみながら強くなれる環境を作ることが私の使命です。」",
     achievements: [
-      "WBCムエタイ日本ランキング3位",
-      "全日本キック選手権 優勝",
-      "指導歴15年以上",
+      "元プロボクサー",
+      "指導歴20年以上",
     ],
-    image: "/images/class-kickboxing.png",
-    aspect: "aspect-[4/3]",
+    image: sakaiImg,
+    aspect: "aspect-[2/3]",
   },
   {
     nameJa: "natuki",
