@@ -6,6 +6,7 @@ import { seoConfig } from "@/lib/gymConfig";
 import natsukiImg from "@assets/image2_1774836824150.jpeg";
 import sakaiImg from "@assets/image0_1774837724133.jpeg";
 import moritaImg from "@assets/image0_1774837407598.jpeg";
+import instructorsHeroBg from "@assets/image2_1774838117868.png";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -75,8 +76,8 @@ export default function Instructors() {
 
       {/* Hero */}
       <div className="relative" style={{ height: "50vh", minHeight: "400px" }}>
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/class-personal.png')" }} />
-        <div className="absolute inset-0 bg-[#4D5058]/78" />
+        <div className="absolute inset-0 bg-cover bg-center bg-white" style={{ backgroundImage: `url(${instructorsHeroBg})`, backgroundSize: "contain", backgroundRepeat: "no-repeat" }} />
+        <div className="absolute inset-0 bg-white/60" />
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -90,7 +91,7 @@ export default function Instructors() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="text-4xl sm:text-5xl font-bold text-white"
+            className="text-4xl sm:text-5xl font-bold text-[#4D5058]"
           >
             インストラクター
           </motion.h1>
