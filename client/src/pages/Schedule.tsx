@@ -494,7 +494,7 @@ export default function Schedule() {
             <motion.div variants={fadeInUp} className="rounded-xl overflow-hidden border border-gray-200 shadow-sm">
               <div className="bg-[#4D5058] px-6 py-4">
                 <p className="text-white text-lg font-bold tracking-wide">キッズクラス</p>
-                <p className="text-white/50 text-xs mt-0.5">高校生以下対象</p>
+                <p className="text-white/50 text-xs mt-0.5">小学1年生〜中学3年生まで</p>
               </div>
               <div className="bg-white divide-y divide-gray-100">
                 {gymConfig.kidsMembership.map((plan, i) => (
