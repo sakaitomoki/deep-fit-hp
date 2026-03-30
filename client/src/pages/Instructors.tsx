@@ -26,7 +26,7 @@ const fadeInRight = {
 const instructors = [
   {
     nameJa: "坂井 友貴",
-    nameEn: "YUKI SAKAI",
+    nameEn: "TOMOKI SAKAI",
     role: "代表 / ヘッドトレーナー",
     specialties: ["キックボクシング", "ボクシング"],
     record: "指導歴10年以上",
