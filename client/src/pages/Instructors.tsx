@@ -38,7 +38,7 @@ const instructors = [
     aspect: "aspect-[4/3]",
   },
   {
-    nameJa: "なつき",
+    nameJa: "natuki",
     nameEn: "NATSUKI",
     role: "チーフインストラクター",
     specialties: ["フィットネスキック", "ダイエット指導"],
