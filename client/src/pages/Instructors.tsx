@@ -3,6 +3,7 @@ import { Award, Medal } from "lucide-react";
 import { Link } from "wouter";
 import SEO from "@/components/SEO";
 import { seoConfig } from "@/lib/gymConfig";
+import natsukiImg from "@assets/image2_1774836824150.jpeg";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -35,8 +36,8 @@ const instructors = [
     image: "/images/class-kickboxing.png",
   },
   {
-    nameJa: "鈴木 あやか",
-    nameEn: "AYAKA SUZUKI",
+    nameJa: "なつき",
+    nameEn: "NATSUKI",
     role: "チーフインストラクター",
     specialties: ["フィットネスキック", "ダイエット指導"],
     record: "指導歴8年",
@@ -46,7 +47,7 @@ const instructors = [
       "フィットネスインストラクター資格保有",
       "栄養士資格保有",
     ],
-    image: "/images/class-personal.png",
+    image: natsukiImg,
   },
   {
     nameJa: "田口 誠",
