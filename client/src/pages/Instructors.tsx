@@ -4,7 +4,7 @@ import { Link } from "wouter";
 import SEO from "@/components/SEO";
 import { seoConfig } from "@/lib/gymConfig";
 import natsukiImg from "@assets/image2_1774836824150.jpeg";
-import moritaImg from "@assets/image0_1774837057083.jpeg";
+import moritaImg from "@assets/image0_1774837407598.jpeg";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -35,6 +35,7 @@ const instructors = [
       "指導歴15年以上",
     ],
     image: "/images/class-kickboxing.png",
+    aspect: "aspect-[4/3]",
   },
   {
     nameJa: "なつき",
@@ -49,20 +50,21 @@ const instructors = [
       "栄養士資格保有",
     ],
     image: natsukiImg,
+    aspect: "aspect-[4/3]",
   },
   {
     nameJa: "森田 陸斗",
     nameEn: "RIKUTO MORITA",
     role: "トレーナー",
-    specialties: ["テクニック", "選手育成"],
+    specialties: ["キックボクシング", "フィットネス指導"],
     record: "プロ戦績 10戦6勝",
-    bio: "現役プロキックボクサーとして活躍しながらDEEP.FITのトレーナーを務める。実戦で磨いたテクニックを活かした指導が好評。プロを目指す選手から初心者まで、目標に合わせた丁寧な指導を行う。「自分自身も戦い続けながら、皆さんの目標達成を全力でサポートします。」",
+    bio: "現役プロキックボクサーとして活躍しながらDEEP.FITのトレーナーを務める。本格的なキックボクシングの技術をベースに、楽しく続けられるフィットネス指導が好評。初心者の方でも無理なく始められるよう、一人ひとりのペースに合わせた丁寧なサポートを心がけている。「一緒に楽しく体を動かして、健康な毎日を作りましょう！」",
     achievements: [
       "現役プロキックボクサー",
       "プロ戦績 10戦6勝",
-      "選手育成実績多数",
     ],
     image: moritaImg,
+    aspect: "aspect-[2/3]",
   },
 ];
 
@@ -114,7 +116,7 @@ export default function Instructors() {
                     className={`${isEven ? "lg:order-2" : ""} relative`}
                     data-testid={`img-instructor-${i}`}
                   >
-                    <div className="relative rounded-md overflow-hidden aspect-[4/3]">
+                    <div className={`relative rounded-md overflow-hidden ${inst.aspect ?? "aspect-[4/3]"}`}>
                       <img
                         src={inst.image}
                         alt={inst.nameJa}
