@@ -4,6 +4,7 @@ import { Link } from "wouter";
 import SEO from "@/components/SEO";
 import { seoConfig } from "@/lib/gymConfig";
 import natsukiImg from "@assets/image2_1774836824150.jpeg";
+import moritaImg from "@assets/image0_1774837057083.jpeg";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -50,18 +51,18 @@ const instructors = [
     image: natsukiImg,
   },
   {
-    nameJa: "田口 誠",
-    nameEn: "MAKOTO TAGUCHI",
-    role: "シニアトレーナー",
+    nameJa: "森田 陸斗",
+    nameEn: "RIKUTO MORITA",
+    role: "トレーナー",
     specialties: ["テクニック", "選手育成"],
-    record: "プロ戦績 28戦20勝",
-    bio: "全日本ライト級チャンピオンの経歴を持つテクニシャン。細かい技術の指導に定評があり、プロを目指す選手の育成にも力を入れている。これまでに5名のプロ選手を輩出。「基礎の積み重ねが全ての強さの源です。一緒に上を目指しましょう。」",
+    record: "プロ戦績 10戦6勝",
+    bio: "現役プロキックボクサーとして活躍しながらDEEP.FITのトレーナーを務める。実戦で磨いたテクニックを活かした指導が好評。プロを目指す選手から初心者まで、目標に合わせた丁寧な指導を行う。「自分自身も戦い続けながら、皆さんの目標達成を全力でサポートします。」",
     achievements: [
-      "全日本ライト級チャンピオン",
-      "プロ選手5名輩出",
-      "指導歴10年以上",
+      "現役プロキックボクサー",
+      "プロ戦績 10戦6勝",
+      "選手育成実績多数",
     ],
-    image: "/images/gym-about.png",
+    image: moritaImg,
   },
 ];
 
