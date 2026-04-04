@@ -5,7 +5,7 @@ export const gymConfig = {
   subtitle: "サーキット×キックボクシングフィットネスジム",
   phone: "06-7777-7853",
   email: "sakitomokideep@icloud.com",
-  address: "〒660-0001 兵庫県尼崎市長洲東通1–9-25 2F DEEP.FIT",
+  address: "〒660-0801 兵庫県尼崎市長洲東通1–9-25 2F DEEP.FIT",
   addressShort: "兵庫県尼崎市長洲東通1–9-25 2F",
   access: [
     "JR尼崎駅 徒歩10分",
