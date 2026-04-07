@@ -1,0 +1,19 @@
+{
+  "name": "DEEP.FIT サーキット×キックボクシングジム",
+  "short_name": "DEEP.FIT",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#f97316",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}

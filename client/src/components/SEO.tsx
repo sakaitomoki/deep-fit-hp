@@ -10,6 +10,7 @@ interface SEOProps {
 export default function SEO({ title, description, path = "" }: SEOProps) {
   const fullTitle = `${title} | ${seoConfig.siteName} - 尼崎市・兵庫県`;
   const url = `${seoConfig.siteUrl}${path}`;
+  const ogImage = `${seoConfig.siteUrl}/favicon.png`;
 
   return (
     <Helmet>
@@ -23,6 +24,7 @@ export default function SEO({ title, description, path = "" }: SEOProps) {
       <meta property="og:type" content="website" />
       <meta property="og:locale" content={seoConfig.locale} />
       <meta property="og:site_name" content={seoConfig.siteName} />
+      <meta property="og:image" content={ogImage} />
     </Helmet>
   );
 }
