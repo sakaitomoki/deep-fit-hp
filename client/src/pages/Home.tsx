@@ -249,8 +249,8 @@ export default function Home() {
             data-testid="text-hero-subheadline"
           >
             <p>
-              初心者9割。女性歓迎。<br />
-              ダイエット・運動不足解消・ストレス発散に。
+              運動が久しぶりの方も多く通っています。<br />
+              体を動かして、気分まで軽くなる時間を。
             </p>
           </motion.div>
 
