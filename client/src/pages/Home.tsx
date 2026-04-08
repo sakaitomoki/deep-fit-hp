@@ -125,8 +125,26 @@ const classes = [
   { title: "キッズクラス", subtitle: "Kids Class", level: "お子様向け", description: "楽しみながら体を動かすキッズ向けプログラム。礼儀やスポーツの基礎も学べます。保護者も安心の環境です。", image: kidsClassImg, animation: "right" },
 ];
 
+const heroPlaylist = [
+  "/video/clip1.mp4",
+  "/video/clip2.mp4",
+  "/video/clip3.mp4",
+  "/video/clip4.mp4",
+  "/video/clip5.mp4",
+  "/video/clip6.mp4",
+  "/video/clip7.mp4",
+  "/video/clip8.mp4",
+  "/video/clip9.mp4",
+  "/video/clip_last.mp4",
+];
+
 export default function Home() {
   const heroRef = useRef<HTMLDivElement>(null);
+  const [heroVideoIndex, setHeroVideoIndex] = useState(0);
+
+  const advanceHeroVideo = () => {
+    setHeroVideoIndex((i) => (i + 1) % heroPlaylist.length);
+  };
 
   const [testimonialIndex, setTestimonialIndex] = useState(0);
   const [testimonialDirection, setTestimonialDirection] = useState(1);
@@ -159,16 +177,17 @@ export default function Home() {
       {/* Hero Section */}
       <div ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden bg-white">
 
-        {/* Background video — right-aligned on widescreen */}
+        {/* Background video playlist — right-aligned on widescreen */}
         <video
+          key={heroVideoIndex}
           autoPlay
           muted
-          loop
           playsInline
+          onEnded={advanceHeroVideo}
           data-testid="video-hero-bg"
           className="absolute inset-0 w-full h-full object-cover object-center lg:object-right"
         >
-          <source src="/video/hero.mp4" type="video/mp4" />
+          <source src={heroPlaylist[heroVideoIndex]} type="video/mp4" />
         </video>
 
         {/* Left white overlay — ensures text is always on a clean bg */}
