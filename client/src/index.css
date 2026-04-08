@@ -341,7 +341,7 @@
   line-height: 0.9;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-  color: rgba(255,106,26,.32);
+  color: rgba(234,165,59,.34);
 }
 
 /* content layer */
@@ -380,7 +380,7 @@
   display: block;
   width: 28px;
   height: 1px;
-  background: rgba(255,106,26,.6);
+  background: rgba(234,165,59,.7);
   flex-shrink: 0;
 }
 
@@ -398,8 +398,8 @@
   font-weight: 700;
   line-height: 1;
   letter-spacing: 0.04em;
-  border: 1px solid rgba(255,106,26,.35);
-  color: #ff6a1a;
+  border: 1px solid rgba(234,165,59,.38);
+  color: #EAA53B;
   background: rgba(0,0,0,.35);
   backdrop-filter: blur(4px);
   border-radius: 2px;
@@ -415,7 +415,7 @@
 }
 .hero-v2__strip--main {
   padding: 14px 22px;
-  background: rgba(255,106,26,.92);
+  background: #D9962E;
   color: #fff;
   transform: rotate(-3deg);
   transform-origin: left center;

@@ -20,7 +20,7 @@ export default function MobileContactBar() {
       <a
         href={`tel:${gymConfig.phone}`}
         data-testid="mobile-bar-phone"
-        className="flex-1 flex flex-col items-center justify-center gap-1 bg-[#4D5058] text-white py-3 text-center active:brightness-90 transition-all border-x border-white/10"
+        className="flex-1 flex flex-col items-center justify-center gap-1 bg-[#EAA53B] text-[#111111] py-3 text-center active:brightness-90 transition-all border-x border-black/10"
       >
         <Phone className="w-6 h-6" />
         <span className="text-[10px] font-medium tracking-wide">電話</span>
@@ -29,7 +29,7 @@ export default function MobileContactBar() {
       <Link
         href="/contact"
         data-testid="mobile-bar-contact"
-        className="flex-1 flex flex-col items-center justify-center gap-1 bg-[#F2AC55] text-white py-3 text-center active:brightness-90 transition-all"
+        className="flex-1 flex flex-col items-center justify-center gap-1 bg-[#EAA53B] text-[#111111] py-3 text-center active:brightness-90 transition-all"
       >
         <MessageSquare className="w-6 h-6" />
         <span className="text-[10px] font-medium tracking-wide">お問い合わせ</span>
