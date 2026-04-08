@@ -226,7 +226,7 @@ export default function Home() {
           >
             <span className="hero-v2__label">はじめてでも安心</span>
             <span className="hero-v2__label">女性にも通いやすい</span>
-            <span className="hero-v2__label">体験レッスン受付中</span>
+            <span className="hero-v2__label">まずは気楽に体験から</span>
           </motion.div>
 
           <motion.div
