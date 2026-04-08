@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
-import GymLogo from "./GymLogo";
+import deepFitLogo from "@assets/DEEP.FIT_ロゴデザイン_1775627509340.png";
 import { gymConfig } from "@/lib/gymConfig";
 
 const navLinks = [
@@ -36,8 +36,13 @@ export default function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          <Link href="/" data-testid="link-logo" className="py-2 pr-3">
-            <GymLogo size="md" />
+          <Link href="/" data-testid="link-logo" className="py-1 pr-2 sm:pr-3 lg:pr-4">
+            <img
+              src={deepFitLogo}
+              alt="DEEP.FIT"
+              data-testid="img-logo"
+              className="h-9 sm:h-10 lg:h-12 w-auto object-contain"
+            />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-1">
