@@ -289,7 +289,6 @@ export default function Home() {
               <SiLine style={{ width: 20, height: 20, flexShrink: 0 }} />
               LINEで無料体験予約
             </a>
-            <p className="hero-v2__cta-note">体験だけでもOK / 無理な勧誘なし</p>
           </motion.div>
 
         </div>
