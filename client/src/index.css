@@ -341,10 +341,11 @@
 }
 .hero-v2__logo {
   display: inline-block;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  font-size: clamp(20px, 1.8vw, 34px);
-  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  font-size: clamp(14px, 1.2vw, 20px);
+  line-height: 1.5;
+  color: rgba(255,255,255,.82);
 }
 .hero-v2__labels {
   display: flex;
@@ -364,30 +365,30 @@
   box-shadow: 0 8px 20px rgba(0,0,0,.3);
   backdrop-filter: blur(4px);
 }
-.hero-v2__label:nth-child(1) { transform: rotate(-8deg); }
-.hero-v2__label:nth-child(2) { transform: rotate(-5deg); }
-.hero-v2__label:nth-child(3) { transform: rotate(-7deg); }
-.hero-v2__label:nth-child(4) { transform: rotate(-4deg); }
+.hero-v2__label:nth-child(1) { transform: rotate(-5deg); }
+.hero-v2__label:nth-child(2) { transform: rotate(-3deg); }
+.hero-v2__label:nth-child(3) { transform: rotate(-4deg); }
+.hero-v2__label:nth-child(4) { transform: rotate(-3deg); }
 .hero-v2__strip {
   display: inline-block;
 }
 .hero-v2__strip--main {
-  margin-top: 32px;
+  margin-top: 28px;
   margin-left: 6px;
-  padding: 18px 28px;
+  padding: 12px 22px;
   background: #ff6a1a;
   color: #fff;
-  transform: rotate(-7deg);
+  transform: rotate(-5deg);
   transform-origin: left center;
-  box-shadow: 0 14px 30px rgba(0,0,0,.28);
+  box-shadow: 0 10px 24px rgba(0,0,0,.24);
 }
 .hero-v2__strip--main h1 {
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  font-size: clamp(34px, 5vw, 76px);
-  line-height: 1.02;
+  gap: 2px;
+  font-size: clamp(30px, 4.5vw, 68px);
+  line-height: 1.0;
   font-weight: 900;
   letter-spacing: -0.04em;
 }
@@ -396,46 +397,46 @@
 }
 .hero-v2__lines {
   position: relative;
-  margin-top: 28px;
-  margin-left: 48px;
+  margin-top: 24px;
+  margin-left: 44px;
   width: min(52vw, 720px);
-  height: 64px;
-  transform: rotate(-7deg);
+  height: 56px;
+  transform: rotate(-5deg);
 }
 .hero-v2__lines span {
   position: absolute;
   left: 0;
   display: block;
-  height: 5px;
+  height: 4px;
   background: #ff6a1a;
 }
 .hero-v2__lines span:nth-child(1) {
-  top: 10px;
+  top: 8px;
   width: 58%;
 }
 .hero-v2__lines span:nth-child(2) {
-  top: 28px;
+  top: 24px;
   width: 100%;
 }
 .hero-v2__bigcopy {
   display: flex;
   flex-direction: column;
   align-self: flex-start;
-  margin-top: 4px;
+  margin-top: 2px;
   margin-left: -4px;
-  transform: rotate(-7deg);
+  transform: rotate(-5deg);
   transform-origin: left top;
   pointer-events: none;
 }
 .hero-v2__bigcopy span {
   display: block;
   font-weight: 900;
-  font-size: clamp(56px, 9.4vw, 160px);
+  font-size: clamp(48px, 8vw, 136px);
   line-height: 0.88;
   letter-spacing: -0.05em;
   text-transform: uppercase;
-  color: rgba(255,106,26,.92);
-  text-shadow: 0 8px 18px rgba(0,0,0,.18);
+  color: rgba(255,106,26,.48);
+  text-shadow: none;
 }
 .hero-v2__subcopy {
   margin-top: 22px;

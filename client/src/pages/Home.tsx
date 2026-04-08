@@ -204,7 +204,10 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.05, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="hero-v2__logo text-[18px]">JR尼崎駅より徒歩10分のサーキット×キックボクシングジム </span>
+            <span className="hero-v2__logo">
+              JR尼崎駅 徒歩10分<br />
+              サーキット×キックボクシングジム
+            </span>
           </motion.div>
 
           {/* Labels */}
@@ -288,6 +291,7 @@ export default function Home() {
               <SiLine style={{ width: 20, height: 20, flexShrink: 0 }} />
               LINEで無料体験予約
             </a>
+            <p className="hero-v2__cta-note">手ぶらで体験OK / 初心者歓迎</p>
           </motion.div>
 
         </div>
