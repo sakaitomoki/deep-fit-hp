@@ -34,7 +34,7 @@ export default function Navigation() {
         scrolled ? "bg-[#4D5058]/95 backdrop-blur-md shadow-lg" : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-3 sm:px-5 lg:px-8">
+      <div className="w-full px-3 sm:px-6 lg:px-10 xl:px-14">
         <div className="flex items-center justify-between h-20 lg:h-24">
           <Link href="/" data-testid="link-logo" className="flex items-center h-full py-0 pr-2 sm:pr-3 lg:pr-4">
             <img
