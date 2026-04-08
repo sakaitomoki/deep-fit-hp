@@ -216,7 +216,6 @@ export default function Home() {
           >
             <span className="hero-v2__label">初心者歓迎</span>
             <span className="hero-v2__label">女性歓迎</span>
-            <span className="hero-v2__label">月額8,800円〜</span>
             <span className="hero-v2__label">体験レッスン受付中</span>
           </motion.div>
 
