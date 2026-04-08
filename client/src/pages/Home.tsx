@@ -197,30 +197,15 @@ export default function Home() {
             transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="w-full lg:w-[56%] px-6 sm:px-10 lg:px-16 flex flex-col items-start justify-center py-20 lg:py-0 min-h-screen max-w-3xl"
           >
-            {/* Logo */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.25, duration: 0.6 }}
-              className="mb-4"
-            >
-              <img
-                src="/images/hero-deepfit.png"
-                alt="DEEP.FIT"
-                data-testid="img-hero-logo"
-                className="h-12 sm:h-14 w-auto object-contain"
-              />
-            </motion.div>
-
             {/* Eyebrow accent */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3, duration: 0.5 }}
-              className="flex items-center gap-2 mb-4"
+              className="flex items-center gap-2 mb-5"
             >
-              <span className="block w-6 h-[3px] bg-[#F2AC55] rounded-full" />
-              <span className="text-[#4D5058] text-xs tracking-[0.3em] uppercase font-bold">Circuit × Kickboxing Gym</span>
+              <span className="block w-8 h-[3px] bg-[#F2AC55] rounded-full shadow-sm" />
+              <span className="text-[#4D5058] text-[0.7rem] tracking-[0.35em] uppercase font-extrabold">Circuit × Kickboxing Gym</span>
             </motion.div>
 
             {/* Main Headline */}
@@ -228,11 +213,11 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.38, duration: 0.7 }}
-              className="text-[2.6rem] sm:text-5xl lg:text-[3.6rem] font-black leading-[1.08] tracking-[-0.02em] mb-3 text-[#1a1c20]"
+              className="text-[2.75rem] sm:text-5xl lg:text-[4.2rem] font-black leading-[1.02] tracking-[-0.045em] mb-4 text-[#111827] drop-shadow-[0_1px_0_rgba(255,255,255,0.9)]"
               data-testid="text-hero-headline"
             >
               運動が苦手でも<br />
-              <span className="text-[#F2AC55]">続けやすい。</span>
+              <span className="text-[#F2AC55] drop-shadow-[0_1px_1px_rgba(255,255,255,0.85)]">続けやすい。</span>
             </motion.h1>
 
             {/* Subheadline */}
@@ -240,7 +225,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.48, duration: 0.6 }}
-              className="text-[#4D5058] text-base sm:text-lg font-bold mb-5 border-l-[3px] border-[#F2AC55] pl-3"
+              className="text-[#4D5058] text-base sm:text-lg font-bold mb-5 border-l-[3px] border-[#F2AC55] pl-3 drop-shadow-[0_1px_0_rgba(255,255,255,0.9)]"
               data-testid="text-hero-subheadline"
             >
               JR尼崎のキックボクシング × サーキットジム
@@ -258,8 +243,8 @@ export default function Home() {
                 "初心者9割。女性歓迎。",
                 "ダイエット・運動不足解消・ストレス発散に対応。",
               ].map((item) => (
-                <li key={item} className="flex items-start gap-2.5 text-[#2d2f35] text-[0.95rem] sm:text-base font-semibold">
-                  <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-[#F2AC55] flex items-center justify-center shadow-sm">
+                <li key={item} className="flex items-start gap-2.5 text-[#2d2f35] text-[0.95rem] sm:text-base font-semibold drop-shadow-[0_1px_0_rgba(255,255,255,0.85)]">
+                  <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-[#F2AC55] flex items-center justify-center shadow-sm ring-1 ring-white/70">
                     <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 12 12" stroke="currentColor" strokeWidth={2.75}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M2 6l3 3 5-5" />
                     </svg>
@@ -284,7 +269,7 @@ export default function Home() {
               ].map((badge) => (
                 <div
                   key={badge.main}
-                  className="flex flex-col items-center bg-[#FFF8EC] border border-[#F2AC55]/50 rounded-xl px-4 py-2 shadow-sm"
+                  className="flex flex-col items-center bg-[#FFF8EC]/95 backdrop-blur-sm border border-[#F2AC55]/50 rounded-xl px-4 py-2 shadow-sm"
                 >
                   <span className="text-[#C47D0A] font-extrabold text-sm leading-tight">{badge.main}</span>
                   <span className="text-[#C47D0A]/70 text-xs font-semibold">{badge.sub}</span>
