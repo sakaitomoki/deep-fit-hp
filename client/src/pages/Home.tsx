@@ -296,16 +296,6 @@ export default function Home() {
               </a>
             </motion.div>
 
-            {/* Sub text under button */}
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.92, duration: 0.5 }}
-              className="text-sm text-[#4D5058]/60 font-medium"
-              data-testid="text-hero-cta-note"
-            >
-              体験無料 / 入会金無料 / 初月会費無料
-            </motion.p>
           </motion.div>
         </div>
 
