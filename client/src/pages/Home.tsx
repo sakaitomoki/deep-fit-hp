@@ -173,121 +173,127 @@ export default function Home() {
     <>
       <SEO title={seoConfig.pages.home.title} description={seoConfig.pages.home.description} path="/" />
       <ScrollProgress />
-      {/* Hero Section */}
-      <div ref={heroRef} className="relative h-screen min-h-[680px] overflow-hidden bg-[#0a0c12]">
+      {/* Hero Section — hero-v2 */}
+      <section className="hero-v2" ref={heroRef}>
 
-        {/* Background video playlist — right-aligned on widescreen */}
-        <video
-          key={heroVideoIndex}
-          autoPlay
-          muted
-          playsInline
-          onEnded={advanceHeroVideo}
-          data-testid="video-hero-bg"
-          className="absolute inset-0 w-full h-full object-cover object-center lg:object-right"
-        >
-          <source src={heroPlaylist[heroVideoIndex]} type="video/mp4" />
-        </video>
-
-        {/* Overlay: left dark zone + bottom dark zone for text readability */}
-        <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(to right, rgba(10,12,18,0.92) 0%, rgba(10,12,18,0.86) 28%, rgba(10,12,18,0.55) 50%, rgba(10,12,18,0.12) 68%, rgba(10,12,18,0) 78%)" }} />
-        <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(to top, rgba(10,12,18,0.82) 0%, rgba(10,12,18,0.45) 28%, rgba(10,12,18,0) 55%)" }} />
-
-        {/* Content — bottom-left anchored */}
-        <div className="absolute inset-0 z-10 flex items-end">
-          <div className="w-full lg:w-[60%] px-6 sm:px-10 lg:px-14 pb-12 lg:pb-16">
-
-            {/* Eyebrow */}
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-              className="flex items-center gap-2.5 mb-4"
-            >
-              <span className="block w-7 h-[2px] bg-[#F2AC55] rounded-full" />
-              <span className="text-white/55 text-[0.68rem] tracking-[0.35em] uppercase font-bold">Circuit × Kickboxing Gym</span>
-            </motion.div>
-
-            {/* Checklist */}
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-              className="flex flex-col gap-2 mb-4"
-              data-testid="list-hero-features"
-            >
-              {[
-                "初心者9割。女性も安心して通えます。",
-                "ダイエット・ストレス発散・体力づくりに。",
-              ].map((item) => (
-                <span key={item} className="flex items-center gap-2.5 text-white/80 text-sm sm:text-base font-semibold">
-                  <span className="flex-shrink-0 w-5 h-5 rounded-full bg-[#F2AC55] flex items-center justify-center shadow-sm">
-                    <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 12 12" stroke="currentColor" strokeWidth={2.75}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M2 6l3 3 5-5" />
-                    </svg>
-                  </span>
-                  {item}
-                </span>
-              ))}
-            </motion.div>
-
-            {/* Subheadline */}
-            <motion.p
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-              className="text-white/90 text-lg sm:text-xl font-bold mb-4 border-l-[3px] border-[#F2AC55] pl-3"
-              data-testid="text-hero-subheadline"
-            >
-              JR尼崎のキックボクシング×サーキットジム
-            </motion.p>
-
-            {/* Main Headline */}
-            <motion.h1
-              initial={{ opacity: 0, y: 60 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.42, duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-              className="font-black leading-[1.05] tracking-[-0.03em] mb-6 text-white"
-              data-testid="text-hero-headline"
-            >
-              <span className="block text-[2.6rem] sm:text-[3.2rem] lg:text-[4.2rem]">運動が苦手でも、</span>
-              <span className="block text-[48px] sm:text-[2.8rem] lg:text-[3.7rem] text-[#F2AC55]">続けやすい。</span>
-            </motion.h1>
-
-            {/* Benefit Badges + LINE CTA */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.56, duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-              className="flex flex-wrap items-center gap-x-4 gap-y-3"
-              data-testid="badges-hero-benefits"
-            >
-              <div className="flex flex-col gap-1.5">
-                <p className="text-white/40 text-[0.62rem] tracking-[0.18em] uppercase font-semibold">4月末までの限定特典</p>
-                <div className="flex flex-wrap gap-2">
-                  {["体験無料", "入会金無料", "初月会費無料"].map((label) => (
-                    <div key={label} className="bg-[#FFF8EC]/10 border border-[#F2AC55]/40 rounded-xl px-3 py-1.5 backdrop-blur-sm">
-                      <span className="text-[#F2AC55] font-extrabold text-sm">{label}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <a
-                href={gymConfig.sns.line}
-                target="_blank"
-                rel="noopener noreferrer"
-                data-testid="button-line-cta"
-                className="inline-flex items-center gap-2.5 bg-[#06C755] hover:bg-[#05b34e] text-white font-bold text-base px-7 py-4 rounded-full shadow-lg transition-colors duration-200"
-              >
-                <SiLine className="w-5 h-5" />
-                LINEで無料体験予約
-              </a>
-            </motion.div>
-
-          </div>
+        {/* z-0: Background video playlist */}
+        <div className="hero-v2__media">
+          <video
+            key={heroVideoIndex}
+            autoPlay
+            muted
+            playsInline
+            onEnded={advanceHeroVideo}
+            data-testid="video-hero-bg"
+            className="hero-v2__video"
+          >
+            <source src={heroPlaylist[heroVideoIndex]} type="video/mp4" />
+          </video>
         </div>
 
-      </div>
+        {/* z-1: Overlay */}
+        <div className="hero-v2__overlay" />
+
+        {/* z-2: Inner content */}
+        <div className="hero-v2__inner">
+
+          {/* Brand */}
+          <motion.div
+            className="hero-v2__brand"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.05, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <span className="hero-v2__logo">DEEP.FIT</span>
+          </motion.div>
+
+          {/* Labels */}
+          <motion.div
+            className="hero-v2__labels"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.15, duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <span className="hero-v2__label">初心者歓迎</span>
+            <span className="hero-v2__label">女性歓迎</span>
+            <span className="hero-v2__label">JR尼崎</span>
+            <span className="hero-v2__label">体験レッスン受付中</span>
+          </motion.div>
+
+          {/* Main headline strip */}
+          <motion.div
+            className="hero-v2__strip hero-v2__strip--main"
+            initial={{ opacity: 0, y: 60 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.28, duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <h1 data-testid="text-hero-headline">
+              <span>楽しいから続く。</span>
+              <span>続くから変わる。</span>
+            </h1>
+          </motion.div>
+
+          {/* Decorative lines */}
+          <motion.div
+            className="hero-v2__lines"
+            aria-hidden="true"
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={{ opacity: 1, scaleX: 1 }}
+            transition={{ delay: 0.44, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            style={{ transformOrigin: "left center" }}
+          >
+            <span />
+            <span />
+          </motion.div>
+
+          {/* Big English copy */}
+          <motion.div
+            className="hero-v2__bigcopy"
+            aria-label="FEEL THE CHANGE."
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.38, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <span>FEEL THE</span>
+            <span>CHANGE.</span>
+          </motion.div>
+
+          {/* Subcopy */}
+          <motion.div
+            className="hero-v2__subcopy"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+            data-testid="text-hero-subheadline"
+          >
+            <p>
+              初心者9割。女性歓迎。<br />
+              ダイエット・運動不足解消・ストレス発散に。
+            </p>
+          </motion.div>
+
+          {/* CTA */}
+          <motion.div
+            className="hero-v2__cta"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <a
+              href={gymConfig.sns.line}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hero-v2__cta-btn"
+              data-testid="button-line-cta"
+            >
+              <SiLine style={{ width: 20, height: 20, flexShrink: 0 }} />
+              LINEで無料体験予約
+            </a>
+            <p className="hero-v2__cta-note">体験だけでもOK / 無理な勧誘なし</p>
+          </motion.div>
+
+        </div>
+      </section>
       {/* Opening Campaign - moved up after hero */}
       <section
         className="py-16 lg:py-24 relative overflow-hidden"
