@@ -34,14 +34,14 @@ export default function Navigation() {
         scrolled ? "bg-[#4D5058]/95 backdrop-blur-md shadow-lg" : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-3 sm:px-5 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          <Link href="/" data-testid="link-logo" className="py-1 pr-2 sm:pr-3 lg:pr-4">
+          <Link href="/" data-testid="link-logo" className="flex items-center h-full py-1 pr-2 sm:pr-3 lg:pr-4">
             <img
               src={deepFitLogo}
               alt="DEEP.FIT"
               data-testid="img-logo"
-              className="h-9 sm:h-10 lg:h-12 w-auto object-contain"
+              className="h-full w-auto max-h-14 lg:max-h-18 object-contain"
             />
           </Link>
 
