@@ -225,7 +225,7 @@ export default function Home() {
             transition={{ delay: 0.18, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
             <span className="hero-v2__label">はじめてでも安心</span>
-            <span className="hero-v2__label">女性歓迎</span>
+            <span className="hero-v2__label">女性にも通いやすい</span>
             <span className="hero-v2__label">体験レッスン受付中</span>
           </motion.div>
 
