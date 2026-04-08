@@ -176,7 +176,7 @@ export default function Home() {
       {/* Hero Section — hero-v2 */}
       <section className="hero-v2" ref={heroRef}>
 
-        {/* z-0: Background video playlist */}
+        {/* z-0: Background video */}
         <div className="hero-v2__media">
           <video
             key={heroVideoIndex}
@@ -191,43 +191,49 @@ export default function Home() {
           </video>
         </div>
 
-        {/* z-1: Overlay */}
+        {/* z-1: Overlay — light, left-only */}
         <div className="hero-v2__overlay" />
 
-        {/* z-2: Inner content */}
+        {/* z-2: Background watermark */}
+        <motion.div
+          className="hero-v2__bigcopy"
+          aria-hidden="true"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6, duration: 1.2 }}
+        >
+          <span>FEEL THE</span>
+          <span>CHANGE.</span>
+        </motion.div>
+
+        {/* z-3: Content */}
         <div className="hero-v2__inner">
 
-          {/* Brand */}
           <motion.div
             className="hero-v2__brand"
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.05, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ delay: 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="hero-v2__logo">
-              JR尼崎駅 徒歩10分<br />
-              サーキット×キックボクシングジム
-            </span>
+            <span className="hero-v2__logo">JR尼崎 徒歩10分 — サーキット×キックボクシングジム</span>
           </motion.div>
 
-          {/* Labels */}
           <motion.div
             className="hero-v2__labels"
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.15, duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ delay: 0.18, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
             <span className="hero-v2__label">初心者歓迎</span>
             <span className="hero-v2__label">女性歓迎</span>
             <span className="hero-v2__label">体験レッスン受付中</span>
           </motion.div>
 
-          {/* Main headline strip */}
           <motion.div
             className="hero-v2__strip hero-v2__strip--main"
-            initial={{ opacity: 0, y: 60 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.28, duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ delay: 0.28, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
             <h1 data-testid="text-hero-headline">
               <span>楽しいから続く。</span>
@@ -235,37 +241,11 @@ export default function Home() {
             </h1>
           </motion.div>
 
-          {/* Big English copy */}
-          <motion.div
-            className="hero-v2__bigcopy"
-            aria-label="FEEL THE CHANGE."
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.38, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <span>FEEL THE</span>
-            <span>CHANGE.</span>
-          </motion.div>
-
-          {/* Decorative lines */}
-          <motion.div
-            className="hero-v2__lines mt-[25px] ml-[0px]"
-            aria-hidden="true"
-            initial={{ opacity: 0, scaleX: 0 }}
-            animate={{ opacity: 1, scaleX: 1 }}
-            transition={{ delay: 0.44, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            style={{ transformOrigin: "left center" }}
-          >
-            <span />
-            <span />
-          </motion.div>
-
-          {/* Subcopy */}
           <motion.div
             className="hero-v2__subcopy"
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ delay: 0.42, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             data-testid="text-hero-subheadline"
           >
             <p>
@@ -274,12 +254,11 @@ export default function Home() {
             </p>
           </motion.div>
 
-          {/* CTA */}
           <motion.div
             className="hero-v2__cta"
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ delay: 0.52, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
             <a
               href={gymConfig.sns.line}
@@ -288,10 +267,10 @@ export default function Home() {
               className="hero-v2__cta-btn"
               data-testid="button-line-cta"
             >
-              <SiLine style={{ width: 20, height: 20, flexShrink: 0 }} />
+              <SiLine style={{ width: 18, height: 18, flexShrink: 0 }} />
               LINEで無料体験予約
             </a>
-            <p className="hero-v2__cta-note">手ぶらで体験OK / 初心者歓迎</p>
+            <p className="hero-v2__cta-note">手ぶらで体験OK / 無理な勧誘なし</p>
           </motion.div>
 
         </div>
