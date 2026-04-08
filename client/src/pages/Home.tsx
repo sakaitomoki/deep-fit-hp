@@ -171,6 +171,9 @@ export default function Home() {
           className="absolute inset-0 w-full h-full object-cover object-right"
         />
 
+        {/* Left white overlay — ensures text is always on a clean bg */}
+        <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0.97) 38%, rgba(255,255,255,0.82) 58%, rgba(255,255,255,0) 75%)" }} />
+
         {/* Campaign Badge — top-right corner */}
         <motion.div
           initial={{ opacity: 0, y: -10 }}
@@ -209,12 +212,23 @@ export default function Home() {
               />
             </motion.div>
 
+            {/* Eyebrow accent */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+              className="flex items-center gap-2 mb-4"
+            >
+              <span className="block w-6 h-[3px] bg-[#F2AC55] rounded-full" />
+              <span className="text-[#4D5058] text-xs tracking-[0.3em] uppercase font-bold">Circuit × Kickboxing Gym</span>
+            </motion.div>
+
             {/* Main Headline */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.35, duration: 0.7 }}
-              className="text-4xl sm:text-5xl lg:text-[4.15rem] font-black leading-[1.02] tracking-[-0.04em] mb-4 text-gray-900 drop-shadow-[0_2px_8px_rgba(255,255,255,0.55)]"
+              transition={{ delay: 0.38, duration: 0.7 }}
+              className="text-[2.6rem] sm:text-5xl lg:text-[3.6rem] font-black leading-[1.08] tracking-[-0.02em] mb-3 text-[#1a1c20]"
               data-testid="text-hero-headline"
             >
               運動が苦手でも<br />
@@ -223,10 +237,10 @@ export default function Home() {
 
             {/* Subheadline */}
             <motion.p
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.45, duration: 0.6 }}
-              className="text-base sm:text-lg text-gray-700 font-semibold mb-5"
+              transition={{ delay: 0.48, duration: 0.6 }}
+              className="text-[#4D5058] text-base sm:text-lg font-bold mb-5 border-l-[3px] border-[#F2AC55] pl-3"
               data-testid="text-hero-subheadline"
             >
               JR尼崎のキックボクシング × サーキットジム
@@ -234,18 +248,18 @@ export default function Home() {
 
             {/* Checklist */}
             <motion.ul
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.55, duration: 0.6 }}
-              className="space-y-2 mb-6"
+              transition={{ delay: 0.56, duration: 0.6 }}
+              className="space-y-2.5 mb-6"
               data-testid="list-hero-features"
             >
               {[
                 "初心者9割。女性歓迎。",
                 "ダイエット・運動不足解消・ストレス発散に対応。",
               ].map((item) => (
-                <li key={item} className="flex items-start gap-2 text-gray-800 text-[0.98rem] sm:text-base font-medium">
-                  <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-[#4A8B4F] flex items-center justify-center">
+                <li key={item} className="flex items-start gap-2.5 text-[#2d2f35] text-[0.95rem] sm:text-base font-semibold">
+                  <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-[#F2AC55] flex items-center justify-center shadow-sm">
                     <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 12 12" stroke="currentColor" strokeWidth={2.75}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M2 6l3 3 5-5" />
                     </svg>
@@ -257,10 +271,10 @@ export default function Home() {
 
             {/* Benefit Badges */}
             <motion.div
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.65, duration: 0.6 }}
-              className="flex flex-wrap gap-2 mb-6"
+              transition={{ delay: 0.64, duration: 0.6 }}
+              className="flex flex-wrap gap-2 mb-7"
               data-testid="badges-hero-benefits"
             >
               {[
@@ -270,10 +284,10 @@ export default function Home() {
               ].map((badge) => (
                 <div
                   key={badge.main}
-                  className="flex flex-col items-center bg-white/70 backdrop-blur-[2px] border border-[#DFA23F]/60 rounded-xl px-4 py-2 shadow-sm"
+                  className="flex flex-col items-center bg-[#FFF8EC] border border-[#F2AC55]/50 rounded-xl px-4 py-2 shadow-sm"
                 >
-                  <span className="text-[#D58311] font-extrabold text-sm leading-tight">{badge.main}</span>
-                  <span className="text-[#B97418] text-xs font-semibold">{badge.sub}</span>
+                  <span className="text-[#C47D0A] font-extrabold text-sm leading-tight">{badge.main}</span>
+                  <span className="text-[#C47D0A]/70 text-xs font-semibold">{badge.sub}</span>
                 </div>
               ))}
             </motion.div>
@@ -282,7 +296,7 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.8, duration: 0.5 }}
+              transition={{ delay: 0.78, duration: 0.5 }}
               className="mb-3"
             >
               <a
@@ -290,7 +304,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 data-testid="button-line-cta"
-                className="inline-flex items-center gap-2 bg-[#06C755] hover:bg-[#05b34e] text-white font-bold text-base px-7 py-3.5 rounded-full shadow-xl transition-colors duration-200"
+                className="inline-flex items-center gap-2.5 bg-[#06C755] hover:bg-[#05b34e] text-white font-bold text-base px-7 py-4 rounded-full shadow-lg transition-colors duration-200"
               >
                 <SiLine className="w-5 h-5" />
                 LINEで1分予約 無料体験はこちら
@@ -301,8 +315,8 @@ export default function Home() {
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.95, duration: 0.5 }}
-              className="text-sm text-gray-600 font-medium"
+              transition={{ delay: 0.92, duration: 0.5 }}
+              className="text-sm text-[#4D5058]/60 font-medium"
               data-testid="text-hero-cta-note"
             >
               体験無料 / 入会金無料 / 初月会費無料
