@@ -35,13 +35,13 @@ export default function Navigation() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-3 sm:px-5 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
-          <Link href="/" data-testid="link-logo" className="flex items-center h-full py-1 pr-2 sm:pr-3 lg:pr-4">
+        <div className="flex items-center justify-between h-20 lg:h-24">
+          <Link href="/" data-testid="link-logo" className="flex items-center h-full py-0 pr-2 sm:pr-3 lg:pr-4">
             <img
               src={deepFitLogo}
               alt="DEEP.FIT"
               data-testid="img-logo"
-              className="h-full w-auto max-h-14 lg:max-h-18 object-contain"
+              className="h-full w-auto max-h-20 lg:max-h-24 object-contain"
             />
           </Link>
 
