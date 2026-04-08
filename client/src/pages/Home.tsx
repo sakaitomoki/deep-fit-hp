@@ -175,7 +175,7 @@ export default function Home() {
       <ScrollProgress />
 
       {/* Hero Section */}
-      <div ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden bg-white">
+      <div ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden bg-[#0a0c12]">
 
         {/* Background video playlist — right-aligned on widescreen */}
         <video
@@ -190,9 +190,8 @@ export default function Home() {
           <source src={heroPlaylist[heroVideoIndex]} type="video/mp4" />
         </video>
 
-        {/* Left overlay — softer fade so text stays readable yet video shows through */}
-        <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(to right, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.93) 28%, rgba(255,255,255,0.72) 48%, rgba(255,255,255,0.22) 64%, rgba(255,255,255,0) 76%)" }} />
-
+        {/* Left dark overlay — readable text zone fades to transparent */}
+        <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(to right, rgba(10,12,18,0.88) 0%, rgba(10,12,18,0.84) 30%, rgba(10,12,18,0.58) 50%, rgba(10,12,18,0.18) 66%, rgba(10,12,18,0) 76%)" }} />
 
         {/* Text overlay — left half */}
         <div className="relative z-10 w-full min-h-screen flex items-center">
@@ -200,17 +199,17 @@ export default function Home() {
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="w-full lg:w-[56%] px-6 sm:px-10 lg:px-16 flex flex-col items-start justify-center py-20 lg:py-0 min-h-screen max-w-3xl"
+            className="w-full lg:w-[54%] px-6 sm:px-10 lg:px-16 flex flex-col items-start justify-center py-24 lg:py-0 min-h-screen max-w-2xl"
           >
             {/* Eyebrow accent */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3, duration: 0.5 }}
-              className="flex items-center gap-2 mb-5"
+              className="flex items-center gap-2.5 mb-6"
             >
-              <span className="block w-8 h-[3px] bg-[#F2AC55] rounded-full shadow-sm" />
-              <span className="text-[#4D5058] text-[0.7rem] tracking-[0.35em] uppercase font-extrabold drop-shadow-[0_1px_3px_rgba(255,255,255,0.95)]">Circuit × Kickboxing Gym</span>
+              <span className="block w-8 h-[2px] bg-[#F2AC55] rounded-full" />
+              <span className="text-white/60 text-[0.68rem] tracking-[0.35em] uppercase font-bold">Circuit × Kickboxing Gym</span>
             </motion.div>
 
             {/* Main Headline */}
@@ -218,11 +217,11 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.38, duration: 0.7 }}
-              className="text-[2.75rem] sm:text-5xl lg:text-[4.2rem] font-black leading-[1.02] tracking-[-0.045em] mb-4 text-[#111827] drop-shadow-[0_2px_8px_rgba(255,255,255,0.95)]"
+              className="font-black leading-[1.08] tracking-[-0.03em] mb-4 text-white"
               data-testid="text-hero-headline"
             >
-              運動が苦手でも<br />
-              <span className="text-[#F2AC55] drop-shadow-[0_2px_6px_rgba(255,255,255,0.9)]">続けやすい。</span>
+              <span className="block text-[2.6rem] sm:text-[3rem] lg:text-[3.6rem]">運動が苦手でも、</span>
+              <span className="block text-[2.3rem] sm:text-[2.6rem] lg:text-[3.1rem] text-[#F2AC55]">続けやすい。</span>
             </motion.h1>
 
             {/* Subheadline */}
@@ -230,10 +229,10 @@ export default function Home() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.48, duration: 0.6 }}
-              className="text-[#4D5058] text-base sm:text-lg font-bold mb-5 border-l-[3px] border-[#F2AC55] pl-3 drop-shadow-[0_1px_4px_rgba(255,255,255,0.95)]"
+              className="text-white/90 text-lg sm:text-xl font-bold mb-5 border-l-[3px] border-[#F2AC55] pl-3"
               data-testid="text-hero-subheadline"
             >
-              JR尼崎のキックボクシング × サーキットジム
+              JR尼崎のキックボクシング×サーキットジム
             </motion.p>
 
             {/* Checklist */}
@@ -241,15 +240,15 @@ export default function Home() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.56, duration: 0.6 }}
-              className="space-y-2.5 mb-6"
+              className="space-y-3.5 mb-7"
               data-testid="list-hero-features"
             >
               {[
-                "初心者9割。女性歓迎。",
-                "ダイエット・運動不足解消・ストレス発散に対応。",
+                "初心者9割。女性も安心して通えます。",
+                "ダイエット・ストレス発散・体力づくりに。",
               ].map((item) => (
-                <li key={item} className="flex items-start gap-2.5 text-[#2d2f35] text-[0.95rem] sm:text-base font-semibold drop-shadow-[0_1px_0_rgba(255,255,255,0.85)]">
-                  <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-[#F2AC55] flex items-center justify-center shadow-sm ring-1 ring-white/70">
+                <li key={item} className="flex items-start gap-3 text-white/85 text-[0.95rem] sm:text-base font-semibold">
+                  <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-[#F2AC55] flex items-center justify-center shadow-sm">
                     <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 12 12" stroke="currentColor" strokeWidth={2.75}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M2 6l3 3 5-5" />
                     </svg>
@@ -264,22 +263,20 @@ export default function Home() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.64, duration: 0.6 }}
-              className="flex flex-wrap gap-2 mb-7"
+              className="mb-7"
               data-testid="badges-hero-benefits"
             >
-              {[
-                { main: "体験無料", sub: "4月末まで" },
-                { main: "入会金無料", sub: "4月末まで" },
-                { main: "初月会費無料", sub: "4月末まで" },
-              ].map((badge) => (
-                <div
-                  key={badge.main}
-                  className="flex flex-col items-center bg-[#FFF8EC]/95 backdrop-blur-sm border border-[#F2AC55]/50 rounded-xl px-4 py-2 shadow-sm"
-                >
-                  <span className="text-[#C47D0A] font-extrabold text-sm leading-tight">{badge.main}</span>
-                  <span className="text-[#C47D0A]/70 text-xs font-semibold">{badge.sub}</span>
-                </div>
-              ))}
+              <p className="text-white/50 text-[0.68rem] tracking-[0.2em] uppercase mb-2 font-semibold">4月末までの限定特典</p>
+              <div className="flex flex-wrap gap-2">
+                {["体験無料", "入会金無料", "初月会費無料"].map((label) => (
+                  <div
+                    key={label}
+                    className="bg-[#FFF8EC]/10 border border-[#F2AC55]/40 rounded-xl px-4 py-2 backdrop-blur-sm"
+                  >
+                    <span className="text-[#F2AC55] font-extrabold text-sm">{label}</span>
+                  </div>
+                ))}
+              </div>
             </motion.div>
 
             {/* LINE CTA Button */}
@@ -287,7 +284,7 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.78, duration: 0.5 }}
-              className="mb-3"
+              className="flex flex-col items-start gap-2"
             >
               <a
                 href={gymConfig.sns.line}
@@ -297,8 +294,9 @@ export default function Home() {
                 className="inline-flex items-center gap-2.5 bg-[#06C755] hover:bg-[#05b34e] text-white font-bold text-base px-7 py-4 rounded-full shadow-lg transition-colors duration-200"
               >
                 <SiLine className="w-5 h-5" />
-                LINEで1分予約 無料体験はこちら
+                LINEで無料体験予約
               </a>
+              <p className="text-white/45 text-xs pl-1">体験だけでもOK。しつこい勧誘は一切ありません。</p>
             </motion.div>
 
           </motion.div>
