@@ -190,8 +190,8 @@ export default function Home() {
           <source src={heroPlaylist[heroVideoIndex]} type="video/mp4" />
         </video>
 
-        {/* Left white overlay — ensures text is always on a clean bg */}
-        <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0.97) 38%, rgba(255,255,255,0.82) 58%, rgba(255,255,255,0) 75%)" }} />
+        {/* Left overlay — softer fade so text stays readable yet video shows through */}
+        <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(to right, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.93) 28%, rgba(255,255,255,0.72) 48%, rgba(255,255,255,0.22) 64%, rgba(255,255,255,0) 76%)" }} />
 
         {/* Campaign Badge — top-right corner */}
         <motion.div
@@ -224,7 +224,7 @@ export default function Home() {
               className="flex items-center gap-2 mb-5"
             >
               <span className="block w-8 h-[3px] bg-[#F2AC55] rounded-full shadow-sm" />
-              <span className="text-[#4D5058] text-[0.7rem] tracking-[0.35em] uppercase font-extrabold">Circuit × Kickboxing Gym</span>
+              <span className="text-[#4D5058] text-[0.7rem] tracking-[0.35em] uppercase font-extrabold drop-shadow-[0_1px_3px_rgba(255,255,255,0.95)]">Circuit × Kickboxing Gym</span>
             </motion.div>
 
             {/* Main Headline */}
@@ -232,11 +232,11 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.38, duration: 0.7 }}
-              className="text-[2.75rem] sm:text-5xl lg:text-[4.2rem] font-black leading-[1.02] tracking-[-0.045em] mb-4 text-[#111827] drop-shadow-[0_1px_0_rgba(255,255,255,0.9)]"
+              className="text-[2.75rem] sm:text-5xl lg:text-[4.2rem] font-black leading-[1.02] tracking-[-0.045em] mb-4 text-[#111827] drop-shadow-[0_2px_8px_rgba(255,255,255,0.95)]"
               data-testid="text-hero-headline"
             >
               運動が苦手でも<br />
-              <span className="text-[#F2AC55] drop-shadow-[0_1px_1px_rgba(255,255,255,0.85)]">続けやすい。</span>
+              <span className="text-[#F2AC55] drop-shadow-[0_2px_6px_rgba(255,255,255,0.9)]">続けやすい。</span>
             </motion.h1>
 
             {/* Subheadline */}
@@ -244,7 +244,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.48, duration: 0.6 }}
-              className="text-[#4D5058] text-base sm:text-lg font-bold mb-5 border-l-[3px] border-[#F2AC55] pl-3 drop-shadow-[0_1px_0_rgba(255,255,255,0.9)]"
+              className="text-[#4D5058] text-base sm:text-lg font-bold mb-5 border-l-[3px] border-[#F2AC55] pl-3 drop-shadow-[0_1px_4px_rgba(255,255,255,0.95)]"
               data-testid="text-hero-subheadline"
             >
               JR尼崎のキックボクシング × サーキットジム
