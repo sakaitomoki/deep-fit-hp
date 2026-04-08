@@ -296,7 +296,6 @@ export default function Home() {
                 <SiLine className="w-5 h-5" />
                 LINEで無料体験予約
               </a>
-              <p className="text-white/45 text-xs pl-1">体験だけでもOK。しつこい勧誘は一切ありません。</p>
             </motion.div>
 
           </motion.div>
