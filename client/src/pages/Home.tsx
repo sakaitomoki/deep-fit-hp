@@ -140,10 +140,75 @@ const heroPlaylist = [
 
 export default function Home() {
   const heroRef = useRef<HTMLDivElement>(null);
-  const [heroVideoIndex, setHeroVideoIndex] = useState(0);
+  const videoRefA = useRef<HTMLVideoElement>(null);
+  const videoRefB = useRef<HTMLVideoElement>(null);
+
+  // activeSlot: which slot ('a' or 'b') is currently visible
+  const [activeSlot, setActiveSlot] = useState<'a' | 'b'>('a');
+  // slotSrc: current src for each slot
+  const [slotSrc, setSlotSrc] = useState({
+    a: heroPlaylist[0],
+    b: heroPlaylist[1],
+  });
+  // currentIndexRef tracks which playlist index is currently active
+  const currentIndexRef = useRef(0);
+
+  // Start the first video on mount
+  useEffect(() => {
+    const refA = videoRefA.current;
+    if (refA) refA.play().catch(() => {});
+  }, []);
+
+  // Control playback when activeSlot changes (skip initial mount — handled above)
+  const isFirstRender = useRef(true);
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+    const refA = videoRefA.current;
+    const refB = videoRefB.current;
+    if (!refA || !refB) return;
+
+    if (activeSlot === 'a') {
+      refA.play().catch(() => {});
+    } else {
+      refB.play().catch(() => {});
+    }
+  }, [activeSlot]);
+
+  const crossfadeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (crossfadeTimerRef.current !== null) clearTimeout(crossfadeTimerRef.current);
+    };
+  }, []);
+
+  const CROSSFADE_DURATION_MS = 900;
 
   const advanceHeroVideo = () => {
-    setHeroVideoIndex((i) => (i + 1) % heroPlaylist.length);
+    const nextIndex = (currentIndexRef.current + 1) % heroPlaylist.length;
+    const afterNextIndex = (nextIndex + 1) % heroPlaylist.length;
+    currentIndexRef.current = nextIndex;
+
+    setActiveSlot((prev) => {
+      const outgoing = prev;
+      const incoming = prev === 'a' ? 'b' : 'a';
+
+      // After crossfade completes, reset outgoing slot and preload next-next video
+      if (crossfadeTimerRef.current !== null) clearTimeout(crossfadeTimerRef.current);
+      crossfadeTimerRef.current = setTimeout(() => {
+        const outRef = outgoing === 'a' ? videoRefA.current : videoRefB.current;
+        if (outRef) {
+          outRef.pause();
+          outRef.currentTime = 0;
+        }
+        setSlotSrc((s) => ({ ...s, [outgoing]: heroPlaylist[afterNextIndex] }));
+      }, CROSSFADE_DURATION_MS);
+
+      return incoming;
+    });
   };
 
   const [testimonialIndex, setTestimonialIndex] = useState(0);
@@ -176,19 +241,30 @@ export default function Home() {
       {/* Hero Section — hero-v2 */}
       <section className="hero-v2" ref={heroRef}>
 
-        {/* z-0: Background video */}
+        {/* z-0: Background video — dual-slot crossfade */}
         <div className="hero-v2__media">
           <video
-            key={heroVideoIndex}
-            autoPlay
+            ref={videoRefA}
             muted
             playsInline
-            onEnded={advanceHeroVideo}
-            data-testid="video-hero-bg"
+            preload="auto"
+            onEnded={activeSlot === 'a' ? advanceHeroVideo : undefined}
+            data-testid="video-hero-bg-a"
             className="hero-v2__video"
-          >
-            <source src={heroPlaylist[heroVideoIndex]} type="video/mp4" />
-          </video>
+            style={{ opacity: activeSlot === 'a' ? 1 : 0 }}
+            src={slotSrc.a}
+          />
+          <video
+            ref={videoRefB}
+            muted
+            playsInline
+            preload="auto"
+            onEnded={activeSlot === 'b' ? advanceHeroVideo : undefined}
+            data-testid="video-hero-bg-b"
+            className="hero-v2__video"
+            style={{ opacity: activeSlot === 'b' ? 1 : 0 }}
+            src={slotSrc.b}
+          />
         </div>
 
         {/* z-1: Overlay — light, left-only */}
