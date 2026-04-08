@@ -215,7 +215,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="hero-v2__logo">JR尼崎 徒歩10分 — サーキット×キックボクシングジム</span>
+            <span className="hero-v2__logo text-[16px]">DEEP.FIT｜JR尼崎駅徒歩10分のサーキット×キックボクシングジム</span>
           </motion.div>
 
           <motion.div
