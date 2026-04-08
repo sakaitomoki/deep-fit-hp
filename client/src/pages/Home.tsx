@@ -173,7 +173,6 @@ export default function Home() {
     <>
       <SEO title={seoConfig.pages.home.title} description={seoConfig.pages.home.description} path="/" />
       <ScrollProgress />
-
       {/* Hero Section */}
       <div ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden bg-[#0a0c12]">
 
@@ -221,7 +220,7 @@ export default function Home() {
               data-testid="text-hero-headline"
             >
               <span className="block text-[2.6rem] sm:text-[3rem] lg:text-[3.6rem]">運動が苦手でも、</span>
-              <span className="block text-[2.3rem] sm:text-[2.6rem] lg:text-[3.1rem] text-[#F2AC55]">続けやすい。</span>
+              <span className="block sm:text-[2.6rem] lg:text-[3.1rem] text-[#F2AC55] text-[48px]">続けやすい</span>
             </motion.h1>
 
             {/* Subheadline */}
@@ -302,7 +301,6 @@ export default function Home() {
         </div>
 
       </div>
-
       {/* Opening Campaign - moved up after hero */}
       <section
         className="py-16 lg:py-24 relative overflow-hidden"
@@ -387,7 +385,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
       {/* Why Choose Us - リフィナス風リデザイン */}
       <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -518,7 +515,6 @@ export default function Home() {
 
         </div>
       </section>
-
       {/* About Section */}
       <section
         className="py-20 lg:py-28 relative bg-cover bg-center bg-fixed"
@@ -586,7 +582,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Classes */}
       <section className="py-20 lg:py-28 bg-[#F2F3F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -653,7 +648,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
       {/* Testimonials */}
       <section
         className="py-20 lg:py-28 relative bg-cover bg-center"
@@ -729,7 +723,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Instagram Section */}
       <section className="py-20 lg:py-28 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -777,7 +770,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
       {/* LINE Section */}
       <section className="py-20 lg:py-28 overflow-hidden" style={{ background: "linear-gradient(135deg, #06C755 0%, #04A344 100%)" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -892,7 +884,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* CTA Section */}
       <section className="py-20 lg:py-28 relative overflow-hidden bg-gradient-to-br from-[#F2AC55] via-[#F2AC55] to-[#D99A40]">
         <div
