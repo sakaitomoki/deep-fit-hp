@@ -249,7 +249,7 @@ export default function Home() {
 
           {/* Decorative lines */}
           <motion.div
-            className="hero-v2__lines ml-[0px] mt-[25px]"
+            className="hero-v2__lines mt-[25px] ml-[0px]"
             aria-hidden="true"
             initial={{ opacity: 0, scaleX: 0 }}
             animate={{ opacity: 1, scaleX: 1 }}
