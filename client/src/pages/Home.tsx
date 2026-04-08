@@ -193,20 +193,6 @@ export default function Home() {
         {/* Left overlay — softer fade so text stays readable yet video shows through */}
         <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(to right, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.93) 28%, rgba(255,255,255,0.72) 48%, rgba(255,255,255,0.22) 64%, rgba(255,255,255,0) 76%)" }} />
 
-        {/* Campaign Badge — top-right corner */}
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-          className="absolute top-20 right-4 sm:right-8 lg:right-10 z-20"
-        >
-          <span
-            data-testid="badge-campaign"
-            className="inline-block bg-orange-500 text-white text-sm font-bold px-4 py-2 rounded-lg shadow-md"
-          >
-            4月末まで特典多数！
-          </span>
-        </motion.div>
 
         {/* Text overlay — left half */}
         <div className="relative z-10 w-full min-h-screen flex items-center">
