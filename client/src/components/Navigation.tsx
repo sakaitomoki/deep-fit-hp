@@ -35,13 +35,13 @@ export default function Navigation() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-3 sm:px-5 lg:px-8">
-        <div className="flex items-center justify-between h-20 lg:h-24">
+        <div className="flex items-center justify-between h-16 lg:h-24">
           <Link href="/" data-testid="link-logo" className="flex items-center h-full py-0 pr-2 sm:pr-3 lg:pr-4">
             <img
               src={deepFitLogo}
               alt="DEEP.FIT"
               data-testid="img-logo"
-              className="h-full w-auto max-h-20 lg:max-h-24 object-contain"
+              className="h-12 sm:h-full w-auto max-h-12 lg:max-h-24 object-contain"
             />
           </Link>
 
@@ -65,7 +65,7 @@ export default function Navigation() {
             })}
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             <a
               href={`tel:${gymConfig.phone}`}
               data-testid="button-phone"
