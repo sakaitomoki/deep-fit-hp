@@ -214,7 +214,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.35, duration: 0.7 }}
-              className="text-4xl sm:text-5xl lg:text-[4.15rem] font-black leading-[1.02] tracking-[-0.04em] mb-4 text-gray-900 drop-shadow-[0_1px_1px_rgba(255,255,255,0.45)]"
+              className="text-4xl sm:text-5xl lg:text-[4.15rem] font-black leading-[1.02] tracking-[-0.04em] mb-4 text-gray-900 drop-shadow-[0_2px_8px_rgba(255,255,255,0.55)]"
               data-testid="text-hero-headline"
             >
               運動が苦手でも<br />
