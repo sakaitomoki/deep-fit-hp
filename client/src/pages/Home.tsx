@@ -6,7 +6,6 @@ import { SiInstagram, SiLine } from "react-icons/si";
 import SEO from "@/components/SEO";
 import { gymConfig, seoConfig } from "@/lib/gymConfig";
 import deepFitLogo from "@assets/image0_1773383672040.png";
-import heroBgImg from "@assets/image_1775529582780.png";
 import kidsClassImg from "@assets/image0_1773932269993.jpeg";
 
 const fadeInUp = {
@@ -160,16 +159,17 @@ export default function Home() {
       {/* Hero Section */}
       <div ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden bg-white">
 
-        {/* Full-width background image */}
-        <motion.img
-          src={heroBgImg}
-          alt="DEEP.FIT ジム"
-          data-testid="img-hero-bg"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.9 }}
-          className="absolute inset-0 w-full h-full object-cover object-right"
-        />
+        {/* Background video — right-aligned on widescreen */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          data-testid="video-hero-bg"
+          className="absolute inset-0 w-full h-full object-cover object-center lg:object-right"
+        >
+          <source src="/video/hero.mp4" type="video/mp4" />
+        </video>
 
         {/* Left white overlay — ensures text is always on a clean bg */}
         <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0.97) 38%, rgba(255,255,255,0.82) 58%, rgba(255,255,255,0) 75%)" }} />
