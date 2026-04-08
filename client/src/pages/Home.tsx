@@ -204,7 +204,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.05, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="hero-v2__logo">DEEP.FIT</span>
+            <span className="hero-v2__logo text-[18px]">JR尼崎駅より徒歩10分のサーキット×キックボクシングジム </span>
           </motion.div>
 
           {/* Labels */}
