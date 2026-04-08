@@ -314,11 +314,13 @@
   z-index: 1;
   background:
     linear-gradient(
-      100deg,
-      rgba(8,8,12,.78) 0%,
-      rgba(8,8,12,.50) 18%,
-      rgba(8,8,12,.16) 36%,
-      rgba(8,8,12,0) 52%
+      90deg,
+      rgba(0,0,0,.58) 0%,
+      rgba(0,0,0,.42) 18%,
+      rgba(0,0,0,.22) 34%,
+      rgba(0,0,0,.10) 52%,
+      rgba(0,0,0,.03) 72%,
+      rgba(0,0,0,0) 100%
     );
 }
 
@@ -327,7 +329,7 @@
   position: absolute;
   z-index: 2;
   left: 3%;
-  bottom: 6%;
+  bottom: 10%;
   pointer-events: none;
   transform: rotate(-3deg);
   transform-origin: left bottom;
@@ -335,11 +337,11 @@
 .hero-v2__bigcopy span {
   display: block;
   font-weight: 900;
-  font-size: clamp(52px, 9vw, 160px);
-  line-height: 0.86;
+  font-size: clamp(72px, 8.2vw, 132px);
+  line-height: 0.9;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.06);
+  color: rgba(255,106,26,.32);
 }
 
 /* content layer */
@@ -352,7 +354,7 @@
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 clamp(24px, 4vw, 56px);
+  padding: 78px clamp(24px, 4vw, 56px) 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -361,7 +363,7 @@
 
 /* brand line */
 .hero-v2__brand {
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 .hero-v2__logo {
   display: flex;
@@ -387,7 +389,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 26px;
 }
 .hero-v2__label {
   display: inline-block;
@@ -402,13 +404,17 @@
   backdrop-filter: blur(4px);
   border-radius: 2px;
 }
+.hero-v2__label:nth-child(1) { transform: rotate(-5deg); }
+.hero-v2__label:nth-child(2) { transform: rotate(-5deg); }
+.hero-v2__label:nth-child(3) { transform: rotate(-4deg); }
+.hero-v2__label:nth-child(4) { transform: rotate(-5deg); }
 
 /* headline strip — refined */
 .hero-v2__strip {
   display: inline-block;
 }
 .hero-v2__strip--main {
-  padding: 10px 20px;
+  padding: 14px 22px;
   background: rgba(255,106,26,.92);
   color: #fff;
   transform: rotate(-3deg);
@@ -420,8 +426,8 @@
   display: flex;
   flex-direction: column;
   gap: 1px;
-  font-size: clamp(26px, 3.6vw, 56px);
-  line-height: 1.08;
+  font-size: clamp(30px, 4.2vw, 60px);
+  line-height: 0.98;
   font-weight: 900;
   letter-spacing: -0.03em;
 }
@@ -444,7 +450,7 @@
 
 /* cta */
 .hero-v2__cta {
-  margin-top: 24px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -472,9 +478,9 @@
 }
 .hero-v2__cta-note {
   margin: 0;
-  font-size: 11px;
+  font-size: 14px;
   letter-spacing: 0.04em;
-  color: rgba(255,255,255,.45);
+  color: rgba(255,255,255,.82);
 }
 
 /* ── tablet ── */
