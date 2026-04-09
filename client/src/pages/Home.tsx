@@ -310,23 +310,39 @@ function InstagramAtmosphereSection() {
         </motion.div>
 
         <motion.div
-          className="ig-atmosphere-section__cta"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInUp}
+          className="ig-atmosphere-section__banner"
         >
-          <a
-            href={gymConfig.sns.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-            data-testid="button-instagram"
-            className="ig-atmosphere-section__btn"
-          >
-            <SiInstagram className="w-4 h-4" />
-            Instagramで雰囲気を見る
-          </a>
-          <p className="ig-atmosphere-section__note">@deep.amagasaki</p>
+          <div className="ig-atmosphere-section__banner-left">
+            <div className="ig-atmosphere-section__banner-icon">
+              <SiInstagram className="w-9 h-9 text-white" />
+            </div>
+            <div>
+              <p className="ig-atmosphere-section__banner-follow">FOLLOW US</p>
+              <p className="ig-atmosphere-section__banner-heading">練習風景・日常を公開中！！</p>
+              <p className="ig-atmosphere-section__banner-handle">@deep.amagasaki</p>
+            </div>
+          </div>
+          <div className="ig-atmosphere-section__banner-right">
+            <div className="ig-atmosphere-section__banner-promo">
+              <SiInstagram className="w-3 h-3 text-[#F0A93A]" />
+              インスタフォローで体験<span className="ig-atmosphere-section__banner-promo-free">無料</span>
+              <span className="ig-atmosphere-section__banner-promo-sub">フォロー後、DMまたはLINEでご連絡ください</span>
+            </div>
+            <a
+              href={gymConfig.sns.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="button-instagram"
+              className="ig-atmosphere-section__btn"
+            >
+              <SiInstagram className="w-4 h-4" />
+              Instagramを見る
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>
