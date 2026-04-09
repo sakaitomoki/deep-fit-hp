@@ -329,7 +329,7 @@ function InstagramAtmosphereSection() {
           <div className="ig-atmosphere-section__banner-right">
             <div className="ig-atmosphere-section__banner-promo">
               <SiInstagram className="w-3 h-3 text-[#F0A93A]" />
-              インスタフォローで体験<span className="ig-atmosphere-section__banner-promo-free">無料</span>
+              インスタフォローで体験
               <span className="ig-atmosphere-section__banner-promo-sub">フォロー後、DMまたはLINEでご連絡ください</span>
             </div>
             <a
