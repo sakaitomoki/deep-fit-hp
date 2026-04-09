@@ -317,18 +317,20 @@ export default function Home() {
             </h1>
           </motion.div>
 
-          <motion.div
-            className="hero-v2__subcopy"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.42, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            data-testid="text-hero-subheadline"
-          >
-            <p>
-              運動が久しぶりの方も多く通っています。<br />
-              体を動かして、気分まで軽くなる時間を。
-            </p>
-          </motion.div>
+          <div className="hero-variants">
+            <motion.div
+              className="hero-v2__subcopy"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.42, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              data-testid="text-hero-subheadline"
+            >
+              <p>
+                運動が久しぶりの方も多く通っています。<br />
+                体を動かして、気分まで軽くなる時間を。
+              </p>
+            </motion.div>
+          </div>
 
           <motion.div
             className="hero-v2__cta"
