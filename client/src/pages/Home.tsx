@@ -142,6 +142,7 @@ export default function Home() {
   const heroRef = useRef<HTMLDivElement>(null);
   const videoRefA = useRef<HTMLVideoElement>(null);
   const videoRefB = useRef<HTMLVideoElement>(null);
+  const [heroPattern, setHeroPattern] = useState<"balanced" | "bold" | "typographic">("balanced");
 
   // activeSlot: which slot ('a' or 'b') is currently visible
   const [activeSlot, setActiveSlot] = useState<'a' | 'b'>('a');
@@ -240,6 +241,32 @@ export default function Home() {
       <ScrollProgress />
       {/* Hero Section — hero-v2 */}
       <section className="hero-v2" ref={heroRef}>
+        <div className="hero-pattern-switcher">
+          <button
+            type="button"
+            className={`hero-pattern-switcher__item ${heroPattern === "balanced" ? "is-active" : ""}`}
+            onClick={() => setHeroPattern("balanced")}
+            data-testid="button-hero-pattern-balanced"
+          >
+            案1
+          </button>
+          <button
+            type="button"
+            className={`hero-pattern-switcher__item ${heroPattern === "bold" ? "is-active" : ""}`}
+            onClick={() => setHeroPattern("bold")}
+            data-testid="button-hero-pattern-bold"
+          >
+            案2
+          </button>
+          <button
+            type="button"
+            className={`hero-pattern-switcher__item ${heroPattern === "typographic" ? "is-active" : ""}`}
+            onClick={() => setHeroPattern("typographic")}
+            data-testid="button-hero-pattern-typographic"
+          >
+            案3
+          </button>
+        </div>
 
         {/* z-0: Background video — dual-slot crossfade */}
         <div className="hero-v2__media">
@@ -283,7 +310,7 @@ export default function Home() {
         </motion.div>
 
         {/* z-3: Content */}
-        <div className="hero-v2__inner">
+        <div className={`hero-v2__inner hero-v2__inner--${heroPattern}`}>
 
           <motion.div
             className="hero-v2__brand"

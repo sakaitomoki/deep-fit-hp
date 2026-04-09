@@ -301,6 +301,33 @@
   inset: 0;
   z-index: 0;
 }
+.hero-pattern-switcher {
+  position: absolute;
+  z-index: 4;
+  top: 18px;
+  right: 18px;
+  display: flex;
+  gap: 6px;
+  padding: 6px;
+  border-radius: 999px;
+  background: rgba(17,17,17,.6);
+  backdrop-filter: blur(8px);
+}
+.hero-pattern-switcher__item {
+  height: 34px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(234,165,59,.22);
+  background: rgba(255,255,255,.04);
+  color: rgba(255,255,255,.72);
+  font-size: 12px;
+  font-weight: 700;
+}
+.hero-pattern-switcher__item.is-active {
+  background: #EAA53B;
+  color: #111111;
+  border-color: #EAA53B;
+}
 .hero-v2__video {
   position: absolute;
   inset: 0;
@@ -484,6 +511,29 @@
   font-size: 14px;
   letter-spacing: 0.04em;
   color: rgba(255,255,255,.82);
+}
+.hero-v2__inner--bold .hero-v2__strip--main {
+  padding: 18px 26px;
+}
+.hero-v2__inner--bold .hero-v2__strip--main h1 {
+  font-size: clamp(32px, 4.8vw, 66px);
+}
+.hero-v2__inner--bold .hero-v2__cta-btn {
+  min-width: 280px;
+}
+.hero-v2__inner--typographic .hero-v2__brand {
+  margin-bottom: 8px;
+}
+.hero-v2__inner--typographic .hero-v2__labels {
+  margin-bottom: 18px;
+}
+.hero-v2__inner--typographic .hero-v2__strip--main {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(234,165,59,.28);
+  box-shadow: none;
+}
+.hero-v2__inner--typographic .hero-v2__subcopy {
+  max-width: 360px;
 }
 
 /* ── tablet ── */
