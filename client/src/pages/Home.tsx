@@ -207,7 +207,7 @@ function OpeningOfferSection() {
           className="opening-offer-section__assurance"
         >
           <span>体験時間は自由</span>
-          <span>初心者歓迎</span>
+          <span>持ち物は動きやすい服装だけ</span>
           <span>見学だけでもOK</span>
           <span>LINEで簡単予約</span>
         </motion.div>
