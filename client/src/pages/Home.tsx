@@ -381,7 +381,6 @@ export default function Home() {
   const heroRef = useRef<HTMLDivElement>(null);
   const videoRefA = useRef<HTMLVideoElement>(null);
   const videoRefB = useRef<HTMLVideoElement>(null);
-  const [heroPattern, setHeroPattern] = useState<"balanced" | "bold" | "typographic">("balanced");
 
   // activeSlot: which slot ('a' or 'b') is currently visible
   const [activeSlot, setActiveSlot] = useState<'a' | 'b'>('a');
@@ -522,7 +521,7 @@ export default function Home() {
         </motion.div>
 
         {/* z-3: Content */}
-        <div className={`hero-v2__inner hero-v2__inner--${heroPattern}`}>
+        <div className="hero-v2__inner hero-v2__inner--balanced">
 
           <motion.div
             className="hero-v2__brand"
