@@ -742,6 +742,254 @@
   }
 }
 
+/* ── Reasons Section ── */
+.reasons-section {
+  position: relative;
+  background: #0D0F13;
+  color: #fff;
+  padding: 80px 0 72px;
+}
+
+.reasons-section__inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.reasons-section__header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.reasons-section__eyebrow {
+  display: inline-block;
+  color: #F0A93A;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.3em;
+  margin-bottom: 14px;
+}
+
+.reasons-section__title {
+  margin: 0 0 16px;
+  font-size: clamp(30px, 4vw, 52px);
+  font-weight: 900;
+  line-height: 1.15;
+  color: #fff;
+}
+
+.reasons-section__lead {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: clamp(15px, 1.2vw, 17px);
+  line-height: 1.8;
+}
+
+/* Cards grid */
+.reasons-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.reasons-card {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(240, 169, 58, 0.15);
+  background: #131720;
+  display: flex;
+  flex-direction: column;
+  min-height: 340px;
+  cursor: default;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.reasons-card:hover {
+  border-color: rgba(240, 169, 58, 0.36);
+  transform: translateY(-3px);
+}
+
+.reasons-card__img-wrap {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.reasons-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.reasons-card:hover .reasons-card__img {
+  transform: scale(1.04);
+}
+
+.reasons-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.54) 100%);
+  pointer-events: none;
+}
+
+.reasons-card__content {
+  padding: 20px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.reasons-card__tag {
+  display: inline-flex;
+  align-items: center;
+  height: 24px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: rgba(240, 169, 58, 0.14);
+  border: 1px solid rgba(240, 169, 58, 0.28);
+  color: #F0A93A;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  align-self: flex-start;
+}
+
+.reasons-card__title {
+  margin: 0;
+  font-size: clamp(17px, 1.6vw, 21px);
+  font-weight: 800;
+  line-height: 1.45;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.reasons-card__body {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+/* Evidence chips */
+.reasons-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 36px;
+}
+
+.reasons-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.reasons-chip::before {
+  content: "✓";
+  color: #F0A93A;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Soft CTA */
+.reasons-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 32px 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.reasons-cta__lead {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 14px;
+  text-align: center;
+}
+
+.reasons-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 260px;
+  min-height: 52px;
+  border-radius: 999px;
+  background: #06C755;
+  color: #fff;
+  font-weight: 800;
+  font-size: 15px;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.reasons-cta__btn:hover {
+  background: #04a847;
+  transform: translateY(-2px);
+}
+
+.reasons-cta__text-link {
+  color: rgba(255, 255, 255, 0.52);
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.reasons-cta__text-link:hover {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* Reasons responsive */
+@media (max-width: 767px) {
+  .reasons-section {
+    padding: 60px 0 56px;
+  }
+
+  .reasons-section__header {
+    margin-bottom: 32px;
+  }
+
+  .reasons-cards {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .reasons-card {
+    min-height: auto;
+  }
+
+  .reasons-card__img-wrap {
+    height: 200px;
+  }
+
+  .reasons-card__content {
+    padding: 16px 18px 20px;
+  }
+
+  .reasons-cta__btn {
+    width: 100%;
+    max-width: 340px;
+  }
+}
+
 /* ── tablet ── */
 @media (max-width: 1024px) {
   .hero-v2__video {

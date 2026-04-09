@@ -112,12 +112,145 @@ const testimonials = [
   },
 ];
 
-const reasons = [
-  { icon: Users, title: "初心者歓迎", text: "経験ゼロでも安心してスタート。丁寧な指導で基礎からしっかり学べます。" },
-  { icon: Trophy, title: "幅広い年齢層", text: "20代〜70代まで在籍。あなたのペースで、あなたの目標に合わせて続けられます。" },
-  { icon: Dumbbell, title: "充実の設備", text: "プロ仕様のリング、サンドバッグ12本、グローブ無料貸出。設備は十分に揃っています。" },
-  { icon: Clock, title: "続けられる仕組み", text: "朝・夕・週末と豊富なクラス時間帯。ライフスタイルに合わせて無理なく継続できます。" },
+const reasonCards = [
+  {
+    id: 1,
+    tag: "SPACE",
+    title: "綺麗で広いから、\n初めてでも通いやすい",
+    body: "清潔感のある広い空間で、初心者の方でも入りやすい環境です。圧迫感が少なく、落ち着いてトレーニングに取り組めます。",
+    image: "/images/gym-interior.png",
+  },
+  {
+    id: 2,
+    tag: "EQUIPMENT",
+    title: "個室のスミスマシンで、\n目的に合わせて鍛えられる",
+    body: "キックボクシングやサーキットだけでなく、個室で集中して補強トレーニングもできます。引き締め、筋力強化など目的に合わせやすいのが特長です。",
+    image: "/images/smith-machine.jpeg",
+  },
+  {
+    id: 3,
+    tag: "ATMOSPHERE",
+    title: "会員さんの人柄が良く、\n一人でも馴染みやすい",
+    body: "和気藹々とした雰囲気があり、一人参加でも通いやすい空気があります。自分のペースを保ちながら続けやすい環境です。",
+    image: "/images/gym-about.png",
+  },
+  {
+    id: 4,
+    tag: "STYLE",
+    title: "集中したい日も、\n楽しく動きたい日も、どちらもできる",
+    body: "一人で黙々と取り組みたい日も、他のメンバーと和気藹々と動きたい日も、どちらにも対応できます。その日の気分に合わせて続けられます。",
+    image: "/images/class-circuit.png",
+  },
 ];
+
+const reasonsEvidenceChips = [
+  "女性会員も多く、通いやすい雰囲気",
+  "一人参加でも馴染みやすい",
+  "個室設備あり",
+  "目的に合わせて使い分け可能",
+];
+
+function ReasonCard({ card }: { card: typeof reasonCards[0] }) {
+  return (
+    <motion.div
+      className="reasons-card"
+      variants={scaleIn}
+      data-testid={`card-reason-${card.id}`}
+    >
+      <div className="reasons-card__img-wrap">
+        <img src={card.image} alt={card.title.replace("\n", "")} className="reasons-card__img" />
+        <div className="reasons-card__overlay" />
+      </div>
+      <div className="reasons-card__content">
+        <span className="reasons-card__tag">{card.tag}</span>
+        <h3 className="reasons-card__title">
+          {card.title.split("\n").map((line, i) => (
+            <span key={i}>{line}</span>
+          ))}
+        </h3>
+        <p className="reasons-card__body">{card.body}</p>
+      </div>
+    </motion.div>
+  );
+}
+
+function ReasonsSection() {
+  return (
+    <section className="reasons-section">
+      <div className="reasons-section__inner">
+        {/* Header */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          className="reasons-section__header"
+        >
+          <span className="reasons-section__eyebrow">POINT 02</span>
+          <h2 className="reasons-section__title">
+            DEEP.FITが<br />選ばれる理由
+          </h2>
+          <p className="reasons-section__lead">
+            綺麗な空間、通いやすい雰囲気、目的に合わせた設備。<br />
+            続けやすさには、理由があります。
+          </p>
+        </motion.div>
+
+        {/* Cards */}
+        <motion.div
+          className="reasons-cards"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+        >
+          {reasonCards.map((card) => (
+            <ReasonCard key={card.id} card={card} />
+          ))}
+        </motion.div>
+
+        {/* Evidence chips */}
+        <motion.div
+          className="reasons-chips"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+        >
+          {reasonsEvidenceChips.map((chip, i) => (
+            <span key={i} className="reasons-chip" data-testid={`chip-reason-${i}`}>
+              {chip}
+            </span>
+          ))}
+        </motion.div>
+
+        {/* Soft CTA */}
+        <motion.div
+          className="reasons-cta"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+        >
+          <p className="reasons-cta__lead">雰囲気を見てみたい方は、まずは無料体験へ</p>
+          <a
+            href={gymConfig.sns.line}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="reasons-cta__btn"
+            data-testid="button-reasons-line"
+          >
+            <SiLine className="w-5 h-5" />
+            無料体験を予約する
+          </a>
+          <Link href="/contact" className="reasons-cta__text-link" data-testid="link-reasons-contact">
+            見学・体験を相談する →
+          </Link>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
 
 const classes = [
   { title: "フィットネス", subtitle: "Fitness Class", level: "全レベル", description: "有酸素運動とキックボクシングを組み合わせた人気クラス。楽しみながら体を動かし、ダイエットや体力アップを目指せます。", image: "/images/class-kickboxing.png", animation: "left" },
@@ -487,136 +620,7 @@ export default function Home() {
         </div>
       </section>
       <OpeningOfferSection />
-      {/* Why Choose Us - リフィナス風リデザイン */}
-      <section className="py-20 lg:py-28 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-
-          {/* POINT 01 header */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            className="text-center mb-12"
-          >
-            <span className="inline-block bg-[#4D5058] text-[#F2AC55] text-xs font-bold px-5 py-2 rounded-full mb-4 tracking-[0.2em] uppercase">POINT 01</span>
-            <p className="text-[#F2AC55] text-xs tracking-[0.3em] uppercase mb-2">Why Choose Us</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#4D5058]">選ばれる理由</h2>
-            <p className="text-[#4D5058]/50 text-base mt-3">なぜ今、キックボクシングが人気なのか？</p>
-          </motion.div>
-
-          {/* 2x2 popularity reasons */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="grid grid-cols-2 gap-4 mb-16"
-          >
-            {[
-              { emoji: "💥", title: "ストレス発散になる！", sub: "仕事や日常のモヤモヤをスッキリ解消" },
-              { emoji: "😄", title: "楽しく続けられる！", sub: "飽きずに夢中になれる唯一の有酸素運動" },
-              { emoji: "🔥", title: "全身の脂肪燃焼！", sub: "ダイエットに最適な全身有酸素運動" },
-              { emoji: "👥", title: "男女・年齢問わず！", sub: "初心者から上級者まで一緒に楽しめる" },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                variants={scaleIn}
-                className="rounded-2xl bg-[#F2F3F5] p-5 sm:p-6 text-center border border-gray-100"
-              >
-                <div className="text-3xl sm:text-4xl mb-3">{item.emoji}</div>
-                <p className="font-bold text-[#4D5058] text-sm sm:text-base leading-snug mb-1">{item.title}</p>
-                <p className="text-[#4D5058]/50 text-xs leading-relaxed hidden sm:block">{item.sub}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          {/* POINT 02 - こんな方におすすめ + DEEP.FIT特徴 */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-8"
-          >
-            {/* Left: recommended for */}
-            <div>
-              <span className="inline-block bg-[#4D5058] text-[#F2AC55] text-xs font-bold px-5 py-2 rounded-full mb-5 tracking-[0.2em] uppercase">POINT 02</span>
-              <h3 className="text-2xl sm:text-3xl font-bold text-[#4D5058] mb-6">
-                こんな方に<br />おすすめです！
-              </h3>
-              <div className="space-y-3">
-                {[
-                  "スポーツジムだと続かない！",
-                  "ストレスを発散したい！",
-                  "運動不足から何かチャレンジしたい！",
-                  "ダイエットしながら筋肉もつけたい！",
-                  "楽しくトレーニングを続けたい！",
-                ].map((text, i) => (
-                  <div key={i} className="flex items-center gap-3 bg-[#F2F3F5] rounded-xl px-4 py-3.5">
-                    <div className="w-6 h-6 rounded-full bg-[#F2AC55] text-white text-xs font-bold flex items-center justify-center shrink-0">{i + 1}</div>
-                    <p className="font-bold text-[#4D5058] text-sm sm:text-base">{text}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Right: Calorie chart + female ratio */}
-            <div className="bg-[#F2F3F5] rounded-3xl p-6 sm:p-8 border border-gray-100">
-              <p className="text-[#E8954A] text-xs tracking-[0.2em] uppercase mb-2 font-bold">Why Kickboxing?</p>
-              <h3 className="text-lg sm:text-xl font-bold text-[#4D5058] mb-1 leading-snug">
-                圧倒的な<span className="text-[#E8954A]">消費カロリー</span>だから<br />
-                効率的にカラダが変わる
-              </h3>
-              <p className="text-[#4D5058]/55 text-xs mb-5 leading-relaxed">
-                キックボクシングの消費カロリーはヨガの<span className="text-[#E74C3C] font-bold">6倍！</span><br />
-                全身を大きく動かすから、短時間で高い脂肪燃焼効果。
-              </p>
-
-              {/* Bar chart */}
-              <div className="flex items-end justify-around gap-1.5 mb-3" style={{ height: "140px" }}>
-                {[
-                  { label: "キックボクシング", kcal: 387, pct: 100, highlight: true },
-                  { label: "ボクシング", kcal: 187, pct: 48, highlight: false },
-                  { label: "フィットネスクラブ", kcal: 187, pct: 48, highlight: false },
-                  { label: "ウォーキング", kcal: 119, pct: 31, highlight: false },
-                  { label: "ヨガ", kcal: 65, pct: 17, highlight: false },
-                ].map((item, i) => (
-                  <div key={i} className="flex flex-col items-center justify-end gap-1 flex-1 h-full">
-                    <span className={`font-bold leading-none ${item.highlight ? "text-[#E74C3C] text-sm" : "text-[10px] text-[#4D5058]/70"}`}>
-                      {item.kcal}<span className="text-[9px] font-normal">kcal</span>
-                    </span>
-                    <div
-                      className="w-full rounded-t-lg"
-                      style={{
-                        height: `${item.pct}%`,
-                        background: item.highlight
-                          ? "linear-gradient(to top, #E74C3C 0%, #F77F00 50%, #F2AC55 100%)"
-                          : "linear-gradient(to top, #F2AC55 0%, #F5CFA0 100%)",
-                      }}
-                    />
-                    <span className="text-[8px] text-[#4D5058]/60 text-center leading-tight w-full" style={{ fontSize: "8px" }}>
-                      {item.label.replace("キックボクシング", "キック\nボクシング").replace("フィットネスクラブ", "フィット\nネスクラブ").split("\n").map((l, j) => <span key={j} className="block">{l}</span>)}
-                    </span>
-                  </div>
-                ))}
-              </div>
-
-              {/* 7割女性 */}
-              <div className="mt-4 bg-white rounded-2xl px-4 py-3.5 flex items-center gap-3 border border-gray-100 shadow-sm">
-                <span className="text-3xl shrink-0">👩</span>
-                <div>
-                  <p className="font-bold text-[#4D5058] text-sm">
-                    会員様の<span className="text-[#E8954A] font-heading font-bold text-xl mx-1">約7割</span>が女性
-                  </p>
-                  <p className="text-[#4D5058]/50 text-xs mt-0.5">主婦や仕事帰りのOLさんに大人気です</p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-        </div>
-      </section>
+      <ReasonsSection />
       {/* About Section */}
       <section
         className="py-20 lg:py-28 relative bg-cover bg-center bg-fixed"
