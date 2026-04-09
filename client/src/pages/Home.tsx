@@ -138,6 +138,111 @@ const heroPlaylist = [
   "/video/clip_last.mp4",
 ];
 
+const openingOfferItems = [
+  { id: 1, label: "特典1", title: "体験料", originalPrice: "通常 1,500円", benefit: "無料" },
+  { id: 2, label: "特典2", title: "入会金", originalPrice: "通常 10,000円", benefit: "無料" },
+  { id: 3, label: "特典3", title: "初月会費", originalPrice: "通常 11,000円〜13,200円", benefit: "無料" },
+];
+
+function OpeningOfferSection() {
+  return (
+    <section className="opening-offer-section">
+      <div className="opening-offer-section__inner">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          className="opening-offer-section__header"
+        >
+          <p className="opening-offer-section__eyebrow">LIMITED OFFER</p>
+          <h2 className="opening-offer-section__title">
+            今なら始めやすい
+            <span>3大特典</span>
+          </h2>
+          <p className="opening-offer-section__lead">
+            4月末までの期間限定。<br />
+            無料体験から気軽に始められます。
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+          className="opening-offer-section__cards"
+        >
+          {openingOfferItems.map((item) => (
+            <motion.div key={item.id} variants={scaleIn} className="opening-offer-card">
+              <div className="opening-offer-card__label">{item.label}</div>
+              <div className="opening-offer-card__body">
+                <div>
+                  <p className="opening-offer-card__title">{item.title}</p>
+                  <p className="opening-offer-card__original">{item.originalPrice}</p>
+                </div>
+                <p className="opening-offer-card__benefit">{item.benefit}</p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          className="opening-offer-section__value"
+        >
+          <p className="opening-offer-section__value-label">初期費用</p>
+          <p className="opening-offer-section__value-main">0円でスタート可能</p>
+          <p className="opening-offer-section__value-sub">まずは無料体験だけでもOKです。</p>
+        </motion.div>
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          className="opening-offer-section__assurance"
+        >
+          <span>無理な勧誘なし</span>
+          <span>初心者歓迎</span>
+          <span>見学だけでもOK</span>
+          <span>LINEで簡単予約</span>
+        </motion.div>
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          className="opening-offer-section__cta"
+        >
+          <a
+            href={gymConfig.sns.line}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-testid="button-home-offer-line"
+            className="opening-offer-section__cta-primary"
+          >
+            <SiLine className="w-5 h-5" />
+            LINEで無料体験を予約する
+          </a>
+          <Link
+            href="/contact"
+            data-testid="button-home-offer-contact"
+            className="opening-offer-section__cta-secondary"
+          >
+            見学・体験を相談する
+          </Link>
+          <p className="opening-offer-section__cta-note">1分で予約可能 / 返信は営業時間内に順次対応</p>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
   const heroRef = useRef<HTMLDivElement>(null);
   const videoRefA = useRef<HTMLVideoElement>(null);
@@ -380,90 +485,7 @@ export default function Home() {
 
         </div>
       </section>
-      {/* Opening Campaign - moved up after hero */}
-      <section
-        className="py-16 lg:py-24 relative overflow-hidden"
-        style={{ background: "linear-gradient(135deg, #D99A40 0%, #F2AC55 50%, #E8954A 100%)" }}
-      >
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "repeating-linear-gradient(45deg, white 0, white 1px, transparent 0, transparent 50%)", backgroundSize: "20px 20px" }} />
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            className="text-center"
-          >
-            <div className="inline-flex items-center gap-2 bg-white text-[#D99A40] text-sm font-bold px-6 py-2.5 rounded-full mb-5 shadow-lg tracking-wide">
-              <Star className="w-4 h-4 fill-[#F2AC55] text-[#F2AC55]" />
-              無料キャンペーン実施中
-              <Star className="w-4 h-4 fill-[#F2AC55] text-[#F2AC55]" />
-            </div>
-            <span className="text-white/80 text-sm tracking-[0.2em] uppercase block mb-1">Opening Campaign</span>
-            <h2 className="text-5xl sm:text-6xl font-bold text-white drop-shadow-lg mb-1">３大特典</h2>
-            <p className="text-white/90 font-bold text-xl mb-1">４月末まで限定！</p>
-            <p className="text-white/60 text-xs mb-8">※すべて税込価格</p>
-
-            <div className="space-y-3 mb-8 w-full max-w-sm mx-auto">
-              {[
-                { num: "特典１", label: "体験料金", price: "¥1,500" },
-                { num: "特典２", label: "入会金", price: "¥10,000" },
-                { num: "特典３", label: "初月会費", price: "¥11,000〜¥13,200" },
-              ].map((item) => (
-                <div key={item.num} className="bg-white rounded-2xl overflow-hidden shadow-lg">
-                  <div className="flex items-center px-4 py-3.5 gap-3">
-                    <span className="bg-[#4D5058] text-white text-xs font-bold px-2.5 py-1 rounded-full shrink-0">{item.num}</span>
-                    <span className="text-[#4D5058] font-bold text-base flex-1 text-left">{item.label}</span>
-                    <div className="flex items-center gap-2 shrink-0">
-                      <div className="relative">
-                        <span className="font-heading font-bold text-base text-gray-300">{item.price}</span>
-                        <span className="absolute inset-0 flex items-center pointer-events-none">
-                          <span className="block w-full h-[2px] bg-[#E74C3C] rotate-[-10deg] rounded-full" />
-                        </span>
-                      </div>
-                      <span className="font-heading font-bold text-2xl text-[#F2AC55]">無料</span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="bg-white/20 border-2 border-white/50 rounded-3xl px-6 py-5 w-full max-w-sm mx-auto flex flex-col items-center mb-8 shadow-xl">
-              <p className="text-white/80 text-sm font-medium mb-2">特典合計（最大）</p>
-              <div className="flex items-center gap-4">
-                <div className="relative">
-                  <span className="font-heading font-bold text-2xl text-white/40">¥24,700〜</span>
-                  <span className="absolute inset-0 flex items-center pointer-events-none">
-                    <span className="block w-full h-[3px] bg-white/70 rotate-[-8deg] rounded-full" />
-                  </span>
-                </div>
-                <span className="font-heading font-bold text-5xl text-white drop-shadow-lg">¥０</span>
-              </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
-                href={gymConfig.sns.line}
-                target="_blank"
-                rel="noopener noreferrer"
-                data-testid="button-home-campaign-line"
-                className="inline-flex items-center gap-3 bg-[#06C755] text-white font-bold px-8 py-4 rounded-full text-base transition-all duration-200 shadow-xl hover:scale-105"
-              >
-                <SiLine className="w-5 h-5" />
-                LINEで体験予約する
-              </a>
-              <Link
-                href="/contact"
-                data-testid="button-home-campaign-contact"
-                className="inline-flex items-center gap-2 bg-white/20 border-2 border-white/60 text-white font-medium px-7 py-4 rounded-full text-base transition-all duration-200 hover:bg-white/30"
-              >
-                お問い合わせフォーム
-              </Link>
-            </div>
-            <p className="text-white/50 text-xs mt-4">体験後、当日入会でキャンペーン適用</p>
-          </motion.div>
-        </div>
-      </section>
+      <OpeningOfferSection />
       {/* Why Choose Us - リフィナス風リデザイン */}
       <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
