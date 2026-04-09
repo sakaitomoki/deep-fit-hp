@@ -316,9 +316,6 @@ function InstagramAtmosphereSection() {
           viewport={{ once: true }}
           variants={fadeInUp}
         >
-          <div className="ig-atmosphere-section__promo">
-            インスタフォローで体験<span className="ig-atmosphere-section__promo-free">無料</span>
-          </div>
           <a
             href={gymConfig.sns.instagram}
             target="_blank"
