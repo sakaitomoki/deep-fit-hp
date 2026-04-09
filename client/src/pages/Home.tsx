@@ -267,9 +267,6 @@ function InstagramAtmosphereSection() {
     { image: "/images/gym-interior.png", alt: "ジム全景" },
     { image: "/images/class-kickboxing.png", alt: "キックボクシング" },
     { image: "/images/gym-about.png", alt: "会員の雰囲気" },
-    { image: "/images/class-circuit.png", alt: "サーキット" },
-    { image: "/images/smith-machine.jpeg", alt: "個室設備" },
-    { image: "/images/class-personal.png", alt: "パーソナル" },
   ];
 
   return (
