@@ -5,7 +5,6 @@ import { ArrowRight, MessageCircle } from "lucide-react";
 import { SiInstagram, SiLine } from "react-icons/si";
 import SEO from "@/components/SEO";
 import { gymConfig, seoConfig } from "@/lib/gymConfig";
-import instagramPromoImage from "@assets/image_1775719223370.png";
 import deepFitLogo from "@assets/image0_1773383672040.png";
 import kidsClassImg from "@assets/image0_1773932269993.jpeg";
 
@@ -317,20 +316,6 @@ function InstagramAtmosphereSection() {
           viewport={{ once: true }}
           variants={fadeInUp}
         >
-          <div className="ig-atmosphere-section__promo-card">
-            <div className="ig-atmosphere-section__promo-copy">
-              <p className="ig-atmosphere-section__promo-eyebrow">FOLLOW US</p>
-              <p className="ig-atmosphere-section__promo-title">練習風景・日常を公開中！！</p>
-              <p className="ig-atmosphere-section__promo-handle">@deep.amagasaki</p>
-            </div>
-            <div className="ig-atmosphere-section__promo-visual">
-              <img
-                src={instagramPromoImage}
-                alt="Instagramで雰囲気を見る"
-                className="ig-atmosphere-section__promo-image"
-              />
-            </div>
-          </div>
           <a
             href={gymConfig.sns.instagram}
             target="_blank"
@@ -339,7 +324,7 @@ function InstagramAtmosphereSection() {
             className="ig-atmosphere-section__btn"
           >
             <SiInstagram className="w-4 h-4" />
-            Instagramを見る
+            Instagramで雰囲気を見る
           </a>
           <p className="ig-atmosphere-section__note">@deep.amagasaki</p>
         </motion.div>
