@@ -508,16 +508,16 @@ export default function Home() {
         {/* z-1: Overlay — light, left-only */}
         <div className="hero-v2__overlay" />
 
-        {/* z-2: Background watermark */}
+        {/* z-2: Two-tier heading watermark */}
         <motion.div
           className="hero-v2__bigcopy"
-          aria-hidden="true"
+          data-testid="text-hero-two-tier-heading"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 1.2 }}
         >
-          <span>FEEL THE</span>
-          <span>CHANGE.</span>
+          <span className="hero-v2__bigcopy--top">FEEL THE CHANGE.</span>
+          <span className="hero-v2__bigcopy--bottom">DEEP.FIT</span>
         </motion.div>
 
         {/* z-3: Content */}
