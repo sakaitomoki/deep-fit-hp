@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
-import { motion, useScroll, useSpring, AnimatePresence } from "framer-motion";
-import { Users, Trophy, Dumbbell, Clock, ChevronLeft, ChevronRight, Star, ArrowRight, MessageCircle } from "lucide-react";
+import { motion, useScroll, useSpring } from "framer-motion";
+import { ArrowRight, MessageCircle } from "lucide-react";
 import { SiInstagram, SiLine } from "react-icons/si";
 import SEO from "@/components/SEO";
 import { gymConfig, seoConfig } from "@/lib/gymConfig";
@@ -33,22 +33,6 @@ const staggerContainer = {
   visible: { transition: { staggerChildren: 0.15 } },
 };
 
-function GlowButton({ children, className = "", href }: { children: React.ReactNode; className?: string; href?: string }) {
-  const content = (
-    <div className="relative group inline-block">
-      <div className="absolute inset-0 bg-[#F2AC55]/30 blur-md rounded-full scale-0 group-hover:scale-100 transition-transform duration-300 pointer-events-none" />
-      <span className={`relative z-10 inline-flex items-center justify-center bg-[#F2AC55] text-white font-medium px-7 py-3 rounded-full transition-all duration-200 ${className}`}>
-        {children}
-      </span>
-    </div>
-  );
-
-  if (href) {
-    return <Link href={href} className="inline-block">{content}</Link>;
-  }
-  return content;
-}
-
 function ScrollProgress() {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
@@ -59,39 +43,6 @@ function ScrollProgress() {
       className="fixed top-0 left-0 right-0 h-1 bg-[#F2AC55] z-[60]"
     />
   );
-}
-
-function CountUp({ target, suffix = "", duration = 2000 }: { target: number; suffix?: string; duration?: number }) {
-  const [count, setCount] = useState(0);
-  const [started, setStarted] = useState(false);
-  const ref = useRef<HTMLSpanElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !started) {
-          setStarted(true);
-        }
-      },
-      { threshold: 0.5 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, [started]);
-
-  useEffect(() => {
-    if (!started) return;
-    let startTime: number;
-    const step = (timestamp: number) => {
-      if (!startTime) startTime = timestamp;
-      const progress = Math.min((timestamp - startTime) / duration, 1);
-      setCount(Math.floor(progress * target));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [started, target, duration]);
-
-  return <span ref={ref}>{count}{suffix}</span>;
 }
 
 const testimonials = [
@@ -174,7 +125,7 @@ function ReasonCard({ card }: { card: typeof reasonCards[0] }) {
   );
 }
 
-function ReasonsSection() {
+function GymIdentitySection() {
   return (
     <section className="reasons-section">
       <div className="reasons-section__inner">
@@ -186,13 +137,13 @@ function ReasonsSection() {
           variants={fadeInUp}
           className="reasons-section__header"
         >
-          <span className="reasons-section__eyebrow">POINT 02</span>
+          <span className="reasons-section__eyebrow">ABOUT</span>
           <h2 className="reasons-section__title">
-            DEEP.FITが<br />選ばれる理由
+            DEEP.FITって<br />どんなジム？
           </h2>
           <p className="reasons-section__lead">
-            綺麗な空間、通いやすい雰囲気、目的に合わせた設備。<br />
-            続けやすさには、理由があります。
+            綺麗で広い空間、通いやすい雰囲気、目的に合わせた設備。<br />
+            初めての方でも続けやすい理由があります。
           </p>
         </motion.div>
 
@@ -253,10 +204,175 @@ function ReasonsSection() {
 }
 
 const classes = [
-  { title: "フィットネス", subtitle: "Fitness Class", level: "全レベル", description: "有酸素運動とキックボクシングを組み合わせた人気クラス。楽しみながら体を動かし、ダイエットや体力アップを目指せます。", image: "/images/class-kickboxing.png", animation: "left" },
-  { title: "パーソナルトレーニング", subtitle: "Personal Training", level: "全レベル", description: "マンツーマンで目標に合わせた特別プログラムを提供。効率よく、確実に結果を出したい方に最適です。", image: "/images/class-personal.png", animation: "up" },
-  { title: "キッズクラス", subtitle: "Kids Class", level: "お子様向け", description: "楽しみながら体を動かすキッズ向けプログラム。礼儀やスポーツの基礎も学べます。保護者も安心の環境です。", image: kidsClassImg, animation: "right" },
+  { title: "フィットネス", subtitle: "Fitness Class", level: "初心者向け", description: "有酸素運動とキックボクシングを組み合わせた人気クラス。楽しみながらダイエットや体力アップを目指せます。", image: "/images/class-kickboxing.png", animation: "left", target: "運動不足解消・ダイエット", intensity: 1, duration: "30分", beginnerOk: true },
+  { title: "パーソナルトレーニング", subtitle: "Personal Training", level: "全レベル", description: "マンツーマンで目標に合わせた特別プログラム。フォーム重視で、引き締め・筋力強化を確実に。", image: "/images/class-personal.png", animation: "up", target: "引き締め・筋力強化", intensity: 2, duration: "60分", beginnerOk: true },
+  { title: "キッズクラス", subtitle: "Kids Class", level: "お子様向け", description: "楽しみながら体を動かすキッズ向けプログラム。礼儀やスポーツの基礎も学べます。", image: kidsClassImg, animation: "right", target: "基礎体力・礼儀", intensity: 1, duration: "60分", beginnerOk: true },
 ];
+
+const recommendedItems = [
+  "ジムが続かなかった",
+  "運動不足を解消したい",
+  "ダイエットしたい",
+  "ストレス発散したい",
+  "一人でも通いやすい場所がいい",
+  "女性でも安心できる環境がいい",
+];
+
+function RecommendedForSection() {
+  return (
+    <section className="recommended-section">
+      <div className="recommended-section__inner">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          className="recommended-section__header"
+        >
+          <h2 className="recommended-section__title">こんな方におすすめです</h2>
+          <p className="recommended-section__lead">ひとつでも当てはまる方は、無料体験から始めやすいです。</p>
+        </motion.div>
+
+        <motion.div
+          className="recommended-section__grid"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+        >
+          {recommendedItems.map((item, i) => (
+            <motion.div key={i} variants={scaleIn} className="recommended-item" data-testid={`chip-recommended-${i}`}>
+              <span className="recommended-item__check">✓</span>
+              <span className="recommended-item__text">{item}</span>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        <motion.p
+          className="recommended-section__note"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+        >
+          当てはまった方は、まずは<a href={gymConfig.sns.line} target="_blank" rel="noopener noreferrer" className="recommended-section__link" data-testid="link-recommended-line">無料体験</a>から気軽にどうぞ。
+        </motion.p>
+      </div>
+    </section>
+  );
+}
+
+function InstagramAtmosphereSection() {
+  const igThumbs = [
+    { image: "/images/gym-interior.png", alt: "ジム全景" },
+    { image: "/images/class-kickboxing.png", alt: "キックボクシング" },
+    { image: "/images/gym-about.png", alt: "会員の雰囲気" },
+    { image: "/images/class-circuit.png", alt: "サーキット" },
+    { image: "/images/smith-machine.jpeg", alt: "個室設備" },
+    { image: "/images/class-personal.png", alt: "パーソナル" },
+  ];
+
+  return (
+    <section className="ig-atmosphere-section">
+      <div className="ig-atmosphere-section__inner">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          className="ig-atmosphere-section__header"
+        >
+          <SiInstagram className="w-8 h-8 text-[#F0A93A] mx-auto mb-4" />
+          <h2 className="ig-atmosphere-section__title">実際の雰囲気は、Instagramで見られます</h2>
+          <p className="ig-atmosphere-section__lead">練習風景や日常の様子を通じて、ジムの空気感や通いやすさが分かります。</p>
+        </motion.div>
+
+        <motion.div
+          className="ig-atmosphere-section__grid"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+        >
+          {igThumbs.map((thumb, i) => (
+            <motion.a
+              key={i}
+              variants={scaleIn}
+              href={gymConfig.sns.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ig-atmosphere-section__thumb"
+              data-testid={`link-ig-thumb-${i}`}
+            >
+              <img src={thumb.image} alt={thumb.alt} className="ig-atmosphere-section__thumb-img" />
+              <div className="ig-atmosphere-section__thumb-overlay">
+                <SiInstagram className="w-5 h-5 text-white" />
+              </div>
+            </motion.a>
+          ))}
+        </motion.div>
+
+        <motion.div
+          className="ig-atmosphere-section__cta"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+        >
+          <div className="ig-atmosphere-section__promo">
+            インスタフォローで体験<span className="ig-atmosphere-section__promo-free">無料</span>
+          </div>
+          <a
+            href={gymConfig.sns.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-testid="button-instagram"
+            className="ig-atmosphere-section__btn"
+          >
+            <SiInstagram className="w-4 h-4" />
+            Instagramで雰囲気を見る
+          </a>
+          <p className="ig-atmosphere-section__note">@deep.amagasaki</p>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function TestimonialsGridSection() {
+  return (
+    <section className="testimonials-grid-section">
+      <div className="testimonials-grid-section__inner">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          className="testimonials-grid-section__header"
+        >
+          <h2 className="testimonials-grid-section__title">実際に通っている方の声</h2>
+          <p className="testimonials-grid-section__lead">はじめての方や、運動が久しぶりの方からも、通いやすさについての声をいただいています。</p>
+        </motion.div>
+
+        <motion.div
+          className="testimonials-grid-section__cards"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+        >
+          {testimonials.map((t, i) => (
+            <motion.div key={i} variants={scaleIn} className="testimonial-card" data-testid={`card-testimonial-${i}`}>
+              <p className="testimonial-card__meta">{t.meta}</p>
+              <p className="testimonial-card__text">「{t.text}」</p>
+              <p className="testimonial-card__name">{t.name}</p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
 
 const heroPlaylist = [
   "/video/clip1.mp4",
@@ -450,27 +566,6 @@ export default function Home() {
     });
   };
 
-  const [testimonialIndex, setTestimonialIndex] = useState(0);
-  const [testimonialDirection, setTestimonialDirection] = useState(1);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTestimonialDirection(1);
-      setTestimonialIndex((i) => (i + 1) % testimonials.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
-
-  const prevTestimonial = () => {
-    setTestimonialDirection(-1);
-    setTestimonialIndex((i) => (i - 1 + testimonials.length) % testimonials.length);
-  };
-
-  const nextTestimonial = () => {
-    setTestimonialDirection(1);
-    setTestimonialIndex((i) => (i + 1) % testimonials.length);
-  };
-
   const tagline = gymConfig.tagline.split("");
 
   return (
@@ -592,76 +687,12 @@ export default function Home() {
         </div>
       </section>
       <OpeningOfferSection />
-      <ReasonsSection />
-      {/* About Section */}
-      <section
-        className="py-20 lg:py-28 relative bg-cover bg-center bg-fixed"
-        style={{ backgroundImage: "url('/images/gym-about.png')" }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-b from-[#4D5058]/80 via-[#4D5058]/70 to-[#4D5058]/90" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInLeft}
-            >
-              <p className="text-[#F2AC55] text-xs tracking-[0.3em] uppercase mb-3">About Us</p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-5">ジムについて</h2>
-              <p className="text-white/90 font-medium text-xl italic mb-5">「動いて、整えて、気づけば続く。」</p>
-              <p className="text-white/70 leading-relaxed mb-6 text-sm sm:text-base">
-                DEEP.FITは2026年オープン予定のサーキット×キックボクシングジムです。「運動が苦手でも、楽しく続けられる場所を作りたい」という想いから生まれました。初心者の方や女性の方でも、安心して通える環境づくりを大切にしています。
-              </p>
-              <GlowButton href="/about">
-                ジムについて詳しく <ArrowRight className="w-4 h-4 inline ml-1" />
-              </GlowButton>
-            </motion.div>
-
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInRight}
-              className="flex flex-col gap-5"
-            >
-              {/* Main announcement card */}
-              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-7 text-center shadow-xl">
-                <div className="inline-flex items-center gap-2 bg-[#F2AC55] text-white text-xs font-bold px-4 py-1.5 rounded-full mb-4 tracking-widest uppercase shadow">
-                  <Star className="w-3.5 h-3.5 fill-white text-white" />
-                  エリア初
-                </div>
-                <p className="text-white/60 text-xs tracking-[0.2em] uppercase mb-2">New Open 2026</p>
-                <h3 className="text-white font-bold text-xl sm:text-2xl leading-snug mb-1">
-                  JR尼崎エリア初<br />
-                  <span className="text-[#F2AC55]">キックボクシング</span><br />
-                  フィットネスジム誕生
-                </h3>
-              </div>
-
-              {/* Access badges */}
-              <div className="grid grid-cols-2 gap-3">
-                <div className="bg-white/10 border border-white/15 rounded-2xl px-4 py-4 flex flex-col items-center gap-2 text-center">
-                  <span className="text-2xl">🚉</span>
-                  <div>
-                    <p className="text-white font-bold text-sm">JR尼崎駅</p>
-                    <p className="text-[#F2AC55] font-heading font-bold text-xl">徒歩10分</p>
-                  </div>
-                </div>
-                <div className="bg-white/10 border border-white/15 rounded-2xl px-4 py-4 flex flex-col items-center gap-2 text-center">
-                  <span className="text-2xl">🅿️</span>
-                  <div>
-                    <p className="text-white font-bold text-sm">近隣駐車場</p>
-                    <p className="text-[#F2AC55] font-heading font-bold text-xl">あり</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+      <GymIdentitySection />
+      <RecommendedForSection />
+      <InstagramAtmosphereSection />
+      <TestimonialsGridSection />
       {/* Classes */}
-      <section className="py-20 lg:py-28 bg-[#F2F3F5]">
+      <section className="class-guide-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -670,8 +701,9 @@ export default function Home() {
             variants={fadeInUp}
             className="text-center mb-14"
           >
-            <p className="text-[#F2AC55] text-xs tracking-[0.3em] uppercase mb-3">Our Classes</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#4D5058]">クラス紹介</h2>
+            <p className="text-[#F0A93A] text-xs tracking-[0.3em] uppercase mb-3">Classes</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#4D5058]">目的に合わせて選べるクラス</h2>
+            <p className="text-[#4D5058]/60 text-sm mt-3">どんな目的でも、合うトレーニングが見つかります</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -685,6 +717,7 @@ export default function Home() {
                   viewport={{ once: true }}
                   variants={variant}
                   className="group relative rounded-2xl overflow-hidden aspect-[4/5] cursor-pointer"
+                  data-testid={`card-class-${i}`}
                 >
                   <div className="absolute inset-0 overflow-hidden">
                     <img
@@ -694,15 +727,27 @@ export default function Home() {
                     />
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#4D5058]/40 to-[#4D5058]/90" />
-                  <div className="absolute top-4 left-4">
-                    <span className="text-[10px] tracking-wider font-medium bg-[#F2AC55] text-white px-3 py-1 rounded-full uppercase">
+                  <div className="absolute top-4 left-4 flex flex-wrap gap-1.5">
+                    <span className="text-[10px] tracking-wider font-medium bg-[#F0A93A] text-white px-3 py-1 rounded-full uppercase">
                       {cls.level}
                     </span>
+                    {cls.beginnerOk && (
+                      <span className="text-[10px] tracking-wider font-medium bg-white/20 text-white px-2.5 py-1 rounded-full backdrop-blur-sm">
+                        初心者OK
+                      </span>
+                    )}
                   </div>
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <p className="text-white/50 text-xs tracking-[0.2em] uppercase mb-1">{cls.subtitle}</p>
                     <h3 className="text-white font-bold text-xl mb-2">{cls.title}</h3>
-                    <p className="text-white/70 text-xs leading-relaxed">{cls.description}</p>
+                    <p className="text-white/70 text-xs leading-relaxed mb-3">{cls.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="text-[10px] bg-white/10 text-white/80 px-2 py-0.5 rounded-full border border-white/10">{cls.target}</span>
+                      <span className="text-[10px] bg-white/10 text-white/80 px-2 py-0.5 rounded-full border border-white/10">{cls.duration}</span>
+                      <span className="text-[10px] bg-white/10 text-white/80 px-2 py-0.5 rounded-full border border-white/10">
+                        強度{"★".repeat(cls.intensity)}{"☆".repeat(3 - cls.intensity)}
+                      </span>
+                    </div>
                   </div>
                 </motion.div>
               );
@@ -726,133 +771,10 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-      {/* Testimonials */}
-      <section
-        className="py-20 lg:py-28 relative bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/gym-interior.png')" }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-b from-[#4D5058]/85 to-[#4D5058]/95" />
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            className="text-center mb-12"
-          >
-            <p className="text-[#F2AC55] text-xs tracking-[0.3em] uppercase mb-3">Testimonials</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">お客様の声</h2>
-          </motion.div>
-
-          <div className="relative min-h-[200px] sm:min-h-[180px]">
-            <AnimatePresence mode="wait" initial={false}>
-              <motion.div
-                key={testimonialIndex}
-                initial={{ opacity: 0, x: testimonialDirection * 60 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: testimonialDirection * -60 }}
-                transition={{ duration: 0.4, ease: "easeInOut" }}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8"
-              >
-                <div className="flex justify-center mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-[#F2AC55] text-[#F2AC55]" />
-                  ))}
-                </div>
-                <p className="text-white/85 text-center leading-relaxed text-sm sm:text-base mb-6">
-                  「{testimonials[testimonialIndex].text}」
-                </p>
-                <div className="text-center">
-                  <p className="text-white font-semibold">{testimonials[testimonialIndex].name}</p>
-                  <p className="text-white/50 text-xs mt-0.5">{testimonials[testimonialIndex].meta}</p>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
-          <div className="flex items-center justify-center gap-4 mt-8">
-            <button
-              onClick={prevTestimonial}
-              aria-label="前へ"
-              data-testid="button-testimonial-prev"
-              className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#F2AC55] transition-colors duration-200"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <div className="flex gap-2">
-              {testimonials.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => { setTestimonialDirection(i > testimonialIndex ? 1 : -1); setTestimonialIndex(i); }}
-                  aria-label={`スライド ${i + 1}`}
-                  data-testid={`button-testimonial-dot-${i}`}
-                  className={`rounded-full transition-all duration-300 ${i === testimonialIndex ? "w-6 h-2 bg-[#F2AC55]" : "w-2 h-2 bg-white/30"}`}
-                />
-              ))}
-            </div>
-            <button
-              onClick={nextTestimonial}
-              aria-label="次へ"
-              data-testid="button-testimonial-next"
-              className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#F2AC55] transition-colors duration-200"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
-          </div>
-        </div>
-      </section>
-      {/* Instagram Section */}
-      <section className="py-20 lg:py-28 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            className="relative rounded-2xl overflow-hidden"
-            style={{ background: "linear-gradient(135deg, #833ab4 0%, #fd1d1d 40%, #fcb045 100%)" }}
-          >
-            <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)", backgroundSize: "20px 20px" }} />
-            <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 p-8 sm:p-12">
-              <div className="flex items-center gap-6">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center shrink-0">
-                  <SiInstagram className="w-9 h-9 sm:w-11 sm:h-11 text-white" />
-                </div>
-                <div>
-                  <p className="text-white/70 text-xs tracking-[0.2em] uppercase mb-1">Follow Us</p>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-white leading-tight">
-                    練習風景・日常を<br className="sm:hidden" />公開中！！
-                  </h2>
-                  <p className="text-white/80 text-sm mt-1">@deep.amagasaki</p>
-                </div>
-              </div>
-              <div className="flex flex-col items-center gap-4 text-center">
-                <div className="bg-white/10 border border-white/20 rounded-xl px-6 py-4 backdrop-blur-sm">
-                  <p className="text-white font-bold text-sm mb-1">
-                    🎉 インスタフォローで体験<span className="text-yellow-300 text-xl font-heading ml-1">無料</span>
-                  </p>
-                  <p className="text-white/70 text-xs">フォロー後、DMまたはLINEでご連絡ください</p>
-                </div>
-                <a
-                  href={gymConfig.sns.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-testid="button-instagram"
-                  className="inline-flex items-center gap-2 bg-white text-[#fd1d1d] font-bold px-7 py-3 rounded-full text-sm transition-all duration-200 hover:scale-105"
-                >
-                  <SiInstagram className="w-4 h-4" />
-                  Instagramを見る
-                </a>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-      {/* LINE Section */}
+      {/* LINE Consult Section */}
       <section className="py-20 lg:py-28 overflow-hidden" style={{ background: "linear-gradient(135deg, #06C755 0%, #04A344 100%)" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left: Text */}
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -866,33 +788,40 @@ export default function Home() {
                 <p className="text-white/70 text-xs tracking-[0.3em] uppercase">Official LINE</p>
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 leading-tight">
-                LINEで簡単に<br />お申し込み可能
+                自分に合うか不安な方は、<br />まずはLINEでご相談ください
               </h2>
               <p className="text-white/80 mb-6 leading-relaxed text-sm sm:text-base">
-                友だち追加後、「体験希望」とお送りいただければこちらからご案内いたします。
+                見学だけ、体験だけ、空き枠確認だけでも大丈夫です。<br />
+                運動が久しぶりの方もお気軽にご相談ください。
               </p>
-              <div className="bg-white/10 border border-white/20 rounded-xl p-5 mb-6 space-y-2 text-sm text-white/90">
-                <p className="font-bold text-white mb-3">📅 体験可能時間</p>
-                <div className="grid grid-cols-1 gap-2 text-xs">
-                  <div className="bg-white/10 rounded-lg px-3 py-2">
-                    <p className="font-semibold text-white">月〜日曜日（木曜定休）</p>
-                    <p className="text-white/70">10:00 〜 22:00</p>
-                  </div>
-                </div>
+
+              <div className="flex flex-wrap gap-2 mb-6">
+                {["無理な勧誘なし", "見学だけでもOK", "初心者歓迎", "一人参加OK"].map((chip, i) => (
+                  <span key={i} className="bg-white/15 border border-white/20 text-white/90 text-xs px-3 py-1.5 rounded-full">{chip}</span>
+                ))}
               </div>
-              <a
-                href={gymConfig.sns.line}
-                target="_blank"
-                rel="noopener noreferrer"
-                data-testid="button-line-add"
-                className="inline-flex items-center gap-2 bg-white text-[#06C755] font-bold px-7 py-3 rounded-full text-sm transition-all duration-200 hover:scale-105 shadow-lg"
-              >
-                <SiLine className="w-5 h-5" />
-                友だち追加する
-              </a>
+
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a
+                  href={gymConfig.sns.line}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid="button-line-add"
+                  className="inline-flex items-center justify-center gap-2 bg-white text-[#06C755] font-bold px-7 py-3 rounded-full text-sm transition-all duration-200 hover:scale-105 shadow-lg"
+                >
+                  <SiLine className="w-5 h-5" />
+                  LINEで無料体験を予約する
+                </a>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 bg-white/15 border border-white/25 text-white font-medium px-6 py-3 rounded-full text-sm transition-all duration-200 hover:bg-white/25"
+                  data-testid="link-line-contact"
+                >
+                  見学・体験を相談する
+                </Link>
+              </div>
             </motion.div>
 
-            {/* Right: LINE Chat Mockup */}
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -901,9 +830,7 @@ export default function Home() {
               className="flex justify-center"
             >
               <div className="w-full max-w-sm">
-                {/* Phone frame */}
                 <div className="bg-[#BEE3CD] rounded-3xl p-4 shadow-2xl">
-                  {/* Chat header */}
                   <div className="bg-[#06C755] rounded-2xl px-4 py-3 flex items-center gap-3 mb-3">
                     <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center shrink-0 overflow-hidden">
                       <img src={deepFitLogo} alt="DEEP.FIT" className="w-full h-full object-contain p-0.5" />
@@ -913,15 +840,12 @@ export default function Home() {
                       <p className="text-white/70 text-xs">公式アカウント</p>
                     </div>
                   </div>
-                  {/* Messages */}
                   <div className="space-y-3 px-1 max-h-80 overflow-hidden">
-                    {/* User sends */}
                     <div className="flex justify-end">
                       <div className="bg-[#06C755] text-white text-xs px-3 py-2 rounded-2xl rounded-tr-sm max-w-[70%]">
                         体験希望
                       </div>
                     </div>
-                    {/* Auto-reply message */}
                     <div className="flex items-start gap-2">
                       <div className="w-7 h-7 rounded-full bg-white flex items-center justify-center shrink-0 mt-1 shadow-sm overflow-hidden">
                         <img src={deepFitLogo} alt="DEEP.FIT" className="w-full h-full object-contain p-0.5" />
@@ -936,7 +860,6 @@ export default function Home() {
                         <p className="mt-1">運動経験なくてもスタートできるようになってますので、お気軽にご連絡ください😆</p>
                       </div>
                     </div>
-                    {/* Second message */}
                     <div className="flex items-start gap-2">
                       <div className="w-7 h-7 rounded-full bg-white flex items-center justify-center shrink-0 mt-1 shadow-sm overflow-hidden">
                         <img src={deepFitLogo} alt="DEEP.FIT" className="w-full h-full object-contain p-0.5" />
@@ -951,7 +874,6 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                  {/* Input bar */}
                   <div className="mt-3 bg-white/60 rounded-full px-4 py-2 flex items-center gap-2">
                     <MessageCircle className="w-4 h-4 text-[#06C755]/60" />
                     <p className="text-[#333]/40 text-xs">メッセージを入力...</p>
@@ -962,16 +884,9 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* CTA Section */}
-      <section className="py-20 lg:py-28 relative overflow-hidden bg-gradient-to-br from-[#F2AC55] via-[#F2AC55] to-[#D99A40]">
-        <div
-          className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)",
-            backgroundSize: "25px 25px",
-            animation: "dot-pattern 20s ease-in-out infinite",
-          }}
-        />
+      {/* Final Trial CTA */}
+      <section className="final-cta-section">
+        <div className="final-cta-section__bg" />
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -979,48 +894,51 @@ export default function Home() {
           variants={fadeInUp}
           className="relative z-10 max-w-3xl mx-auto px-4 text-center"
         >
-          <p className="text-white/70 text-xs tracking-[0.3em] uppercase mb-3">Trial Lesson</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">体験レッスン受付中</h2>
-          <p className="text-white/80 mb-5">まずは一度、DEEP.FITを体験してみてください。</p>
+          <p className="text-white/70 text-xs tracking-[0.3em] uppercase mb-3">Trial</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">まずは無料体験からお試しください</h2>
+          <p className="text-white/80 mb-8 leading-relaxed text-sm sm:text-base">
+            ジムの雰囲気や通いやすさを、実際に見てから判断していただけます。
+          </p>
 
-          {/* Price with slash */}
-          <div className="flex flex-col items-center mb-2">
-            <div className="relative inline-block">
-              <span className="font-heading font-bold text-5xl sm:text-6xl text-white/40 line-through decoration-white/60 decoration-[3px]">
-                {gymConfig.trialLesson.priceOriginal}
-              </span>
-              {/* diagonal slash overlay */}
-              <span className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <span className="block w-full h-[3px] bg-white/70 rotate-[-18deg] rounded-full" />
-              </span>
+          <div className="final-cta-section__info">
+            <div className="final-cta-section__info-item">
+              <span className="final-cta-section__info-label">体験料</span>
+              <span className="final-cta-section__info-value">無料</span>
             </div>
-            <div className="mt-1 flex items-center gap-3">
-              <span className="font-heading font-bold text-6xl sm:text-7xl text-white">無料</span>
+            <div className="final-cta-section__info-item">
+              <span className="final-cta-section__info-label">持ち物</span>
+              <span className="final-cta-section__info-value">動きやすい服装だけ</span>
+            </div>
+            <div className="final-cta-section__info-item">
+              <span className="final-cta-section__info-label">見学</span>
+              <span className="final-cta-section__info-value">見学だけでもOK</span>
             </div>
           </div>
 
-          <div className="inline-flex items-center gap-2 bg-white/20 border border-white/30 rounded-full px-5 py-2 mb-8">
-            <SiInstagram className="w-4 h-4 text-white" />
-            <span className="text-white text-sm font-medium">インスタフォロワー限定</span>
+          <div className="flex flex-wrap justify-center gap-2 mb-8">
+            {["無理な勧誘なし", "おひとり様歓迎", "運動初心者の方も安心"].map((chip, i) => (
+              <span key={i} className="bg-white/15 border border-white/25 text-white/90 text-xs px-3 py-1.5 rounded-full">{chip}</span>
+            ))}
           </div>
+
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <div className="relative group inline-block">
-              <div className="absolute inset-0 bg-white/30 blur-md rounded-full scale-0 group-hover:scale-100 transition-transform duration-300 pointer-events-none" />
-              <Link
-                href="/contact"
-                data-testid="button-trial-lesson"
-                className="relative z-10 inline-block bg-white text-[#D99A40] font-bold px-8 py-3 rounded-full text-base transition-all duration-200"
-              >
-                体験レッスンを申し込む
-              </Link>
-            </div>
             <a
-              href={`tel:${gymConfig.phone}`}
-              data-testid="button-phone-cta"
+              href={gymConfig.sns.line}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="button-trial-lesson"
+              className="inline-flex items-center gap-2 bg-white text-[#D99A40] font-bold px-8 py-3 rounded-full text-base transition-all duration-200 hover:scale-105 shadow-lg"
+            >
+              <SiLine className="w-5 h-5 text-[#06C755]" />
+              無料体験を予約する
+            </a>
+            <Link
+              href="/contact"
+              data-testid="button-contact-cta"
               className="border-2 border-white/60 text-white px-8 py-3 rounded-full text-base font-medium hover:bg-white/10 transition-all duration-200"
             >
-              電話で予約
-            </a>
+              見学・体験を相談する
+            </Link>
           </div>
         </motion.div>
       </section>
