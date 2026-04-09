@@ -7,7 +7,6 @@ import SEO from "@/components/SEO";
 import { gymConfig, seoConfig } from "@/lib/gymConfig";
 import deepFitLogo from "@assets/image0_1773383672040.png";
 import kidsClassImg from "@assets/image0_1773932269993.jpeg";
-import igPostImage from "@assets/image_1775719074081.png";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -265,9 +264,9 @@ function RecommendedForSection() {
 
 function InstagramAtmosphereSection() {
   const igThumbs = [
-    { image: igPostImage, alt: "Instagram投稿1" },
-    { image: igPostImage, alt: "Instagram投稿2" },
-    { image: igPostImage, alt: "Instagram投稿3" },
+    { image: "/images/gym-interior.png", alt: "ジム全景" },
+    { image: "/images/class-kickboxing.png", alt: "キックボクシング" },
+    { image: "/images/gym-about.png", alt: "会員の雰囲気" },
   ];
 
   return (
@@ -318,9 +317,7 @@ function InstagramAtmosphereSection() {
           variants={fadeInUp}
         >
           <div className="ig-atmosphere-section__promo">
-            <span className="ig-atmosphere-section__promo-eyebrow">FOLLOW US</span>
-            <span className="ig-atmosphere-section__promo-main">練習風景・日常を公開中！！</span>
-            <span className="ig-atmosphere-section__promo-sub">@deep.amagasaki</span>
+            インスタフォローで体験<span className="ig-atmosphere-section__promo-free">無料</span>
           </div>
           <a
             href={gymConfig.sns.instagram}

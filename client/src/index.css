@@ -1176,35 +1176,15 @@
 
 .ig-atmosphere-section__promo {
   display: inline-flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 4px;
-  background: rgba(240, 169, 58, 0.16);
-  border: 1px solid rgba(240, 169, 58, 0.16);
-  border-radius: 14px;
-  padding: 14px 18px;
-  color: rgba(255, 255, 255, 0.94);
-  font-size: 12px;
-  margin-bottom: 18px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
-}
-
-.ig-atmosphere-section__promo-eyebrow {
-  font-size: 11px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.ig-atmosphere-section__promo-main {
-  font-size: 15px;
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-.ig-atmosphere-section__promo-sub {
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.65);
+  align-items: center;
+  gap: 6px;
+  background: rgba(240, 169, 58, 0.12);
+  border: 1px solid rgba(240, 169, 58, 0.2);
+  border-radius: 999px;
+  padding: 8px 18px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 13px;
+  margin-bottom: 16px;
 }
 
 .ig-atmosphere-section__promo-free {
@@ -1245,21 +1225,20 @@
   justify-content: center;
   gap: 10px;
   min-width: min(100%, 340px);
-  background: linear-gradient(135deg, #111111 0%, #1a1a1a 100%);
+  background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 48%, #fcb045 100%);
   color: #ffffff;
   font-weight: 800;
   font-size: 16px;
   padding: 18px 32px;
   border-radius: 999px;
   text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 12px 28px rgba(253, 29, 29, 0.28);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .ig-atmosphere-section__btn:hover {
   transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 16px 34px rgba(253, 29, 29, 0.34);
 }
 
 @media (max-width: 767px) {
