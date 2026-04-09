@@ -237,7 +237,7 @@ function OpeningOfferSection() {
           >
             見学・体験を相談する
           </Link>
-          <p className="opening-offer-section__cta-note">1分で予約可能 / 返信は営業時間内に順次対応</p>
+          <p className="opening-offer-section__cta-note">返信は営業時間内に順次対応</p>
         </motion.div>
       </div>
     </section>
