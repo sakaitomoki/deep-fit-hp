@@ -206,7 +206,7 @@ function OpeningOfferSection() {
           variants={fadeInUp}
           className="opening-offer-section__assurance"
         >
-          <span>無理な勧誘なし</span>
+          <span>体験時間は自由</span>
           <span>初心者歓迎</span>
           <span>見学だけでもOK</span>
           <span>LINEで簡単予約</span>
