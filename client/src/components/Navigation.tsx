@@ -81,9 +81,9 @@ export default function Navigation() {
             <a
               href={`tel:${gymConfig.phone}`}
               data-testid="button-phone"
-              className="hidden lg:flex items-center gap-1.5 border border-white/20 text-white/70 hover:text-white hover:border-white/50 px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200"
+              className="hidden lg:flex items-center gap-2 bg-[#F2AC55] text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-200"
             >
-              <Phone className="w-3 h-3" />
+              <Phone className="w-4 h-4" />
               {gymConfig.phone}
             </a>
 
@@ -129,7 +129,7 @@ export default function Navigation() {
               })}
               <a
                 href={`tel:${gymConfig.phone}`}
-                className="flex items-center gap-2 text-white/60 px-4 py-2.5 text-sm font-medium mt-1"
+                className="bg-[#F2AC55] text-white px-4 py-3 rounded-md text-sm font-medium mt-2"
               >
                 <Phone className="w-3.5 h-3.5" />
                 {gymConfig.phone}
