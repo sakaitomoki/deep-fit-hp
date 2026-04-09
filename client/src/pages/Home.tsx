@@ -209,7 +209,8 @@ function OpeningOfferSection() {
           <span>体験時間は自由</span>
           <span>持ち物は動きやすい服装だけ</span>
           <span>おひとり様での参加歓迎</span>
-          <span>LINEで簡単予約</span>
+          <span>運動初心者の方も歓迎
+</span>
         </motion.div>
 
         <motion.div
