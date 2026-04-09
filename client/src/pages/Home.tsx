@@ -155,7 +155,7 @@ function OpeningOfferSection() {
           variants={fadeInUp}
           className="opening-offer-section__header"
         >
-          <p className="opening-offer-section__eyebrow">LIMITED OFFER</p>
+          <p className="opening-offer-section__eyebrow">OPENキャンペーン</p>
           <h2 className="opening-offer-section__title">
             今なら始めやすい
             <span>3大特典</span>
