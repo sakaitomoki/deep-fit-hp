@@ -43,7 +43,6 @@ export default function About() {
   return (
     <>
       <SEO title={seoConfig.pages.about.title} description={seoConfig.pages.about.description} path="/about" />
-
       {/* Hero */}
       <div className="relative" style={{ height: "50vh", minHeight: "400px" }}>
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/gym-interior.png')" }} />
@@ -67,7 +66,6 @@ export default function About() {
           </motion.h1>
         </div>
       </div>
-
       {/* Our Story */}
       <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -81,9 +79,8 @@ export default function About() {
               <p className="text-[#F2AC55] text-xs tracking-[0.3em] uppercase mb-3">Our Story</p>
               <h2 className="text-3xl sm:text-4xl font-bold text-[#4D5058] mb-6">ジムの歩み</h2>
               <div className="space-y-4 text-[#4D5058]/70 leading-relaxed text-sm sm:text-base">
-                <p>
-                  DEEP.FITは、2026年に尼崎市長洲東通りにオープン予定のキックボクシングフィットネスジムです。
-                </p>
+                <p>DEEP.FITは、2026年4月に尼崎市長洲東通りにオープンした
+                キックボクシングフィットネスジムです。</p>
                 <p className="text-[#4D5058] font-medium italic border-l-4 border-[#F2AC55] pl-4 py-1">
                   「運動が苦手でも、楽しく続けられる場所を作りたい」<br />
                   そんな想いからこのジムは生まれました。
@@ -125,7 +122,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
       {/* Our Values */}
       <section className="py-20 lg:py-28 bg-[#F2F3F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -166,7 +162,6 @@ export default function About() {
           </motion.div>
         </div>
       </section>
-
       {/* Facilities */}
       <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -207,7 +202,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
       {/* Access */}
       <section className="py-20 lg:py-28 bg-[#4D5058]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
