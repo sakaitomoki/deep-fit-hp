@@ -140,7 +140,7 @@ function GymIdentitySection() {
           </h2>
           <p className="reasons-section__lead">
             綺麗で広い空間、通いやすい雰囲気、目的に合わせた設備。<br />
-            初めての方でも続けやすい理由があります。
+            初めての方でも、自分のペースで続けやすいジムです。
           </p>
         </motion.div>
 
