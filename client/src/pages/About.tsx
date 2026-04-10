@@ -112,12 +112,6 @@ export default function About() {
                 alt="ジム内観"
                 className="rounded-md w-full object-cover aspect-[4/3]"
               />
-              <div className="hidden md:flex absolute -bottom-4 -left-4 bg-[#F2AC55] text-white rounded-md px-5 py-4 items-center gap-3 shadow-lg">
-                <div>
-                  <div className="font-heading font-bold text-3xl">2026</div>
-                  <div className="text-white/80 text-xs">オープン予定</div>
-                </div>
-              </div>
             </motion.div>
           </div>
         </div>
