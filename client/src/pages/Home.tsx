@@ -189,7 +189,7 @@ function GymIdentitySection() {
             data-testid="button-reasons-line"
           >
             <SiLine className="w-5 h-5" />
-            見学も入れて無料体験を予約する
+            見学・無料体験を予約する
           </a>
           <Link href="/contact" className="reasons-cta__text-link" data-testid="link-reasons-contact">
             見学・体験を相談する →
