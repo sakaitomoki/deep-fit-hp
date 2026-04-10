@@ -754,7 +754,7 @@
 /* ── Reasons Section ── */
 .reasons-section {
   position: relative;
-  background: #0D0F13;
+  background: #0F1520;
   color: #fff;
   padding: 80px 0 72px;
 }
@@ -806,8 +806,8 @@
   position: relative;
   border-radius: 22px;
   overflow: hidden;
-  border: 1px solid rgba(240, 169, 58, 0.15);
-  background: #131720;
+  border: 1px solid rgba(240, 169, 58, 0.18);
+  background: #151D2B;
   display: flex;
   flex-direction: column;
   min-height: 340px;
@@ -816,7 +816,7 @@
 }
 
 .reasons-card:hover {
-  border-color: rgba(240, 169, 58, 0.36);
+  border-color: rgba(240, 169, 58, 0.38);
   transform: translateY(-3px);
 }
 
@@ -835,6 +835,7 @@
   object-position: center;
   display: block;
   transition: transform 0.45s ease;
+  filter: brightness(1.08);
 }
 
 .reasons-card:hover .reasons-card__img {
@@ -844,7 +845,7 @@
 .reasons-card__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.54) 100%);
+  background: linear-gradient(180deg, rgba(0,0,0,0.04) 0%, rgba(0,0,0,0.38) 100%);
   pointer-events: none;
 }
 
@@ -884,8 +885,8 @@
 .reasons-card__body {
   margin: 0;
   font-size: 13.5px;
-  line-height: 1.75;
-  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.82);
 }
 
 /* Evidence chips */
@@ -1001,7 +1002,7 @@
 
 /* ── FAQ Section ── */
 .faq-section {
-  background: #0B0F15;
+  background: #0E1219;
   padding: 88px 0 80px;
 }
 
@@ -1013,7 +1014,7 @@
 
 .faq-section__header {
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 52px;
 }
 
 .faq-section__title {
@@ -1032,27 +1033,27 @@
 .faq-section__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+  gap: 18px;
 }
 
 .faq-card {
-  background: #111827;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: #141C2A;
+  border: 1px solid rgba(240, 169, 58, 0.10);
   border-radius: 20px;
-  padding: 24px;
+  padding: 28px;
   transition: border-color 0.25s ease, background 0.25s ease;
 }
 
 .faq-card:hover {
-  border-color: rgba(240, 169, 58, 0.18);
-  background: #151c2a;
+  border-color: rgba(240, 169, 58, 0.22);
+  background: #182030;
 }
 
 .faq-card__question {
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 
 .faq-card__q-label {
@@ -1081,8 +1082,8 @@
 
 .faq-card__divider {
   height: 1px;
-  background: rgba(255, 255, 255, 0.06);
-  margin-bottom: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  margin-bottom: 18px;
 }
 
 .faq-card__answer {
@@ -1109,7 +1110,7 @@
 .faq-card__a-content {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
   padding-top: 3px;
 }
 
@@ -1122,9 +1123,9 @@
 }
 
 .faq-card__a-text {
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.76);
   font-size: 13px;
-  line-height: 1.75;
+  line-height: 1.85;
   margin: 0;
 }
 
@@ -1139,14 +1140,14 @@
   }
 
   .faq-card {
-    padding: 20px;
+    padding: 22px;
     border-radius: 16px;
   }
 }
 
 /* ── Instagram Atmosphere Section ── */
 .ig-atmosphere-section {
-  background: #0D0F13;
+  background: #0C1018;
   padding: 80px 0 72px;
 }
 
@@ -1169,7 +1170,7 @@
 }
 
 .ig-atmosphere-section__lead {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.68);
   font-size: 14px;
   line-height: 1.7;
 }
@@ -1195,6 +1196,7 @@
   height: 100%;
   object-fit: cover;
   transition: transform 0.4s ease;
+  filter: brightness(1.06) saturate(1.05);
 }
 
 .ig-atmosphere-section__thumb:hover .ig-atmosphere-section__thumb-img {
@@ -1204,7 +1206,7 @@
 .ig-atmosphere-section__thumb-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.22);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1370,7 +1372,7 @@
 
 /* ── Testimonials Grid Section ── */
 .testimonials-grid-section {
-  background: #0D0F13;
+  background: #0F1520;
   padding: 80px 0 72px;
 }
 
@@ -1407,13 +1409,13 @@
 }
 
 .testimonial-card {
-  background: #131720;
-  border: 1px solid rgba(240, 169, 58, 0.1);
+  background: #151D2B;
+  border: 1px solid rgba(240, 169, 58, 0.12);
   border-radius: 16px;
-  padding: 24px 22px;
+  padding: 26px 24px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 .testimonial-card__meta {
@@ -1424,8 +1426,8 @@
 
 .testimonial-card__text {
   font-size: 13px;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.82);
 }
 
 .testimonial-card__name {

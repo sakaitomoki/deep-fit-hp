@@ -749,10 +749,10 @@ export default function Home() {
                     <img
                       src={cls.image}
                       alt={cls.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 brightness-[1.06]"
                     />
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#4D5058]/40 to-[#4D5058]/90" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#4D5058]/28 to-[#4D5058]/82" />
                   <div className="absolute top-4 left-4 flex flex-wrap gap-1.5">
                     <span className="text-[10px] tracking-wider font-medium bg-[#F0A93A] text-white px-3 py-1 rounded-full uppercase">
                       {cls.level}
