@@ -1106,12 +1106,26 @@
   line-height: 1;
 }
 
-.faq-card__a-text {
-  color: rgba(255, 255, 255, 0.82);
+.faq-card__a-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 3px;
+}
+
+.faq-card__a-lead {
+  color: rgba(255, 255, 255, 0.96);
   font-size: 14px;
+  font-weight: 600;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.faq-card__a-text {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 13px;
   line-height: 1.75;
   margin: 0;
-  padding-top: 4px;
 }
 
 @media (max-width: 767px) {
