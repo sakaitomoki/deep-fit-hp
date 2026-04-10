@@ -248,7 +248,7 @@ export default function Contact() {
       {/* Map */}
       <div className="h-96 w-full">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281!2d135.4!3d34.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e8d!2sAmagasaki!5e0!3m2!1sja!2sjp&z=15"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3279.1523061255643!2d135.4332379!3d34.7265551!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000efdad0e9e859%3A0x4321cf1e4177f1fd!2sDEEP.FIT%20CIRCUIT%20%C3%97KICKBOXING%20GYM!5e0!3m2!1sja!2sjp!4v1775797181640!5m2!1sja!2sjp"
           width="100%"
           height="100%"
           style={{ border: 0 }}
