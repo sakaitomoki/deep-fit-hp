@@ -375,7 +375,6 @@ function TestimonialsGridSection() {
             <motion.div key={i} variants={scaleIn} className="testimonial-card" data-testid={`card-testimonial-${i}`}>
               <p className="testimonial-card__meta">{t.meta}</p>
               <p className="testimonial-card__text">「{t.text}」</p>
-              <p className="testimonial-card__name">{t.name}</p>
             </motion.div>
           ))}
         </motion.div>
