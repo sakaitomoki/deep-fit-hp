@@ -204,54 +204,51 @@ const classes = [
   { title: "キッズクラス", subtitle: "Kids Class", level: "お子様向け", description: "楽しみながら体を動かすキッズ向けプログラム。礼儀やスポーツの基礎も学べます。", image: kidsClassImg, animation: "right", target: "基礎体力・礼儀", intensity: 1, duration: "60分", beginnerOk: true },
 ];
 
-const recommendedItems = [
-  "ジムが続かなかった",
-  "運動不足を解消したい",
-  "ダイエットしたい",
-  "ストレス発散したい",
-  "一人でも通いやすい場所がいい",
-  "女性でも安心できる環境がいい",
+const faqItems = [
+  { q: "運動経験がなくても大丈夫ですか？", a: "はい、会員の多くが運動未経験からスタートしています。メニューは個人のレベルに合わせて調整するので、体力に自信がなくても安心して始められます。" },
+  { q: "女性一人でも通いやすいですか？", a: "女性の会員も多く、おひとりで通われている方がほとんどです。スタッフも丁寧にサポートしますので、安心してお越しください。" },
+  { q: "体験当日は何を持っていけばいいですか？", a: "動きやすい服装と室内シューズ、タオル、飲み物があれば大丈夫です。特別な道具は必要ありません。" },
+  { q: "どれくらいで効果を実感できますか？", a: "個人差はありますが、週2〜3回のペースで1ヶ月ほど続けると、体力や気分の変化を感じる方が多いです。" },
+  { q: "子ども連れでも大丈夫ですか？", a: "キッズクラスもご用意しています。お子さまと一緒に通われているご家庭もありますので、お気軽にご相談ください。" },
+  { q: "途中で辞めたくなったらどうすればいいですか？", a: "月単位での退会が可能です。長期の縛りはありませんので、まずはお気軽に体験からお試しください。" },
 ];
 
-function RecommendedForSection() {
+function FAQSection() {
   return (
-    <section className="recommended-section">
-      <div className="recommended-section__inner">
+    <section className="faq-section">
+      <div className="faq-section__inner">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInUp}
-          className="recommended-section__header"
+          className="faq-section__header"
         >
-          <h2 className="recommended-section__title">初めての方から、よくあるご質問</h2>
-          <p className="recommended-section__lead">ひとつでも当てはまる方は、無料体験から始めやすいです。</p>
+          <h2 className="faq-section__title">はじめてでも大丈夫？ よくあるご質問</h2>
+          <p className="faq-section__lead">体験前に気になることを、よくある質問からまとめました。</p>
         </motion.div>
 
         <motion.div
-          className="recommended-section__grid"
+          className="faq-section__grid"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={staggerContainer}
         >
-          {recommendedItems.map((item, i) => (
-            <motion.div key={i} variants={scaleIn} className="recommended-item" data-testid={`chip-recommended-${i}`}>
-              <span className="recommended-item__check">✓</span>
-              <span className="recommended-item__text">{item}</span>
+          {faqItems.map((item, i) => (
+            <motion.div key={i} variants={fadeInUp} className="faq-card" data-testid={`card-faq-${i}`}>
+              <div className="faq-card__question">
+                <span className="faq-card__q-label">Q</span>
+                <p className="faq-card__q-text">{item.q}</p>
+              </div>
+              <div className="faq-card__divider" />
+              <div className="faq-card__answer">
+                <span className="faq-card__a-label">A</span>
+                <p className="faq-card__a-text">{item.a}</p>
+              </div>
             </motion.div>
           ))}
         </motion.div>
-
-        <motion.p
-          className="recommended-section__note"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInUp}
-        >
-          当てはまった方は、まずは<a href={gymConfig.sns.line} target="_blank" rel="noopener noreferrer" className="recommended-section__link" data-testid="link-recommended-line">無料体験</a>から気軽にどうぞ。
-        </motion.p>
       </div>
     </section>
   );
@@ -690,7 +687,7 @@ export default function Home() {
       </section>
       <OpeningOfferSection />
       <GymIdentitySection />
-      <RecommendedForSection />
+      <FAQSection />
       <InstagramAtmosphereSection />
       <TestimonialsGridSection />
       {/* Classes */}
