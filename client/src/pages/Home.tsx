@@ -224,7 +224,7 @@ function RecommendedForSection() {
           variants={fadeInUp}
           className="recommended-section__header"
         >
-          <h2 className="recommended-section__title">こんな方におすすめです</h2>
+          <h2 className="recommended-section__title">初めての方から、よくあるご質問</h2>
           <p className="recommended-section__lead">ひとつでも当てはまる方は、無料体験から始めやすいです。</p>
         </motion.div>
 
