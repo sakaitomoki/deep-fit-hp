@@ -16,7 +16,7 @@ const localBusinessJsonLd = {
   alternateName: gymConfig.nameJa,
   description: `兵庫県尼崎市のサーキット×キックボクシングジム。初心者・女性歓迎。無料体験受付中。`,
   url: seoConfig.siteUrl,
-  logo: `${seoConfig.siteUrl}/favicon.png`,
+  logo: `${seoConfig.siteUrl}/images/hero-logo-bg.png`,
   image: `${seoConfig.siteUrl}/images/hero-deepfit.png`,
   telephone: gymConfig.phone,
   email: gymConfig.email,
