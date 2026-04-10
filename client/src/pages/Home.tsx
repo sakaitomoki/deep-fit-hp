@@ -180,7 +180,7 @@ function GymIdentitySection() {
           viewport={{ once: true }}
           variants={fadeInUp}
         >
-          <p className="reasons-cta__lead">雰囲気を見てみたい方は、まずは無料体験へ</p>
+          <p className="reasons-cta__lead">まずは実際の雰囲気を、無料体験や見学でお確かめください</p>
           <a
             href={gymConfig.sns.line}
             target="_blank"
