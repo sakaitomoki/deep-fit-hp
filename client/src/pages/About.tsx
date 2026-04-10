@@ -242,7 +242,7 @@ export default function About() {
               className="rounded-md overflow-hidden h-72 bg-white/10"
             >
               <iframe
-                src="https://www.google.com/maps?q=%E5%85%B5%E5%BA%AB%E7%9C%8C%E5%B0%BC%E5%B4%8E%E5%B8%82%E9%95%B7%E6%B4%B2%E6%9D%B1%E9%80%9A1-9-25&output=embed"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3279.1523061255643!2d135.4332379!3d34.7265551!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000efdad0e9e859%3A0x4321cf1e4177f1fd!2sDEEP.FIT%20CIRCUIT%20%C3%97KICKBOXING%20GYM!5e0!3m2!1sja!2sjp!4v1775797181640!5m2!1sja!2sjp"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
