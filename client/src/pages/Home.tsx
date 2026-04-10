@@ -489,9 +489,7 @@ function OpeningOfferSection() {
             href="/contact"
             data-testid="button-home-offer-contact"
             className="opening-offer-section__cta-secondary"
-          >
-            見学・体験を相談する
-          </Link>
+          >ご不安な点などを相談する</Link>
           <p className="opening-offer-section__cta-note">返信は営業時間内に順次対応</p>
         </motion.div>
       </div>
