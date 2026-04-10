@@ -242,7 +242,7 @@ export default function About() {
               className="rounded-md overflow-hidden h-72 bg-white/10"
             >
               <iframe
-                src="https://www.google.com/maps?q=https%3A%2F%2Fmaps.app.goo.gl%2F2NzRgmGWNdHohzyLA&output=embed"
+                src="https://www.google.com/maps?q=%E5%85%B5%E5%BA%AB%E7%9C%8C%E5%B0%BC%E5%B4%8E%E5%B8%82%E9%95%B7%E6%B4%B2%E6%9D%B1%E9%80%9A1-9-25&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
