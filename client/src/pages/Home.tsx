@@ -191,9 +191,7 @@ function GymIdentitySection() {
             <SiLine className="w-5 h-5" />
             見学・無料体験を予約する
           </a>
-          <Link href="/contact" className="reasons-cta__text-link" data-testid="link-reasons-contact">
-            見学・体験を相談する →
-          </Link>
+          <Link href="/contact" className="reasons-cta__text-link" data-testid="link-reasons-contact">ご不安な点などの相談はこちら →</Link>
         </motion.div>
       </div>
     </section>
