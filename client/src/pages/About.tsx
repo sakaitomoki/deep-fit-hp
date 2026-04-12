@@ -62,7 +62,7 @@ export default function About() {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="text-4xl sm:text-5xl font-bold text-white"
           >
-            ジムについて
+            綺麗で広い空間・女性も通いやすい尼崎のキックボクシングジム
           </motion.h1>
         </div>
       </div>
@@ -109,7 +109,8 @@ export default function About() {
             >
               <img
                 src="/images/class-kickboxing.png"
-                alt="ジム内観"
+                alt="DEEP.FITでのキックボクシングレッスン風景"
+                loading="lazy"
                 className="rounded-md w-full object-cover aspect-[4/3]"
               />
             </motion.div>
@@ -168,7 +169,8 @@ export default function About() {
             >
               <img
                 src="/images/gym-about.png"
-                alt="トレーニング施設"
+                alt="DEEP.FITのトレーニング施設と設備の全景"
+                loading="lazy"
                 className="rounded-md w-full object-cover aspect-[4/3]"
               />
             </motion.div>

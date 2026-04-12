@@ -30,7 +30,7 @@ export const gymConfig = {
     twitter: "https://x.com",
     line: "https://lin.ee/uqfaBm6",
   },
-  googleMapsUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.4!2d135.4!3d34.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e8d!2sAmagasaki!5e0!3m2!1sja!2sjp",
+  googleMapsUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3279.1523061255643!2d135.4332379!3d34.7265551!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000efdad0e9e859%3A0x4321cf1e4177f1fd!2sDEEP.FIT%20CIRCUIT%20%C3%97KICKBOXING%20GYM!5e0!3m2!1sja!2sjp!4v1775797181640!5m2!1sja!2sjp",
   trialLesson: {
     price: "¥1,500",
     priceOriginal: "¥1,500",
@@ -86,27 +86,29 @@ export const seoConfig = {
   siteName: "DEEP.FIT サーキット×キックボクシングジム",
   siteUrl: "https://deepfit.jp",
   locale: "ja_JP",
-  keywords: "キックボクシング, サーキットトレーニング, 尼崎, 兵庫県, ダイエット, フィットネス, 初心者歓迎, パーソナルトレーニング, ボディメイク, 格闘技, ジム, 筋トレ, 有酸素運動",
+  keywords: "キックボクシング, サーキットトレーニング, 尼崎, JR尼崎, 兵庫県, ダイエット, フィットネス, 初心者歓迎, 女性歓迎, 無料体験, パーソナルトレーニング, ボディメイク, ジム",
+  ogImage: "/images/gym-interior.png",
   pages: {
     home: {
-      title: "ホーム",
-      description: "兵庫県尼崎市のサーキット×キックボクシングジム「DEEP.FIT」。初心者から上級者まで対応。体験レッスン受付中。",
+      title: "JR尼崎のキックボクシングジムならDEEP.FIT｜初心者・女性歓迎・無料体験受付中",
+      description: "DEEP.FITはJR尼崎駅徒歩10分のサーキット×キックボクシングジムです。初心者・女性・一人参加でも通いやすく、綺麗で広い空間と個室スミスマシンも完備。無料体験受付中。",
+      h1: "JR尼崎で初心者・女性も通いやすいキックボクシングジム",
     },
     about: {
-      title: "ジムについて",
-      description: "DEEP.FIT は2015年設立の尼崎市のサーキット×キックボクシングジム。プロ選手在籍、充実の設備、初心者歓迎。JR尼崎駅から徒歩5分。",
+      title: "DEEP.FITってどんなジム？｜綺麗で広い空間・女性も通いやすい尼崎のキックボクシングジム",
+      description: "綺麗で広い空間、和気藹々とした雰囲気、個室スミスマシン完備。DEEP.FITは初心者や女性でも通いやすく、一人で集中したい日も楽しく動きたい日も選べるジムです。",
     },
     schedule: {
-      title: "クラス・料金",
-      description: "尼崎市DEEP.FITのキックボクシングクラス一覧と料金。入門、フィットネス、テクニック、スパーリング。月額¥7,700〜。体験レッスン¥1,000。",
+      title: "クラス紹介｜初心者向けフィットネス・パーソナル・キッズクラス｜DEEP.FIT 尼崎",
+      description: "DEEP.FITのクラス紹介ページです。初心者向けフィットネス、パーソナルトレーニング、キッズクラスなど、目的に合わせて選べるクラスをご案内します。",
     },
     instructors: {
-      title: "インストラクター",
-      description: "DEEP.FITの経験豊富なインストラクター紹介。元プロキックボクサーが丁寧に指導。尼崎市で本格的なキックボクシング指導を受けられます。",
+      title: "インストラクター紹介｜DEEP.FIT 尼崎",
+      description: "DEEP.FITのインストラクター紹介です。初心者や女性でも安心して通えるよう、丁寧なサポートを大切にしています。",
     },
     contact: {
-      title: "お問い合わせ",
-      description: "尼崎市DEEP.FITへのお問い合わせ。体験レッスン予約、入会相談、見学予約はこちらから。お電話でも受付中。",
+      title: "無料体験・お問い合わせ｜DEEP.FIT 尼崎",
+      description: "DEEP.FITの無料体験予約・お問い合わせページです。見学だけでもOK。運動が久しぶりの方や初心者の方もお気軽にご相談ください。",
     },
   },
 };

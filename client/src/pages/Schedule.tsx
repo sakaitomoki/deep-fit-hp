@@ -159,7 +159,7 @@ export default function Schedule() {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="text-4xl sm:text-5xl font-bold text-white"
           >
-            クラス・料金
+            初心者向けフィットネス・パーソナル・キッズクラス
           </motion.h1>
         </div>
       </div>
@@ -611,7 +611,8 @@ export default function Schedule() {
           >
             <img
               src="/images/smith-machine.jpeg"
-              alt="オールインワン スミスマシン"
+              alt="DEEP.FITの個室スミスマシン設備（パワーラック・ケーブル完備）"
+              loading="lazy"
               className="w-full h-64 sm:h-80 object-cover object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />

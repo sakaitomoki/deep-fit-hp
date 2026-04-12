@@ -103,7 +103,7 @@ export default function Instructors() {
             transition={{ delay: 0.3, duration: 0.65 }}
             className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight"
           >
-            インストラクター
+            インストラクター紹介
           </motion.h1>
           <motion.div
             initial={{ scaleX: 0 }}
@@ -136,7 +136,8 @@ export default function Instructors() {
                     <div className={`relative rounded-md overflow-hidden ${inst.aspect ?? "aspect-[4/3]"}`}>
                       <img
                         src={inst.image}
-                        alt={inst.nameJa}
+                        alt={`DEEP.FITインストラクター ${inst.nameJa}（${inst.role}）`}
+                        loading="lazy"
                         className="w-full h-full object-cover object-top"
                       />
                       <div className="absolute bottom-0 left-0 right-0 bg-[#4D5058]/80 backdrop-blur-sm px-5 py-4">
@@ -168,10 +169,10 @@ export default function Instructors() {
                     </div>
                     <p className="text-[#4D5058]/70 text-sm leading-relaxed mb-6">{inst.bio}</p>
                     <div className="bg-[#F2F3F5] rounded-md p-5">
-                      <h4 className="flex items-center gap-2 font-bold text-[#4D5058] text-sm mb-3">
+                      <h3 className="flex items-center gap-2 font-bold text-[#4D5058] text-sm mb-3">
                         <Award className="w-4 h-4 text-[#F2AC55]" />
                         主な実績
-                      </h4>
+                      </h3>
                       <ul className="space-y-2">
                         {inst.achievements.map((a, j) => (
                           <li key={j} className="flex items-center gap-2 text-sm text-[#4D5058]/70">
@@ -210,7 +211,7 @@ export default function Instructors() {
             data-testid="button-cta-instructors"
             className="inline-block bg-[#F2AC55] text-white px-8 py-3 rounded-full text-base font-medium transition-all duration-200"
           >
-            体験レッスンを予約する
+            無料体験を予約する
           </Link>
         </motion.div>
       </section>

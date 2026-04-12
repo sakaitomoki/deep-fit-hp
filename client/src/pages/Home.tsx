@@ -67,6 +67,7 @@ const reasonCards = [
     title: "綺麗で広いから、\n気持ちよく通い続けやすい",
     body: "清潔感のある広い空間で、初めての方でも入りやすい環境です。圧迫感が少なく、落ち着いてトレーニングに取り組めます。",
     image: "/images/gym-interior.png",
+    alt: "DEEP.FITの広く清潔感のあるジム内観",
   },
   {
     id: 2,
@@ -74,6 +75,7 @@ const reasonCards = [
     title: "個室のスミスマシンで、\n一人で集中した補強もできます",
     body: "キックボクシングやサーキットだけでなく、\n個室で自分の目的に合わせた補強トレーニングも可能です。\n引き締め、筋力強化、体力づくりまで、幅広く対応できます。",
     image: "/images/smith-machine.jpeg",
+    alt: "DEEP.FITの個室スミスマシン設備",
   },
   {
     id: 3,
@@ -81,6 +83,7 @@ const reasonCards = [
     title: "会員さんの雰囲気が良く、\n一人でも馴染みやすいジムです",
     body: "和気藹々とした空気があり、初めてでも居心地よく通いやすい環境です。\nただ賑やかなだけでなく、自分のペースも大切にできます。",
     image: "/images/gym-about.png",
+    alt: "会員同士が楽しくトレーニングするDEEP.FITの雰囲気",
   },
   {
     id: 4,
@@ -88,6 +91,7 @@ const reasonCards = [
     title: "集中したい日も、\n楽しく動きたい日も、どちらも選べます",
     body: "一人で黙々と打ち込みたい日も、\n他のメンバーと楽しく身体を動かしたい日も、\nその日の気分や目的に合わせて通いやすいジムです。",
     image: "/images/class-circuit.png",
+    alt: "DEEP.FITのサーキットトレーニングクラスの様子",
   },
 ];
 
@@ -106,7 +110,7 @@ function ReasonCard({ card }: { card: typeof reasonCards[0] }) {
       data-testid={`card-reason-${card.id}`}
     >
       <div className="reasons-card__img-wrap">
-        <img src={card.image} alt={card.title.replace("\n", "")} className="reasons-card__img" />
+        <img src={card.image} alt={card.alt} className="reasons-card__img" loading="lazy" />
         <div className="reasons-card__overlay" />
       </div>
       <div className="reasons-card__content">
@@ -199,9 +203,9 @@ function GymIdentitySection() {
 }
 
 const classes = [
-  { title: "フィットネス", subtitle: "Fitness Class", level: "初心者向け", description: "有酸素運動とキックボクシングを組み合わせた人気クラス。楽しみながらダイエットや体力アップを目指せます。", image: "/images/class-kickboxing.png", animation: "left", target: "運動不足解消・ダイエット", intensity: 1, duration: "30分", beginnerOk: true },
-  { title: "パーソナルトレーニング", subtitle: "Personal Training", level: "全レベル", description: "マンツーマンで目標に合わせた特別プログラム。フォーム重視で、引き締め・筋力強化を確実に。", image: "/images/class-personal.png", animation: "up", target: "引き締め・筋力強化", intensity: 2, duration: "60分", beginnerOk: true },
-  { title: "キッズクラス", subtitle: "Kids Class", level: "お子様向け", description: "楽しみながら体を動かすキッズ向けプログラム。礼儀やスポーツの基礎も学べます。", image: kidsClassImg, animation: "right", target: "基礎体力・礼儀", intensity: 1, duration: "60分", beginnerOk: true },
+  { title: "フィットネス", subtitle: "Fitness Class", level: "初心者向け", description: "有酸素運動とキックボクシングを組み合わせた人気クラス。楽しみながらダイエットや体力アップを目指せます。", image: "/images/class-kickboxing.png", alt: "DEEP.FITの初心者向けフィットネスキックボクシングクラス", animation: "left", target: "運動不足解消・ダイエット", intensity: 1, duration: "30分", beginnerOk: true },
+  { title: "パーソナルトレーニング", subtitle: "Personal Training", level: "全レベル", description: "マンツーマンで目標に合わせた特別プログラム。フォーム重視で、引き締め・筋力強化を確実に。", image: "/images/class-personal.png", alt: "DEEP.FITのパーソナルトレーニング指導の様子", animation: "up", target: "引き締め・筋力強化", intensity: 2, duration: "60分", beginnerOk: true },
+  { title: "キッズクラス", subtitle: "Kids Class", level: "お子様向け", description: "楽しみながら体を動かすキッズ向けプログラム。礼儀やスポーツの基礎も学べます。", image: kidsClassImg, alt: "DEEP.FITのキッズクラスでお子さまが楽しくトレーニング", animation: "right", target: "基礎体力・礼儀", intensity: 1, duration: "60分", beginnerOk: true },
 ];
 
 const faqItems = [
@@ -283,9 +287,9 @@ function FAQSection() {
 
 function InstagramAtmosphereSection() {
   const igThumbs = [
-    { image: "/images/gym-interior.png", alt: "ジム全景" },
-    { image: "/images/class-kickboxing.png", alt: "キックボクシング" },
-    { image: "/images/gym-about.png", alt: "会員の雰囲気" },
+    { image: "/images/gym-interior.png", alt: "DEEP.FITの広く清潔感のあるジム内観" },
+    { image: "/images/class-kickboxing.png", alt: "初心者向けキックボクシングレッスンの様子" },
+    { image: "/images/gym-about.png", alt: "会員同士が和気藹々とトレーニングするDEEP.FITの雰囲気" },
   ];
 
   return (
@@ -320,7 +324,7 @@ function InstagramAtmosphereSection() {
               className="ig-atmosphere-section__thumb"
               data-testid={`link-ig-thumb-${i}`}
             >
-              <img src={thumb.image} alt={thumb.alt} className="ig-atmosphere-section__thumb-img" />
+              <img src={thumb.image} alt={thumb.alt} loading="lazy" className="ig-atmosphere-section__thumb-img" />
               <div className="ig-atmosphere-section__thumb-overlay">
                 <SiInstagram className="w-5 h-5 text-white" />
               </div>
@@ -596,7 +600,7 @@ export default function Home() {
 
   return (
     <>
-      <SEO title={seoConfig.pages.home.title} description={seoConfig.pages.home.description} path="/" />
+      <SEO title={seoConfig.pages.home.title} description={seoConfig.pages.home.description} path="/" faqItems={faqItems} />
       <ScrollProgress />
       {/* Hero Section — hero-v2 */}
       <section className="hero-v2" ref={heroRef}>
@@ -671,8 +675,9 @@ export default function Home() {
             transition={{ delay: 0.28, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
             <h1 data-testid="text-hero-headline">
-              <span>楽しいから続く。</span>
-              <span>続くから変わる。</span>
+              <span className="sr-only">JR尼崎で初心者・女性も通いやすいキックボクシングジム DEEP.FIT</span>
+              <span aria-hidden="true">楽しいから続く。</span>
+              <span aria-hidden="true">続くから変わる。</span>
             </h1>
           </motion.div>
 
@@ -748,7 +753,8 @@ export default function Home() {
                   <div className="absolute inset-0 overflow-hidden">
                     <img
                       src={cls.image}
-                      alt={cls.title}
+                      alt={cls.alt}
+                      loading="lazy"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 brightness-[1.06]"
                     />
                   </div>

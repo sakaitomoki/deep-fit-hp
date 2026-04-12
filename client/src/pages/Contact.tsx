@@ -32,7 +32,7 @@ const fadeInRight = {
 const contactInfo = [
   { icon: Phone, label: "電話番号", value: gymConfig.phone, href: `tel:${gymConfig.phone}` },
   { icon: Mail, label: "メールアドレス", value: gymConfig.email, href: `mailto:${gymConfig.email}` },
-  { icon: MapPin, label: "住所", value: `${gymConfig.address}\nJR尼崎駅 徒歩5分`, href: null },
+  { icon: MapPin, label: "住所", value: `${gymConfig.address}\nJR尼崎駅 徒歩10分`, href: null },
   { icon: Clock, label: "営業時間", value: `月〜水・金: ${gymConfig.hours.weekday}\n土・日: ${gymConfig.hours.saturday}\n定休日: ${gymConfig.hours.closed}`, href: null },
 ];
 
@@ -86,7 +86,7 @@ export default function Contact() {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="text-4xl sm:text-5xl font-bold text-white"
           >
-            お問い合わせ
+            無料体験・お問い合わせ
           </motion.h1>
         </div>
       </div>
