@@ -86,7 +86,13 @@ server/
 - `client/public/images/deepfit-logo.png` - ロゴ
 - `client/public/images/hero-gym.png` - ヒーロー画像
 
-## SEO TODO（未確定情報）
-- `seoConfig.siteUrl`: 現在 `https://deepfit.jp` — 正式ドメイン確定後に更新
-- Google Business Profileとの連携: 正式URL確定後にsitemap/canonicalを更新
+## SEO 設定
+- 本番ドメイン: `https://deep-amagasaki.com`
+- ファビコン: `client/public/favicon.ico`（16/32px ICO）+ `favicon-{16,32,48}x{...}.png` + `apple-touch-icon.png`(180px) + `android-chrome-{192,512}x{...}.png`
+- ロゴ元画像: `client/public/images/deepfit-logo.png`（1536x1024、3:2比率のため透明パディングで正方形化）
+
+## SEO TODO（運用側で必要な作業）
+- Google Search Console に `https://deep-amagasaki.com` を登録 → サイトマップ送信、URL検査でインデックス申請
+- Google Business Profile（マイビジネス）の店舗情報と公式サイトURLをひも付け
+- ドメイン変更後、Googleがファビコン再クロールするまで数日〜数週間かかる
 - OG画像: 現在 `gym-interior.png` を使用 — 専用OG画像（1200x630）作成推奨

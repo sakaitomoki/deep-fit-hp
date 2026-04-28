@@ -675,7 +675,7 @@ export default function Home() {
             transition={{ delay: 0.28, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
             <h1 data-testid="text-hero-headline">
-              <span className="sr-only">JR尼崎で初心者・女性も通いやすいキックボクシングジム DEEP.FIT</span>
+              <span className="sr-only">DEEP.FIT（ディープフィット）｜JR尼崎駅徒歩10分のキックボクシング・サーキットフィットネスジム</span>
               <span aria-hidden="true">楽しいから続く。</span>
               <span aria-hidden="true">続くから変わる。</span>
             </h1>

@@ -84,10 +84,10 @@ export const gymConfig = {
 
 export const seoConfig = {
   siteName: "DEEP.FIT サーキット×キックボクシングジム",
-  siteUrl: "https://deepfit.jp",
+  siteUrl: "https://deep-amagasaki.com",
   locale: "ja_JP",
   keywords: "キックボクシング, サーキットトレーニング, 尼崎, JR尼崎, 兵庫県, ダイエット, フィットネス, 初心者歓迎, 女性歓迎, 無料体験, パーソナルトレーニング, ボディメイク, ジム",
-  ogImage: "/images/gym-interior.png",
+  ogImage: "/images/og-image.jpg",
   pages: {
     home: {
       title: "JR尼崎のキックボクシングジムならDEEP.FIT｜初心者・女性歓迎・無料体験受付中",

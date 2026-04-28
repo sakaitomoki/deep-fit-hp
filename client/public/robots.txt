@@ -3,4 +3,4 @@ Allow: /
 
 Disallow: /api/
 
-Sitemap: https://deepfit.jp/sitemap.xml
+Sitemap: https://deep-amagasaki.com/sitemap.xml
