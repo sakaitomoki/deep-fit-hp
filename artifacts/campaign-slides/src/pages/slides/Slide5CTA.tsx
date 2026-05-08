@@ -82,7 +82,62 @@ export default function Slide5CTA() {
             >
               7月31日（木）
             </div>
-            <div style={{ width: "4vw", height: "2px", background: "#EAA53B", marginBottom: "3vh" }} />
+            <div style={{ width: "4vw", height: "2px", background: "#EAA53B", marginBottom: "2vh" }} />
+            <div
+              style={{
+                background: "rgba(234,165,59,0.12)",
+                border: "1px solid rgba(234,165,59,0.3)",
+                padding: "1.2vh 1.5vw",
+                marginBottom: "2vh",
+              }}
+            >
+              <div
+                style={{
+                  fontSize: "1.5vw",
+                  fontFamily: "Noto Sans JP, sans-serif",
+                  fontWeight: 400,
+                  color: "rgba(255,255,255,0.5)",
+                  marginBottom: "0.3vh",
+                }}
+              >
+                入会月の総節約額
+              </div>
+              <div className="flex items-baseline" style={{ gap: "1vw" }}>
+                <div
+                  style={{
+                    fontSize: "4vw",
+                    fontFamily: "Oswald, sans-serif",
+                    fontWeight: 700,
+                    color: "#EAA53B",
+                    letterSpacing: "-0.01em",
+                    lineHeight: 1,
+                  }}
+                >
+                  ¥23,000〜
+                </div>
+                <div
+                  style={{
+                    fontSize: "2vw",
+                    fontFamily: "Noto Sans JP, sans-serif",
+                    fontWeight: 700,
+                    color: "#FFFFFF",
+                  }}
+                >
+                  お得
+                </div>
+              </div>
+              <div
+                style={{
+                  fontSize: "1.5vw",
+                  fontFamily: "Noto Sans JP, sans-serif",
+                  fontWeight: 400,
+                  color: "rgba(255,255,255,0.4)",
+                  marginTop: "0.3vh",
+                }}
+              >
+                ＋月会費永久割引が継続
+              </div>
+            </div>
             <div
               style={{
                 fontSize: "2.2vw",
