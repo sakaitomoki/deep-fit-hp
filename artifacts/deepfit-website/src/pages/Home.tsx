@@ -412,9 +412,9 @@ const heroPlaylist = [
 ];
 
 const openingOfferItems = [
-  { id: 1, label: "特典1", title: "体験料", originalPrice: "通常 1,500円", benefit: "無料" },
-  { id: 2, label: "特典2", title: "入会金", originalPrice: "通常 10,000円", benefit: "無料" },
-  { id: 3, label: "特典3", title: "初月会費", originalPrice: "通常 11,000円〜13,200円", benefit: "無料" },
+  { id: 1, label: "特典①", title: "体験料", originalPrice: "通常 2,000円", benefit: "無料" },
+  { id: 2, label: "特典②", title: "入会金", originalPrice: "通常 10,000円", benefit: "無料" },
+  { id: 3, label: "特典③", title: "翌月会費", originalPrice: "女性 11,000円 / 男性 13,200円", benefit: "無料" },
 ];
 
 function OpeningOfferSection() {
@@ -428,17 +428,18 @@ function OpeningOfferSection() {
           variants={fadeInUp}
           className="opening-offer-section__header"
         >
-          <p className="opening-offer-section__eyebrow text-[24px]">OPENキャンペーン</p>
+          <p className="opening-offer-section__eyebrow text-[24px]">過去最大キャンペーン</p>
           <h2 className="opening-offer-section__title">
-            今なら始めやすい
-            <span>3大特典</span>
+            夏までに変わる。
+            <span>5大特典</span>
           </h2>
           <p className="opening-offer-section__lead">
-            4月末までの期間限定。<br />
-            無料体験から気軽に始められます。
+            5月7日〜7月31日の期間限定。<br />
+            まずは無料体験から気軽にどうぞ。
           </p>
         </motion.div>
 
+        {/* 3大無料特典カード */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -460,6 +461,57 @@ function OpeningOfferSection() {
           ))}
         </motion.div>
 
+        {/* 追加特典 ④⑤ */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+          className="flex flex-col sm:flex-row gap-4 w-full mt-4"
+        >
+          {/* 特典④ 月会費永久割引 */}
+          <motion.div
+            variants={scaleIn}
+            className="opening-offer-card flex-1"
+          >
+            <div className="opening-offer-card__label">特典④</div>
+            <div className="opening-offer-card__body">
+              <div>
+                <p className="opening-offer-card__title">月会費 永久割引</p>
+                <p className="opening-offer-card__original">当日ご入会の方限定</p>
+              </div>
+              <div>
+                <p className="text-[11px] text-[#F0A93A]/70 mb-0.5">女性フルタイム</p>
+                <p className="text-[#888] line-through text-sm">11,000円</p>
+                <p className="opening-offer-card__benefit leading-none">9,900円</p>
+                <p className="text-[11px] text-[#F0A93A]/70 mt-2 mb-0.5">男性フルタイム</p>
+                <p className="text-[#888] line-through text-sm">13,200円</p>
+                <p className="opening-offer-card__benefit leading-none">12,100円</p>
+                <p className="text-[11px] text-white/40 mt-2">継続縛りなし・いつでも退会可</p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* 特典⑤ キャッシュバック */}
+          <motion.div
+            variants={scaleIn}
+            className="opening-offer-card flex-1"
+          >
+            <div className="opening-offer-card__label">特典⑤</div>
+            <div className="opening-offer-card__body">
+              <div>
+                <p className="opening-offer-card__title">3ヶ月継続ボーナス</p>
+                <p className="opening-offer-card__original">フルタイム会員のみ対象</p>
+              </div>
+              <div>
+                <p className="opening-offer-card__benefit">1ヶ月分</p>
+                <p className="text-white/60 text-sm mt-1">会費キャッシュバック</p>
+                <p className="text-[11px] text-white/40 mt-2">3ヶ月継続でまるごと返金</p>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -467,9 +519,9 @@ function OpeningOfferSection() {
           variants={fadeInUp}
           className="opening-offer-section__value"
         >
-          <p className="opening-offer-section__value-label">初期費用</p>
-          <p className="opening-offer-section__value-main">0円でスタート可能</p>
-          <p className="opening-offer-section__value-sub">まずは無料体験だけでもOKです。</p>
+          <p className="opening-offer-section__value-label">入会月の節約額</p>
+          <p className="opening-offer-section__value-main">最大 23,000円〜</p>
+          <p className="opening-offer-section__value-sub">＋月会費永久割引が継続します</p>
         </motion.div>
 
         <motion.div
@@ -479,9 +531,9 @@ function OpeningOfferSection() {
           variants={fadeInUp}
           className="opening-offer-section__assurance"
         >
-          <span>体験時間は自由</span>
-          <span>持ち物は動きやすい服装だけ</span>
-          <span>おひとり様での参加歓迎</span>
+          <span>体験料 2,000円 → 無料</span>
+          <span>入会金 10,000円 → 無料</span>
+          <span>縛りなし・いつでも退会可</span>
           <span>運動初心者の方も歓迎</span>
         </motion.div>
 
