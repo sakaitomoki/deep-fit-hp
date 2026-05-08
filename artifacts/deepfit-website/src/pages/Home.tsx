@@ -488,16 +488,6 @@ function OpeningOfferSection() {
             {/* メインコピー */}
             <div className="px-5 pt-3 pb-3 text-center" style={{ borderBottom: "1px solid rgba(234,165,59,0.15)" }}>
               <p style={{
-                color: "#FFFFFF",
-                fontSize: "clamp(22px,2.8vw,32px)",
-                fontWeight: 900,
-                lineHeight: 1.15,
-                margin: 0,
-                letterSpacing: "0.02em",
-              }}>
-                今月中の入会で
-              </p>
-              <p style={{
                 color: "#EAA53B",
                 fontSize: "clamp(28px,4vw,46px)",
                 fontWeight: 900,

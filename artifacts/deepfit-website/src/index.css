@@ -493,14 +493,14 @@
   position: relative;
   overflow: hidden;
   padding: 72px 0;
-  background: #FFFFFF;
-  color: #111111;
+  background: #1A1D24;
+  color: #fff;
 }
 .opening-offer-section::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: repeating-linear-gradient(45deg, rgba(0,0,0,.025) 0, rgba(0,0,0,.025) 1px, transparent 1px, transparent 22px);
+  background-image: repeating-linear-gradient(45deg, rgba(255,255,255,.03) 0, rgba(255,255,255,.03) 1px, transparent 1px, transparent 22px);
   opacity: 1;
   pointer-events: none;
 }
@@ -517,7 +517,7 @@
 }
 .opening-offer-section__eyebrow {
   margin: 0 0 10px;
-  color: #C8860A;
+  color: #EAA53B;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: .28em;
@@ -528,15 +528,15 @@
   font-size: clamp(32px, 4.8vw, 58px);
   line-height: 1.05;
   font-weight: 900;
-  color: #111111;
+  color: #fff;
 }
 .opening-offer-section__title span {
   display: block;
-  color: #C8860A;
+  color: #EAA53B;
 }
 .opening-offer-section__lead {
   margin: 14px 0 0;
-  color: rgba(0,0,0,.58);
+  color: rgba(255,255,255,.62);
   font-size: clamp(15px, 1.2vw, 18px);
   line-height: 1.7;
 }
@@ -551,8 +551,8 @@
   align-items: center;
   padding: 16px 18px;
   border-radius: 22px;
-  background: #F9F6F0;
-  border: 1px solid rgba(200,134,10,.22);
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(234,165,59,.2);
 }
 .opening-offer-card__label {
   flex-shrink: 0;
@@ -562,8 +562,8 @@
   min-width: 74px;
   height: 30px;
   border-radius: 999px;
-  background: rgba(200,134,10,.13);
-  color: #C8860A;
+  background: rgba(234,165,59,.15);
+  color: #EAA53B;
   font-size: 12px;
   font-weight: 800;
 }
@@ -578,17 +578,17 @@
   margin: 0;
   font-size: clamp(18px, 1.8vw, 22px);
   font-weight: 800;
-  color: #111111;
+  color: #fff;
 }
 .opening-offer-card__original {
   margin: 4px 0 0;
   font-size: 13px;
-  color: rgba(0,0,0,.42);
+  color: rgba(255,255,255,.42);
   text-decoration: line-through;
 }
 .opening-offer-card__benefit {
   margin: 0;
-  color: #C8860A;
+  color: #EAA53B;
   font-size: clamp(24px, 3vw, 34px);
   font-weight: 900;
   line-height: 1;
@@ -598,12 +598,12 @@
   padding: 22px 18px;
   margin-bottom: 18px;
   border-radius: 26px;
-  background: #F9F6F0;
-  border: 1px solid rgba(200,134,10,.28);
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(234,165,59,.22);
 }
 .opening-offer-section__value-label {
   margin: 0 0 6px;
-  color: rgba(0,0,0,.52);
+  color: rgba(255,255,255,.55);
   font-size: 13px;
   letter-spacing: .18em;
   text-transform: uppercase;
@@ -612,11 +612,11 @@
   margin: 0;
   font-size: clamp(28px, 4vw, 48px);
   font-weight: 900;
-  color: #111111;
+  color: #fff;
 }
 .opening-offer-section__value-sub {
   margin: 8px 0 0;
-  color: rgba(0,0,0,.52);
+  color: rgba(255,255,255,.55);
   font-size: 14px;
 }
 .opening-offer-section__assurance {
@@ -629,9 +629,9 @@
 .opening-offer-section__assurance span {
   padding: 8px 12px;
   border-radius: 999px;
-  background: rgba(0,0,0,.05);
-  border: 1px solid rgba(0,0,0,.1);
-  color: rgba(0,0,0,.72);
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  color: rgba(255,255,255,.78);
   font-size: 13px;
 }
 .opening-offer-section__cta {
@@ -658,13 +658,13 @@
   color: #fff;
 }
 .opening-offer-section__cta-secondary {
-  background: rgba(0,0,0,.06);
-  color: #111111;
-  border: 1px solid rgba(0,0,0,.12);
+  background: rgba(255,255,255,.08);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.14);
 }
 .opening-offer-section__cta-note {
   margin: 0;
-  color: rgba(0,0,0,.45);
+  color: rgba(255,255,255,.45);
   font-size: 12px;
   text-align: center;
 }
