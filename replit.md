@@ -1,98 +1,67 @@
-# DEEP.FIT - サーキット×キックボクシングジム ウェブサイト
+# DEEP.FIT Website
 
-## プロジェクト概要
-兵庫県尼崎市にあるサーキットトレーニング×キックボクシングジム「DEEP.FIT」のプロフェッショナルな日本語マルチページウェブサイト。
+A gym website for DEEP.FIT — a kickboxing and circuit fitness gym near JR Amagasaki station in Hyogo, Japan.
 
-## 技術スタック
-- **フロントエンド**: React + Vite + TailwindCSS + Framer Motion
-- **バックエンド**: Express.js + Node.js
-- **データベース**: PostgreSQL (Drizzle ORM)
-- **ルーティング**: wouter
-- **データフェッチ**: TanStack React Query v5
-- **フォーム**: react-hook-form + zodResolver
-- **SEO**: react-helmet-async + JSON-LD構造化データ
-- **フォント**: Noto Sans JP (本文), Oswald (見出し)
+## Run & Operate
 
-## ページ構成
-- `/` - ホームページ（ヒーロー動画 → 3大特典 → GymIdentity → FAQ → Instagram雰囲気 → 口コミ → クラス紹介 → LINE相談 → 最終CTA）
-- `/about` - ジムについて（Our Story、Values、施設、アクセス）
-- `/schedule` - クラス・料金（クラス紹介、週間スケジュール、料金プラン）
-- `/instructors` - インストラクター（3名の詳細プロフィール）
-- `/contact` - お問い合わせ（フォーム + Google Maps）
+- `pnpm --filter @workspace/api-server run dev` — run the API server (port 8080)
+- `pnpm --filter @workspace/deepfit-website run dev` — run the frontend Vite dev server
+- `pnpm run typecheck` — full typecheck across all packages
+- `pnpm run build` — typecheck + build all packages
+- `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
+- `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
+- Required env: `DATABASE_URL` — Postgres connection string
 
-## SEO実装
-- **メタタグ**: 各ページに固有のtitle / meta description / canonical / OG / Twitter Card
-- **構造化データ**: SportsActivityLocation + HealthClub (JSON-LD)、FAQPage (トップページ)
-- **見出し構造**: 各ページにH1は1つ、H2/H3で適切な階層
-- **画像SEO**: 全主要画像に自然な日本語alt
-- **ローカルSEO**: geo meta tags、areaServed、NAP整合
-- **sitemap.xml / robots.txt**: client/public/ に配置
-- **パフォーマンス**: フォント最適化(preload)、画像lazy loading、LCPヒーロー画像preload
-- **ターゲットキーワード**: JR尼崎, キックボクシング, 初心者, 女性歓迎, 無料体験, サーキットトレーニング
+## Stack
 
-## デザインシステム
-- プライマリゴールド: `#EAA53B` / `#F0A93A`
-- プライマリグレー: `#4D5058`
-- アクセントオレンジ: `#F2AC55`
-- 背景グレー: `#F2F3F5`
-- ダークセクション背景: `#0B0F15` / `#0F1520` / `#0E1219` / `#0C1018`
-- カード背景: `#151D2B` / `#141C2A`
-- フォント: Oswald（英語見出し）/ Noto Sans JP（日本語本文）
+- pnpm workspaces, Node.js 24, TypeScript 5.9
+- Frontend: React + Vite + Tailwind CSS v4 + Framer Motion + Wouter
+- Backend: Express 5
+- DB: PostgreSQL + Drizzle ORM
+- Validation: Zod, drizzle-zod
+- API codegen: Orval (from OpenAPI spec)
+- Build: esbuild (CJS bundle)
+- Forms: react-hook-form + @hookform/resolvers
+- SEO: react-helmet-async
 
-## ファイル構成
-```
-client/src/
-  App.tsx               - ルーティング、プロバイダー
-  pages/
-    Home.tsx            - ホーム（最もリッチなアニメーション）
-    About.tsx           - ジムについて
-    Schedule.tsx        - クラス・料金
-    Instructors.tsx     - インストラクター
-    Contact.tsx         - お問い合わせ
-  components/
-    Navigation.tsx      - 固定ヘッダー（スクロール検知付き）
-    Footer.tsx          - フッター（4カラム）
-    SEO.tsx             - SEOメタタグ + JSON-LD構造化データ
-    GymLogo.tsx         - ロゴ
-  lib/
-    gymConfig.ts        - ジム設定・SEO設定（ページ別タイトル/説明）
-    queryClient.ts      - TanStack Query設定
-client/public/
-  robots.txt            - クローラー制御
-  sitemap.xml           - 全公開ページのサイトマップ
-  images/               - ジム画像・ロゴ
-shared/
-  schema.ts             - DBスキーマ（contact_inquiries）
-server/
-  routes.ts             - POST/GET /api/contact
-  storage.ts            - DatabaseStorage
-  db.ts                 - PostgreSQL接続
-```
+## Where things live
 
-## データベーステーブル
-- `contact_inquiries` - お問い合わせデータ（id, name, email, phone, inquiry_type, message, is_read, created_at）
+- `artifacts/deepfit-website/` — React + Vite frontend (previewPath: `/`)
+- `artifacts/api-server/` — Express API backend (previewPath: `/api`)
+- `lib/db/` — Drizzle schema (`contactInquiries` table)
+- `lib/db/schema.ts` — source of truth for DB schema
+- `artifacts/deepfit-website/src/lib/gymConfig.ts` — all gym-specific data (hours, pricing, contact, SNS URLs)
+- `artifacts/deepfit-website/src/index.css` — full DEEP.FIT theme variables + BEM component classes
+- `artifacts/deepfit-website/public/` — all static assets (images, videos, favicons)
 
-## APIエンドポイント
-- `POST /api/contact` - お問い合わせ送信
-- `GET /api/contact` - お問い合わせ一覧取得
+## Architecture decisions
 
-## 画像
-- `client/public/images/gym-interior.png` - ジム内観（OG画像にも使用）
-- `client/public/images/class-kickboxing.png` - キックボクシングクラス
-- `client/public/images/class-personal.png` - パーソナルトレーニング
-- `client/public/images/class-circuit.png` - サーキットトレーニング
-- `client/public/images/gym-about.png` - ジム紹介用
-- `client/public/images/smith-machine.jpeg` - 個室スミスマシン
-- `client/public/images/deepfit-logo.png` - ロゴ
-- `client/public/images/hero-gym.png` - ヒーロー画像
+- Wouter used instead of React Router (lightweight SPA routing, matches original)
+- Hero section uses dual-slot video crossfade pattern for smooth clip transitions
+- All BEM CSS classes (hero-v2, opening-offer-section, etc.) ported directly from migration backup
+- Fonts loaded via Google Fonts in index.html: Noto Sans JP (body) + Oswald (headings/watermarks)
+- Contact form POSTs to `/api/contact` and stores submissions in PostgreSQL via Drizzle
 
-## SEO 設定
-- 本番ドメイン: `https://deep-amagasaki.com`
-- ファビコン: `client/public/favicon.ico`（16/32px ICO）+ `favicon-{16,32,48}x{...}.png` + `apple-touch-icon.png`(180px) + `android-chrome-{192,512}x{...}.png`
-- ロゴ元画像: `client/public/images/deepfit-logo.png`（1536x1024、3:2比率のため透明パディングで正方形化）
+## Product
 
-## SEO TODO（運用側で必要な作業）
-- Google Search Console に `https://deep-amagasaki.com` を登録 → サイトマップ送信、URL検査でインデックス申請
-- Google Business Profile（マイビジネス）の店舗情報と公式サイトURLをひも付け
-- ドメイン変更後、Googleがファビコン再クロールするまで数日〜数週間かかる
-- OG画像: 現在 `gym-interior.png` を使用 — 専用OG画像（1200x630）作成推奨
+- **Home**: hero video crossfade, opening offer campaign, gym identity cards, FAQ, Instagram section, testimonials, class overview, LINE CTA, final trial CTA
+- **About**: gym values, mission, timeline, access info
+- **Instructors**: instructor profiles with photos and credentials
+- **Schedule / Classes**: class type cards, weekly schedule table (color-coded), pricing tables for all membership tiers
+- **Contact**: contact info + inquiry form (name, email, phone, type, message) wired to PostgreSQL
+
+## User preferences
+
+_Populate as you build — explicit user instructions worth remembering across sessions._
+
+## Gotchas
+
+- Hero video requires actual MP4 files in `public/video/` — they render black in static screenshots
+- Framer Motion `ease` bezier arrays must be typed as `[number, number, number, number]` (not `number[]`)
+- `zod` must be in api-server's own `dependencies` (not just inherited via @workspace/db)
+- `pnpm run typecheck:libs` must pass before leaf package typechecks run
+
+## Pointers
+
+- See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and package details
+- Migration backup source at `.migration-backup/` for reference
