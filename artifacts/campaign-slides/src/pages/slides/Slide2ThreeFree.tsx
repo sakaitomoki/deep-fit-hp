@@ -23,7 +23,7 @@ export default function Slide2ThreeFree() {
           marginBottom: "1.5vh",
         }}
       >
-        Campaign Benefits
+        キャンペーン特典
       </div>
       <div
         style={{

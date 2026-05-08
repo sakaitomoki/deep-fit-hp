@@ -45,7 +45,7 @@ export default function Slide5CTA() {
                 marginBottom: "1.5vh",
               }}
             >
-              CAMPAIGN PERIOD
+              キャンペーン期間
             </div>
             <div
               style={{
@@ -125,7 +125,7 @@ export default function Slide5CTA() {
               marginBottom: "3vh",
             }}
           >
-            GYM INFO
+            ジム情報
           </div>
 
           <div className="flex flex-col" style={{ gap: "2.5vh" }}>

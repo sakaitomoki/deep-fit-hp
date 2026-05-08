@@ -27,7 +27,7 @@ export default function Slide4Bonus() {
             marginBottom: "1.5vh",
           }}
         >
-          特典⑤ — Bonus
+          特典⑤
         </div>
         <div
           style={{
