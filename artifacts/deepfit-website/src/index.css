@@ -493,15 +493,15 @@
   position: relative;
   overflow: hidden;
   padding: 72px 0;
-  background: linear-gradient(180deg, #111111 0%, #17191d 100%);
-  color: #fff;
+  background: #FFFFFF;
+  color: #111111;
 }
 .opening-offer-section::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: repeating-linear-gradient(45deg, rgba(255,255,255,.04) 0, rgba(255,255,255,.04) 1px, transparent 1px, transparent 22px);
-  opacity: .18;
+  background-image: repeating-linear-gradient(45deg, rgba(0,0,0,.025) 0, rgba(0,0,0,.025) 1px, transparent 1px, transparent 22px);
+  opacity: 1;
   pointer-events: none;
 }
 .opening-offer-section__inner {
@@ -517,7 +517,7 @@
 }
 .opening-offer-section__eyebrow {
   margin: 0 0 10px;
-  color: #EAA53B;
+  color: #C8860A;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: .28em;
@@ -528,14 +528,15 @@
   font-size: clamp(32px, 4.8vw, 58px);
   line-height: 1.05;
   font-weight: 900;
+  color: #111111;
 }
 .opening-offer-section__title span {
   display: block;
-  color: #EAA53B;
+  color: #C8860A;
 }
 .opening-offer-section__lead {
   margin: 14px 0 0;
-  color: rgba(255,255,255,.72);
+  color: rgba(0,0,0,.58);
   font-size: clamp(15px, 1.2vw, 18px);
   line-height: 1.7;
 }
@@ -550,8 +551,8 @@
   align-items: center;
   padding: 16px 18px;
   border-radius: 22px;
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(234,165,59,.18);
+  background: #F9F6F0;
+  border: 1px solid rgba(200,134,10,.22);
 }
 .opening-offer-card__label {
   flex-shrink: 0;
@@ -561,8 +562,8 @@
   min-width: 74px;
   height: 30px;
   border-radius: 999px;
-  background: rgba(234,165,59,.14);
-  color: #EAA53B;
+  background: rgba(200,134,10,.13);
+  color: #C8860A;
   font-size: 12px;
   font-weight: 800;
 }
@@ -577,16 +578,17 @@
   margin: 0;
   font-size: clamp(18px, 1.8vw, 22px);
   font-weight: 800;
+  color: #111111;
 }
 .opening-offer-card__original {
   margin: 4px 0 0;
   font-size: 13px;
-  color: rgba(255,255,255,.52);
+  color: rgba(0,0,0,.42);
   text-decoration: line-through;
 }
 .opening-offer-card__benefit {
   margin: 0;
-  color: #EAA53B;
+  color: #C8860A;
   font-size: clamp(24px, 3vw, 34px);
   font-weight: 900;
   line-height: 1;
@@ -596,12 +598,12 @@
   padding: 22px 18px;
   margin-bottom: 18px;
   border-radius: 26px;
-  background: rgba(255,255,255,.05);
-  border: 1px solid rgba(234,165,59,.24);
+  background: #F9F6F0;
+  border: 1px solid rgba(200,134,10,.28);
 }
 .opening-offer-section__value-label {
   margin: 0 0 6px;
-  color: rgba(255,255,255,.68);
+  color: rgba(0,0,0,.52);
   font-size: 13px;
   letter-spacing: .18em;
   text-transform: uppercase;
@@ -610,11 +612,11 @@
   margin: 0;
   font-size: clamp(28px, 4vw, 48px);
   font-weight: 900;
-  color: #fff;
+  color: #111111;
 }
 .opening-offer-section__value-sub {
   margin: 8px 0 0;
-  color: rgba(255,255,255,.74);
+  color: rgba(0,0,0,.52);
   font-size: 14px;
 }
 .opening-offer-section__assurance {
@@ -627,9 +629,9 @@
 .opening-offer-section__assurance span {
   padding: 8px 12px;
   border-radius: 999px;
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.1);
-  color: rgba(255,255,255,.86);
+  background: rgba(0,0,0,.05);
+  border: 1px solid rgba(0,0,0,.1);
+  color: rgba(0,0,0,.72);
   font-size: 13px;
 }
 .opening-offer-section__cta {
@@ -656,13 +658,13 @@
   color: #fff;
 }
 .opening-offer-section__cta-secondary {
-  background: rgba(255,255,255,.08);
-  color: #fff;
-  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(0,0,0,.06);
+  color: #111111;
+  border: 1px solid rgba(0,0,0,.12);
 }
 .opening-offer-section__cta-note {
   margin: 0;
-  color: rgba(255,255,255,.55);
+  color: rgba(0,0,0,.45);
   font-size: 12px;
   text-align: center;
 }

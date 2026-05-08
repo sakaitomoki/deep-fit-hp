@@ -461,33 +461,56 @@ function OpeningOfferSection() {
           ))}
         </motion.div>
 
-        {/* 追加特典 ④⑤ */}
+        {/* 先着50名限定バナー */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          className="flex items-center justify-center gap-3 mb-6 px-5 py-3 rounded-full mx-auto w-fit"
+          style={{ background: "#111111", color: "#EAA53B" }}
+        >
+          <span style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.2em", opacity: 0.7, color: "#EAA53B" }}>限定</span>
+          <span style={{ fontSize: "clamp(15px,1.6vw,18px)", fontWeight: 900, fontFamily: "Oswald, sans-serif", letterSpacing: "0.04em" }}>
+            先着 50名 限定
+          </span>
+          <span style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.2em", opacity: 0.7, color: "#EAA53B" }}>限定</span>
+        </motion.div>
+
+        {/* 追加特典 ④⑤ — 大きく目立つカード */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={staggerContainer}
-          className="flex flex-col sm:flex-row gap-4 w-full mt-4"
+          className="flex flex-col sm:flex-row gap-5 w-full mt-2 mb-2"
         >
           {/* 特典④ 月会費永久割引 */}
           <motion.div
             variants={scaleIn}
-            className="opening-offer-card flex-1"
+            className="flex-1 rounded-3xl overflow-hidden"
+            style={{ background: "#111111", border: "2px solid #EAA53B" }}
           >
-            <div className="opening-offer-card__label">特典④</div>
-            <div className="opening-offer-card__body">
-              <div>
-                <p className="opening-offer-card__title">月会費 永久割引</p>
-                <p className="opening-offer-card__original">当日ご入会の方限定</p>
-              </div>
-              <div>
-                <p className="text-[11px] text-[#F0A93A]/70 mb-0.5">女性フルタイム</p>
-                <p className="text-[#888] line-through text-sm">11,000円</p>
-                <p className="opening-offer-card__benefit leading-none">9,900円</p>
-                <p className="text-[11px] text-[#F0A93A]/70 mt-2 mb-0.5">男性フルタイム</p>
-                <p className="text-[#888] line-through text-sm">13,200円</p>
-                <p className="opening-offer-card__benefit leading-none">12,100円</p>
-                <p className="text-[11px] text-white/40 mt-2">継続縛りなし・いつでも退会可</p>
+            <div className="flex items-center gap-2 px-6 pt-5 pb-3" style={{ borderBottom: "1px solid rgba(234,165,59,0.2)" }}>
+              <span style={{ background: "#EAA53B", color: "#111", fontSize: 12, fontWeight: 900, padding: "3px 14px", borderRadius: 999, letterSpacing: "0.08em" }}>特典④</span>
+              <span style={{ color: "rgba(234,165,59,0.7)", fontSize: 11, fontWeight: 700, letterSpacing: "0.15em" }}>当日入会限定</span>
+            </div>
+            <div className="px-6 pt-4 pb-5">
+              <p style={{ color: "#FFFFFF", fontSize: "clamp(18px,2vw,22px)", fontWeight: 900, marginBottom: 4 }}>月会費 <span style={{ color: "#EAA53B" }}>永久</span>割引</p>
+              <p style={{ color: "rgba(255,255,255,0.45)", fontSize: 13, marginBottom: 16 }}>継続縛りなし・いつでも退会可</p>
+              <div className="flex gap-6">
+                <div>
+                  <p style={{ color: "rgba(234,165,59,0.7)", fontSize: 11, fontWeight: 700, marginBottom: 2 }}>女性フルタイム</p>
+                  <p style={{ color: "rgba(255,255,255,0.35)", fontSize: 13, textDecoration: "line-through", marginBottom: 0 }}>11,000円</p>
+                  <p style={{ color: "#EAA53B", fontSize: "clamp(30px,4vw,44px)", fontWeight: 900, lineHeight: 1.05, fontFamily: "Oswald, sans-serif" }}>¥9,900</p>
+                  <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 11, marginTop: 2 }}>/ 月（永久）</p>
+                </div>
+                <div>
+                  <p style={{ color: "rgba(234,165,59,0.7)", fontSize: 11, fontWeight: 700, marginBottom: 2 }}>男性フルタイム</p>
+                  <p style={{ color: "rgba(255,255,255,0.35)", fontSize: 13, textDecoration: "line-through", marginBottom: 0 }}>13,200円</p>
+                  <p style={{ color: "#EAA53B", fontSize: "clamp(30px,4vw,44px)", fontWeight: 900, lineHeight: 1.05, fontFamily: "Oswald, sans-serif" }}>¥12,100</p>
+                  <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 11, marginTop: 2 }}>/ 月（永久）</p>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -495,18 +518,21 @@ function OpeningOfferSection() {
           {/* 特典⑤ キャッシュバック */}
           <motion.div
             variants={scaleIn}
-            className="opening-offer-card flex-1"
+            className="flex-1 rounded-3xl overflow-hidden"
+            style={{ background: "#111111", border: "2px solid #EAA53B" }}
           >
-            <div className="opening-offer-card__label">特典⑤</div>
-            <div className="opening-offer-card__body">
+            <div className="flex items-center gap-2 px-6 pt-5 pb-3" style={{ borderBottom: "1px solid rgba(234,165,59,0.2)" }}>
+              <span style={{ background: "#EAA53B", color: "#111", fontSize: 12, fontWeight: 900, padding: "3px 14px", borderRadius: 999, letterSpacing: "0.08em" }}>特典⑤</span>
+              <span style={{ color: "rgba(234,165,59,0.7)", fontSize: 11, fontWeight: 700, letterSpacing: "0.15em" }}>フルタイム会員のみ対象</span>
+            </div>
+            <div className="px-6 pt-4 pb-5">
+              <p style={{ color: "#FFFFFF", fontSize: "clamp(18px,2vw,22px)", fontWeight: 900, marginBottom: 4 }}>3ヶ月継続で <span style={{ color: "#EAA53B" }}>キャッシュバック</span></p>
+              <p style={{ color: "rgba(255,255,255,0.45)", fontSize: 13, marginBottom: 16 }}>3ヶ月続けたら、まるごと返金</p>
               <div>
-                <p className="opening-offer-card__title">3ヶ月継続ボーナス</p>
-                <p className="opening-offer-card__original">フルタイム会員のみ対象</p>
-              </div>
-              <div>
-                <p className="opening-offer-card__benefit">1ヶ月分</p>
-                <p className="text-white/60 text-sm mt-1">会費キャッシュバック</p>
-                <p className="text-[11px] text-white/40 mt-2">3ヶ月継続でまるごと返金</p>
+                <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 13, marginBottom: 4 }}>キャッシュバック額</p>
+                <p style={{ color: "#EAA53B", fontSize: "clamp(34px,5vw,54px)", fontWeight: 900, lineHeight: 1, fontFamily: "Oswald, sans-serif" }}>1ヶ月分</p>
+                <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "clamp(15px,1.6vw,18px)", fontWeight: 700, marginTop: 4 }}>の会費を全額返金</p>
+                <p style={{ color: "rgba(255,255,255,0.3)", fontSize: 12, marginTop: 10 }}>女性最大 ¥9,900 / 男性最大 ¥12,100</p>
               </div>
             </div>
           </motion.div>
