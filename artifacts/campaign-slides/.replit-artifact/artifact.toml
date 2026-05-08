@@ -1,0 +1,31 @@
+kind = "slides"
+previewPath = "/campaign-slides/"
+title = "夏までに変わる。キャンペーンスライド"
+version = "1.0.0"
+id = "artifacts/campaign-slides"
+router = "path"
+
+[[integratedSkills]]
+name = "slides"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/campaign-slides/" ]
+localPort = 18591
+
+[services.development]
+run = "pnpm --filter @workspace/campaign-slides run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/campaign-slides", "run", "build" ]
+publicDir = "artifacts/campaign-slides/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18591"
+BASE_PATH = "/campaign-slides/"
