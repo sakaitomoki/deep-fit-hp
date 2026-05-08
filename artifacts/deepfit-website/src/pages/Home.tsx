@@ -469,48 +469,83 @@ function OpeningOfferSection() {
           variants={staggerContainer}
           className="flex flex-col sm:flex-row gap-5 w-full mt-2 mb-2"
         >
-          {/* 特典④ 先着50名限定・月会費永久割引 */}
+          {/* 特典④ 先着50名限定・月会費永久割引 — 広告スタイル */}
           <motion.div
             variants={scaleIn}
             className="flex-1 rounded-3xl overflow-hidden"
-            style={{ background: "#0B0F15", border: "2px solid #EAA53B", position: "relative" }}
+            style={{
+              background: "linear-gradient(160deg, #0B0F15 0%, #151a24 100%)",
+              border: "2.5px solid #EAA53B",
+              position: "relative",
+            }}
           >
-            {/* 先着50名ヘッダー帯 */}
-            <div style={{ background: "#EAA53B", padding: "10px 24px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-              <div className="flex items-center gap-2">
-                <span style={{ background: "#111", color: "#EAA53B", fontSize: 10, fontWeight: 900, padding: "2px 10px", borderRadius: 999, letterSpacing: "0.12em" }}>特典④</span>
-                <span style={{ color: "#111111", fontSize: 11, fontWeight: 800, letterSpacing: "0.18em" }}>当日入会限定</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <span style={{ color: "#111", fontSize: 10, fontWeight: 800, letterSpacing: "0.1em", opacity: 0.6 }}>残り</span>
-                <span style={{ color: "#111111", fontSize: "clamp(18px,2.2vw,24px)", fontWeight: 900, fontFamily: "Oswald, sans-serif", lineHeight: 1 }}>50</span>
-                <span style={{ color: "#111", fontSize: 10, fontWeight: 800, letterSpacing: "0.1em", opacity: 0.6 }}>名</span>
-              </div>
+            {/* 特典④ラベル */}
+            <div className="px-5 pt-4 pb-0 flex items-center gap-2">
+              <span style={{ background: "rgba(234,165,59,0.18)", color: "#EAA53B", fontSize: 11, fontWeight: 900, padding: "3px 12px", borderRadius: 999, letterSpacing: "0.1em" }}>特典④</span>
+              <span style={{ color: "rgba(255,255,255,0.4)", fontSize: 11, letterSpacing: "0.12em" }}>当日入会限定</span>
             </div>
 
-            {/* 先着50名限定タイトル */}
-            <div className="px-6 pt-5 pb-2" style={{ borderBottom: "1px solid rgba(234,165,59,0.15)" }}>
-              <p style={{ color: "#EAA53B", fontSize: "clamp(11px,1vw,13px)", fontWeight: 800, letterSpacing: "0.22em", marginBottom: 4 }}>先着 50名 限定</p>
-              <p style={{ color: "#FFFFFF", fontSize: "clamp(20px,2.4vw,28px)", fontWeight: 900, lineHeight: 1.1, margin: 0 }}>
-                月会費が<span style={{ color: "#EAA53B" }}>ずっと</span>オフ
+            {/* メインコピー */}
+            <div className="px-5 pt-3 pb-3 text-center" style={{ borderBottom: "1px solid rgba(234,165,59,0.15)" }}>
+              <p style={{
+                color: "#FFFFFF",
+                fontSize: "clamp(22px,2.8vw,32px)",
+                fontWeight: 900,
+                lineHeight: 1.15,
+                margin: 0,
+                letterSpacing: "0.02em",
+              }}>
+                今月中の入会で
               </p>
-              <p style={{ color: "rgba(255,255,255,0.38)", fontSize: 12, marginTop: 6, marginBottom: 0 }}>継続縛りなし・いつでも退会可</p>
+              <p style={{
+                color: "#EAA53B",
+                fontSize: "clamp(28px,4vw,46px)",
+                fontWeight: 900,
+                lineHeight: 1.05,
+                margin: "4px 0 2px",
+                fontFamily: "Oswald, sans-serif",
+                letterSpacing: "0.02em",
+              }}>
+                月会費が永久にOFF！！
+              </p>
+              <p style={{ color: "rgba(255,255,255,0.45)", fontSize: 13, margin: 0 }}>
+                ※先着50名限定
+              </p>
             </div>
 
-            {/* 価格 */}
-            <div className="px-6 pt-4 pb-6 flex gap-8">
-              <div>
-                <p style={{ color: "rgba(234,165,59,0.65)", fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", marginBottom: 3 }}>女性フルタイム</p>
-                <p style={{ color: "rgba(255,255,255,0.3)", fontSize: 13, textDecoration: "line-through", margin: 0 }}>通常 11,000円/月</p>
-                <p style={{ color: "#EAA53B", fontSize: "clamp(34px,4.5vw,52px)", fontWeight: 900, lineHeight: 1, fontFamily: "Oswald, sans-serif", margin: "2px 0 0" }}>¥9,900</p>
-                <p style={{ color: "rgba(255,255,255,0.35)", fontSize: 11, marginTop: 3 }}>/ 月（永久）</p>
+            {/* 価格比較 */}
+            <div className="px-5 pt-4 pb-5">
+              {/* 女性 */}
+              <div className="mb-4">
+                <p style={{ color: "rgba(234,165,59,0.7)", fontSize: 11, fontWeight: 800, letterSpacing: "0.14em", marginBottom: 3 }}>女性フルタイム</p>
+                <div className="flex items-baseline gap-2">
+                  <span style={{ color: "rgba(255,255,255,0.35)", fontSize: "clamp(15px,1.8vw,20px)", fontWeight: 700 }}>通常</span>
+                  <span style={{ color: "rgba(255,255,255,0.35)", fontSize: "clamp(18px,2.2vw,26px)", fontWeight: 800, textDecoration: "line-through" }}>11,000円</span>
+                  <span style={{ color: "rgba(255,255,255,0.35)", fontSize: "clamp(15px,1.8vw,20px)", fontWeight: 700 }}>が</span>
+                </div>
+                <div className="flex items-baseline gap-2 mt-0.5">
+                  <span style={{ color: "#FFFFFF", fontSize: "clamp(16px,1.8vw,20px)", fontWeight: 700 }}>ずっと</span>
+                  <span style={{ color: "#EAA53B", fontSize: "clamp(32px,4.2vw,50px)", fontWeight: 900, lineHeight: 1, fontFamily: "Oswald, sans-serif" }}>9,900円</span>
+                  <span style={{ color: "#FFFFFF", fontSize: "clamp(14px,1.4vw,17px)", fontWeight: 700 }}>で通い放題！</span>
+                </div>
               </div>
-              <div>
-                <p style={{ color: "rgba(234,165,59,0.65)", fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", marginBottom: 3 }}>男性フルタイム</p>
-                <p style={{ color: "rgba(255,255,255,0.3)", fontSize: 13, textDecoration: "line-through", margin: 0 }}>通常 13,200円/月</p>
-                <p style={{ color: "#EAA53B", fontSize: "clamp(34px,4.5vw,52px)", fontWeight: 900, lineHeight: 1, fontFamily: "Oswald, sans-serif", margin: "2px 0 0" }}>¥12,100</p>
-                <p style={{ color: "rgba(255,255,255,0.35)", fontSize: 11, marginTop: 3 }}>/ 月（永久）</p>
+
+              {/* 男性 */}
+              <div style={{ borderTop: "1px solid rgba(234,165,59,0.12)", paddingTop: 14 }}>
+                <p style={{ color: "rgba(234,165,59,0.7)", fontSize: 11, fontWeight: 800, letterSpacing: "0.14em", marginBottom: 3 }}>男性フルタイム</p>
+                <div className="flex items-baseline gap-2">
+                  <span style={{ color: "rgba(255,255,255,0.35)", fontSize: "clamp(15px,1.8vw,20px)", fontWeight: 700 }}>通常</span>
+                  <span style={{ color: "rgba(255,255,255,0.35)", fontSize: "clamp(18px,2.2vw,26px)", fontWeight: 800, textDecoration: "line-through" }}>13,200円</span>
+                  <span style={{ color: "rgba(255,255,255,0.35)", fontSize: "clamp(15px,1.8vw,20px)", fontWeight: 700 }}>が</span>
+                </div>
+                <div className="flex items-baseline gap-2 mt-0.5">
+                  <span style={{ color: "#FFFFFF", fontSize: "clamp(16px,1.8vw,20px)", fontWeight: 700 }}>ずっと</span>
+                  <span style={{ color: "#EAA53B", fontSize: "clamp(32px,4.2vw,50px)", fontWeight: 900, lineHeight: 1, fontFamily: "Oswald, sans-serif" }}>12,100円</span>
+                  <span style={{ color: "#FFFFFF", fontSize: "clamp(14px,1.4vw,17px)", fontWeight: 700 }}>で通い放題！</span>
+                </div>
               </div>
+
+              <p style={{ color: "rgba(255,255,255,0.25)", fontSize: 11, marginTop: 14, textAlign: "center" }}>継続縛りなし・いつでも退会可</p>
             </div>
           </motion.div>
 
