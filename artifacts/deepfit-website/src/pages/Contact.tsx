@@ -109,7 +109,7 @@ export default function Contact() {
       </div>
 
       {/* Contact Section */}
-      <section className="py-20 lg:py-28 bg-[#1A1D24]">
+      <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-10">
             {/* Contact Info */}
@@ -122,8 +122,8 @@ export default function Contact() {
             >
               <div className="mb-8">
                 <p className="text-[#F2AC55] text-xs tracking-[0.3em] uppercase mb-3">Get In Touch</p>
-                <h2 className="text-3xl font-bold text-white">連絡先</h2>
-                <p className="text-white/60 text-sm mt-3 leading-relaxed">
+                <h2 className="text-3xl font-bold text-[#4D5058]">連絡先</h2>
+                <p className="text-[#4D5058]/60 text-sm mt-3 leading-relaxed">
                   体験レッスンのご予約やご質問など、お気軽にお問い合わせください。
                 </p>
               </div>
@@ -136,13 +136,13 @@ export default function Contact() {
                       <Icon className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <p className="text-white/50 text-xs mb-0.5">{item.label}</p>
+                      <p className="text-[#4D5058]/50 text-xs mb-0.5">{item.label}</p>
                       {item.href ? (
-                        <a href={item.href} className="text-white text-sm font-medium hover:text-[#F2AC55] transition-colors">
+                        <a href={item.href} className="text-[#4D5058] text-sm font-medium hover:text-[#F2AC55] transition-colors">
                           {item.value}
                         </a>
                       ) : (
-                        <p className="text-white text-sm font-medium whitespace-pre-line">{item.value}</p>
+                        <p className="text-[#4D5058] text-sm font-medium whitespace-pre-line">{item.value}</p>
                       )}
                     </div>
                   </div>
@@ -158,8 +158,8 @@ export default function Contact() {
               variants={fadeInRight}
               className="lg:col-span-3"
             >
-              <div className="bg-[#232830] rounded-md p-7 sm:p-8 border border-white/10">
-                <h3 className="text-xl font-bold text-white mb-6">お問い合わせフォーム</h3>
+              <div className="bg-[#F2F3F5] rounded-md p-7 sm:p-8">
+                <h3 className="text-xl font-bold text-[#4D5058] mb-6">お問い合わせフォーム</h3>
                 <Form {...form}>
                   <form onSubmit={form.handleSubmit((data) => mutation.mutate(data))} className="space-y-5">
                     <FormField

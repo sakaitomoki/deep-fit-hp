@@ -67,10 +67,6 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-html, body {
-  background-color: #1A1D24;
-}
-
 :root {
   --button-outline: rgba(0,0,0, .10);
   --badge-outline: rgba(0,0,0, .05);

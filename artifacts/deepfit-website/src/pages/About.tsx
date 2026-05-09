@@ -67,7 +67,7 @@ export default function About() {
         </div>
       </div>
       {/* Our Story */}
-      <section className="py-20 lg:py-28 bg-[#1A1D24]">
+      <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <motion.div
@@ -77,11 +77,11 @@ export default function About() {
               variants={fadeInLeft}
             >
               <p className="text-[#F2AC55] text-xs tracking-[0.3em] uppercase mb-3">Our Story</p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">ジムの歩み</h2>
-              <div className="space-y-4 text-white/70 leading-relaxed text-sm sm:text-base">
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#4D5058] mb-6">ジムの歩み</h2>
+              <div className="space-y-4 text-[#4D5058]/70 leading-relaxed text-sm sm:text-base">
                 <p>DEEP.FITは、2026年4月に尼崎市長洲東通りにオープンした
                 キックボクシングフィットネスジムです。</p>
-                <p className="text-white/90 font-medium italic border-l-4 border-[#F2AC55] pl-4 py-1">
+                <p className="text-[#4D5058] font-medium italic border-l-4 border-[#F2AC55] pl-4 py-1">
                   「運動が苦手でも、楽しく続けられる場所を作りたい」<br />
                   そんな想いからこのジムは生まれました。
                 </p>
@@ -118,7 +118,7 @@ export default function About() {
         </div>
       </section>
       {/* Our Values */}
-      <section className="py-20 lg:py-28 bg-[#1A1D24]">
+      <section className="py-20 lg:py-28 bg-[#F2F3F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -128,7 +128,7 @@ export default function About() {
             className="text-center mb-14"
           >
             <p className="text-[#F2AC55] text-xs tracking-[0.3em] uppercase mb-3">Our Values</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">大切にしていること</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#4D5058]">大切にしていること</h2>
           </motion.div>
 
           <motion.div
@@ -144,13 +144,13 @@ export default function About() {
                 <motion.div
                   key={i}
                   variants={fadeInUp}
-                  className="bg-white/5 rounded-md p-6 text-center border border-white/10"
+                  className="bg-white rounded-md p-6 text-center border border-gray-100"
                 >
                   <div className="w-12 h-12 rounded-full bg-[#F2AC55]/10 flex items-center justify-center mx-auto mb-4">
                     <Icon className="w-6 h-6 text-[#F2AC55]" />
                   </div>
-                  <h3 className="font-bold text-white text-lg mb-2">{value.title}</h3>
-                  <p className="text-white/60 text-sm leading-relaxed">{value.text}</p>
+                  <h3 className="font-bold text-[#4D5058] text-lg mb-2">{value.title}</h3>
+                  <p className="text-[#4D5058]/60 text-sm leading-relaxed">{value.text}</p>
                 </motion.div>
               );
             })}
@@ -158,7 +158,7 @@ export default function About() {
         </div>
       </section>
       {/* Facilities */}
-      <section className="py-20 lg:py-28 bg-[#1A1D24]">
+      <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <motion.div
@@ -182,15 +182,15 @@ export default function About() {
               variants={fadeInRight}
             >
               <p className="text-[#F2AC55] text-xs tracking-[0.3em] uppercase mb-3">Facilities</p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">施設・設備</h2>
-              <p className="text-white/60 text-sm mb-6 leading-relaxed">
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#4D5058] mb-6">施設・設備</h2>
+              <p className="text-[#4D5058]/60 text-sm mb-6 leading-relaxed">
                 快適にトレーニングできる環境を整えています。必要な道具は無料でレンタルできるので、手ぶらでお越しいただけます。
               </p>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {equipment.map((item, i) => (
                   <li key={i} className="flex items-center gap-3">
                     <CheckCircle2 className="w-5 h-5 text-[#F2AC55] shrink-0" />
-                    <span className="text-white/80 text-sm">{item}</span>
+                    <span className="text-[#4D5058]/80 text-sm">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -199,7 +199,7 @@ export default function About() {
         </div>
       </section>
       {/* Access */}
-      <section className="py-20 lg:py-28 bg-[#1A1D24]">
+      <section className="py-20 lg:py-28 bg-[#4D5058]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"

@@ -164,7 +164,7 @@ export default function Schedule() {
       </div>
 
       {/* Class Types */}
-      <section className="py-20 lg:py-28 bg-[#1A1D24]">
+      <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -174,7 +174,7 @@ export default function Schedule() {
             className="text-center mb-14"
           >
             <p className="text-[#F2AC55] text-xs tracking-[0.3em] uppercase mb-3">Our Classes</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">クラス紹介</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#4D5058]">クラス紹介</h2>
           </motion.div>
 
           <motion.div
@@ -190,7 +190,7 @@ export default function Schedule() {
                 <motion.div
                   key={i}
                   variants={fadeInUp}
-                  className="border border-white/10 rounded-md p-7 bg-white/5"
+                  className="border border-gray-100 rounded-md p-7 bg-white"
                 >
                   <div className={`w-12 h-12 ${cls.colorBg} rounded-md flex items-center justify-center mb-4`}>
                     <Icon className={`w-6 h-6 ${cls.colorText}`} />
@@ -198,9 +198,9 @@ export default function Schedule() {
                   <span className={`text-xs font-medium ${cls.colorText} ${cls.colorBg} px-2 py-0.5 rounded`}>
                     {cls.level}
                   </span>
-                  <h3 className="text-white font-bold text-xl mt-3 mb-1">{cls.title}</h3>
+                  <h3 className="text-[#4D5058] font-bold text-xl mt-3 mb-1">{cls.title}</h3>
                   <p className={`text-xs ${cls.colorText} mb-3`}>{cls.time}</p>
-                  <p className="text-white/60 text-sm leading-relaxed">{cls.description}</p>
+                  <p className="text-[#4D5058]/60 text-sm leading-relaxed">{cls.description}</p>
                 </motion.div>
               );
             })}
@@ -209,7 +209,7 @@ export default function Schedule() {
       </section>
 
       {/* Schedule Table */}
-      <section className="py-20 lg:py-28 bg-[#1A1D24]">
+      <section className="py-20 lg:py-28 bg-[#F2F3F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -219,17 +219,17 @@ export default function Schedule() {
             className="text-center mb-12"
           >
             <p className="text-[#F2AC55] text-xs tracking-[0.3em] uppercase mb-3">Weekly Schedule</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">タイムスケジュール</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#4D5058]">タイムスケジュール</h2>
           </motion.div>
 
           {/* Schedule Table */}
-          <div className="overflow-x-auto rounded-xl border border-white/10 shadow-sm">
+          <div className="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
             <table className="border-collapse w-full text-sm" style={{ minWidth: "560px" }}>
               <thead>
                 <tr>
-                  <th className="border border-white/10 bg-[#2A2E38] text-white font-bold px-3 py-2 text-center w-16">時間</th>
+                  <th className="border border-gray-200 bg-[#4D5058] text-white font-bold px-3 py-2 text-center w-16">時間</th>
                   {dayOrder.map((day) => (
-                    <th key={day} className="border border-white/10 bg-[#2A2E38] text-white font-bold px-3 py-2 text-center">
+                    <th key={day} className="border border-gray-200 bg-[#4D5058] text-white font-bold px-3 py-2 text-center">
                       {dayLabelsMap[day]}
                     </th>
                   ))}
@@ -241,20 +241,20 @@ export default function Schedule() {
                   const isHour = timeVal % 1 === 0;
                   return (
                     <tr key={ri} className={isHour ? "" : "border-t-0"}>
-                      <td className={`border border-white/10 bg-[#1A1D24] text-right pr-2 text-xs font-medium whitespace-nowrap align-top pt-1 ${isHour ? "text-white/60" : "text-white/25"}`}>
+                      <td className={`border border-gray-200 bg-white text-right pr-2 text-xs font-medium whitespace-nowrap align-top pt-1 ${isHour ? "text-[#4D5058]/70" : "text-[#4D5058]/30"}`}>
                         {formatTime(timeVal)}
                       </td>
                       {row.map((cell, ci) => {
                         if (cell === "skip") return null;
                         if (cell === null) {
-                          return <td key={ci} className={`border border-white/5 bg-[#1A1D24] ${isHour ? "border-t-white/10" : ""}`} />;
+                          return <td key={ci} className={`border border-gray-100 bg-white ${isHour ? "border-t-gray-200" : ""}`} />;
                         }
                         const s = colorStyles[cell.block.color];
                         return (
                           <td
                             key={ci}
                             rowSpan={cell.rowspan}
-                            className={`border border-white/10 text-center align-middle px-2 py-1 ${s.bg}`}
+                            className={`border border-gray-200 text-center align-middle px-2 py-1 ${s.bg}`}
                           >
                             <p className={`font-bold text-xs leading-snug ${s.text}`}>{cell.block.label}</p>
                             {cell.block.sublabel && (
@@ -271,11 +271,11 @@ export default function Schedule() {
                 })}
                 {/* 22:00 closing row */}
                 <tr>
-                  <td className="border border-white/10 bg-[#1A1D24] text-right pr-2 text-xs font-medium text-white/60 whitespace-nowrap align-top pt-1">
+                  <td className="border border-gray-200 bg-white text-right pr-2 text-xs font-medium text-[#4D5058]/70 whitespace-nowrap align-top pt-1">
                     22:00
                   </td>
                   {dayOrder.map((_, ci) => (
-                    <td key={ci} className="border border-white/10 bg-[#1A1D24] h-2" />
+                    <td key={ci} className="border border-gray-200 bg-white h-2" />
                   ))}
                 </tr>
               </tbody>
@@ -293,11 +293,11 @@ export default function Schedule() {
             ].map(({ color, label }) => (
               <div key={color} className="flex items-center gap-2">
                 <div className={`w-4 h-4 rounded border ${colorStyles[color].bg} ${colorStyles[color].border}`} />
-                <span className="text-xs text-white/60">{label}</span>
+                <span className="text-xs text-[#4D5058]/60">{label}</span>
               </div>
             ))}
           </div>
-          <p className="text-white/40 text-xs mt-2">
+          <p className="text-[#4D5058]/40 text-xs mt-2">
             ※ パーソナルトレーニングは要予約。キッズクラスは火曜17:00〜18:00・土曜14:00〜15:00。対人クラスは土曜19:30〜21:00（ドロップイン可）。木曜定休。
           </p>
         </div>
@@ -400,7 +400,7 @@ export default function Schedule() {
       </section>
 
       {/* Pricing */}
-      <section className="py-20 lg:py-28 bg-[#1A1D24]">
+      <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -410,8 +410,8 @@ export default function Schedule() {
             className="text-center mb-12"
           >
             <p className="text-[#F2AC55] text-xs tracking-[0.3em] uppercase mb-3">Pricing</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">PRICE LIST</h2>
-            <p className="text-white/50 text-sm mt-3">入会金 {gymConfig.joinFee}（税込）　※税込み価格で表示</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#4D5058]">PRICE LIST</h2>
+            <p className="text-[#4D5058]/50 text-sm mt-3">入会金 {gymConfig.joinFee}（税込）　※税込み価格で表示</p>
           </motion.div>
 
           {/* Category Cards */}
@@ -423,20 +423,20 @@ export default function Schedule() {
             className="grid sm:grid-cols-2 gap-6 mb-8"
           >
             {/* Female */}
-            <motion.div variants={fadeInUp} className="rounded-xl overflow-hidden border border-white/10 shadow-sm">
-              <div className="bg-[#2A2E38] px-6 py-4">
+            <motion.div variants={fadeInUp} className="rounded-xl overflow-hidden border border-gray-200 shadow-sm">
+              <div className="bg-[#4D5058] px-6 py-4">
                 <p className="text-white text-lg font-bold tracking-wide">女性会員</p>
               </div>
-              <div className="bg-white/5 divide-y divide-white/10">
+              <div className="bg-white divide-y divide-gray-100">
                 {gymConfig.membership.map((plan, i) => (
                   <div key={i} className="flex items-center justify-between px-6 py-4">
                     <div>
-                      <p className="font-medium text-white">{plan.name}</p>
-                      <p className="text-xs text-white/40 mt-0.5">{plan.subtitle}</p>
+                      <p className="font-medium text-[#4D5058]">{plan.name}</p>
+                      <p className="text-xs text-[#4D5058]/40 mt-0.5">{plan.subtitle}</p>
                     </div>
                     <div className="text-right">
                       <p className="font-heading font-bold text-2xl text-[#D99A40]">{plan.femalePrice}</p>
-                      <p className="text-white/40 text-xs">/ 月（税込）</p>
+                      <p className="text-[#4D5058]/40 text-xs">/ 月（税込）</p>
                     </div>
                   </div>
                 ))}
@@ -444,20 +444,20 @@ export default function Schedule() {
             </motion.div>
 
             {/* Male */}
-            <motion.div variants={fadeInUp} className="rounded-xl overflow-hidden border border-white/10 shadow-sm">
-              <div className="bg-[#2A2E38] px-6 py-4">
+            <motion.div variants={fadeInUp} className="rounded-xl overflow-hidden border border-gray-200 shadow-sm">
+              <div className="bg-[#4D5058] px-6 py-4">
                 <p className="text-white text-lg font-bold tracking-wide">男性会員</p>
               </div>
-              <div className="bg-white/5 divide-y divide-white/10">
+              <div className="bg-white divide-y divide-gray-100">
                 {gymConfig.membership.map((plan, i) => (
                   <div key={i} className="flex items-center justify-between px-6 py-4">
                     <div>
-                      <p className="font-medium text-white">{plan.name}</p>
-                      <p className="text-xs text-white/40 mt-0.5">{plan.subtitle}</p>
+                      <p className="font-medium text-[#4D5058]">{plan.name}</p>
+                      <p className="text-xs text-[#4D5058]/40 mt-0.5">{plan.subtitle}</p>
                     </div>
                     <div className="text-right">
-                      <p className="font-heading font-bold text-2xl text-[#EAA53B]">{plan.malePrice}</p>
-                      <p className="text-white/40 text-xs">/ 月（税込）</p>
+                      <p className="font-heading font-bold text-2xl text-[#4D5058]">{plan.malePrice}</p>
+                      <p className="text-[#4D5058]/40 text-xs">/ 月（税込）</p>
                     </div>
                   </div>
                 ))}
@@ -474,7 +474,7 @@ export default function Schedule() {
             className="flex flex-wrap gap-x-6 gap-y-2 mb-10"
           >
             {gymConfig.membership[0].benefits.map((b, i) => (
-              <span key={i} className="flex items-center gap-1.5 text-sm text-white/60">
+              <span key={i} className="flex items-center gap-1.5 text-sm text-[#4D5058]/60">
                 <CheckCircle2 className="w-4 h-4 text-[#F2AC55] shrink-0" />
                 {b}
               </span>
@@ -490,18 +490,18 @@ export default function Schedule() {
             className="grid sm:grid-cols-2 gap-6 mb-6"
           >
             {/* Kids */}
-            <motion.div variants={fadeInUp} className="rounded-xl overflow-hidden border border-white/10 shadow-sm">
-              <div className="bg-[#2A2E38] px-6 py-4">
+            <motion.div variants={fadeInUp} className="rounded-xl overflow-hidden border border-gray-200 shadow-sm">
+              <div className="bg-[#4D5058] px-6 py-4">
                 <p className="text-white text-lg font-bold tracking-wide">キッズクラス</p>
                 <p className="text-white/50 text-xs mt-0.5">小学1年生〜中学3年生まで</p>
               </div>
-              <div className="bg-white/5 divide-y divide-white/10">
+              <div className="bg-white divide-y divide-gray-100">
                 {gymConfig.kidsMembership.map((plan, i) => (
                   <div key={i} className="flex items-center justify-between px-6 py-4">
-                    <p className="font-medium text-white">{plan.name}</p>
+                    <p className="font-medium text-[#4D5058]">{plan.name}</p>
                     <div className="text-right">
-                      <p className="font-heading font-bold text-2xl text-[#4CAF50]">{plan.price}</p>
-                      <p className="text-white/40 text-xs">{plan.note}</p>
+                      <p className="font-heading font-bold text-2xl text-[#1F7A3A]">{plan.price}</p>
+                      <p className="text-[#4D5058]/40 text-xs">{plan.note}</p>
                     </div>
                   </div>
                 ))}
@@ -509,19 +509,19 @@ export default function Schedule() {
             </motion.div>
 
             {/* Personal Training */}
-            <motion.div variants={fadeInUp} className="rounded-xl overflow-hidden border border-white/10 shadow-sm">
-              <div className="bg-[#2A2E38] px-6 py-4">
+            <motion.div variants={fadeInUp} className="rounded-xl overflow-hidden border border-gray-200 shadow-sm">
+              <div className="bg-[#4D5058] px-6 py-4">
                 <p className="text-white text-lg font-bold tracking-wide">パーソナルトレーニング</p>
                 <p className="text-white/50 text-xs mt-0.5">完全マンツーマン・予約制</p>
               </div>
-              <div className="bg-white/5 px-6 py-6 flex items-center justify-between">
+              <div className="bg-white px-6 py-6 flex items-center justify-between">
                 <div>
-                  <p className="font-medium text-white">{gymConfig.personalTraining.duration} / 1セッション</p>
-                  <p className="text-xs text-white/50 mt-1">👥 {gymConfig.personalTraining.note}</p>
+                  <p className="font-medium text-[#4D5058]">{gymConfig.personalTraining.duration} / 1セッション</p>
+                  <p className="text-xs text-[#4D5058]/50 mt-1">👥 {gymConfig.personalTraining.note}</p>
                 </div>
                 <div className="text-right">
-                  <p className="font-heading font-bold text-2xl text-[#60A5FA]">{gymConfig.personalTraining.price}</p>
-                  <p className="text-white/40 text-xs">（税込）</p>
+                  <p className="font-heading font-bold text-2xl text-[#2563A8]">{gymConfig.personalTraining.price}</p>
+                  <p className="text-[#4D5058]/40 text-xs">（税込）</p>
                 </div>
               </div>
             </motion.div>
@@ -539,13 +539,13 @@ export default function Schedule() {
               <p className="text-white text-lg font-bold tracking-wide">体験レッスン</p>
               <p className="text-white/80 text-xs">Trial Lesson　※初回限り・要予約</p>
             </div>
-            <div className="bg-white/5 px-6 py-6">
+            <div className="bg-white px-6 py-6">
               {/* Instagram free - prominent */}
               <div className="flex flex-col sm:flex-row sm:items-center gap-6 mb-5">
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-2">
                     <div className="relative inline-block">
-                      <span className="font-heading font-bold text-3xl text-white/30">{gymConfig.trialLesson.price}</span>
+                      <span className="font-heading font-bold text-3xl text-gray-300">{gymConfig.trialLesson.price}</span>
                       <span className="absolute inset-0 flex items-center pointer-events-none">
                         <span className="block w-full h-[3px] bg-[#E74C3C] rotate-[-12deg] rounded-full" />
                       </span>
@@ -554,7 +554,7 @@ export default function Schedule() {
                   </div>
                   <div className="flex items-center gap-2 bg-gradient-to-r from-[#833AB4]/10 via-[#FD1D1D]/10 to-[#F77737]/10 border border-[#F77737]/20 rounded-full px-4 py-1.5 inline-flex">
                     <SiInstagram className="w-4 h-4 text-[#E1306C]" />
-                    <span className="text-sm font-bold text-white">インスタフォロワー限定</span>
+                    <span className="text-sm font-bold text-[#4D5058]">インスタフォロワー限定</span>
                     <a href={gymConfig.sns.instagram} target="_blank" rel="noopener noreferrer" className="text-[#E1306C] text-xs underline underline-offset-2">@deep.amagasaki</a>
                   </div>
                 </div>
@@ -574,7 +574,7 @@ export default function Schedule() {
                 <Link
                   href="/contact"
                   data-testid="button-contact-schedule"
-                  className="flex-1 inline-flex items-center justify-center gap-2 bg-transparent border-2 border-[#F2AC55] text-[#F2AC55] font-medium px-6 py-3.5 rounded-full text-base transition-all duration-200 hover:bg-[#F2AC55]/10"
+                  className="flex-1 inline-flex items-center justify-center gap-2 bg-white border-2 border-[#F2AC55] text-[#D99A40] font-medium px-6 py-3.5 rounded-full text-base transition-all duration-200 hover:bg-[#FFF8EC]"
                 >
                   <MessageCircle className="w-4 h-4" />
                   お問い合わせフォーム
@@ -586,7 +586,7 @@ export default function Schedule() {
       </section>
 
       {/* Equipment & Access */}
-      <section className="py-20 lg:py-28 bg-[#1A1D24]">
+      <section className="py-20 lg:py-28 bg-[#4D5058]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"

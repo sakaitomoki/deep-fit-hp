@@ -108,7 +108,7 @@ export default function Instructors() {
       </div>
 
       {/* Instructors List */}
-      <section className="py-20 lg:py-28 bg-[#1A1D24]">
+      <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-20 lg:space-y-28">
             {instructors.map((inst, i) => {
@@ -130,7 +130,7 @@ export default function Instructors() {
                         loading="lazy"
                         className="w-full h-full object-cover object-top"
                       />
-                      <div className="absolute bottom-0 left-0 right-0 bg-[#1A1D24]/85 backdrop-blur-sm px-5 py-4">
+                      <div className="absolute bottom-0 left-0 right-0 bg-[#4D5058]/80 backdrop-blur-sm px-5 py-4">
                         <p className="text-[#F2AC55] text-xs tracking-wider font-medium">{inst.nameEn}</p>
                         <p className="text-white/60 text-xs">{inst.role}</p>
                       </div>
@@ -151,21 +151,21 @@ export default function Instructors() {
                         </span>
                       ))}
                     </div>
-                    <h2 className="text-2xl sm:text-3xl font-bold text-white mb-1">{inst.nameJa}</h2>
-                    <p className="text-white/60 text-sm mb-2">{inst.role}</p>
+                    <h2 className="text-2xl sm:text-3xl font-bold text-[#4D5058] mb-1">{inst.nameJa}</h2>
+                    <p className="text-[#4D5058]/60 text-sm mb-2">{inst.role}</p>
                     <div className="flex items-center gap-2 mb-5">
                       <Medal className="w-4 h-4 text-[#F2AC55]" />
-                      <span className="text-white/70 text-sm">{inst.record}</span>
+                      <span className="text-[#4D5058]/70 text-sm">{inst.record}</span>
                     </div>
-                    <p className="text-white/70 text-sm leading-relaxed mb-6">{inst.bio}</p>
-                    <div className="bg-white/5 rounded-md p-5 border border-white/10">
-                      <h3 className="flex items-center gap-2 font-bold text-white text-sm mb-3">
+                    <p className="text-[#4D5058]/70 text-sm leading-relaxed mb-6">{inst.bio}</p>
+                    <div className="bg-[#F2F3F5] rounded-md p-5">
+                      <h3 className="flex items-center gap-2 font-bold text-[#4D5058] text-sm mb-3">
                         <Award className="w-4 h-4 text-[#F2AC55]" />
                         主な実績
                       </h3>
                       <ul className="space-y-2">
                         {inst.achievements.map((a, j) => (
-                          <li key={j} className="flex items-center gap-2 text-sm text-white/70">
+                          <li key={j} className="flex items-center gap-2 text-sm text-[#4D5058]/70">
                             <span className="w-1.5 h-1.5 rounded-full bg-[#F2AC55] shrink-0" />
                             {a}
                           </li>
@@ -181,7 +181,7 @@ export default function Instructors() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 lg:py-24 bg-[#1A1D24]">
+      <section className="py-20 lg:py-24 bg-[#4D5058]">
         <motion.div
           initial="hidden"
           whileInView="visible"
