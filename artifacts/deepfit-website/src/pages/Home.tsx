@@ -874,7 +874,7 @@ export default function Home() {
             <Link
               href="/schedule"
               data-testid="button-view-all-classes"
-              className="inline-flex items-center gap-2 bg-[#4D5058] text-white px-8 py-3 rounded-full text-sm font-medium hover:bg-[#53565E] transition-colors duration-200"
+              className="inline-flex items-center gap-2 bg-[#F2AC55] text-white px-8 py-3 rounded-full text-sm font-bold hover:bg-[#D99A40] transition-colors duration-200 shadow-md"
             >
               全てのクラスを見る <ArrowRight className="w-4 h-4" />
             </Link>

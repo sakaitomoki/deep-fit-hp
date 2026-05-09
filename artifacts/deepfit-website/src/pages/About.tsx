@@ -199,7 +199,7 @@ export default function About() {
         </div>
       </section>
       {/* Access */}
-      <section className="py-20 lg:py-28 bg-[#4D5058]">
+      <section className="py-20 lg:py-28 bg-[#F2F3F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -209,7 +209,7 @@ export default function About() {
             className="text-center mb-12"
           >
             <p className="text-[#F2AC55] text-xs tracking-[0.3em] uppercase mb-3">Access</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">アクセス</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#4D5058]">アクセス</h2>
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -220,19 +220,19 @@ export default function About() {
               variants={fadeInLeft}
               className="space-y-4"
             >
-              <div className="bg-white/5 rounded-md p-5 border border-white/10">
+              <div className="bg-white rounded-md p-5 border border-gray-200 shadow-sm">
                 <h3 className="text-[#F2AC55] font-semibold mb-2">住所</h3>
-                <p className="text-white/80 text-sm">{gymConfig.address}</p>
+                <p className="text-[#4D5058]/80 text-sm">{gymConfig.address}</p>
               </div>
-              <div className="bg-white/5 rounded-md p-5 border border-white/10">
+              <div className="bg-white rounded-md p-5 border border-gray-200 shadow-sm">
                 <h3 className="text-[#F2AC55] font-semibold mb-2">最寄駅</h3>
                 {gymConfig.access.map((a, i) => (
-                  <p key={i} className="text-white/80 text-sm">{a}</p>
+                  <p key={i} className="text-[#4D5058]/80 text-sm">{a}</p>
                 ))}
               </div>
-              <div className="bg-white/5 rounded-md p-5 border border-white/10">
+              <div className="bg-white rounded-md p-5 border border-gray-200 shadow-sm">
                 <h3 className="text-[#F2AC55] font-semibold mb-2">定休日</h3>
-                <p className="text-white/80 text-sm">{gymConfig.hours.closed}</p>
+                <p className="text-[#4D5058]/80 text-sm">{gymConfig.hours.closed}</p>
               </div>
             </motion.div>
 
@@ -241,7 +241,7 @@ export default function About() {
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeInRight}
-              className="rounded-md overflow-hidden h-72 bg-white/10"
+              className="rounded-md overflow-hidden h-72 bg-gray-200"
             >
               <iframe
                 src={gymConfig.googleMapsUrl}

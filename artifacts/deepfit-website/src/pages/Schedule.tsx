@@ -306,10 +306,10 @@ export default function Schedule() {
       {/* Summer Campaign */}
       <section
         className="py-20 lg:py-28 relative overflow-hidden"
-        style={{ background: "linear-gradient(135deg, #0B0F15 0%, #151A24 100%)" }}
+        style={{ background: "linear-gradient(135deg, #D99A40 0%, #F2AC55 50%, #E8954A 100%)" }}
       >
-        {/* Subtle gold grid pattern */}
-        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "repeating-linear-gradient(0deg, #EAA53B 0, #EAA53B 1px, transparent 0, transparent 60px), repeating-linear-gradient(90deg, #EAA53B 0, #EAA53B 1px, transparent 0, transparent 60px)" }} />
+        {/* Diagonal stripe pattern */}
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "repeating-linear-gradient(45deg, white 0, white 1px, transparent 0, transparent 20px)" }} />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
           {/* Header */}
@@ -320,18 +320,18 @@ export default function Schedule() {
             variants={fadeInUp}
             className="text-center mb-10"
           >
-            <div className="inline-flex items-center gap-2 mb-4" style={{ background: "rgba(234,165,59,0.15)", border: "1px solid rgba(234,165,59,0.4)", borderRadius: 999, padding: "6px 20px" }}>
-              <Star className="w-3.5 h-3.5 fill-[#EAA53B] text-[#EAA53B]" />
-              <span style={{ color: "#EAA53B", fontSize: 12, fontWeight: 800, letterSpacing: "0.18em" }}>過去最大キャンペーン</span>
-              <Star className="w-3.5 h-3.5 fill-[#EAA53B] text-[#EAA53B]" />
+            <div className="inline-flex items-center gap-2 mb-4" style={{ background: "rgba(255,255,255,0.25)", border: "1px solid rgba(255,255,255,0.5)", borderRadius: 999, padding: "6px 20px" }}>
+              <Star className="w-3.5 h-3.5 fill-white text-white" />
+              <span style={{ color: "#fff", fontSize: 12, fontWeight: 800, letterSpacing: "0.18em" }}>過去最大キャンペーン</span>
+              <Star className="w-3.5 h-3.5 fill-white text-white" />
             </div>
             <h2 className="text-white font-bold leading-tight mb-2" style={{ fontSize: "clamp(28px,5vw,52px)" }}>
               夏までに変わる。
             </h2>
-            <p className="font-heading font-bold text-[#EAA53B] drop-shadow-lg mb-3" style={{ fontSize: "clamp(40px,8vw,80px)", lineHeight: 1 }}>
+            <p className="font-heading font-bold text-white drop-shadow-lg mb-3" style={{ fontSize: "clamp(40px,8vw,80px)", lineHeight: 1 }}>
               5大特典
             </p>
-            <p className="text-white/70 text-sm">5月7日〜7月31日の期間限定。まずは無料体験から気軽にどうぞ。</p>
+            <p className="text-white/80 text-sm">5月7日〜7月31日の期間限定。まずは無料体験から気軽にどうぞ。</p>
           </motion.div>
 
           {/* 特典①②③ row */}
@@ -348,15 +348,15 @@ export default function Schedule() {
               { label: "特典③", title: "翌月会費", original: "女性 11,000円 / 男性 13,200円" },
             ].map((item) => (
               <motion.div key={item.label} variants={fadeInUp}
-                className="rounded-2xl px-5 py-4 flex flex-row sm:flex-col items-center sm:items-start gap-3 sm:gap-1"
-                style={{ background: "rgba(234,165,59,0.07)", border: "1.5px solid rgba(234,165,59,0.25)" }}
+                className="rounded-2xl px-5 py-4 flex flex-row sm:flex-col items-center sm:items-start gap-3 sm:gap-1 shadow-md"
+                style={{ background: "rgba(255,255,255,0.9)", border: "1.5px solid rgba(255,255,255,0.6)" }}
               >
-                <span style={{ background: "rgba(234,165,59,0.18)", color: "#EAA53B", fontSize: 11, fontWeight: 900, padding: "2px 12px", borderRadius: 999, letterSpacing: "0.1em", whiteSpace: "nowrap" }}>{item.label}</span>
+                <span style={{ background: "rgba(242,172,85,0.18)", color: "#D99A40", fontSize: 11, fontWeight: 900, padding: "2px 12px", borderRadius: 999, letterSpacing: "0.1em", whiteSpace: "nowrap" }}>{item.label}</span>
                 <div className="flex-1 sm:mt-2">
-                  <p className="text-white font-bold text-lg leading-tight">{item.title}</p>
-                  <p className="text-white/40 text-xs mt-0.5">{item.original}</p>
+                  <p className="text-[#4D5058] font-bold text-lg leading-tight">{item.title}</p>
+                  <p className="text-[#4D5058]/45 text-xs mt-0.5 line-through">{item.original}</p>
                 </div>
-                <p className="font-heading font-bold text-[#EAA53B] shrink-0" style={{ fontSize: "clamp(26px,3.5vw,36px)", lineHeight: 1 }}>無料</p>
+                <p className="font-heading font-bold text-[#D99A40] shrink-0" style={{ fontSize: "clamp(26px,3.5vw,36px)", lineHeight: 1 }}>無料</p>
               </motion.div>
             ))}
           </motion.div>
@@ -435,13 +435,14 @@ export default function Schedule() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeInUp}
-            className="text-center mb-8"
+            className="rounded-3xl px-8 py-6 text-center mb-8 shadow-lg"
+            style={{ background: "rgba(255,255,255,0.88)", border: "1.5px solid rgba(255,255,255,0.6)" }}
           >
-            <p className="text-white/50 text-sm mb-1">入会月の節約額</p>
-            <p className="font-heading font-bold text-white" style={{ fontSize: "clamp(36px,6vw,64px)", lineHeight: 1 }}>
-              最大 <span style={{ color: "#EAA53B" }}>23,000円〜</span>
+            <p className="text-[#4D5058]/60 text-sm mb-1">入会月の節約額</p>
+            <p className="font-heading font-bold text-[#4D5058]" style={{ fontSize: "clamp(36px,6vw,64px)", lineHeight: 1 }}>
+              最大 <span style={{ color: "#D99A40" }}>23,000円〜</span>
             </p>
-            <p className="text-white/40 text-xs mt-2">＋月会費永久割引が継続します</p>
+            <p className="text-[#4D5058]/50 text-xs mt-2">＋月会費永久割引が継続します</p>
           </motion.div>
 
           {/* CTAs */}
@@ -465,14 +466,13 @@ export default function Schedule() {
             <Link
               href="/contact"
               data-testid="button-campaign-contact"
-              className="inline-flex items-center gap-2 text-white font-medium px-7 py-4 rounded-full text-base transition-all duration-200"
-              style={{ background: "rgba(234,165,59,0.12)", border: "1.5px solid rgba(234,165,59,0.4)" }}
+              className="inline-flex items-center gap-2 bg-white text-[#D99A40] font-medium px-7 py-4 rounded-full text-base transition-all duration-200 shadow-md hover:scale-105"
             >
-              <MessageCircle className="w-4 h-4 text-[#EAA53B]" />
+              <MessageCircle className="w-4 h-4" />
               お問い合わせフォーム
             </Link>
           </motion.div>
-          <p className="text-center text-white/30 text-xs mt-4">体験後、当日入会でキャンペーン適用　※キャンペーンは予告なく終了する場合があります</p>
+          <p className="text-center text-white/70 text-xs mt-4">体験後、当日入会でキャンペーン適用　※キャンペーンは予告なく終了する場合があります</p>
         </div>
       </section>
 
@@ -663,7 +663,7 @@ export default function Schedule() {
       </section>
 
       {/* Equipment & Access */}
-      <section className="py-20 lg:py-28 bg-[#4D5058]">
+      <section className="py-20 lg:py-28 bg-[#F2F3F5]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -673,7 +673,7 @@ export default function Schedule() {
             className="text-center mb-12"
           >
             <p className="text-[#F2AC55] text-xs tracking-[0.3em] uppercase mb-3">Facility</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">充実の設備</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#4D5058]">充実の設備</h2>
           </motion.div>
 
           {/* Smith Machine featured photo */}
@@ -709,10 +709,10 @@ export default function Schedule() {
               <motion.div
                 key={i}
                 variants={fadeInUp}
-                className="bg-white/5 border border-white/10 rounded-xl px-5 py-4 flex items-center gap-3"
+                className="bg-white border border-gray-200 rounded-xl px-5 py-4 flex items-center gap-3 shadow-sm"
               >
                 <Dumbbell className="w-5 h-5 text-[#F2AC55] shrink-0" />
-                <span className="text-white text-sm font-medium">{item}</span>
+                <span className="text-[#4D5058] text-sm font-medium">{item}</span>
               </motion.div>
             ))}
           </motion.div>
@@ -722,27 +722,27 @@ export default function Schedule() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeInUp}
-            className="border-t border-white/10 pt-10 flex flex-col sm:flex-row items-center justify-center gap-6 text-center"
+            className="border-t border-gray-200 pt-10 flex flex-col sm:flex-row items-center justify-center gap-6 text-center"
           >
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-[#F2AC55]/20 flex items-center justify-center shrink-0">
+              <div className="w-10 h-10 rounded-full bg-[#F2AC55]/15 flex items-center justify-center shrink-0">
                 <MapPin className="w-5 h-5 text-[#F2AC55]" />
               </div>
               <div className="text-left">
-                <p className="text-white font-semibold text-sm">{gymConfig.addressShort}</p>
+                <p className="text-[#4D5058] font-semibold text-sm">{gymConfig.addressShort}</p>
                 {gymConfig.access.map((a, i) => (
-                  <p key={i} className="text-white/50 text-xs">{a}</p>
+                  <p key={i} className="text-[#4D5058]/50 text-xs">{a}</p>
                 ))}
               </div>
             </div>
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-[#F2AC55]/20 flex items-center justify-center shrink-0">
+              <div className="w-10 h-10 rounded-full bg-[#F2AC55]/15 flex items-center justify-center shrink-0">
                 <Zap className="w-5 h-5 text-[#F2AC55]" />
               </div>
               <div className="text-left">
-                <p className="text-white font-semibold text-sm">営業時間</p>
-                <p className="text-white/50 text-xs">{gymConfig.hours.weekday}</p>
-                <p className="text-white/50 text-xs">定休日：{gymConfig.hours.closed}</p>
+                <p className="text-[#4D5058] font-semibold text-sm">営業時間</p>
+                <p className="text-[#4D5058]/50 text-xs">{gymConfig.hours.weekday}</p>
+                <p className="text-[#4D5058]/50 text-xs">定休日：{gymConfig.hours.closed}</p>
               </div>
             </div>
           </motion.div>

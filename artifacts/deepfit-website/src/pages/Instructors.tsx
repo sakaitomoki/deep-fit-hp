@@ -181,25 +181,29 @@ export default function Instructors() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 lg:py-24 bg-[#4D5058]">
+      <section
+        className="py-20 lg:py-24 relative overflow-hidden"
+        style={{ background: "linear-gradient(135deg, #D99A40 0%, #F2AC55 50%, #E8954A 100%)" }}
+      >
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "repeating-linear-gradient(45deg, white 0, white 1px, transparent 0, transparent 20px)" }} />
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInUp}
-          className="max-w-3xl mx-auto px-4 text-center"
+          className="max-w-3xl mx-auto px-4 text-center relative z-10"
         >
-          <p className="text-[#F2AC55] text-xs tracking-[0.3em] uppercase mb-3">Join Us</p>
+          <p className="text-white/80 text-xs tracking-[0.3em] uppercase mb-3">Join Us</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             一緒にトレーニングしませんか？
           </h2>
-          <p className="text-white/60 text-sm mb-8">
+          <p className="text-white/80 text-sm mb-8">
             経験豊富なインストラクターが、あなたの目標達成を全力でサポートします。
           </p>
           <Link
             href="/contact"
             data-testid="button-cta-instructors"
-            className="inline-block bg-[#F2AC55] text-white px-8 py-3 rounded-full text-base font-medium transition-all duration-200"
+            className="inline-block bg-white text-[#D99A40] font-bold px-8 py-3 rounded-full text-base transition-all duration-200 shadow-lg hover:scale-105"
           >
             無料体験を予約する
           </Link>
