@@ -304,13 +304,8 @@ export default function Schedule() {
       </section>
 
       {/* Summer Campaign */}
-      <section
-        className="py-20 lg:py-28 relative overflow-hidden"
-        style={{ background: "linear-gradient(135deg, #D99A40 0%, #F2AC55 50%, #E8954A 100%)" }}
-      >
-        {/* Diagonal stripe pattern */}
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "repeating-linear-gradient(45deg, white 0, white 1px, transparent 0, transparent 20px)" }} />
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Header */}
           <motion.div
@@ -320,18 +315,18 @@ export default function Schedule() {
             variants={fadeInUp}
             className="text-center mb-10"
           >
-            <div className="inline-flex items-center gap-2 mb-4" style={{ background: "rgba(255,255,255,0.25)", border: "1px solid rgba(255,255,255,0.5)", borderRadius: 999, padding: "6px 20px" }}>
-              <Star className="w-3.5 h-3.5 fill-white text-white" />
-              <span style={{ color: "#fff", fontSize: 12, fontWeight: 800, letterSpacing: "0.18em" }}>過去最大キャンペーン</span>
-              <Star className="w-3.5 h-3.5 fill-white text-white" />
+            <div className="inline-flex items-center gap-2 mb-4" style={{ background: "rgba(242,172,85,0.12)", border: "1px solid rgba(242,172,85,0.4)", borderRadius: 999, padding: "6px 20px" }}>
+              <Star className="w-3.5 h-3.5 fill-[#F2AC55] text-[#F2AC55]" />
+              <span style={{ color: "#D99A40", fontSize: 12, fontWeight: 800, letterSpacing: "0.18em" }}>過去最大キャンペーン</span>
+              <Star className="w-3.5 h-3.5 fill-[#F2AC55] text-[#F2AC55]" />
             </div>
-            <h2 className="text-white font-bold leading-tight mb-2" style={{ fontSize: "clamp(28px,5vw,52px)" }}>
+            <h2 className="text-[#4D5058] font-bold leading-tight mb-2" style={{ fontSize: "clamp(28px,5vw,52px)" }}>
               夏までに変わる。
             </h2>
-            <p className="font-heading font-bold text-white drop-shadow-lg mb-3" style={{ fontSize: "clamp(40px,8vw,80px)", lineHeight: 1 }}>
+            <p className="font-heading font-bold text-[#D99A40] mb-3" style={{ fontSize: "clamp(40px,8vw,80px)", lineHeight: 1 }}>
               5大特典
             </p>
-            <p className="text-white/80 text-sm">5月7日〜7月31日の期間限定。まずは無料体験から気軽にどうぞ。</p>
+            <p className="text-[#4D5058]/60 text-sm">5月7日〜7月31日の期間限定。まずは無料体験から気軽にどうぞ。</p>
           </motion.div>
 
           {/* 特典①②③ row */}
@@ -472,7 +467,7 @@ export default function Schedule() {
               お問い合わせフォーム
             </Link>
           </motion.div>
-          <p className="text-center text-white/70 text-xs mt-4">体験後、当日入会でキャンペーン適用　※キャンペーンは予告なく終了する場合があります</p>
+          <p className="text-center text-[#4D5058]/40 text-xs mt-4">体験後、当日入会でキャンペーン適用　※キャンペーンは予告なく終了する場合があります</p>
         </div>
       </section>
 
