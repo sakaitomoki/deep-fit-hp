@@ -811,8 +811,8 @@ export default function Home() {
             className="text-center mb-14"
           >
             <p className="text-[#F0A93A] text-xs tracking-[0.3em] uppercase mb-3">Classes</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#4D5058]">目的に合わせて選べるクラス</h2>
-            <p className="text-[#4D5058]/60 text-sm mt-3">どんな目的でも、合うトレーニングが見つかります</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white">目的に合わせて選べるクラス</h2>
+            <p className="text-white/60 text-sm mt-3">どんな目的でも、合うトレーニングが見つかります</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -874,7 +874,7 @@ export default function Home() {
             <Link
               href="/schedule"
               data-testid="button-view-all-classes"
-              className="inline-flex items-center gap-2 bg-[#4D5058] text-white px-8 py-3 rounded-full text-sm font-medium hover:bg-[#53565E] transition-colors duration-200"
+              className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white px-8 py-3 rounded-full text-sm font-medium hover:bg-white/15 transition-colors duration-200"
             >
               全てのクラスを見る <ArrowRight className="w-4 h-4" />
             </Link>
