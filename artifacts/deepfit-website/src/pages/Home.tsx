@@ -227,9 +227,9 @@ const faqItems = [
     aBody: "お子さま同伴のみならず、キッズクラスのご用意もあり、ご家庭の状況に合わせて通い方をご案内しています。気になることがあれば事前にLINEでご相談いただけます。",
   },
   {
-    q: "退会やお休みはできますか？",
-    aLead: "はい、月単位でのご相談が可能です。",
-    aBody: "長期の縛りや違約金はありません。ライフスタイルの変化に合わせて、無理なく続けられる通い方をスタッフと一緒に考えます。",
+    q: "退会はいつでもできますか？",
+    aLead: "はい。継続縛りなし・いつでも月単位で退会できます。",
+    aBody: "違約金や解約手数料は一切ありません。なお、休会制度はご用意しておりませんのでご了承ください。ライフスタイルの変化があっても、退会のご連絡をいただければスムーズに対応します。",
   },
 ];
 
@@ -343,9 +343,18 @@ function InstagramAtmosphereSection() {
           </div>
           <div className="ig-atmosphere-section__banner-right">
             <div className="ig-atmosphere-section__banner-promo">
-              <SiInstagram className="w-3 h-3 text-[#F0A93A]" />
-              インスタフォローで体験無料
-              <span className="ig-atmosphere-section__banner-promo-sub">フォロー後、DMまたはLINEでご連絡ください</span>
+              <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 6 }}>
+                <SiInstagram className="w-4 h-4 text-[#F0A93A]" />
+                <span style={{ color: "#F0A93A", fontSize: 11, fontWeight: 900, letterSpacing: "0.14em" }}>期間限定特典</span>
+              </div>
+              <p style={{ fontSize: "clamp(15px,2vw,18px)", fontWeight: 900, lineHeight: 1.25, marginBottom: 4 }}>
+                インスタをフォローして<br />
+                <span style={{ color: "#F0A93A", fontSize: "clamp(18px,2.5vw,22px)" }}>体験料2,000円→無料</span>
+              </p>
+              <span className="ig-atmosphere-section__banner-promo-sub" style={{ fontSize: 11 }}>
+                ① @deep.amagasaki をフォロー<br />
+                ② DMまたはLINEで「フォローしました」と送るだけ
+              </span>
             </div>
             <a
               href={gymConfig.sns.instagram}
@@ -355,7 +364,7 @@ function InstagramAtmosphereSection() {
               className="ig-atmosphere-section__btn"
             >
               <SiInstagram className="w-4 h-4" />
-              Instagramを見る
+              @deep.amagasaki をフォローする
             </a>
           </div>
         </motion.div>
