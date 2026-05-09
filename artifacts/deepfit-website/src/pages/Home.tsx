@@ -750,7 +750,7 @@ export default function Home() {
             transition={{ delay: 0.18, duration: 0.6, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
           >
             <span className="hero-v2__label">はじめてでも安心</span>
-            <span className="hero-v2__label">女性も通いやすい</span>
+            <span className="hero-v2__label">女性が多く通うジム</span>
             <span className="hero-v2__label">まずは気楽に体験から</span>
           </motion.div>
 

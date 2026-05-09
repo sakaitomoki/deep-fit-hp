@@ -158,7 +158,7 @@ export default function Instructors() {
                       <span className="text-[#4D5058]/70 text-sm">{inst.record}</span>
                     </div>
                     <p className="text-[#4D5058]/70 text-sm leading-relaxed mb-6">{inst.bio}</p>
-                    <div className="bg-[#F2F3F5] rounded-md p-5">
+                    <div className="bg-[#FAF5EE] rounded-md p-5">
                       <h3 className="flex items-center gap-2 font-bold text-[#4D5058] text-sm mb-3">
                         <Award className="w-4 h-4 text-[#F2AC55]" />
                         主な実績

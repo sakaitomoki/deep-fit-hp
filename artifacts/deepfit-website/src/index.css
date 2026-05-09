@@ -493,15 +493,14 @@
   position: relative;
   overflow: hidden;
   padding: 72px 0;
-  background: linear-gradient(135deg, #D99A40 0%, #F2AC55 50%, #E8954A 100%);
-  color: #fff;
+  background: #FAF5EE;
+  color: #3D3530;
 }
 .opening-offer-section::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: repeating-linear-gradient(45deg, rgba(255,255,255,.08) 0, rgba(255,255,255,.08) 1px, transparent 1px, transparent 20px);
-  opacity: 1;
+  background-image: none;
   pointer-events: none;
 }
 .opening-offer-section__inner {
@@ -517,7 +516,7 @@
 }
 .opening-offer-section__eyebrow {
   margin: 0 0 10px;
-  color: rgba(255,255,255,.9);
+  color: #D99A40;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: .28em;
@@ -528,15 +527,15 @@
   font-size: clamp(32px, 4.8vw, 58px);
   line-height: 1.05;
   font-weight: 900;
-  color: #fff;
+  color: #3D3530;
 }
 .opening-offer-section__title span {
   display: block;
-  color: #EAA53B;
+  color: #D99A40;
 }
 .opening-offer-section__lead {
   margin: 14px 0 0;
-  color: rgba(255,255,255,.62);
+  color: #8C7B72;
   font-size: clamp(15px, 1.2vw, 18px);
   line-height: 1.7;
 }
@@ -599,13 +598,13 @@
   padding: 22px 18px;
   margin-bottom: 18px;
   border-radius: 26px;
-  background: rgba(255,255,255,.85);
-  border: 1px solid rgba(255,255,255,.6);
-  box-shadow: 0 4px 16px rgba(0,0,0,.08);
+  background: #FFFFFF;
+  border: 1.5px solid #EDE3D8;
+  box-shadow: 0 4px 16px rgba(61,53,48,.07);
 }
 .opening-offer-section__value-label {
   margin: 0 0 6px;
-  color: rgba(77,80,88,.65);
+  color: #8C7B72;
   font-size: 13px;
   letter-spacing: .18em;
   text-transform: uppercase;
@@ -614,11 +613,11 @@
   margin: 0;
   font-size: clamp(28px, 4vw, 48px);
   font-weight: 900;
-  color: #4D5058;
+  color: #D99A40;
 }
 .opening-offer-section__value-sub {
   margin: 8px 0 0;
-  color: rgba(77,80,88,.6);
+  color: #8C7B72;
   font-size: 14px;
 }
 .opening-offer-section__assurance {
@@ -631,9 +630,9 @@
 .opening-offer-section__assurance span {
   padding: 8px 12px;
   border-radius: 999px;
-  background: rgba(255,255,255,.85);
-  border: 1px solid rgba(255,255,255,.6);
-  color: #4D5058;
+  background: #FFFFFF;
+  border: 1px solid #EDE3D8;
+  color: #3D3530;
   font-size: 13px;
 }
 .opening-offer-section__cta {
@@ -660,13 +659,13 @@
   color: #fff;
 }
 .opening-offer-section__cta-secondary {
-  background: rgba(255,255,255,.08);
-  color: #fff;
-  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(61,53,48,.07);
+  color: #3D3530;
+  border: 1px solid #EDE3D8;
 }
 .opening-offer-section__cta-note {
   margin: 0;
-  color: rgba(255,255,255,.45);
+  color: rgba(61,53,48,.45);
   font-size: 12px;
   text-align: center;
 }
@@ -893,7 +892,7 @@
 
 /* ─── FAQ Section ───────────────────────────────────────────── */
 .faq-section {
-  background: #0E1219;
+  background: #FAF5EE;
   padding: 88px 0 80px;
 }
 .faq-section__inner {
@@ -908,11 +907,11 @@
 .faq-section__title {
   font-size: clamp(22px, 4vw, 32px);
   font-weight: 700;
-  color: #ffffff;
+  color: #3D3530;
   margin-bottom: 12px;
 }
 .faq-section__lead {
-  color: rgba(255, 255, 255, 0.72);
+  color: #8C7B72;
   font-size: 14px;
   line-height: 1.7;
 }
@@ -922,15 +921,15 @@
   gap: 18px;
 }
 .faq-card {
-  background: #141C2A;
-  border: 1px solid rgba(240, 169, 58, 0.10);
+  background: #FFFFFF;
+  border: 1.5px solid #EDE3D8;
   border-radius: 20px;
   padding: 28px;
   transition: border-color 0.25s ease, background 0.25s ease;
 }
 .faq-card:hover {
-  border-color: rgba(240, 169, 58, 0.22);
-  background: #182030;
+  border-color: #D99A40;
+  background: #FFFBF5;
 }
 .faq-card__question {
   display: flex;
@@ -953,7 +952,7 @@
   line-height: 1;
 }
 .faq-card__q-text {
-  color: rgba(255, 255, 255, 0.95);
+  color: #3D3530;
   font-size: 15px;
   font-weight: 600;
   line-height: 1.6;
@@ -962,7 +961,7 @@
 }
 .faq-card__divider {
   height: 1px;
-  background: rgba(255, 255, 255, 0.08);
+  background: #EDE3D8;
   margin-bottom: 18px;
 }
 .faq-card__answer {
@@ -977,8 +976,8 @@
   min-width: 28px;
   height: 28px;
   border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.06);
-  color: rgba(255, 255, 255, 0.55);
+  background: rgba(61, 53, 48, 0.07);
+  color: #8C7B72;
   font-size: 13px;
   font-weight: 600;
   flex-shrink: 0;
@@ -991,14 +990,14 @@
   padding-top: 3px;
 }
 .faq-card__a-lead {
-  color: rgba(255, 255, 255, 0.96);
+  color: #3D3530;
   font-size: 14px;
   font-weight: 600;
   line-height: 1.6;
   margin: 0;
 }
 .faq-card__a-text {
-  color: rgba(255, 255, 255, 0.76);
+  color: #6B5C52;
   font-size: 13px;
   line-height: 1.85;
   margin: 0;
@@ -1012,7 +1011,7 @@
 
 /* ─── Instagram Atmosphere Section ─────────────────────────── */
 .ig-atmosphere-section {
-  background: #0C1018;
+  background: #FAF5EE;
   padding: 80px 0 72px;
 }
 .ig-atmosphere-section__inner {
@@ -1027,11 +1026,11 @@
 .ig-atmosphere-section__title {
   font-size: clamp(20px, 3.5vw, 28px);
   font-weight: 700;
-  color: #ffffff;
+  color: #3D3530;
   margin-bottom: 10px;
 }
 .ig-atmosphere-section__lead {
-  color: rgba(255, 255, 255, 0.68);
+  color: #8C7B72;
   font-size: 14px;
   line-height: 1.7;
 }
@@ -1188,7 +1187,7 @@
 
 /* ─── Testimonials Grid Section ─────────────────────────────── */
 .testimonials-grid-section {
-  background: #0F1520;
+  background: #2C1F10;
   padding: 80px 0 72px;
 }
 .testimonials-grid-section__inner {
@@ -1219,8 +1218,8 @@
   gap: 16px;
 }
 .testimonial-card {
-  background: #151D2B;
-  border: 1px solid rgba(240, 169, 58, 0.12);
+  background: #1F140A;
+  border: 1px solid rgba(240, 169, 58, 0.18);
   border-radius: 16px;
   padding: 26px 24px;
   display: flex;
@@ -1246,7 +1245,7 @@
 /* ─── Class Guide Section ───────────────────────────────────── */
 .class-guide-section {
   padding: 80px 0 72px;
-  background: #F2F3F5;
+  background: #FAF5EE;
 }
 @media (max-width: 767px) {
   .class-guide-section { padding: 56px 0 48px; }

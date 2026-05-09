@@ -158,7 +158,7 @@ export default function Contact() {
               variants={fadeInRight}
               className="lg:col-span-3"
             >
-              <div className="bg-[#F2F3F5] rounded-md p-7 sm:p-8">
+              <div className="bg-[#FAF5EE] rounded-md p-7 sm:p-8">
                 <h3 className="text-xl font-bold text-[#4D5058] mb-6">お問い合わせフォーム</h3>
                 <Form {...form}>
                   <form onSubmit={form.handleSubmit((data) => mutation.mutate(data))} className="space-y-5">
