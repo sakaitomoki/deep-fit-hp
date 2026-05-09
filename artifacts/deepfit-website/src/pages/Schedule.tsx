@@ -303,99 +303,176 @@ export default function Schedule() {
         </div>
       </section>
 
-      {/* Opening Campaign */}
+      {/* Summer Campaign */}
       <section
         className="py-20 lg:py-28 relative overflow-hidden"
-        style={{ background: "linear-gradient(135deg, #D99A40 0%, #F2AC55 50%, #E8954A 100%)" }}
+        style={{ background: "linear-gradient(135deg, #0B0F15 0%, #151A24 100%)" }}
       >
-        {/* Diagonal stripe pattern */}
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "repeating-linear-gradient(45deg, white 0, white 1px, transparent 0, transparent 50%)", backgroundSize: "20px 20px" }} />
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Subtle gold grid pattern */}
+        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "repeating-linear-gradient(0deg, #EAA53B 0, #EAA53B 1px, transparent 0, transparent 60px), repeating-linear-gradient(90deg, #EAA53B 0, #EAA53B 1px, transparent 0, transparent 60px)" }} />
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+          {/* Header */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeInUp}
-            className="text-center"
+            className="text-center mb-10"
           >
-            {/* TOP badge */}
-            <div className="inline-flex items-center gap-2 bg-white text-[#D99A40] text-sm font-bold px-6 py-2.5 rounded-full mb-5 shadow-lg tracking-wide">
-              <Star className="w-4 h-4 fill-[#F2AC55] text-[#F2AC55]" />
-              無料キャンペーン実施中
-              <Star className="w-4 h-4 fill-[#F2AC55] text-[#F2AC55]" />
+            <div className="inline-flex items-center gap-2 mb-4" style={{ background: "rgba(234,165,59,0.15)", border: "1px solid rgba(234,165,59,0.4)", borderRadius: 999, padding: "6px 20px" }}>
+              <Star className="w-3.5 h-3.5 fill-[#EAA53B] text-[#EAA53B]" />
+              <span style={{ color: "#EAA53B", fontSize: 12, fontWeight: 800, letterSpacing: "0.18em" }}>過去最大キャンペーン</span>
+              <Star className="w-3.5 h-3.5 fill-[#EAA53B] text-[#EAA53B]" />
             </div>
+            <h2 className="text-white font-bold leading-tight mb-2" style={{ fontSize: "clamp(28px,5vw,52px)" }}>
+              夏までに変わる。
+            </h2>
+            <p className="font-heading font-bold text-[#EAA53B] drop-shadow-lg mb-3" style={{ fontSize: "clamp(40px,8vw,80px)", lineHeight: 1 }}>
+              5大特典
+            </p>
+            <p className="text-white/70 text-sm">5月7日〜7月31日の期間限定。まずは無料体験から気軽にどうぞ。</p>
+          </motion.div>
 
-            <div className="mb-2">
-              <span className="text-white/80 text-sm tracking-[0.2em] uppercase block mb-1">Opening Campaign</span>
-              <h2 className="text-5xl sm:text-6xl font-bold text-white drop-shadow-lg">
-                ３大特典
-              </h2>
-            </div>
-            <p className="text-white/90 font-bold text-xl mb-1">４月末まで限定！</p>
-            <p className="text-white/60 text-xs mb-10">※すべて税込価格　※キャンペーンは予告なく終了する場合があります</p>
+          {/* 特典①②③ row */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5"
+          >
+            {[
+              { label: "特典①", title: "体験料", original: "通常 2,000円" },
+              { label: "特典②", title: "入会金", original: "通常 10,000円" },
+              { label: "特典③", title: "翌月会費", original: "女性 11,000円 / 男性 13,200円" },
+            ].map((item) => (
+              <motion.div key={item.label} variants={fadeInUp}
+                className="rounded-2xl px-5 py-4 flex flex-row sm:flex-col items-center sm:items-start gap-3 sm:gap-1"
+                style={{ background: "rgba(234,165,59,0.07)", border: "1.5px solid rgba(234,165,59,0.25)" }}
+              >
+                <span style={{ background: "rgba(234,165,59,0.18)", color: "#EAA53B", fontSize: 11, fontWeight: 900, padding: "2px 12px", borderRadius: 999, letterSpacing: "0.1em", whiteSpace: "nowrap" }}>{item.label}</span>
+                <div className="flex-1 sm:mt-2">
+                  <p className="text-white font-bold text-lg leading-tight">{item.title}</p>
+                  <p className="text-white/40 text-xs mt-0.5">{item.original}</p>
+                </div>
+                <p className="font-heading font-bold text-[#EAA53B] shrink-0" style={{ fontSize: "clamp(26px,3.5vw,36px)", lineHeight: 1 }}>無料</p>
+              </motion.div>
+            ))}
+          </motion.div>
 
-            {/* Benefits rows */}
-            <div className="space-y-3 mb-10 w-full max-w-sm mx-auto">
-              {[
-                { num: "特典１", label: "体験料金", price: "¥1,500" },
-                { num: "特典２", label: "入会金", price: "¥10,000" },
-                { num: "特典３", label: "初月会費", price: "¥11,000〜¥13,200" },
-              ].map((item) => (
-                <div key={item.num} className="bg-white rounded-2xl overflow-hidden shadow-lg">
-                  <div className="flex items-center px-4 py-3.5 gap-3">
-                    <span className="bg-[#4D5058] text-white text-xs font-bold px-2.5 py-1 rounded-full shrink-0">{item.num}</span>
-                    <span className="text-[#4D5058] font-bold text-base flex-1 text-left">{item.label}</span>
-                    <div className="flex items-center gap-2 shrink-0">
-                      <div className="relative">
-                        <span className="font-heading font-bold text-base text-gray-300">{item.price}</span>
-                        <span className="absolute inset-0 flex items-center pointer-events-none">
-                          <span className="block w-full h-[2px] bg-[#E74C3C] rotate-[-10deg] rounded-full" />
-                        </span>
-                      </div>
-                      <span className="font-heading font-bold text-2xl text-[#F2AC55]">無料</span>
-                    </div>
+          {/* 特典④⑤ row */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8"
+          >
+            {/* 特典④ */}
+            <motion.div variants={fadeInUp} className="rounded-2xl overflow-hidden" style={{ background: "linear-gradient(160deg, #0D1118 0%, #161C28 100%)", border: "2px solid #EAA53B" }}>
+              <div className="px-5 pt-4 pb-0 flex items-center gap-2">
+                <span style={{ background: "rgba(234,165,59,0.18)", color: "#EAA53B", fontSize: 11, fontWeight: 900, padding: "3px 12px", borderRadius: 999, letterSpacing: "0.1em" }}>特典④</span>
+                <span style={{ color: "rgba(255,255,255,0.4)", fontSize: 11, letterSpacing: "0.12em" }}>当日入会限定</span>
+              </div>
+              <div className="px-5 pt-3 pb-3 text-center" style={{ borderBottom: "1px solid rgba(234,165,59,0.15)" }}>
+                <p style={{ color: "#EAA53B", fontSize: "clamp(22px,3.5vw,36px)", fontWeight: 900, lineHeight: 1.05, margin: "4px 0 2px", fontFamily: "Oswald, sans-serif", letterSpacing: "0.02em" }}>
+                  月会費が永久にOFF！！
+                </p>
+                <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 12, margin: 0 }}>※先着50名限定</p>
+              </div>
+              <div className="px-5 pt-3 pb-5">
+                <div className="mb-3">
+                  <p style={{ color: "rgba(234,165,59,0.7)", fontSize: 10, fontWeight: 800, letterSpacing: "0.14em", marginBottom: 2 }}>女性フルタイム</p>
+                  <div className="flex items-baseline gap-1.5">
+                    <span style={{ color: "rgba(255,255,255,0.3)", fontSize: 14, fontWeight: 700 }}>通常</span>
+                    <span style={{ color: "rgba(255,255,255,0.3)", fontSize: 16, fontWeight: 800, textDecoration: "line-through" }}>11,000円</span>
+                    <span style={{ color: "rgba(255,255,255,0.3)", fontSize: 14, fontWeight: 700 }}>が</span>
+                  </div>
+                  <div className="flex items-baseline gap-1.5 mt-0.5">
+                    <span style={{ color: "#fff", fontSize: 14, fontWeight: 700 }}>ずっと</span>
+                    <span style={{ color: "#EAA53B", fontSize: "clamp(26px,3.5vw,40px)", fontWeight: 900, lineHeight: 1, fontFamily: "Oswald, sans-serif" }}>9,900円</span>
+                    <span style={{ color: "#fff", fontSize: 13, fontWeight: 700 }}>で通い放題！</span>
                   </div>
                 </div>
-              ))}
-            </div>
-
-            {/* Total */}
-            <div className="bg-white/20 border-2 border-white/50 rounded-3xl px-6 py-6 w-full max-w-sm mx-auto flex flex-col items-center mb-10 shadow-xl">
-              <p className="text-white/80 text-sm font-medium mb-2">特典合計（最大）</p>
-              <div className="flex items-center gap-4">
-                <div className="relative">
-                  <span className="font-heading font-bold text-2xl text-white/40">¥24,700〜</span>
-                  <span className="absolute inset-0 flex items-center pointer-events-none">
-                    <span className="block w-full h-[3px] bg-white/70 rotate-[-8deg] rounded-full" />
-                  </span>
+                <div style={{ borderTop: "1px solid rgba(234,165,59,0.12)", paddingTop: 10 }}>
+                  <p style={{ color: "rgba(234,165,59,0.7)", fontSize: 10, fontWeight: 800, letterSpacing: "0.14em", marginBottom: 2 }}>男性フルタイム</p>
+                  <div className="flex items-baseline gap-1.5">
+                    <span style={{ color: "rgba(255,255,255,0.3)", fontSize: 14, fontWeight: 700 }}>通常</span>
+                    <span style={{ color: "rgba(255,255,255,0.3)", fontSize: 16, fontWeight: 800, textDecoration: "line-through" }}>13,200円</span>
+                    <span style={{ color: "rgba(255,255,255,0.3)", fontSize: 14, fontWeight: 700 }}>が</span>
+                  </div>
+                  <div className="flex items-baseline gap-1.5 mt-0.5">
+                    <span style={{ color: "#fff", fontSize: 14, fontWeight: 700 }}>ずっと</span>
+                    <span style={{ color: "#EAA53B", fontSize: "clamp(26px,3.5vw,40px)", fontWeight: 900, lineHeight: 1, fontFamily: "Oswald, sans-serif" }}>12,100円</span>
+                    <span style={{ color: "#fff", fontSize: 13, fontWeight: 700 }}>で通い放題！</span>
+                  </div>
                 </div>
-                <span className="font-heading font-bold text-5xl text-white drop-shadow-lg">¥０</span>
+                <p style={{ color: "rgba(255,255,255,0.2)", fontSize: 11, marginTop: 10, textAlign: "center" }}>継続縛りなし・いつでも退会可</p>
               </div>
-            </div>
+            </motion.div>
 
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
-                href={gymConfig.sns.line}
-                target="_blank"
-                rel="noopener noreferrer"
-                data-testid="button-campaign-line"
-                className="inline-flex items-center gap-3 bg-[#06C755] text-white font-bold px-8 py-4 rounded-full text-base transition-all duration-200 shadow-xl hover:scale-105"
-              >
-                <SiLine className="w-5 h-5" />
-                LINEで体験予約する
-              </a>
-              <Link
-                href="/contact"
-                data-testid="button-campaign-contact"
-                className="inline-flex items-center gap-2 bg-white/20 border-2 border-white/60 text-white font-medium px-7 py-4 rounded-full text-base transition-all duration-200 hover:bg-white/30"
-              >
-                <MessageCircle className="w-4 h-4" />
-                お問い合わせフォーム
-              </Link>
-            </div>
-            <p className="text-white/50 text-xs mt-4">体験後、当日入会でキャンペーン適用</p>
+            {/* 特典⑤ */}
+            <motion.div variants={fadeInUp} className="rounded-2xl overflow-hidden" style={{ background: "#0B0F15", border: "1.5px solid rgba(234,165,59,0.3)" }}>
+              <div className="flex items-center gap-2 px-5 pt-4 pb-3" style={{ borderBottom: "1px solid rgba(234,165,59,0.12)" }}>
+                <span style={{ background: "rgba(234,165,59,0.18)", color: "#EAA53B", fontSize: 11, fontWeight: 900, padding: "3px 12px", borderRadius: 999, letterSpacing: "0.08em" }}>特典⑤</span>
+                <span style={{ color: "rgba(234,165,59,0.6)", fontSize: 11, fontWeight: 700, letterSpacing: "0.12em" }}>フルタイム会員のみ対象</span>
+              </div>
+              <div className="px-5 pt-4 pb-5">
+                <p style={{ color: "#fff", fontSize: "clamp(16px,2vw,20px)", fontWeight: 900, marginBottom: 4 }}>3ヶ月継続で <span style={{ color: "#EAA53B" }}>キャッシュバック</span></p>
+                <p style={{ color: "rgba(255,255,255,0.35)", fontSize: 13, marginBottom: 16 }}>3ヶ月続けたら、まるごと返金</p>
+                <p style={{ color: "rgba(255,255,255,0.35)", fontSize: 12, marginBottom: 4 }}>キャッシュバック額</p>
+                <p style={{ color: "#EAA53B", fontSize: "clamp(32px,5vw,52px)", fontWeight: 900, lineHeight: 1, fontFamily: "Oswald, sans-serif" }}>1ヶ月分</p>
+                <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "clamp(14px,1.6vw,17px)", fontWeight: 700, marginTop: 6 }}>の会費を全額返金</p>
+                <p style={{ color: "rgba(255,255,255,0.22)", fontSize: 11, marginTop: 10 }}>女性最大 ¥9,900 / 男性最大 ¥12,100</p>
+              </div>
+            </motion.div>
           </motion.div>
+
+          {/* Saving summary */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="text-center mb-8"
+          >
+            <p className="text-white/50 text-sm mb-1">入会月の節約額</p>
+            <p className="font-heading font-bold text-white" style={{ fontSize: "clamp(36px,6vw,64px)", lineHeight: 1 }}>
+              最大 <span style={{ color: "#EAA53B" }}>23,000円〜</span>
+            </p>
+            <p className="text-white/40 text-xs mt-2">＋月会費永久割引が継続します</p>
+          </motion.div>
+
+          {/* CTAs */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          >
+            <a
+              href={gymConfig.sns.line}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="button-campaign-line"
+              className="inline-flex items-center gap-3 bg-[#06C755] text-white font-bold px-8 py-4 rounded-full text-base transition-all duration-200 shadow-xl hover:scale-105"
+            >
+              <SiLine className="w-5 h-5" />
+              LINEで体験予約する
+            </a>
+            <Link
+              href="/contact"
+              data-testid="button-campaign-contact"
+              className="inline-flex items-center gap-2 text-white font-medium px-7 py-4 rounded-full text-base transition-all duration-200"
+              style={{ background: "rgba(234,165,59,0.12)", border: "1.5px solid rgba(234,165,59,0.4)" }}
+            >
+              <MessageCircle className="w-4 h-4 text-[#EAA53B]" />
+              お問い合わせフォーム
+            </Link>
+          </motion.div>
+          <p className="text-center text-white/30 text-xs mt-4">体験後、当日入会でキャンペーン適用　※キャンペーンは予告なく終了する場合があります</p>
         </div>
       </section>
 
