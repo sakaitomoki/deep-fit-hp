@@ -15,7 +15,7 @@ export const gymConfig = {
     weekdayPersonal: "13:00 - 17:00（パーソナル・予約制）",
     saturday: "10:00 - 22:00",
     sunday: "10:00 - 22:00",
-    closed: "祝日",
+    closed: "木曜日・祝日",
   },
   hoursDisplay: [
     { label: "平日", time: "10:00 - 13:00 / 17:00 - 22:00" },
@@ -25,7 +25,7 @@ export const gymConfig = {
     { label: "　土キッズ", time: "14:00 - 15:00" },
     { label: "　土パーソナル", time: "15:00 - 22:00" },
     { label: "　日パーソナル", time: "14:00 - 22:00" },
-    { label: "定休日", time: "祝日" },
+    { label: "定休日", time: "木曜日・祝日" },
   ],
   sns: {
     instagram: "https://www.instagram.com/deep.amagasaki/",

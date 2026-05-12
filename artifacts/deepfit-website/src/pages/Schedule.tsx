@@ -79,9 +79,7 @@ const scheduleBlocks: Record<string, ScheduleBlock[]> = {
     { start: 17, end: 22, label: "フィットネス", color: "fitness" },
   ],
   thu: [
-    { start: 10, end: 13, label: "フィットネス", color: "fitness" },
-    { start: 13, end: 17, label: "パーソナル", sublabel: "予約制", color: "personal" },
-    { start: 17, end: 22, label: "フィットネス", color: "fitness" },
+    { start: 10, end: 22, label: "定休日", color: "closed" },
   ],
   fri: [
     { start: 10, end: 13, label: "フィットネス", color: "fitness" },
@@ -299,7 +297,7 @@ export default function Schedule() {
             ))}
           </div>
           <p className="text-[#4D5058]/40 text-xs mt-2">
-            ※ パーソナルトレーニングは要予約。キッズクラスは火曜17:00〜18:00・土曜14:00〜15:00。祝日定休。
+            ※ パーソナルトレーニングは要予約。キッズクラスは火曜17:00〜18:00・土曜14:00〜15:00。木曜・祝日定休。
           </p>
         </div>
       </section>
