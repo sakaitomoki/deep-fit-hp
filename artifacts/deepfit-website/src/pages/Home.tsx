@@ -821,94 +821,8 @@ export default function Home() {
       </section>
 
       <OpeningOfferSection />
-      <GymIdentitySection />
-      <FAQSection />
-      <InstagramAtmosphereSection />
-      <TestimonialsGridSection />
 
-      {/* Classes */}
-      <section className="class-guide-section">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            className="text-center mb-14"
-          >
-            <p className="text-[#F0A93A] text-xs tracking-[0.3em] uppercase mb-3">Classes</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#4D5058]">目的に合わせて選べるクラス</h2>
-            <p className="text-[#4D5058]/60 text-sm mt-3">どんな目的でも、合うトレーニングが見つかります</p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {classes.map((cls, i) => {
-              const variant = cls.animation === "left" ? fadeInLeft : cls.animation === "right" ? fadeInRight : fadeInUp;
-              return (
-                <motion.div
-                  key={i}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  variants={variant}
-                  className="group relative rounded-2xl overflow-hidden aspect-[4/5] cursor-pointer"
-                  data-testid={`card-class-${i}`}
-                >
-                  <div className="absolute inset-0 overflow-hidden">
-                    <img
-                      src={cls.image}
-                      alt={cls.alt}
-                      loading="lazy"
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 brightness-[1.06]"
-                    />
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#4D5058]/28 to-[#4D5058]/82" />
-                  <div className="absolute top-4 left-4 flex flex-wrap gap-1.5">
-                    <span className="text-[10px] tracking-wider font-medium bg-[#F0A93A] text-white px-3 py-1 rounded-full uppercase">
-                      {cls.level}
-                    </span>
-                    {cls.beginnerOk && (
-                      <span className="text-[10px] tracking-wider font-medium bg-white/20 text-white px-2.5 py-1 rounded-full backdrop-blur-sm">
-                        初心者OK
-                      </span>
-                    )}
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <p className="text-white/50 text-xs tracking-[0.2em] uppercase mb-1">{cls.subtitle}</p>
-                    <h3 className="text-white font-bold text-xl mb-2">{cls.title}</h3>
-                    <p className="text-white/70 text-xs leading-relaxed mb-3">{cls.description}</p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="text-[10px] bg-white/10 text-white/80 px-2 py-0.5 rounded-full border border-white/10">{cls.target}</span>
-                      <span className="text-[10px] bg-white/10 text-white/80 px-2 py-0.5 rounded-full border border-white/10">{cls.duration}</span>
-                      <span className="text-[10px] bg-white/10 text-white/80 px-2 py-0.5 rounded-full border border-white/10">
-                        強度{"★".repeat(cls.intensity)}{"☆".repeat(3 - cls.intensity)}
-                      </span>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            className="text-center mt-10"
-          >
-            <Link
-              href="/schedule"
-              data-testid="button-view-all-classes"
-              className="inline-flex items-center gap-2 bg-[#F2AC55] text-white px-8 py-3 rounded-full text-sm font-bold hover:bg-[#D99A40] transition-colors duration-200 shadow-md"
-            >
-              全てのクラスを見る <ArrowRight className="w-4 h-4" />
-            </Link>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* LINE Consult Section */}
+      {/* LINE Consult Section — キャンペーン直後の動線 */}
       <section className="py-20 lg:py-28 overflow-hidden" style={{ background: "linear-gradient(135deg, #06C755 0%, #04A344 100%)" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -1019,6 +933,93 @@ export default function Home() {
               </div>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      <GymIdentitySection />
+      <FAQSection />
+      <InstagramAtmosphereSection />
+      <TestimonialsGridSection />
+
+      {/* Classes */}
+      <section className="class-guide-section">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="text-center mb-14"
+          >
+            <p className="text-[#F0A93A] text-xs tracking-[0.3em] uppercase mb-3">Classes</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#4D5058]">目的に合わせて選べるクラス</h2>
+            <p className="text-[#4D5058]/60 text-sm mt-3">どんな目的でも、合うトレーニングが見つかります</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {classes.map((cls, i) => {
+              const variant = cls.animation === "left" ? fadeInLeft : cls.animation === "right" ? fadeInRight : fadeInUp;
+              return (
+                <motion.div
+                  key={i}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={variant}
+                  className="group relative rounded-2xl overflow-hidden aspect-[4/5] cursor-pointer"
+                  data-testid={`card-class-${i}`}
+                >
+                  <div className="absolute inset-0 overflow-hidden">
+                    <img
+                      src={cls.image}
+                      alt={cls.alt}
+                      loading="lazy"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 brightness-[1.06]"
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#4D5058]/28 to-[#4D5058]/82" />
+                  <div className="absolute top-4 left-4 flex flex-wrap gap-1.5">
+                    <span className="text-[10px] tracking-wider font-medium bg-[#F0A93A] text-white px-3 py-1 rounded-full uppercase">
+                      {cls.level}
+                    </span>
+                    {cls.beginnerOk && (
+                      <span className="text-[10px] tracking-wider font-medium bg-white/20 text-white px-2.5 py-1 rounded-full backdrop-blur-sm">
+                        初心者OK
+                      </span>
+                    )}
+                  </div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <p className="text-white/50 text-xs tracking-[0.2em] uppercase mb-1">{cls.subtitle}</p>
+                    <h3 className="text-white font-bold text-xl mb-2">{cls.title}</h3>
+                    <p className="text-white/70 text-xs leading-relaxed mb-3">{cls.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="text-[10px] bg-white/10 text-white/80 px-2 py-0.5 rounded-full border border-white/10">{cls.target}</span>
+                      <span className="text-[10px] bg-white/10 text-white/80 px-2 py-0.5 rounded-full border border-white/10">{cls.duration}</span>
+                      <span className="text-[10px] bg-white/10 text-white/80 px-2 py-0.5 rounded-full border border-white/10">
+                        強度{"★".repeat(cls.intensity)}{"☆".repeat(3 - cls.intensity)}
+                      </span>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="text-center mt-10"
+          >
+            <Link
+              href="/schedule"
+              data-testid="button-view-all-classes"
+              className="inline-flex items-center gap-2 bg-[#F2AC55] text-white px-8 py-3 rounded-full text-sm font-bold hover:bg-[#D99A40] transition-colors duration-200 shadow-md"
+            >
+              全てのクラスを見る <ArrowRight className="w-4 h-4" />
+            </Link>
+          </motion.div>
         </div>
       </section>
 
