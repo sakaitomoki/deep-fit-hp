@@ -79,7 +79,9 @@ const scheduleBlocks: Record<string, ScheduleBlock[]> = {
     { start: 17, end: 22, label: "フィットネス", color: "fitness" },
   ],
   thu: [
-    { start: 10, end: 22, label: "定休日", color: "closed" },
+    { start: 10, end: 13, label: "フィットネス", color: "fitness" },
+    { start: 13, end: 17, label: "パーソナル", sublabel: "予約制", color: "personal" },
+    { start: 17, end: 22, label: "フィットネス", color: "fitness" },
   ],
   fri: [
     { start: 10, end: 13, label: "フィットネス", color: "fitness" },
@@ -88,13 +90,11 @@ const scheduleBlocks: Record<string, ScheduleBlock[]> = {
   ],
   sat: [
     { start: 10, end: 14, label: "フィットネス", color: "fitness" },
-    { start: 14, end: 15, label: "キッズクラス", color: "kids" },
-    { start: 15, end: 19.5, label: "パーソナル", sublabel: "予約制", color: "personal" },
-    { start: 19.5, end: 21, label: "対人クラス", sublabel: "ドロップイン可", color: "taiai" },
+    { start: 14, end: 22, label: "－", color: "closed" },
   ],
   sun: [
     { start: 10, end: 14, label: "フィットネス", color: "fitness" },
-    { start: 14, end: 22, label: "パーソナル", sublabel: "予約制", color: "personal" },
+    { start: 14, end: 22, label: "－", color: "closed" },
   ],
 };
 
@@ -298,7 +298,7 @@ export default function Schedule() {
             ))}
           </div>
           <p className="text-[#4D5058]/40 text-xs mt-2">
-            ※ パーソナルトレーニングは要予約。キッズクラスは火曜17:00〜18:00・土曜14:00〜15:00。対人クラスは土曜19:30〜21:00（ドロップイン可）。祝日定休。
+            ※ パーソナルトレーニングは要予約。キッズクラスは火曜17:00〜18:00。祝日定休。
           </p>
         </div>
       </section>
