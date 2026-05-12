@@ -513,6 +513,9 @@ function OpeningOfferSection() {
 
             {/* メインコピー */}
             <div className="px-5 pt-3 pb-3 text-center" style={{ borderBottom: "1px solid rgba(234,165,59,0.15)" }}>
+              <div style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "linear-gradient(90deg,#EAA53B,#F5C96A)", borderRadius: 999, padding: "4px 16px", marginBottom: 8 }}>
+                <span style={{ color: "#0B0F15", fontSize: 13, fontWeight: 900, letterSpacing: "0.08em" }}>🔥 先着50名限定</span>
+              </div>
               <p style={{
                 color: "#EAA53B",
                 fontSize: "clamp(28px,4vw,46px)",
@@ -523,9 +526,6 @@ function OpeningOfferSection() {
                 letterSpacing: "0.02em",
               }}>
                 月会費が永久にOFF！！
-              </p>
-              <p style={{ color: "rgba(255,255,255,0.45)", fontSize: 13, margin: 0 }}>
-                ※先着50名限定
               </p>
             </div>
 
@@ -576,6 +576,9 @@ function OpeningOfferSection() {
               <span style={{ color: "rgba(234,165,59,0.6)", fontSize: 11, fontWeight: 700, letterSpacing: "0.15em" }}>フルタイム会員のみ対象</span>
             </div>
             <div className="px-6 pt-4 pb-6">
+              <div style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "linear-gradient(90deg,#EAA53B,#F5C96A)", borderRadius: 999, padding: "4px 16px", marginBottom: 10 }}>
+                <span style={{ color: "#0B0F15", fontSize: 13, fontWeight: 900, letterSpacing: "0.08em" }}>🔥 先着20名限定</span>
+              </div>
               <p style={{ color: "#FFFFFF", fontSize: "clamp(18px,2vw,22px)", fontWeight: 900, marginBottom: 4 }}>3ヶ月継続で <span style={{ color: "#EAA53B" }}>キャッシュバック</span></p>
               <p style={{ color: "rgba(255,255,255,0.38)", fontSize: 13, marginBottom: 20 }}>3ヶ月続けたら、まるごと返金</p>
               <p style={{ color: "rgba(255,255,255,0.35)", fontSize: 13, marginBottom: 4 }}>キャッシュバック額</p>
