@@ -464,7 +464,24 @@ function OpeningOfferSection() {
                   <p className="opening-offer-card__title">{item.title}</p>
                   <p className="opening-offer-card__original">{item.originalPrice}</p>
                 </div>
-                <p className="opening-offer-card__benefit">{item.benefit}</p>
+                <div style={{ textAlign: "right", lineHeight: 1 }}>
+                  <p style={{
+                    margin: 0,
+                    fontFamily: "Oswald, sans-serif",
+                    fontSize: "clamp(42px, 5vw, 62px)",
+                    fontWeight: 900,
+                    color: "#D99A40",
+                    lineHeight: 0.9,
+                    letterSpacing: "-0.02em",
+                  }}>¥0</p>
+                  <p style={{
+                    margin: "4px 0 0",
+                    fontSize: 11,
+                    fontWeight: 800,
+                    letterSpacing: "0.12em",
+                    color: "#8C7B72",
+                  }}>{item.benefit}</p>
+                </div>
               </div>
             </motion.div>
           ))}
