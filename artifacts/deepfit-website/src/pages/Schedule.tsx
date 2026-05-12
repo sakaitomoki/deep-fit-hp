@@ -89,12 +89,12 @@ const scheduleBlocks: Record<string, ScheduleBlock[]> = {
     { start: 17, end: 22, label: "フィットネス", color: "fitness" },
   ],
   sat: [
-    { start: 10, end: 14, label: "フィットネス", color: "fitness" },
-    { start: 14, end: 22, label: "－", color: "closed" },
+    { start: 10, end: 15, label: "－", color: "closed" },
+    { start: 15, end: 22, label: "フィットネス", color: "fitness" },
   ],
   sun: [
-    { start: 10, end: 14, label: "フィットネス", color: "fitness" },
-    { start: 14, end: 22, label: "－", color: "closed" },
+    { start: 10, end: 14, label: "－", color: "closed" },
+    { start: 14, end: 22, label: "フィットネス", color: "fitness" },
   ],
 };
 
