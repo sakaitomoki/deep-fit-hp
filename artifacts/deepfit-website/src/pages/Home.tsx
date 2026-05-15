@@ -279,9 +279,12 @@ function FAQSection() {
 
 function InstagramAtmosphereSection() {
   const igThumbs = [
-    { image: "/images/gym-interior.png", alt: "DEEP.FITの広く清潔感のあるジム内観" },
-    { image: "/images/class-kickboxing.png", alt: "初心者向けキックボクシングレッスンの様子" },
-    { image: "/images/gym-about.png", alt: "会員同士が和気藹々とトレーニングするDEEP.FITの雰囲気" },
+    { image: "/images/gym-kickboxing-woman.jpeg", alt: "キックボクシングトレーニングの様子" },
+    { image: "/images/class-kickboxing.png", alt: "初心者向けキックボクシングレッスン" },
+    { image: "/images/class-circuit.png", alt: "サーキットトレーニングクラス" },
+    { image: "/images/gym-about.png", alt: "DEEP.FITのトレーニング風景" },
+    { image: "/images/kids-class.jpeg", alt: "キッズクラスの様子" },
+    { image: "/images/smith-machine.jpeg", alt: "個室スミスマシンでのトレーニング" },
   ];
 
   return (
