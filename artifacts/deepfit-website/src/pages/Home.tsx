@@ -66,8 +66,8 @@ const reasonCards = [
     tag: "SPACE",
     title: "綺麗で広いから、\n気持ちよく通い続けやすい",
     body: "清潔感のある広い空間で、初めての方でも入りやすい環境です。圧迫感が少なく、落ち着いてトレーニングに取り組めます。",
-    image: "/images/gym-interior.png",
-    alt: "DEEP.FITの広く清潔感のあるジム内観",
+    image: "/images/gym-kickboxing-woman.jpeg",
+    alt: "DEEP.FITのキックボクシングトレーニング",
   },
   {
     id: 2,
