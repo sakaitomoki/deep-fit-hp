@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
 import { gymConfig } from "@/lib/gymConfig";
 
-const deepFitLogo = "/images/deepfit-logo.png";
+const deepFitLogo = "/images/deepfit-logo.webp";
 
 const navLinks = [
   { href: "/", label: "ホーム" },
@@ -49,6 +49,8 @@ export default function Navigation() {
               src={deepFitLogo}
               alt="DEEP.FIT"
               data-testid="img-logo"
+              width={88}
+              height={88}
               className="h-[72px] lg:h-[88px] w-auto object-contain drop-shadow-lg"
             />
           </Link>

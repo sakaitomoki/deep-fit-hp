@@ -108,9 +108,11 @@ export default function About() {
               className="relative"
             >
               <img
-                src="/images/class-kickboxing.png"
+                src="/images/class-kickboxing.webp"
                 alt="DEEP.FITでのキックボクシングレッスン風景"
                 loading="lazy"
+                width={800}
+                height={600}
                 className="rounded-md w-full object-cover aspect-[4/3]"
               />
             </motion.div>
@@ -168,9 +170,11 @@ export default function About() {
               variants={fadeInLeft}
             >
               <img
-                src="/images/gym-about.png"
+                src="/images/gym-about.webp"
                 alt="DEEP.FITのトレーニング施設と設備の全景"
                 loading="lazy"
+                width={800}
+                height={600}
                 className="rounded-md w-full object-cover aspect-[4/3]"
               />
             </motion.div>

@@ -27,6 +27,7 @@ export default function Footer() {
                 href={gymConfig.sns.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="DEEP.FIT Instagram公式アカウント"
                 data-testid="link-sns-instagram"
                 className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center transition-all duration-200 hover:bg-[#F2AC55]"
               >
@@ -36,6 +37,7 @@ export default function Footer() {
                 href={gymConfig.sns.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="DEEP.FIT X（旧Twitter）公式アカウント"
                 data-testid="link-sns-x"
                 className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center transition-all duration-200 hover:bg-[#F2AC55]"
               >
@@ -45,6 +47,7 @@ export default function Footer() {
                 href={gymConfig.sns.line}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="DEEP.FIT LINE公式アカウント"
                 data-testid="link-sns-line"
                 className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center transition-all duration-200 hover:bg-[#F2AC55]"
               >

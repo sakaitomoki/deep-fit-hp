@@ -32,7 +32,7 @@ const instructors = [
       "元プロキックボクサー",
       "フィットネス指導歴10年以上",
     ],
-    image: "/images/instructor-sakai.jpeg",
+    image: "/images/instructor-sakai.webp",
     aspect: "aspect-[2/3]",
   },
   {
@@ -46,7 +46,7 @@ const instructors = [
       "アマチュアキックボクサー",
       "フィットネスインストラクター資格保有",
     ],
-    image: "/images/instructor-natsuki.jpeg",
+    image: "/images/instructor-natsuki.webp",
     aspect: "aspect-[2/3]",
   },
   {
@@ -60,7 +60,7 @@ const instructors = [
       "現役プロキックボクサー",
       "プロ戦績 10戦6勝",
     ],
-    image: "/images/instructor-morita.jpeg",
+    image: "/images/instructor-morita.webp",
     aspect: "aspect-[2/3]",
   },
 ];
@@ -72,13 +72,13 @@ export default function Instructors() {
 
       {/* Hero */}
       <div className="relative overflow-hidden" style={{ height: "52vh", minHeight: "400px" }}>
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/class-personal.png')" }} />
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/class-personal.webp')" }} />
         <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(30,32,37,0.92) 40%, rgba(30,32,37,0.65) 100%)" }} />
 
         <div className="absolute left-0 top-0 h-full w-1 bg-[#F2AC55]" />
 
         <div className="absolute right-0 top-0 h-full w-1/2 flex items-center justify-center opacity-[0.06] pointer-events-none select-none">
-          <img src="/images/instructors-hero-bg.png" alt="" className="w-4/5 object-contain" />
+          <img src="/images/instructors-hero-bg.webp" alt="" width={400} height={400} className="w-4/5 object-contain" />
         </div>
 
         <div className="relative z-10 h-full flex flex-col justify-center pl-10 sm:pl-20 lg:pl-32 max-w-7xl mx-auto w-full">
