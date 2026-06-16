@@ -59,7 +59,7 @@ export const gymConfig = {
       benefits: ["全時間帯利用可能", "月8回まで", "グローブ無料貸出", "パワーラック使用可"],
     },
     {
-      name: "学生会員",
+      name: "学生応援会員",
       subtitle: "Student（大学生可）",
       femalePrice: "¥8,800",
       malePrice: "¥8,800",
