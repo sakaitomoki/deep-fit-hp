@@ -82,7 +82,8 @@ const scheduleBlocks: Record<string, ScheduleBlock[]> = {
     { start: 17, end: 22, label: "フィットネス", color: "fitness" },
   ],
   thu: [
-    { start: 6,  end: 22, label: "定休日", color: "closed" },
+    { start: 6,  end: 10, label: "フリー", color: "free" },
+    { start: 10, end: 22, label: "定休日", color: "closed" },
   ],
   fri: [
     { start: 6,  end: 10, label: "フリー", color: "free" },
@@ -126,7 +127,7 @@ dayOrder.forEach((day, ci) => {
 });
 
 const colorStyles: Record<string, { bg: string; text: string; border: string }> = {
-  free:     { bg: "bg-[#E8F4FD]", text: "text-[#1A6B9A]",  border: "border-[#5BA4CF]/40" },
+  free:     { bg: "bg-[#EDE8FB]", text: "text-[#5B3EBF]",  border: "border-[#7C5CDD]/40" },
   fitness:  { bg: "bg-[#FFF0D6]", text: "text-[#C47F1A]",  border: "border-[#F2AC55]/50" },
   personal: { bg: "bg-[#DDEEFF]", text: "text-[#2563A8]",  border: "border-[#4D90D9]/40" },
   kids:     { bg: "bg-[#D6F5E0]", text: "text-[#1F7A3A]",  border: "border-[#4CAF50]/40" },
