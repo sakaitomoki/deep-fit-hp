@@ -53,7 +53,7 @@ type ScheduleBlock = {
   end: number;
   label: string;
   sublabel?: string;
-  color: "fitness" | "personal" | "kids" | "taiai" | "closed";
+  color: "fitness" | "personal" | "kids" | "taiai" | "closed" | "free";
 };
 
 const dayOrder = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"] as const;
@@ -63,41 +63,47 @@ const dayLabelsMap: Record<typeof dayOrder[number], string> = {
 
 const scheduleBlocks: Record<string, ScheduleBlock[]> = {
   mon: [
+    { start: 6,  end: 10, label: "フリー", color: "free" },
     { start: 10, end: 13, label: "フィットネス", color: "fitness" },
     { start: 13, end: 17, label: "パーソナル", sublabel: "予約制", color: "personal" },
     { start: 17, end: 22, label: "フィットネス", color: "fitness" },
   ],
   tue: [
+    { start: 6,  end: 10, label: "フリー", color: "free" },
     { start: 10, end: 13, label: "フィットネス", color: "fitness" },
     { start: 13, end: 17, label: "パーソナル", sublabel: "予約制", color: "personal" },
     { start: 17, end: 18, label: "キッズクラス", color: "kids" },
     { start: 18, end: 22, label: "フィットネス", color: "fitness" },
   ],
   wed: [
+    { start: 6,  end: 10, label: "フリー", color: "free" },
     { start: 10, end: 13, label: "フィットネス", color: "fitness" },
     { start: 13, end: 17, label: "パーソナル", sublabel: "予約制", color: "personal" },
     { start: 17, end: 22, label: "フィットネス", color: "fitness" },
   ],
   thu: [
-    { start: 10, end: 22, label: "定休日", color: "closed" },
+    { start: 6,  end: 22, label: "定休日", color: "closed" },
   ],
   fri: [
+    { start: 6,  end: 10, label: "フリー", color: "free" },
     { start: 10, end: 13, label: "フィットネス", color: "fitness" },
     { start: 13, end: 17, label: "パーソナル", sublabel: "予約制", color: "personal" },
     { start: 17, end: 22, label: "フィットネス", color: "fitness" },
   ],
   sat: [
+    { start: 6,  end: 10, label: "フリー", color: "free" },
     { start: 10, end: 14, label: "フィットネス", color: "fitness" },
     { start: 14, end: 15, label: "キッズクラス", color: "kids" },
     { start: 15, end: 22, label: "パーソナル", sublabel: "予約制", color: "personal" },
   ],
   sun: [
+    { start: 6,  end: 10, label: "フリー", color: "free" },
     { start: 10, end: 14, label: "フィットネス", color: "fitness" },
     { start: 14, end: 22, label: "パーソナル", sublabel: "予約制", color: "personal" },
   ],
 };
 
-const TABLE_START = 10;
+const TABLE_START = 6;
 const TABLE_END = 22;
 const TABLE_STEP = 0.5;
 const TABLE_ROW_COUNT = (TABLE_END - TABLE_START) / TABLE_STEP;
@@ -120,6 +126,7 @@ dayOrder.forEach((day, ci) => {
 });
 
 const colorStyles: Record<string, { bg: string; text: string; border: string }> = {
+  free:     { bg: "bg-[#E8F4FD]", text: "text-[#1A6B9A]",  border: "border-[#5BA4CF]/40" },
   fitness:  { bg: "bg-[#FFF0D6]", text: "text-[#C47F1A]",  border: "border-[#F2AC55]/50" },
   personal: { bg: "bg-[#DDEEFF]", text: "text-[#2563A8]",  border: "border-[#4D90D9]/40" },
   kids:     { bg: "bg-[#D6F5E0]", text: "text-[#1F7A3A]",  border: "border-[#4CAF50]/40" },
@@ -273,6 +280,7 @@ export default function Schedule() {
                   <td className="border border-gray-200 bg-white text-right pr-2 text-xs font-medium text-[#4D5058]/70 whitespace-nowrap align-top pt-1">
                     22:00
                   </td>
+
                   {dayOrder.map((_, ci) => (
                     <td key={ci} className="border border-gray-200 bg-white h-2" />
                   ))}
@@ -284,11 +292,12 @@ export default function Schedule() {
           {/* Legend */}
           <div className="flex flex-wrap items-center gap-4 mt-5">
             {[
-              { color: "fitness", label: "フィットネス" },
+              { color: "free",     label: "フリー（ジム開放）" },
+              { color: "fitness",  label: "フィットネス" },
               { color: "personal", label: "パーソナル（予約制）" },
-              { color: "kids", label: "キッズクラス" },
-              { color: "taiai", label: "対人クラス" },
-              { color: "closed", label: "定休日" },
+              { color: "kids",     label: "キッズクラス" },
+              { color: "taiai",    label: "対人クラス" },
+              { color: "closed",   label: "定休日" },
             ].map(({ color, label }) => (
               <div key={color} className="flex items-center gap-2">
                 <div className={`w-4 h-4 rounded border ${colorStyles[color].bg} ${colorStyles[color].border}`} />
@@ -297,7 +306,7 @@ export default function Schedule() {
             ))}
           </div>
           <p className="text-[#4D5058]/40 text-xs mt-2">
-            ※ パーソナルトレーニングは要予約。キッズクラスは火曜17:00〜18:00・土曜14:00〜15:00。木曜・祝日定休。
+            ※ フリーは6:00〜10:00のジム開放時間。パーソナルトレーニングは要予約。キッズクラスは火曜17:00〜18:00・土曜14:00〜15:00。木曜・祝日定休。
           </p>
         </div>
       </section>
