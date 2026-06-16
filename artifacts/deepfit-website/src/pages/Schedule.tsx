@@ -298,7 +298,7 @@ export default function Schedule() {
               { color: "fitness",  label: "フィットネス" },
               { color: "personal", label: "パーソナル（予約制）" },
               { color: "kids",     label: "キッズクラス" },
-              { color: "taiai",    label: "対人クラス" },
+              { color: "taiai",    label: "対人クラス（ドロップイン可・1回1,100円）" },
               { color: "closed",   label: "定休日" },
             ].map(({ color, label }) => (
               <div key={color} className="flex items-center gap-2">
@@ -308,7 +308,7 @@ export default function Schedule() {
             ))}
           </div>
           <p className="text-[#4D5058]/40 text-xs mt-2">
-            ※ フリーは会員様の同伴のみドロップイン可能なジム開放時間です（ドロップイン1回1,100円）。パーソナルトレーニングは要予約。キッズクラスは火曜17:00〜18:00・土曜14:00〜15:00。祝日定休。
+            ※ フリーは会員様の同伴のみドロップイン可能なジム開放時間です。対人クラスもドロップイン可（各1回1,100円）。パーソナルトレーニングは要予約。キッズクラスは火曜17:00〜18:00・土曜14:00〜15:00。祝日定休。
           </p>
         </div>
       </section>
