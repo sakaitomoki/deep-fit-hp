@@ -82,8 +82,7 @@ const scheduleBlocks: Record<string, ScheduleBlock[]> = {
     { start: 17, end: 22, label: "フィットネス", color: "fitness" },
   ],
   thu: [
-    { start: 6,  end: 10, label: "フリー", color: "free" },
-    { start: 10, end: 22, label: "定休日", color: "closed" },
+    { start: 6,  end: 22, label: "フリー", color: "free" },
   ],
   fri: [
     { start: 6,  end: 10, label: "フリー", color: "free" },
