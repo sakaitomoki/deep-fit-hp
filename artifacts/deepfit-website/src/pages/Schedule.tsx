@@ -294,7 +294,7 @@ export default function Schedule() {
           {/* Legend */}
           <div className="flex flex-wrap items-center gap-4 mt-5">
             {[
-              { color: "free",     label: "フリー（会員様の知り合いのみドロップイン可）" },
+              { color: "free",     label: "フリー（会員様の同伴のみドロップイン可）" },
               { color: "fitness",  label: "フィットネス" },
               { color: "personal", label: "パーソナル（予約制）" },
               { color: "kids",     label: "キッズクラス" },
@@ -308,7 +308,7 @@ export default function Schedule() {
             ))}
           </div>
           <p className="text-[#4D5058]/40 text-xs mt-2">
-            ※ フリーは会員様の知り合いのみドロップイン可能なジム開放時間です。パーソナルトレーニングは要予約。キッズクラスは火曜17:00〜18:00・土曜14:00〜15:00。祝日定休。
+            ※ フリーは会員様の同伴のみドロップイン可能なジム開放時間です。パーソナルトレーニングは要予約。キッズクラスは火曜17:00〜18:00・土曜14:00〜15:00。祝日定休。
           </p>
         </div>
       </section>
