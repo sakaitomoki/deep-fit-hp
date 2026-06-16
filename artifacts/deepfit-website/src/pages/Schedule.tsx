@@ -91,10 +91,12 @@ const scheduleBlocks: Record<string, ScheduleBlock[]> = {
     { start: 17, end: 22, label: "フィットネス", color: "fitness" },
   ],
   sat: [
-    { start: 6,  end: 10, label: "パーソナル", sublabel: "予約制", color: "personal" },
-    { start: 10, end: 14, label: "フィットネス", color: "fitness" },
-    { start: 14, end: 15, label: "キッズクラス", color: "kids" },
-    { start: 15, end: 22, label: "パーソナル", sublabel: "予約制", color: "personal" },
+    { start: 6,    end: 10,   label: "パーソナル", sublabel: "予約制", color: "personal" },
+    { start: 10,   end: 14,   label: "フィットネス", color: "fitness" },
+    { start: 14,   end: 15,   label: "キッズクラス", color: "kids" },
+    { start: 15,   end: 19.5, label: "パーソナル", sublabel: "予約制", color: "personal" },
+    { start: 19.5, end: 21,   label: "サーキット・対人", sublabel: "ドロップイン可", color: "taiai" },
+    { start: 21,   end: 22,   label: "パーソナル", sublabel: "予約制", color: "personal" },
   ],
   sun: [
     { start: 6,  end: 10, label: "パーソナル", sublabel: "予約制", color: "personal" },
