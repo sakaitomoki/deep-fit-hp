@@ -95,6 +95,10 @@ export default function Footer() {
                 <span className="text-[#F2AC55] mt-0.5 shrink-0 text-sm">🚲</span>
                 <span className="text-white/70 text-sm">駐輪スペースあり（バイクも可）</span>
               </li>
+              <li className="flex items-start gap-3">
+                <span className="text-[#F2AC55] mt-0.5 shrink-0 text-sm">🚗</span>
+                <span className="text-white/70 text-sm">近隣にコインパーキングあり。お車でお越しの方はご利用ください。</span>
+              </li>
             </ul>
           </div>
 
