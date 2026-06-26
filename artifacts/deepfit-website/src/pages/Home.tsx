@@ -443,7 +443,7 @@ function OpeningOfferSection() {
           <p className="opening-offer-section__eyebrow text-[24px]">過去最大キャンペーン</p>
           <h2 className="opening-offer-section__title">
             夏までに変わる。
-            <span>5大特典</span>
+            <span>4大特典</span>
           </h2>
           <p className="opening-offer-section__lead">
             5月7日〜7月31日の期間限定。<br />
@@ -568,28 +568,6 @@ function OpeningOfferSection() {
             </div>
           </motion.div>
 
-          {/* 特典⑤ キャッシュバック */}
-          <motion.div
-            variants={scaleIn}
-            className="flex-1 rounded-3xl overflow-hidden"
-            style={{ background: "#0B0F15", border: "2px solid rgba(234,165,59,0.35)" }}
-          >
-            <div className="flex items-center gap-2 px-6 pt-5 pb-3" style={{ borderBottom: "1px solid rgba(234,165,59,0.15)" }}>
-              <span style={{ background: "rgba(234,165,59,0.18)", color: "#EAA53B", fontSize: 12, fontWeight: 900, padding: "3px 14px", borderRadius: 999, letterSpacing: "0.08em" }}>特典⑤</span>
-              <span style={{ color: "rgba(234,165,59,0.6)", fontSize: 11, fontWeight: 700, letterSpacing: "0.15em" }}>フルタイム会員のみ対象</span>
-            </div>
-            <div className="px-6 pt-4 pb-6">
-              <div style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "linear-gradient(90deg,#EAA53B,#F5C96A)", borderRadius: 999, padding: "4px 16px", marginBottom: 10 }}>
-                <span style={{ color: "#0B0F15", fontSize: 13, fontWeight: 900, letterSpacing: "0.08em" }}>🔥 先着20名限定</span>
-              </div>
-              <p style={{ color: "#FFFFFF", fontSize: "clamp(18px,2vw,22px)", fontWeight: 900, marginBottom: 4 }}>3ヶ月継続で <span style={{ color: "#EAA53B" }}>キャッシュバック</span></p>
-              <p style={{ color: "rgba(255,255,255,0.38)", fontSize: 13, marginBottom: 20 }}>3ヶ月続けたら、まるごと返金</p>
-              <p style={{ color: "rgba(255,255,255,0.35)", fontSize: 13, marginBottom: 4 }}>キャッシュバック額</p>
-              <p style={{ color: "#EAA53B", fontSize: "clamp(34px,5vw,54px)", fontWeight: 900, lineHeight: 1, fontFamily: "Oswald, sans-serif" }}>1ヶ月分</p>
-              <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "clamp(15px,1.6vw,18px)", fontWeight: 700, marginTop: 6 }}>の会費を全額返金</p>
-              <p style={{ color: "rgba(255,255,255,0.25)", fontSize: 12, marginTop: 12 }}>女性最大 ¥9,900 / 男性最大 ¥12,100</p>
-            </div>
-          </motion.div>
         </motion.div>
 
         <motion.div
