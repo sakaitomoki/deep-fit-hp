@@ -335,7 +335,7 @@ export default function Schedule() {
               夏までに変わる。
             </h2>
             <p className="font-heading font-bold text-[#D99A40] mb-3" style={{ fontSize: "clamp(40px,8vw,80px)", lineHeight: 1 }}>
-              5大特典
+              4大特典
             </p>
             <p className="text-[#4D5058]/60 text-sm">5月7日〜7月31日の期間限定。まずは無料体験から気軽にどうぞ。</p>
           </motion.div>
@@ -418,21 +418,6 @@ export default function Schedule() {
               </div>
             </motion.div>
 
-            {/* 特典⑤ */}
-            <motion.div variants={fadeInUp} className="rounded-2xl overflow-hidden" style={{ background: "#0B0F15", border: "1.5px solid rgba(234,165,59,0.3)" }}>
-              <div className="flex items-center gap-2 px-5 pt-4 pb-3" style={{ borderBottom: "1px solid rgba(234,165,59,0.12)" }}>
-                <span style={{ background: "rgba(234,165,59,0.18)", color: "#EAA53B", fontSize: 11, fontWeight: 900, padding: "3px 12px", borderRadius: 999, letterSpacing: "0.08em" }}>特典⑤</span>
-                <span style={{ color: "rgba(234,165,59,0.6)", fontSize: 11, fontWeight: 700, letterSpacing: "0.12em" }}>フルタイム会員のみ対象</span>
-              </div>
-              <div className="px-5 pt-4 pb-5">
-                <p style={{ color: "#fff", fontSize: "clamp(16px,2vw,20px)", fontWeight: 900, marginBottom: 4 }}>3ヶ月継続で <span style={{ color: "#EAA53B" }}>キャッシュバック</span></p>
-                <p style={{ color: "rgba(255,255,255,0.35)", fontSize: 13, marginBottom: 16 }}>3ヶ月続けたら、まるごと返金</p>
-                <p style={{ color: "rgba(255,255,255,0.35)", fontSize: 12, marginBottom: 4 }}>キャッシュバック額</p>
-                <p style={{ color: "#EAA53B", fontSize: "clamp(32px,5vw,52px)", fontWeight: 900, lineHeight: 1, fontFamily: "Oswald, sans-serif" }}>1ヶ月分</p>
-                <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "clamp(14px,1.6vw,17px)", fontWeight: 700, marginTop: 6 }}>の会費を全額返金</p>
-                <p style={{ color: "rgba(255,255,255,0.22)", fontSize: 11, marginTop: 10 }}>女性最大 ¥9,900 / 男性最大 ¥12,100</p>
-              </div>
-            </motion.div>
           </motion.div>
 
           {/* Saving summary */}
