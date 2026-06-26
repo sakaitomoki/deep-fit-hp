@@ -65,8 +65,7 @@ const scheduleBlocks: Record<string, ScheduleBlock[]> = {
   mon: [
     { start: 6,    end: 10,   label: "フリー", color: "free" },
     { start: 10,   end: 13.5, label: "フィットネス", color: "fitness" },
-    { start: 13.5, end: 16,   label: "フリー", color: "free" },
-    { start: 16,   end: 17,   label: "キッズクラス", color: "kids" },
+    { start: 13.5, end: 17,   label: "フリー", color: "free" },
     { start: 17,   end: 22,   label: "フィットネス", color: "fitness" },
   ],
   tue: [
@@ -88,7 +87,8 @@ const scheduleBlocks: Record<string, ScheduleBlock[]> = {
   fri: [
     { start: 6,    end: 10,   label: "フリー", color: "free" },
     { start: 10,   end: 13.5, label: "フィットネス", color: "fitness" },
-    { start: 13.5, end: 17,   label: "フリー", color: "free" },
+    { start: 13.5, end: 16,   label: "フリー", color: "free" },
+    { start: 16,   end: 17,   label: "キッズクラス", color: "kids" },
     { start: 17,   end: 22,   label: "フィットネス", color: "fitness" },
   ],
   sat: [
@@ -309,7 +309,7 @@ export default function Schedule() {
             ))}
           </div>
           <p className="text-[#4D5058]/40 text-xs mt-2">
-            ※ フリーは会員様の同伴のみドロップイン可能なジム開放時間です。対人クラスもドロップイン可（各1回1,100円）。パーソナルトレーニングは要予約。キッズクラスは月曜16:00〜17:00・火曜17:00〜18:00・土曜14:00〜15:00。祝日定休。
+            ※ フリーは会員様の同伴のみドロップイン可能なジム開放時間です。対人クラスもドロップイン可（各1回1,100円）。パーソナルトレーニングは要予約。キッズクラスは火曜17:00〜18:00・金曜16:00〜17:00・土曜14:00〜15:00。祝日定休。
           </p>
         </div>
       </section>
