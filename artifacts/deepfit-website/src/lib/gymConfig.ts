@@ -60,8 +60,8 @@ export const gymConfig = {
       benefits: ["全時間帯利用可能", "月8回まで", "グローブ無料貸出", "パワーラック使用可"],
     },
     {
-      name: "学生応援会員",
-      subtitle: "Student（大学生可）",
+      name: "U-22会員",
+      subtitle: "Under 22 / 通い放題",
       femalePrice: "¥8,800",
       malePrice: "¥8,800",
       priceNote: "/ 月（税込）",
@@ -72,6 +72,7 @@ export const gymConfig = {
   kidsMembership: [
     { name: "月4回", price: "¥6,600", note: "/ 月（税込）" },
     { name: "通い放題", price: "¥8,800", note: "/ 月（税込）" },
+    { name: "親子キック会員", price: "¥6,600", note: "2名まで / 月（税込）" },
   ],
   personalTraining: {
     duration: "60分",
