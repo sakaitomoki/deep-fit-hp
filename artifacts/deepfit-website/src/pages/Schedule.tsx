@@ -498,7 +498,7 @@ export default function Schedule() {
                 <p className="text-white text-lg font-bold tracking-wide">女性会員</p>
               </div>
               <div className="bg-white divide-y divide-gray-100">
-                {gymConfig.membership.map((plan, i) => (
+                {gymConfig.membership.filter(p => p.name !== "U-22会員").map((plan, i) => (
                   <div key={i} className="flex items-center justify-between px-6 py-4">
                     <div>
                       <p className="font-medium text-[#4D5058]">{plan.name}</p>
@@ -519,7 +519,7 @@ export default function Schedule() {
                 <p className="text-white text-lg font-bold tracking-wide">男性会員</p>
               </div>
               <div className="bg-white divide-y divide-gray-100">
-                {gymConfig.membership.map((plan, i) => (
+                {gymConfig.membership.filter(p => p.name !== "U-22会員").map((plan, i) => (
                   <div key={i} className="flex items-center justify-between px-6 py-4">
                     <div>
                       <p className="font-medium text-[#4D5058]">{plan.name}</p>
@@ -534,6 +534,46 @@ export default function Schedule() {
               </div>
             </motion.div>
           </motion.div>
+
+          {/* U-22 standalone card */}
+          {(() => {
+            const u22 = gymConfig.membership.find(p => p.name === "U-22会員");
+            if (!u22) return null;
+            return (
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+                className="rounded-xl overflow-hidden border-2 border-[#2563A8]/40 shadow-sm mb-8"
+              >
+                <div className="bg-[#2563A8] px-6 py-4 flex items-center justify-between">
+                  <div>
+                    <p className="text-white text-lg font-bold tracking-wide">U-22会員</p>
+                    <p className="text-white/60 text-xs mt-0.5">22歳以下限定・通い放題</p>
+                  </div>
+                  <span className="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full">男女同額</span>
+                </div>
+                <div className="bg-white px-6 py-5 flex items-center justify-between">
+                  <div>
+                    <p className="font-medium text-[#4D5058]">{u22.subtitle}</p>
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      {u22.benefits.map((b, i) => (
+                        <span key={i} className="flex items-center gap-1 text-xs text-[#4D5058]/60">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#2563A8] shrink-0" />
+                          {b}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="text-right shrink-0 ml-4">
+                    <p className="font-heading font-bold text-3xl text-[#2563A8]">{u22.femalePrice}</p>
+                    <p className="text-[#4D5058]/40 text-xs">/ 月（税込）</p>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })()}
 
           {/* Benefits note */}
           <motion.div
