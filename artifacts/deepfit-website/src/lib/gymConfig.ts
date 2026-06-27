@@ -71,7 +71,7 @@ export const gymConfig = {
   ],
   kidsMembership: [
     { name: "月4回", price: "¥6,600", note: "/ 月（税込）" },
-    { name: "月6回", price: "¥8,800", note: "/ 月（税込）" },
+    { name: "通い放題", price: "¥8,800", note: "/ 月（税込）" },
   ],
   personalTraining: {
     duration: "60分",
