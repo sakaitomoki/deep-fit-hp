@@ -54,7 +54,7 @@ export const gymConfig = {
       name: "月6回会員",
       subtitle: "6 Times / Month",
       femalePrice: "¥8,800",
-      malePrice: "¥11,000",
+      malePrice: "¥8,800",
       priceNote: "/ 月（税込）",
       popular: false,
       benefits: ["全時間帯利用可能", "月6回まで", "グローブ無料貸出", "パワーラック使用可"],
