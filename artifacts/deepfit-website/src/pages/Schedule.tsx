@@ -53,7 +53,7 @@ type ScheduleBlock = {
   end: number;
   label: string;
   sublabel?: string;
-  color: "fitness" | "personal" | "kids" | "taiai" | "closed" | "free";
+  color: "fitness" | "personal" | "kids" | "oyako" | "taiai" | "closed" | "free";
 };
 
 const dayOrder = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"] as const;
@@ -96,7 +96,7 @@ const scheduleBlocks: Record<string, ScheduleBlock[]> = {
   sat: [
     { start: 6,    end: 10,   label: "パーソナル", sublabel: "予約制", color: "personal" },
     { start: 10,   end: 14,   label: "フィットネス", color: "fitness" },
-    { start: 14,   end: 15,   label: "親子キッズクラス", color: "kids" },
+    { start: 14,   end: 15,   label: "親子キッズクラス", color: "oyako" },
     { start: 15,   end: 19.5, label: "パーソナル", sublabel: "予約制", color: "personal" },
     { start: 19.5, end: 21,   label: "サーキット・対人", sublabel: "ドロップイン可", color: "taiai" },
     { start: 21,   end: 22,   label: "パーソナル", sublabel: "予約制", color: "personal" },
@@ -135,6 +135,7 @@ const colorStyles: Record<string, { bg: string; text: string; border: string }> 
   fitness:  { bg: "bg-[#FFF0D6]", text: "text-[#C47F1A]",  border: "border-[#F2AC55]/50" },
   personal: { bg: "bg-[#DDEEFF]", text: "text-[#2563A8]",  border: "border-[#4D90D9]/40" },
   kids:     { bg: "bg-[#D6F5E0]", text: "text-[#1F7A3A]",  border: "border-[#4CAF50]/40" },
+  oyako:    { bg: "bg-[#FFE4F0]", text: "text-[#B5306A]",  border: "border-[#E05C8A]/40" },
   taiai:    { bg: "bg-[#FFE0E0]", text: "text-[#C0392B]",  border: "border-[#E74C3C]/40" },
   closed:   { bg: "bg-gray-100",  text: "text-gray-400",   border: "border-gray-200" },
 };
@@ -301,6 +302,7 @@ export default function Schedule() {
               { color: "fitness",  label: "フィットネス" },
               { color: "personal", label: "パーソナル（予約制）" },
               { color: "kids",     label: "キッズクラス" },
+              { color: "oyako",    label: "親子キッズクラス" },
               { color: "taiai",    label: "対人クラス（ドロップイン可・1回1,100円）" },
               { color: "closed",   label: "定休日" },
             ].map(({ color, label }) => (
