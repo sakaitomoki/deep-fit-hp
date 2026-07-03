@@ -10,18 +10,18 @@ const defaultOgImage = `${siteUrl}/images/og-image.jpg`;
 
 const pageMeta = {
   "/": {
-    title: "JR尼崎のキックボクシングジムならDEEP.FIT｜初心者・女性歓迎・無料体験受付中",
-    description: "DEEP.FITはJR尼崎駅徒歩10分のサーキット×キックボクシングジムです。初心者・女性・一人参加でも通いやすく、綺麗で広い空間と個室スミスマシンも完備。無料体験受付中。",
+    title: "JR尼崎のサーキットトレーニング×キックボクシングジム｜DEEP.FIT 初心者・女性歓迎・無料体験",
+    description: "DEEP.FITはJR尼崎駅徒歩10分のサーキットトレーニング×キックボクシングジムです。初心者・女性・一人参加でも通いやすく、綺麗で広い空間と個室スミスマシンも完備。無料体験受付中。",
     canonical: `${siteUrl}/`,
   },
   "/about": {
     title: "DEEP.FITってどんなジム？｜綺麗で広い空間・女性も通いやすい尼崎のキックボクシングジム",
-    description: "綺麗で広い空間、和気藹々とした雰囲気、個室スミスマシン完備。DEEP.FITは初心者や女性でも通いやすく、一人で集中したい日も楽しく動きたい日も選べるジムです。",
+    description: "綺麗で広い空間、和気藹々とした雰囲気、個室スミスマシン完備。DEEP.FITはサーキットトレーニングやキックボクシングで初心者や女性でも通いやすく、一人で集中したい日も楽しく動きたい日も選べるジムです。",
     canonical: `${siteUrl}/about`,
   },
   "/schedule": {
-    title: "クラス紹介｜初心者向けフィットネス・パーソナル・キッズクラス｜DEEP.FIT 尼崎",
-    description: "DEEP.FITのクラス紹介ページです。初心者向けフィットネス、パーソナルトレーニング、キッズクラスなど、目的に合わせて選べるクラスをご案内します。",
+    title: "クラス紹介｜サーキットトレーニング・初心者向けフィットネス・パーソナル・キッズ｜DEEP.FIT 尼崎",
+    description: "DEEP.FITのクラス紹介ページです。30分のサーキットトレーニングを中心に、初心者向けフィットネス、パーソナルトレーニング、キッズクラスなど、目的に合わせて選べるクラスをご案内します。",
     canonical: `${siteUrl}/schedule`,
   },
   "/instructors": {
@@ -42,7 +42,8 @@ const localBusinessJsonLd = {
   "@id": `${siteUrl}/#gym`,
   name: "DEEP.FIT",
   alternateName: ["ディープフィット", "DEEP FIT", "DEEP.FIT 尼崎"],
-  description: "DEEP.FITはJR尼崎駅徒歩10分のサーキット×キックボクシングジムです。初心者・女性・一人参加でも通いやすく、綺麗で広い空間と個室スミスマシンも完備。無料体験受付中。",
+  description: "DEEP.FITはJR尼崎駅徒歩10分のサーキットトレーニング×キックボクシングジムです。初心者・女性・一人参加でも通いやすく、綺麗で広い空間と個室スミスマシンも完備。無料体験受付中。",
+  keywords: "サーキットトレーニング, キックボクシング, フィットネスジム, 尼崎, JR尼崎, 30分トレーニング, 初心者向けジム, 女性向けジム, パーソナルトレーニング",
   url: siteUrl,
   logo: `${siteUrl}/android-chrome-512x512.png`,
   image: [
@@ -103,6 +104,33 @@ const localBusinessJsonLd = {
       price: "0",
       priceCurrency: "JPY",
     },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "サーキットトレーニングクラス",
+        serviceType: "サーキットトレーニング",
+        description: "有酸素運動とキックボクシングを組み合わせた30分のサーキットトレーニングクラス。初心者歓迎で、楽しみながら全身を効率よく動かせます。",
+      },
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "パーソナルトレーニング",
+        serviceType: "パーソナルトレーニング",
+        description: "マンツーマンで目標に合わせた特別プログラム。引き締め・筋力強化を個別に対応します。",
+      },
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "キッズクラス",
+        serviceType: "キッズクラス",
+        description: "楽しみながら体を動かすお子様向けプログラム。礼儀やスポーツの基礎も学べます。",
+      },
+    },
   ],
 };
 
@@ -115,6 +143,69 @@ const websiteJsonLd = {
   alternateName: ["DEEP.FIT", "DEEP FIT", "ディープフィット", "DEEP.FIT 尼崎"],
   inLanguage: "ja-JP",
   publisher: { "@id": `${siteUrl}/#gym` },
+};
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "運動経験がなくても大丈夫ですか？",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "はい。むしろ未経験から始める方が多いです。DEEP.FITでは、運動が久しぶりの方や未経験の方も多く通われています。メニューは一人ひとりのレベルに合わせて調整できるので、体力に自信がない方も安心して始められます。",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "サーキットトレーニングとはどんな内容ですか？",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "有酸素運動とキックボクシングの動きを組み合わせた、30分で全身を動かすトレーニングです。DEEP.FITのサーキットトレーニングは、楽しみながらダイエットや体力アップを目指せる内容になっています。初心者や運動が久しぶりの方でも自分のペースで取り組めるので、無理なく続けやすいのが特徴です。",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "女性一人でも通いやすいですか？",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "はい。女性一人でも通いやすい雰囲気です。実際におひとりで通われている方も多く、和気藹々としながらも無理に人に合わせすぎない空気があります。「格闘技ジムは少し不安」という方にも入りやすい環境です。",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "体験当日は何を持っていけばいいですか？",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "動きやすい服装だけで大丈夫です。タオル・飲み物があると快適ですが、手ぶらでも対応できます。グローブなどの道具は不要ですが、ミットやサンドバックを打つ際は、バンテージや軍手などを持参いただくことをお勧めします。",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "どれくらいで効果を実感できますか？",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "目安としては、1〜3か月ほどで何らかの変化を感じる方が多いです。まずは「疲れにくくなった」「気分が軽くなった」といった変化を感じやすく、見た目の変化はその後少しずつ出てきます。DEEP.FITでは、それぞれのペースで無理なく楽しく続けられることを大切にしています。",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "子どもを連れて行っても大丈夫ですか？",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "はい、お子さま連れについてもお気軽にご相談ください。お子さま同伴のみならず、キッズクラスのご用意もあり、ご家庭の状況に合わせて通い方をご案内しています。気になることがあれば事前にLINEでご相談いただけます。",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "退会はいつでもできますか？",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "はい。継続縛りなし・いつでも月単位で退会できます。違約金や解約手数料は一切ありません。なお、休会制度はご用意しておりませんのでご了承ください。ライフスタイルの変化があっても、退会のご連絡をいただければスムーズに対応します。",
+      },
+    },
+  ],
 };
 
 const organizationJsonLd = {
@@ -187,11 +278,15 @@ function injectMeta(html, path) {
     `$1${ogImg}$3`
   );
 
-  const jsonLdScripts = [
+  const jsonLdList = [
     `<script type="application/ld+json">${escapeJsonLd(JSON.stringify(localBusinessJsonLd))}</script>`,
     `<script type="application/ld+json">${escapeJsonLd(JSON.stringify(websiteJsonLd))}</script>`,
     `<script type="application/ld+json">${escapeJsonLd(JSON.stringify(organizationJsonLd))}</script>`,
-  ].join("\n    ");
+  ];
+  if (cleanPath === "/") {
+    jsonLdList.push(`<script type="application/ld+json">${escapeJsonLd(JSON.stringify(faqJsonLd))}</script>`);
+  }
+  const jsonLdScripts = jsonLdList.join("\n    ");
 
   html = html.replace("</head>", `    ${jsonLdScripts}\n  </head>`);
 

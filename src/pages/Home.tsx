@@ -73,7 +73,7 @@ const reasonCards = [
     id: 2,
     tag: "EQUIPMENT",
     title: "個室のスミスマシンで、\n一人で集中した補強もできます",
-    body: "キックボクシングやサーキットだけでなく、\n個室で自分の目的に合わせた補強トレーニングも可能です。\n引き締め、筋力強化、体力づくりまで、幅広く対応できます。",
+    body: "キックボクシングやサーキットトレーニングだけでなく、\n個室で自分の目的に合わせた補強トレーニングも可能です。\n引き締め、筋力強化、体力づくりまで、幅広く対応できます。",
     image: "/images/smith-machine.webp",
     alt: "DEEP.FITの個室スミスマシン設備",
   },
@@ -195,7 +195,7 @@ function GymIdentitySection() {
 }
 
 const classes = [
-  { title: "フィットネス", subtitle: "Fitness Class", level: "初心者向け", description: "有酸素運動とキックボクシングを組み合わせた人気クラス。楽しみながらダイエットや体力アップを目指せます。", image: "/images/class-kickboxing.webp", alt: "DEEP.FITの初心者向けフィットネスキックボクシングクラス", animation: "left", target: "運動不足解消・ダイエット", intensity: 1, duration: "30分", beginnerOk: true },
+  { title: "フィットネス", subtitle: "Fitness Class", level: "初心者向け", description: "有酸素運動とキックボクシングを組み合わせた30分のサーキットトレーニング。楽しみながらダイエットや体力アップを目指せます。", image: "/images/class-kickboxing.webp", alt: "DEEP.FITの初心者向けフィットネスキックボクシングクラス", animation: "left", target: "運動不足解消・ダイエット", intensity: 1, duration: "30分", beginnerOk: true },
   { title: "パーソナルトレーニング", subtitle: "Personal Training", level: "全レベル", description: "マンツーマンで目標に合わせた特別プログラム。フォーム重視で、引き締め・筋力強化を確実に。", image: "/images/class-personal.webp", alt: "DEEP.FITのパーソナルトレーニング指導の様子", animation: "up", target: "引き締め・筋力強化", intensity: 2, duration: "60分", beginnerOk: true },
   { title: "キッズクラス", subtitle: "Kids Class", level: "お子様向け", description: "楽しみながら体を動かすキッズ向けプログラム。礼儀やスポーツの基礎も学べます。", image: kidsClassImg, alt: "DEEP.FITのキッズクラスでお子さまが楽しくトレーニング", animation: "right", target: "基礎体力・礼儀", intensity: 1, duration: "60分", beginnerOk: true },
 ];
@@ -205,6 +205,11 @@ const faqItems = [
     q: "運動経験がなくても大丈夫ですか？",
     aLead: "はい。むしろ未経験から始める方が多いです。",
     aBody: "DEEP.FITでは、運動が久しぶりの方や未経験の方も多く通われています。メニューは一人ひとりのレベルに合わせて調整できるので、体力に自信がない方も安心して始められます。",
+  },
+  {
+    q: "サーキットトレーニングとはどんな内容ですか？",
+    aLead: "有酸素運動とキックボクシングの動きを組み合わせた、30分で全身を動かすトレーニングです。",
+    aBody: "DEEP.FITのサーキットトレーニングは、楽しみながらダイエットや体力アップを目指せる内容になっています。初心者や運動が久しぶりの方でも自分のペースで取り組めるので、無理なく続けやすいのが特徴です。",
   },
   {
     q: "女性一人でも通いやすいですか？",
@@ -741,7 +746,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
           >
-            <span className="hero-v2__logo text-[16px]">DEEP.FIT｜JR尼崎駅徒歩10分のサーキット×キックボクシングジム</span>
+            <span className="hero-v2__logo text-[16px]">DEEP.FIT｜JR尼崎駅徒歩10分のサーキットトレーニング×キックボクシングジム</span>
           </motion.div>
 
           <motion.div
@@ -762,7 +767,7 @@ export default function Home() {
             transition={{ delay: 0.28, duration: 0.7, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
           >
             <h1 data-testid="text-hero-headline">
-              <span className="sr-only">DEEP.FIT（ディープフィット）｜JR尼崎駅徒歩10分のキックボクシング・サーキットフィットネスジム</span>
+              <span className="sr-only">DEEP.FIT（ディープフィット）｜JR尼崎駅徒歩10分のキックボクシング・サーキットトレーニングジム</span>
               <span aria-hidden="true">楽しいから続く。</span>
               <span aria-hidden="true">続くから変わる。</span>
             </h1>
