@@ -1,37 +1,15 @@
 import { Helmet } from "react-helmet-async";
 import { gymConfig, seoConfig } from "@/lib/gymConfig";
 
-interface FAQItem {
-  q: string;
-  aLead: string;
-  aBody: string;
-}
-
 interface SEOProps {
   title: string;
   description: string;
   path?: string;
   type?: "website" | "article";
   noindex?: boolean;
-  faqItems?: FAQItem[];
 }
 
-function buildFaqJsonLd(items: FAQItem[]) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: items.map((item) => ({
-      "@type": "Question",
-      name: item.q,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: `${item.aLead} ${item.aBody}`,
-      },
-    })),
-  };
-}
-
-export default function SEO({ title, description, path = "", type = "website", noindex = false, faqItems }: SEOProps) {
+export default function SEO({ title, description, path = "", type = "website", noindex = false }: SEOProps) {
   const url = `${seoConfig.siteUrl}${path || "/"}`;
   const ogImage = `${seoConfig.siteUrl}${seoConfig.ogImage}`;
 
@@ -59,19 +37,13 @@ export default function SEO({ title, description, path = "", type = "website", n
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:image:type" content="image/jpeg" />
-      <meta property="og:image:alt" content="DEEP.FIT - JR尼崎駅徒歩10分のサーキット×キックボクシングジム" />
+      <meta property="og:image:alt" content="DEEP.FIT - JR尼崎駅徒歩10分のサーキットトレーニング×キックボクシングジム" />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
-      <meta name="twitter:image:alt" content="DEEP.FIT - JR尼崎駅徒歩10分のサーキット×キックボクシングジム" />
-
-      {faqItems && faqItems.length > 0 && (
-        <script type="application/ld+json">
-          {JSON.stringify(buildFaqJsonLd(faqItems))}
-        </script>
-      )}
+      <meta name="twitter:image:alt" content="DEEP.FIT - JR尼崎駅徒歩10分のサーキットトレーニング×キックボクシングジム" />
     </Helmet>
   );
 }

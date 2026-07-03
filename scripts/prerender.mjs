@@ -8,33 +8,17 @@ const distDir = join(__dirname, "..", "dist");
 const siteUrl = "https://deep-amagasaki.com";
 const defaultOgImage = `${siteUrl}/images/og-image.jpg`;
 
-const pageMeta = {
-  "/": {
-    title: "JR尼崎のサーキットトレーニング×キックボクシングジム｜DEEP.FIT 初心者・女性歓迎・無料体験",
-    description: "DEEP.FITはJR尼崎駅徒歩10分のサーキットトレーニング×キックボクシングジムです。初心者・女性・一人参加でも通いやすく、綺麗で広い空間と個室スミスマシンも完備。無料体験受付中。",
-    canonical: `${siteUrl}/`,
-  },
-  "/about": {
-    title: "DEEP.FITってどんなジム？｜綺麗で広い空間・女性も通いやすい尼崎のキックボクシングジム",
-    description: "綺麗で広い空間、和気藹々とした雰囲気、個室スミスマシン完備。DEEP.FITはサーキットトレーニングやキックボクシングで初心者や女性でも通いやすく、一人で集中したい日も楽しく動きたい日も選べるジムです。",
-    canonical: `${siteUrl}/about`,
-  },
-  "/schedule": {
-    title: "クラス紹介｜サーキットトレーニング・初心者向けフィットネス・パーソナル・キッズ｜DEEP.FIT 尼崎",
-    description: "DEEP.FITのクラス紹介ページです。30分のサーキットトレーニングを中心に、初心者向けフィットネス、パーソナルトレーニング、キッズクラスなど、目的に合わせて選べるクラスをご案内します。",
-    canonical: `${siteUrl}/schedule`,
-  },
-  "/instructors": {
-    title: "インストラクター紹介｜DEEP.FIT 尼崎",
-    description: "DEEP.FITのインストラクター紹介です。初心者や女性でも安心して通えるよう、丁寧なサポートを大切にしています。",
-    canonical: `${siteUrl}/instructors`,
-  },
-  "/contact": {
-    title: "無料体験・お問い合わせ｜DEEP.FIT 尼崎",
-    description: "DEEP.FITの無料体験予約・お問い合わせページです。見学だけでもOK。運動が久しぶりの方や初心者の方もお気軽にご相談ください。",
-    canonical: `${siteUrl}/contact`,
-  },
-};
+const seoMeta = JSON.parse(readFileSync(new URL("../src/lib/seoMeta.json", import.meta.url), "utf-8"));
+
+const pageMeta = Object.fromEntries(
+  Object.entries(seoMeta).map(([route, meta]) => [
+    route,
+    {
+      ...meta,
+      canonical: route === "/" ? `${siteUrl}/` : `${siteUrl}${route}`,
+    },
+  ])
+);
 
 const localBusinessJsonLd = {
   "@context": "https://schema.org",
@@ -139,7 +123,7 @@ const websiteJsonLd = {
   "@type": "WebSite",
   "@id": `${siteUrl}/#website`,
   url: siteUrl,
-  name: "DEEP.FIT サーキット×キックボクシングジム",
+  name: "DEEP.FIT サーキットトレーニング×キックボクシングジム",
   alternateName: ["DEEP.FIT", "DEEP FIT", "ディープフィット", "DEEP.FIT 尼崎"],
   inLanguage: "ja-JP",
   publisher: { "@id": `${siteUrl}/#gym` },
@@ -308,3 +292,27 @@ for (const route of Object.keys(pageMeta)) {
 
   console.log(`prerendered: ${route}`);
 }
+
+const sitemapRoutes = [
+  { loc: `${siteUrl}/`, changefreq: "weekly", priority: "1.0" },
+  { loc: `${siteUrl}/about`, changefreq: "monthly", priority: "0.8" },
+  { loc: `${siteUrl}/schedule`, changefreq: "weekly", priority: "0.8" },
+  { loc: `${siteUrl}/instructors`, changefreq: "monthly", priority: "0.7" },
+  { loc: `${siteUrl}/contact`, changefreq: "monthly", priority: "0.9" },
+];
+
+const today = new Date().toISOString().slice(0, 10);
+
+const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${sitemapRoutes
+  .map(
+    (r) =>
+      `  <url>\n    <loc>${r.loc}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>${r.changefreq}</changefreq>\n    <priority>${r.priority}</priority>\n  </url>`
+  )
+  .join("\n")}
+</urlset>
+`;
+
+writeFileSync(join(distDir, "sitemap.xml"), sitemapXml, "utf-8");
+console.log("generated: sitemap.xml");

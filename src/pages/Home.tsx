@@ -697,7 +697,7 @@ export default function Home() {
 
   return (
     <>
-      <SEO title={seoConfig.pages.home.title} description={seoConfig.pages.home.description} path="/" faqItems={faqItems} />
+      <SEO title={seoConfig.pages.home.title} description={seoConfig.pages.home.description} path="/" />
       <ScrollProgress />
       {/* Hero Section */}
       <section className="hero-v2" ref={heroRef}>

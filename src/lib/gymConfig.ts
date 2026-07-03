@@ -1,3 +1,5 @@
+import seoMeta from "./seoMeta.json";
+
 export const gymConfig = {
   name: "DEEP.FIT",
   nameJa: "ディープフィット",
@@ -96,32 +98,16 @@ export const gymConfig = {
 };
 
 export const seoConfig = {
-  siteName: "DEEP.FIT サーキット×キックボクシングジム",
+  siteName: "DEEP.FIT サーキットトレーニング×キックボクシングジム",
   siteUrl: "https://deep-amagasaki.com",
   locale: "ja_JP",
   keywords: "キックボクシング, サーキットトレーニング, 尼崎, JR尼崎, 兵庫県, ダイエット, フィットネス, 初心者歓迎, 女性歓迎, 無料体験, パーソナルトレーニング, ボディメイク, ジム",
   ogImage: "/images/og-image.jpg",
   pages: {
-    home: {
-      title: "JR尼崎のキックボクシングジムならDEEP.FIT｜初心者・女性歓迎・無料体験受付中",
-      description: "DEEP.FITはJR尼崎駅徒歩10分のサーキット×キックボクシングジムです。初心者・女性・一人参加でも通いやすく、綺麗で広い空間と個室スミスマシンも完備。無料体験受付中。",
-      h1: "JR尼崎で初心者・女性も通いやすいキックボクシングジム",
-    },
-    about: {
-      title: "DEEP.FITってどんなジム？｜綺麗で広い空間・女性も通いやすい尼崎のキックボクシングジム",
-      description: "綺麗で広い空間、和気藹々とした雰囲気、個室スミスマシン完備。DEEP.FITは初心者や女性でも通いやすく、一人で集中したい日も楽しく動きたい日も選べるジムです。",
-    },
-    schedule: {
-      title: "クラス紹介｜初心者向けフィットネス・パーソナル・キッズクラス｜DEEP.FIT 尼崎",
-      description: "DEEP.FITのクラス紹介ページです。初心者向けフィットネス、パーソナルトレーニング、キッズクラスなど、目的に合わせて選べるクラスをご案内します。",
-    },
-    instructors: {
-      title: "インストラクター紹介｜DEEP.FIT 尼崎",
-      description: "DEEP.FITのインストラクター紹介です。初心者や女性でも安心して通えるよう、丁寧なサポートを大切にしています。",
-    },
-    contact: {
-      title: "無料体験・お問い合わせ｜DEEP.FIT 尼崎",
-      description: "DEEP.FITの無料体験予約・お問い合わせページです。見学だけでもOK。運動が久しぶりの方や初心者の方もお気軽にご相談ください。",
-    },
+    home: seoMeta["/"],
+    about: seoMeta["/about"],
+    schedule: seoMeta["/schedule"],
+    instructors: seoMeta["/instructors"],
+    contact: seoMeta["/contact"],
   },
 };

@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
 
-Disallow: /api/
-
 Sitemap: https://deep-amagasaki.com/sitemap.xml
