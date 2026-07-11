@@ -298,6 +298,7 @@ const sitemapRoutes = [
   { loc: `${siteUrl}/about`, changefreq: "monthly", priority: "0.8" },
   { loc: `${siteUrl}/schedule`, changefreq: "weekly", priority: "0.8" },
   { loc: `${siteUrl}/instructors`, changefreq: "monthly", priority: "0.7" },
+  { loc: `${siteUrl}/kids`, changefreq: "monthly", priority: "0.7" },
   { loc: `${siteUrl}/contact`, changefreq: "monthly", priority: "0.9" },
 ];
 

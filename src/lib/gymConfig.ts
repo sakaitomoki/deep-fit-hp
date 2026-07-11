@@ -107,6 +107,7 @@ export const seoConfig = {
     home: seoMeta["/"],
     about: seoMeta["/about"],
     schedule: seoMeta["/schedule"],
+    kids: seoMeta["/kids"],
     instructors: seoMeta["/instructors"],
     contact: seoMeta["/contact"],
   },
