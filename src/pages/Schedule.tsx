@@ -44,7 +44,7 @@ const classTypes = [
     time: "60分",
     colorBg: "bg-[#53565E]/10",
     colorText: "text-[#53565E]",
-    description: "お子様向けの楽しいクラス。月・火・水・金曜15:00〜17:00に実施。土曜14:00〜15:00は保護者も一緒に参加できる「親子キッズクラス」も開催しています。",
+    description: "お子様向けの楽しいクラス。月・火・水・金曜15:00〜18:00に実施。土曜14:00〜15:00は保護者も一緒に参加できる「親子キッズクラス」も開催しています。",
   },
 ];
 
@@ -66,22 +66,22 @@ const scheduleBlocks: Record<string, ScheduleBlock[]> = {
     { start: 6,    end: 10,   label: "フリー", color: "free" },
     { start: 10,   end: 13.5, label: "フィットネス", color: "fitness" },
     { start: 13.5, end: 15,   label: "フリー", color: "free" },
-    { start: 15,   end: 17,   label: "キッズクラス", color: "kids" },
-    { start: 17,   end: 22,   label: "フィットネス", color: "fitness" },
+    { start: 15,   end: 18,   label: "キッズクラス", color: "kids" },
+    { start: 18,   end: 22,   label: "フィットネス", color: "fitness" },
   ],
   tue: [
     { start: 6,    end: 10,   label: "フリー", color: "free" },
     { start: 10,   end: 13.5, label: "フィットネス", color: "fitness" },
     { start: 13.5, end: 15,   label: "フリー", color: "free" },
-    { start: 15,   end: 17,   label: "キッズクラス", color: "kids" },
-    { start: 17,   end: 22,   label: "フィットネス", color: "fitness" },
+    { start: 15,   end: 18,   label: "キッズクラス", color: "kids" },
+    { start: 18,   end: 22,   label: "フィットネス", color: "fitness" },
   ],
   wed: [
     { start: 6,    end: 10,   label: "フリー", color: "free" },
     { start: 10,   end: 13.5, label: "フィットネス", color: "fitness" },
     { start: 13.5, end: 15,   label: "フリー", color: "free" },
-    { start: 15,   end: 17,   label: "キッズクラス", color: "kids" },
-    { start: 17,   end: 22,   label: "フィットネス", color: "fitness" },
+    { start: 15,   end: 18,   label: "キッズクラス", color: "kids" },
+    { start: 18,   end: 22,   label: "フィットネス", color: "fitness" },
   ],
   thu: [
     { start: 6,  end: 22, label: "フリー", color: "free" },
@@ -90,8 +90,8 @@ const scheduleBlocks: Record<string, ScheduleBlock[]> = {
     { start: 6,    end: 10,   label: "フリー", color: "free" },
     { start: 10,   end: 13.5, label: "フィットネス", color: "fitness" },
     { start: 13.5, end: 15,   label: "フリー", color: "free" },
-    { start: 15,   end: 17,   label: "キッズクラス", color: "kids" },
-    { start: 17,   end: 22,   label: "フィットネス", color: "fitness" },
+    { start: 15,   end: 18,   label: "キッズクラス", color: "kids" },
+    { start: 18,   end: 22,   label: "フィットネス", color: "fitness" },
   ],
   sat: [
     { start: 6,    end: 10,   label: "パーソナル", sublabel: "予約制", color: "personal" },
@@ -313,7 +313,7 @@ export default function Schedule() {
             ))}
           </div>
           <p className="text-[#4D5058]/40 text-xs mt-2">
-            ※ フリーは会員様の同伴のみドロップイン可能なジム開放時間です。対人クラスもドロップイン可（各1回1,100円）。パーソナルトレーニングは要予約。キッズクラスは月・火・水・金曜15:00〜17:00・土曜14:00〜15:00（親子キッズクラス）。祝日定休。
+            ※ フリーは会員様の同伴のみドロップイン可能なジム開放時間です。対人クラスもドロップイン可（各1回1,100円）。パーソナルトレーニングは要予約。キッズクラスは月・火・水・金曜15:00〜18:00・土曜14:00〜15:00（親子キッズクラス）。祝日定休。
           </p>
         </div>
       </section>
