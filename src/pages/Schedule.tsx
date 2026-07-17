@@ -153,7 +153,7 @@ export default function Schedule() {
 
       {/* Hero */}
       <div className="relative" style={{ height: "50vh", minHeight: "400px" }}>
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/class-circuit.png')" }} />
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/schedule-hero-circuit.webp')" }} />
         <div className="absolute inset-0 bg-[#4D5058]/78" />
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
           <motion.p
