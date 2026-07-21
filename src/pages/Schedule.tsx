@@ -559,20 +559,30 @@ export default function Schedule() {
                   </div>
                   <span className="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap">{premium.condition}</span>
                 </div>
-                <div className="bg-white px-6 py-5 flex items-center justify-between">
-                  <div>
-                    <div className="flex flex-wrap gap-2">
-                      {premium.benefits.map((b, i) => (
-                        <span key={i} className="flex items-center gap-1 text-xs text-[#4D5058]/60">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#D99A40] shrink-0" />
-                          {b}
-                        </span>
-                      ))}
-                    </div>
+                <div className="bg-white px-6 py-5">
+                  <div className="flex flex-wrap gap-x-6 gap-y-2 mb-4">
+                    {premium.benefits.map((b, i) => (
+                      <span key={i} className="flex items-center gap-1 text-xs text-[#4D5058]/60">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#D99A40] shrink-0" />
+                        {b}
+                      </span>
+                    ))}
                   </div>
-                  <div className="text-right shrink-0 ml-4">
-                    <p className="font-heading font-bold text-3xl text-[#D99A40]">{premium.price}</p>
-                    <p className="text-[#4D5058]/40 text-xs">{premium.priceNote}</p>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="rounded-lg bg-[#FDF6EC] px-4 py-3 flex items-center justify-between">
+                      <span className="text-sm font-medium text-[#4D5058]">男性</span>
+                      <div className="text-right">
+                        <p className="font-heading font-bold text-2xl text-[#D99A40] leading-none">{premium.malePrice}</p>
+                        <p className="text-[#4D5058]/40 text-[10px] mt-0.5">{premium.priceNote}</p>
+                      </div>
+                    </div>
+                    <div className="rounded-lg bg-[#FDF6EC] px-4 py-3 flex items-center justify-between">
+                      <span className="text-sm font-medium text-[#4D5058]">女性</span>
+                      <div className="text-right">
+                        <p className="font-heading font-bold text-2xl text-[#D99A40] leading-none">{premium.femalePrice}</p>
+                        <p className="text-[#4D5058]/40 text-[10px] mt-0.5">{premium.priceNote}</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </motion.div>
