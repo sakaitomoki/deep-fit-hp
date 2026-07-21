@@ -71,6 +71,15 @@ export const gymConfig = {
       benefits: ["全時間帯利用可能", "全クラス受け放題", "グローブ無料貸出", "パワーラック使用可"],
     },
   ],
+  premiumMembership: {
+    name: "プレミアム会員",
+    subtitle: "1年以上継続の方限定・通い放題",
+    condition: "1年以上継続・男女共通",
+    price: "¥9,900",
+    priceBase: "¥9,000",
+    priceNote: "/ 月（税込）",
+    benefits: ["全時間帯利用可能", "全クラス受け放題", "グローブ無料貸出", "パワーラック使用可"],
+  },
   kidsMembership: [
     { name: "月4回", price: "¥6,600", note: "/ 月（税込）" },
     { name: "通い放題", price: "¥8,800", note: "/ 月（税込）" },

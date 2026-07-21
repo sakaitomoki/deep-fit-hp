@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Heart, Flame, Users, CheckCircle2, Star, Dumbbell, Zap, MapPin, MessageCircle } from "lucide-react";
+import { Heart, Flame, Users, CheckCircle2, Star, Dumbbell, Zap, MapPin, MessageCircle, Crown } from "lucide-react";
 import { SiLine, SiInstagram } from "react-icons/si";
 import { Link } from "wouter";
 import SEO from "@/components/SEO";
@@ -536,6 +536,48 @@ export default function Schedule() {
               </div>
             </motion.div>
           </motion.div>
+
+          {/* Premium standalone card */}
+          {(() => {
+            const premium = gymConfig.premiumMembership;
+            if (!premium) return null;
+            return (
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+                className="rounded-xl overflow-hidden border-2 border-[#F2AC55]/50 shadow-md mb-8"
+              >
+                <div className="bg-gradient-to-r from-[#D99A40] to-[#F2AC55] px-6 py-4 flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <Crown className="w-5 h-5 text-white shrink-0" />
+                    <div>
+                      <p className="text-white text-lg font-bold tracking-wide">{premium.name}</p>
+                      <p className="text-white/70 text-xs mt-0.5">{premium.subtitle}</p>
+                    </div>
+                  </div>
+                  <span className="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap">{premium.condition}</span>
+                </div>
+                <div className="bg-white px-6 py-5 flex items-center justify-between">
+                  <div>
+                    <div className="flex flex-wrap gap-2">
+                      {premium.benefits.map((b, i) => (
+                        <span key={i} className="flex items-center gap-1 text-xs text-[#4D5058]/60">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#D99A40] shrink-0" />
+                          {b}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="text-right shrink-0 ml-4">
+                    <p className="font-heading font-bold text-3xl text-[#D99A40]">{premium.price}</p>
+                    <p className="text-[#4D5058]/40 text-xs">{premium.priceNote}</p>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })()}
 
           {/* U-22 standalone card */}
           {(() => {
