@@ -4,6 +4,7 @@ import { SiLine, SiInstagram } from "react-icons/si";
 import { Link } from "wouter";
 import SEO from "@/components/SEO";
 import { seoConfig, gymConfig } from "@/lib/gymConfig";
+import { useT } from "@/lib/i18n";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -147,6 +148,7 @@ function formatTime(h: number) {
 }
 
 export default function Schedule() {
+  const t = useT();
   return (
     <>
       <SEO title={seoConfig.pages.schedule.title} description={seoConfig.pages.schedule.description} path="/schedule" />
@@ -170,7 +172,7 @@ export default function Schedule() {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="text-4xl sm:text-5xl font-bold text-white"
           >
-            初心者向けフィットネス・パーソナル・キッズクラス
+            {t("初心者向けフィットネス・パーソナル・キッズクラス")}
           </motion.h1>
         </div>
       </div>
@@ -186,7 +188,7 @@ export default function Schedule() {
             className="text-center mb-14"
           >
             <p className="text-[#F2AC55] text-xs tracking-[0.3em] uppercase mb-3">Our Classes</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#4D5058]">クラス紹介</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#4D5058]">{t("クラス紹介")}</h2>
           </motion.div>
 
           <motion.div
@@ -208,11 +210,11 @@ export default function Schedule() {
                     <Icon className={`w-6 h-6 ${cls.colorText}`} />
                   </div>
                   <span className={`text-xs font-medium ${cls.colorText} ${cls.colorBg} px-2 py-0.5 rounded`}>
-                    {cls.level}
+                    {t(cls.level)}
                   </span>
-                  <h3 className="text-[#4D5058] font-bold text-xl mt-3 mb-1">{cls.title}</h3>
-                  <p className={`text-xs ${cls.colorText} mb-3`}>{cls.time}</p>
-                  <p className="text-[#4D5058]/60 text-sm leading-relaxed">{cls.description}</p>
+                  <h3 className="text-[#4D5058] font-bold text-xl mt-3 mb-1">{t(cls.title)}</h3>
+                  <p className={`text-xs ${cls.colorText} mb-3`}>{t(cls.time)}</p>
+                  <p className="text-[#4D5058]/60 text-sm leading-relaxed">{t(cls.description)}</p>
                 </motion.div>
               );
             })}
@@ -231,7 +233,7 @@ export default function Schedule() {
             className="text-center mb-12"
           >
             <p className="text-[#F2AC55] text-xs tracking-[0.3em] uppercase mb-3">Weekly Schedule</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#4D5058]">タイムスケジュール</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#4D5058]">{t("タイムスケジュール")}</h2>
           </motion.div>
 
           {/* Schedule Table */}
@@ -239,10 +241,10 @@ export default function Schedule() {
             <table className="border-collapse w-full text-sm" style={{ minWidth: "560px" }}>
               <thead>
                 <tr>
-                  <th className="border border-gray-200 bg-[#4D5058] text-white font-bold px-3 py-2 text-center w-16">時間</th>
+                  <th className="border border-gray-200 bg-[#4D5058] text-white font-bold px-3 py-2 text-center w-16">{t("時間")}</th>
                   {dayOrder.map((day) => (
                     <th key={day} className="border border-gray-200 bg-[#4D5058] text-white font-bold px-3 py-2 text-center">
-                      {dayLabelsMap[day]}
+                      {t(dayLabelsMap[day])}
                     </th>
                   ))}
                 </tr>
@@ -268,9 +270,9 @@ export default function Schedule() {
                             rowSpan={cell.rowspan}
                             className={`border border-gray-200 text-center align-middle px-2 py-1 ${s.bg}`}
                           >
-                            <p className={`font-bold text-xs leading-snug ${s.text}`}>{cell.block.label}</p>
+                            <p className={`font-bold text-xs leading-snug ${s.text}`}>{t(cell.block.label)}</p>
                             {cell.block.sublabel && (
-                              <p className={`text-[10px] ${s.text} opacity-70`}>{cell.block.sublabel}</p>
+                              <p className={`text-[10px] ${s.text} opacity-70`}>{t(cell.block.sublabel)}</p>
                             )}
                             <p className={`text-[10px] mt-0.5 ${s.text} opacity-60`}>
                               {formatTime(cell.block.start)}〜{formatTime(cell.block.end)}
@@ -308,12 +310,12 @@ export default function Schedule() {
             ].map(({ color, label }) => (
               <div key={color} className="flex items-center gap-2">
                 <div className={`w-4 h-4 rounded border ${colorStyles[color].bg} ${colorStyles[color].border}`} />
-                <span className="text-xs text-[#4D5058]/60">{label}</span>
+                <span className="text-xs text-[#4D5058]/60">{t(label)}</span>
               </div>
             ))}
           </div>
           <p className="text-[#4D5058]/40 text-xs mt-2">
-            ※ フリーは会員様の同伴のみドロップイン可能なジム開放時間です。対人クラスもドロップイン可（各1回1,100円）。パーソナルトレーニングは要予約。キッズクラスは月・水・金曜15:00〜17:00・火曜15:00〜18:00・土曜14:00〜15:00（親子キッズクラス）。祝日定休。
+            {t("※ フリーは会員様の同伴のみドロップイン可能なジム開放時間です。対人クラスもドロップイン可（各1回1,100円）。パーソナルトレーニングは要予約。キッズクラスは月・水・金曜15:00〜17:00・火曜15:00〜18:00・土曜14:00〜15:00（親子キッズクラス）。祝日定休。")}
           </p>
         </div>
       </section>
@@ -332,16 +334,16 @@ export default function Schedule() {
           >
             <div className="inline-flex items-center gap-2 mb-4" style={{ background: "rgba(242,172,85,0.12)", border: "1px solid rgba(242,172,85,0.4)", borderRadius: 999, padding: "6px 20px" }}>
               <Star className="w-3.5 h-3.5 fill-[#F2AC55] text-[#F2AC55]" />
-              <span style={{ color: "#D99A40", fontSize: 12, fontWeight: 800, letterSpacing: "0.18em" }}>過去最大キャンペーン</span>
+              <span style={{ color: "#D99A40", fontSize: 12, fontWeight: 800, letterSpacing: "0.18em" }}>{t("過去最大キャンペーン")}</span>
               <Star className="w-3.5 h-3.5 fill-[#F2AC55] text-[#F2AC55]" />
             </div>
             <h2 className="text-[#4D5058] font-bold leading-tight mb-2" style={{ fontSize: "clamp(28px,5vw,52px)" }}>
-              夏までに変わる。
+              {t("夏までに変わる。")}
             </h2>
             <p className="font-heading font-bold text-[#D99A40] mb-3" style={{ fontSize: "clamp(40px,8vw,80px)", lineHeight: 1 }}>
-              4大特典
+              {t("4大特典")}
             </p>
-            <p className="text-[#4D5058]/60 text-sm">5月7日〜7月31日の期間限定。まずは無料体験から気軽にどうぞ。</p>
+            <p className="text-[#4D5058]/60 text-sm">{t("5月7日〜7月31日の期間限定。まずは無料体験から気軽にどうぞ。")}</p>
           </motion.div>
 
           {/* 特典①②③ row */}
@@ -361,12 +363,12 @@ export default function Schedule() {
                 className="rounded-2xl px-5 py-4 flex flex-row sm:flex-col items-center sm:items-start gap-3 sm:gap-1 shadow-md"
                 style={{ background: "rgba(255,255,255,0.9)", border: "1.5px solid rgba(255,255,255,0.6)" }}
               >
-                <span style={{ background: "rgba(242,172,85,0.18)", color: "#D99A40", fontSize: 11, fontWeight: 900, padding: "2px 12px", borderRadius: 999, letterSpacing: "0.1em", whiteSpace: "nowrap" }}>{item.label}</span>
+                <span style={{ background: "rgba(242,172,85,0.18)", color: "#D99A40", fontSize: 11, fontWeight: 900, padding: "2px 12px", borderRadius: 999, letterSpacing: "0.1em", whiteSpace: "nowrap" }}>{t(item.label)}</span>
                 <div className="flex-1 sm:mt-2">
-                  <p className="text-[#4D5058] font-bold text-lg leading-tight">{item.title}</p>
-                  <p className="text-[#4D5058]/45 text-xs mt-0.5 line-through">{item.original}</p>
+                  <p className="text-[#4D5058] font-bold text-lg leading-tight">{t(item.title)}</p>
+                  <p className="text-[#4D5058]/45 text-xs mt-0.5 line-through">{t(item.original)}</p>
                 </div>
-                <p className="font-heading font-bold text-[#D99A40] shrink-0" style={{ fontSize: "clamp(26px,3.5vw,36px)", lineHeight: 1 }}>無料</p>
+                <p className="font-heading font-bold text-[#D99A40] shrink-0" style={{ fontSize: "clamp(26px,3.5vw,36px)", lineHeight: 1 }}>{t("無料")}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -382,43 +384,43 @@ export default function Schedule() {
             {/* 特典④ */}
             <motion.div variants={fadeInUp} className="rounded-2xl overflow-hidden" style={{ background: "linear-gradient(160deg, #0D1118 0%, #161C28 100%)", border: "2px solid #EAA53B" }}>
               <div className="px-5 pt-4 pb-0 flex items-center gap-2">
-                <span style={{ background: "rgba(234,165,59,0.18)", color: "#EAA53B", fontSize: 11, fontWeight: 900, padding: "3px 12px", borderRadius: 999, letterSpacing: "0.1em" }}>特典④</span>
-                <span style={{ color: "rgba(255,255,255,0.4)", fontSize: 11, letterSpacing: "0.12em" }}>当日入会限定</span>
+                <span style={{ background: "rgba(234,165,59,0.18)", color: "#EAA53B", fontSize: 11, fontWeight: 900, padding: "3px 12px", borderRadius: 999, letterSpacing: "0.1em" }}>{t("特典④")}</span>
+                <span style={{ color: "rgba(255,255,255,0.4)", fontSize: 11, letterSpacing: "0.12em" }}>{t("当日入会限定")}</span>
               </div>
               <div className="px-5 pt-3 pb-3 text-center" style={{ borderBottom: "1px solid rgba(234,165,59,0.15)" }}>
                 <p style={{ color: "#EAA53B", fontSize: "clamp(22px,3.5vw,36px)", fontWeight: 900, lineHeight: 1.05, margin: "4px 0 2px", fontFamily: "Oswald, sans-serif", letterSpacing: "0.02em" }}>
-                  月会費が永久にOFF！！
+                  {t("月会費が永久にOFF！！")}
                 </p>
-                <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 12, margin: 0 }}>※先着50名限定</p>
+                <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 12, margin: 0 }}>{t("※先着50名限定")}</p>
               </div>
               <div className="px-5 pt-3 pb-5">
                 <div className="mb-3">
-                  <p style={{ color: "rgba(234,165,59,0.7)", fontSize: 10, fontWeight: 800, letterSpacing: "0.14em", marginBottom: 2 }}>女性フルタイム</p>
+                  <p style={{ color: "rgba(234,165,59,0.7)", fontSize: 10, fontWeight: 800, letterSpacing: "0.14em", marginBottom: 2 }}>{t("女性フルタイム")}</p>
                   <div className="flex items-baseline gap-1.5">
-                    <span style={{ color: "rgba(255,255,255,0.3)", fontSize: 14, fontWeight: 700 }}>通常</span>
-                    <span style={{ color: "rgba(255,255,255,0.3)", fontSize: 16, fontWeight: 800, textDecoration: "line-through" }}>11,000円</span>
-                    <span style={{ color: "rgba(255,255,255,0.3)", fontSize: 14, fontWeight: 700 }}>が</span>
+                    <span style={{ color: "rgba(255,255,255,0.3)", fontSize: 14, fontWeight: 700 }}>{t("通常")}</span>
+                    <span style={{ color: "rgba(255,255,255,0.3)", fontSize: 16, fontWeight: 800, textDecoration: "line-through" }}>{t("11,000円")}</span>
+                    <span style={{ color: "rgba(255,255,255,0.3)", fontSize: 14, fontWeight: 700 }}>{t("が")}</span>
                   </div>
                   <div className="flex items-baseline gap-1.5 mt-0.5">
-                    <span style={{ color: "#fff", fontSize: 14, fontWeight: 700 }}>ずっと</span>
-                    <span style={{ color: "#EAA53B", fontSize: "clamp(26px,3.5vw,40px)", fontWeight: 900, lineHeight: 1, fontFamily: "Oswald, sans-serif" }}>9,900円</span>
-                    <span style={{ color: "#fff", fontSize: 13, fontWeight: 700 }}>で通い放題！</span>
+                    <span style={{ color: "#fff", fontSize: 14, fontWeight: 700 }}>{t("ずっと")}</span>
+                    <span style={{ color: "#EAA53B", fontSize: "clamp(26px,3.5vw,40px)", fontWeight: 900, lineHeight: 1, fontFamily: "Oswald, sans-serif" }}>{t("9,900円")}</span>
+                    <span style={{ color: "#fff", fontSize: 13, fontWeight: 700 }}>{t("で通い放題！")}</span>
                   </div>
                 </div>
                 <div style={{ borderTop: "1px solid rgba(234,165,59,0.12)", paddingTop: 10 }}>
-                  <p style={{ color: "rgba(234,165,59,0.7)", fontSize: 10, fontWeight: 800, letterSpacing: "0.14em", marginBottom: 2 }}>男性フルタイム</p>
+                  <p style={{ color: "rgba(234,165,59,0.7)", fontSize: 10, fontWeight: 800, letterSpacing: "0.14em", marginBottom: 2 }}>{t("男性フルタイム")}</p>
                   <div className="flex items-baseline gap-1.5">
-                    <span style={{ color: "rgba(255,255,255,0.3)", fontSize: 14, fontWeight: 700 }}>通常</span>
-                    <span style={{ color: "rgba(255,255,255,0.3)", fontSize: 16, fontWeight: 800, textDecoration: "line-through" }}>13,200円</span>
-                    <span style={{ color: "rgba(255,255,255,0.3)", fontSize: 14, fontWeight: 700 }}>が</span>
+                    <span style={{ color: "rgba(255,255,255,0.3)", fontSize: 14, fontWeight: 700 }}>{t("通常")}</span>
+                    <span style={{ color: "rgba(255,255,255,0.3)", fontSize: 16, fontWeight: 800, textDecoration: "line-through" }}>{t("13,200円")}</span>
+                    <span style={{ color: "rgba(255,255,255,0.3)", fontSize: 14, fontWeight: 700 }}>{t("が")}</span>
                   </div>
                   <div className="flex items-baseline gap-1.5 mt-0.5">
-                    <span style={{ color: "#fff", fontSize: 14, fontWeight: 700 }}>ずっと</span>
-                    <span style={{ color: "#EAA53B", fontSize: "clamp(26px,3.5vw,40px)", fontWeight: 900, lineHeight: 1, fontFamily: "Oswald, sans-serif" }}>12,100円</span>
-                    <span style={{ color: "#fff", fontSize: 13, fontWeight: 700 }}>で通い放題！</span>
+                    <span style={{ color: "#fff", fontSize: 14, fontWeight: 700 }}>{t("ずっと")}</span>
+                    <span style={{ color: "#EAA53B", fontSize: "clamp(26px,3.5vw,40px)", fontWeight: 900, lineHeight: 1, fontFamily: "Oswald, sans-serif" }}>{t("12,100円")}</span>
+                    <span style={{ color: "#fff", fontSize: 13, fontWeight: 700 }}>{t("で通い放題！")}</span>
                   </div>
                 </div>
-                <p style={{ color: "rgba(255,255,255,0.2)", fontSize: 11, marginTop: 10, textAlign: "center" }}>継続縛りなし・いつでも退会可</p>
+                <p style={{ color: "rgba(255,255,255,0.2)", fontSize: 11, marginTop: 10, textAlign: "center" }}>{t("継続縛りなし・いつでも退会可")}</p>
               </div>
             </motion.div>
 
@@ -433,11 +435,11 @@ export default function Schedule() {
             className="rounded-3xl px-8 py-6 text-center mb-8 shadow-lg"
             style={{ background: "rgba(255,255,255,0.88)", border: "1.5px solid rgba(255,255,255,0.6)" }}
           >
-            <p className="text-[#4D5058]/60 text-sm mb-1">入会月の節約額</p>
+            <p className="text-[#4D5058]/60 text-sm mb-1">{t("入会月の節約額")}</p>
             <p className="font-heading font-bold text-[#4D5058]" style={{ fontSize: "clamp(36px,6vw,64px)", lineHeight: 1 }}>
-              最大 <span style={{ color: "#D99A40" }}>23,000円〜</span>
+              {t("最大")} <span style={{ color: "#D99A40" }}>{t("23,000円〜")}</span>
             </p>
-            <p className="text-[#4D5058]/50 text-xs mt-2">＋月会費永久割引が継続します</p>
+            <p className="text-[#4D5058]/50 text-xs mt-2">{t("＋月会費永久割引が継続します")}</p>
           </motion.div>
 
           {/* CTAs */}
@@ -456,7 +458,7 @@ export default function Schedule() {
               className="inline-flex items-center gap-3 bg-[#06C755] text-white font-bold px-8 py-4 rounded-full text-base transition-all duration-200 shadow-xl hover:scale-105"
             >
               <SiLine className="w-5 h-5" />
-              LINEで体験予約する
+              {t("LINEで体験予約する")}
             </a>
             <Link
               href="/contact"
@@ -464,10 +466,10 @@ export default function Schedule() {
               className="inline-flex items-center gap-2 bg-white text-[#D99A40] font-medium px-7 py-4 rounded-full text-base transition-all duration-200 shadow-md hover:scale-105"
             >
               <MessageCircle className="w-4 h-4" />
-              お問い合わせフォーム
+              {t("お問い合わせフォーム")}
             </Link>
           </motion.div>
-          <p className="text-center text-[#4D5058]/40 text-xs mt-4">体験後、当日入会でキャンペーン適用　※キャンペーンは予告なく終了する場合があります</p>
+          <p className="text-center text-[#4D5058]/40 text-xs mt-4">{t("体験後、当日入会でキャンペーン適用　※キャンペーンは予告なく終了する場合があります")}</p>
         </div>
       </section>
 
@@ -483,7 +485,7 @@ export default function Schedule() {
           >
             <p className="text-[#F2AC55] text-xs tracking-[0.3em] uppercase mb-3">Pricing</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-[#4D5058]">PRICE LIST</h2>
-            <p className="text-[#4D5058]/50 text-sm mt-3">入会金 {gymConfig.joinFee}（税込）　※税込み価格で表示</p>
+            <p className="text-[#4D5058]/50 text-sm mt-3">{t("入会金")} {gymConfig.joinFee}{t("（税込）　※税込み価格で表示")}</p>
           </motion.div>
 
           {/* Category Cards */}
@@ -497,18 +499,18 @@ export default function Schedule() {
             {/* Female */}
             <motion.div variants={fadeInUp} className="rounded-xl overflow-hidden border border-gray-200 shadow-sm">
               <div className="bg-[#4D5058] px-6 py-4">
-                <p className="text-white text-lg font-bold tracking-wide">女性会員</p>
+                <p className="text-white text-lg font-bold tracking-wide">{t("女性会員")}</p>
               </div>
               <div className="bg-white divide-y divide-gray-100">
                 {gymConfig.membership.filter(p => p.name !== "U-22会員").map((plan, i) => (
                   <div key={i} className="flex items-center justify-between px-6 py-4">
                     <div>
-                      <p className="font-medium text-[#4D5058]">{plan.name}</p>
-                      <p className="text-xs text-[#4D5058]/40 mt-0.5">{plan.subtitle}</p>
+                      <p className="font-medium text-[#4D5058]">{t(plan.name)}</p>
+                      <p className="text-xs text-[#4D5058]/40 mt-0.5">{t(plan.subtitle)}</p>
                     </div>
                     <div className="text-right">
                       <p className="font-heading font-bold text-2xl text-[#D99A40]">{plan.femalePrice}</p>
-                      <p className="text-[#4D5058]/40 text-xs">/ 月（税込）</p>
+                      <p className="text-[#4D5058]/40 text-xs">{t("/ 月（税込）")}</p>
                     </div>
                   </div>
                 ))}
@@ -518,18 +520,18 @@ export default function Schedule() {
             {/* Male */}
             <motion.div variants={fadeInUp} className="rounded-xl overflow-hidden border border-gray-200 shadow-sm">
               <div className="bg-[#4D5058] px-6 py-4">
-                <p className="text-white text-lg font-bold tracking-wide">男性会員</p>
+                <p className="text-white text-lg font-bold tracking-wide">{t("男性会員")}</p>
               </div>
               <div className="bg-white divide-y divide-gray-100">
                 {gymConfig.membership.filter(p => p.name !== "U-22会員").map((plan, i) => (
                   <div key={i} className="flex items-center justify-between px-6 py-4">
                     <div>
-                      <p className="font-medium text-[#4D5058]">{plan.name}</p>
-                      <p className="text-xs text-[#4D5058]/40 mt-0.5">{plan.subtitle}</p>
+                      <p className="font-medium text-[#4D5058]">{t(plan.name)}</p>
+                      <p className="text-xs text-[#4D5058]/40 mt-0.5">{t(plan.subtitle)}</p>
                     </div>
                     <div className="text-right">
                       <p className="font-heading font-bold text-2xl text-[#4D5058]">{plan.malePrice}</p>
-                      <p className="text-[#4D5058]/40 text-xs">/ 月（税込）</p>
+                      <p className="text-[#4D5058]/40 text-xs">{t("/ 月（税込）")}</p>
                     </div>
                   </div>
                 ))}
@@ -553,34 +555,34 @@ export default function Schedule() {
                   <div className="flex items-center gap-2">
                     <Crown className="w-5 h-5 text-white shrink-0" />
                     <div>
-                      <p className="text-white text-lg font-bold tracking-wide">{premium.name}</p>
-                      <p className="text-white/70 text-xs mt-0.5">{premium.subtitle}</p>
+                      <p className="text-white text-lg font-bold tracking-wide">{t(premium.name)}</p>
+                      <p className="text-white/70 text-xs mt-0.5">{t(premium.subtitle)}</p>
                     </div>
                   </div>
-                  <span className="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap">{premium.condition}</span>
+                  <span className="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap">{t(premium.condition)}</span>
                 </div>
                 <div className="bg-white px-6 py-5">
                   <div className="flex flex-wrap gap-x-6 gap-y-2 mb-4">
                     {premium.benefits.map((b, i) => (
                       <span key={i} className="flex items-center gap-1 text-xs text-[#4D5058]/60">
                         <CheckCircle2 className="w-3.5 h-3.5 text-[#D99A40] shrink-0" />
-                        {b}
+                        {t(b)}
                       </span>
                     ))}
                   </div>
                   <div className="grid grid-cols-2 gap-3">
                     <div className="rounded-lg bg-[#FDF6EC] px-4 py-3 flex items-center justify-between">
-                      <span className="text-sm font-medium text-[#4D5058]">男性</span>
+                      <span className="text-sm font-medium text-[#4D5058]">{t("男性")}</span>
                       <div className="text-right">
                         <p className="font-heading font-bold text-2xl text-[#D99A40] leading-none">{premium.malePrice}</p>
-                        <p className="text-[#4D5058]/40 text-[10px] mt-0.5">{premium.priceNote}</p>
+                        <p className="text-[#4D5058]/40 text-[10px] mt-0.5">{t(premium.priceNote)}</p>
                       </div>
                     </div>
                     <div className="rounded-lg bg-[#FDF6EC] px-4 py-3 flex items-center justify-between">
-                      <span className="text-sm font-medium text-[#4D5058]">女性</span>
+                      <span className="text-sm font-medium text-[#4D5058]">{t("女性")}</span>
                       <div className="text-right">
                         <p className="font-heading font-bold text-2xl text-[#D99A40] leading-none">{premium.femalePrice}</p>
-                        <p className="text-[#4D5058]/40 text-[10px] mt-0.5">{premium.priceNote}</p>
+                        <p className="text-[#4D5058]/40 text-[10px] mt-0.5">{t(premium.priceNote)}</p>
                       </div>
                     </div>
                   </div>
@@ -603,26 +605,26 @@ export default function Schedule() {
               >
                 <div className="bg-[#2563A8] px-6 py-4 flex items-center justify-between">
                   <div>
-                    <p className="text-white text-lg font-bold tracking-wide">U-22会員</p>
-                    <p className="text-white/60 text-xs mt-0.5">22歳以下限定・通い放題</p>
+                    <p className="text-white text-lg font-bold tracking-wide">{t("U-22会員")}</p>
+                    <p className="text-white/60 text-xs mt-0.5">{t("22歳以下限定・通い放題")}</p>
                   </div>
-                  <span className="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full">男女同額</span>
+                  <span className="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full">{t("男女同額")}</span>
                 </div>
                 <div className="bg-white px-6 py-5 flex items-center justify-between">
                   <div>
-                    <p className="font-medium text-[#4D5058]">{u22.subtitle}</p>
+                    <p className="font-medium text-[#4D5058]">{t(u22.subtitle)}</p>
                     <div className="flex flex-wrap gap-2 mt-2">
                       {u22.benefits.map((b, i) => (
                         <span key={i} className="flex items-center gap-1 text-xs text-[#4D5058]/60">
                           <CheckCircle2 className="w-3.5 h-3.5 text-[#2563A8] shrink-0" />
-                          {b}
+                          {t(b)}
                         </span>
                       ))}
                     </div>
                   </div>
                   <div className="text-right shrink-0 ml-4">
                     <p className="font-heading font-bold text-3xl text-[#2563A8]">{u22.femalePrice}</p>
-                    <p className="text-[#4D5058]/40 text-xs">/ 月（税込）</p>
+                    <p className="text-[#4D5058]/40 text-xs">{t("/ 月（税込）")}</p>
                   </div>
                 </div>
               </motion.div>
@@ -640,7 +642,7 @@ export default function Schedule() {
             {gymConfig.membership[0].benefits.map((b, i) => (
               <span key={i} className="flex items-center gap-1.5 text-sm text-[#4D5058]/60">
                 <CheckCircle2 className="w-4 h-4 text-[#F2AC55] shrink-0" />
-                {b}
+                {t(b)}
               </span>
             ))}
           </motion.div>
@@ -656,16 +658,16 @@ export default function Schedule() {
             {/* Kids */}
             <motion.div variants={fadeInUp} className="rounded-xl overflow-hidden border border-gray-200 shadow-sm">
               <div className="bg-[#4D5058] px-6 py-4">
-                <p className="text-white text-lg font-bold tracking-wide">キッズクラス</p>
-                <p className="text-white/50 text-xs mt-0.5">小学1年生〜中学3年生まで</p>
+                <p className="text-white text-lg font-bold tracking-wide">{t("キッズクラス")}</p>
+                <p className="text-white/50 text-xs mt-0.5">{t("小学1年生〜中学3年生まで")}</p>
               </div>
               <div className="bg-white divide-y divide-gray-100">
                 {gymConfig.kidsMembership.map((plan, i) => (
                   <div key={i} className="flex items-center justify-between px-6 py-4">
-                    <p className="font-medium text-[#4D5058]">{plan.name}</p>
+                    <p className="font-medium text-[#4D5058]">{t(plan.name)}</p>
                     <div className="text-right">
                       <p className="font-heading font-bold text-2xl text-[#1F7A3A]">{plan.price}</p>
-                      <p className="text-[#4D5058]/40 text-xs">{plan.note}</p>
+                      <p className="text-[#4D5058]/40 text-xs">{t(plan.note)}</p>
                     </div>
                   </div>
                 ))}
@@ -675,17 +677,17 @@ export default function Schedule() {
             {/* Personal Training */}
             <motion.div variants={fadeInUp} className="rounded-xl overflow-hidden border border-gray-200 shadow-sm">
               <div className="bg-[#4D5058] px-6 py-4">
-                <p className="text-white text-lg font-bold tracking-wide">パーソナルトレーニング</p>
-                <p className="text-white/50 text-xs mt-0.5">完全マンツーマン・予約制</p>
+                <p className="text-white text-lg font-bold tracking-wide">{t("パーソナルトレーニング")}</p>
+                <p className="text-white/50 text-xs mt-0.5">{t("完全マンツーマン・予約制")}</p>
               </div>
               <div className="bg-white px-6 py-6 flex items-center justify-between">
                 <div>
-                  <p className="font-medium text-[#4D5058]">{gymConfig.personalTraining.duration} / 1セッション</p>
-                  <p className="text-xs text-[#4D5058]/50 mt-1">👥 {gymConfig.personalTraining.note}</p>
+                  <p className="font-medium text-[#4D5058]">{t(gymConfig.personalTraining.duration)} {t("/ 1セッション")}</p>
+                  <p className="text-xs text-[#4D5058]/50 mt-1">👥 {t(gymConfig.personalTraining.note)}</p>
                 </div>
                 <div className="text-right">
                   <p className="font-heading font-bold text-2xl text-[#2563A8]">{gymConfig.personalTraining.price}</p>
-                  <p className="text-[#4D5058]/40 text-xs">（税込）</p>
+                  <p className="text-[#4D5058]/40 text-xs">{t("（税込）")}</p>
                 </div>
               </div>
             </motion.div>
@@ -700,8 +702,8 @@ export default function Schedule() {
             className="rounded-2xl border-2 border-[#F2AC55] overflow-hidden shadow-lg"
           >
             <div className="bg-[#F2AC55] px-6 py-4 flex items-center justify-between">
-              <p className="text-white text-lg font-bold tracking-wide">体験レッスン</p>
-              <p className="text-white/80 text-xs">Trial Lesson　※初回限り・要予約</p>
+              <p className="text-white text-lg font-bold tracking-wide">{t("体験レッスン")}</p>
+              <p className="text-white/80 text-xs">{t("Trial Lesson　※初回限り・要予約")}</p>
             </div>
             <div className="bg-white px-6 py-6">
               {/* Instagram free - prominent */}
@@ -714,11 +716,11 @@ export default function Schedule() {
                         <span className="block w-full h-[3px] bg-[#E74C3C] rotate-[-12deg] rounded-full" />
                       </span>
                     </div>
-                    <span className="font-heading font-bold text-4xl text-[#F2AC55]">無料</span>
+                    <span className="font-heading font-bold text-4xl text-[#F2AC55]">{t("無料")}</span>
                   </div>
                   <div className="flex items-center gap-2 bg-gradient-to-r from-[#833AB4]/10 via-[#FD1D1D]/10 to-[#F77737]/10 border border-[#F77737]/20 rounded-full px-4 py-1.5 inline-flex">
                     <SiInstagram className="w-4 h-4 text-[#E1306C]" />
-                    <span className="text-sm font-bold text-[#4D5058]">インスタフォロワー限定</span>
+                    <span className="text-sm font-bold text-[#4D5058]">{t("インスタフォロワー限定")}</span>
                     <a href={gymConfig.sns.instagram} target="_blank" rel="noopener noreferrer" className="text-[#E1306C] text-xs underline underline-offset-2">@deep.amagasaki</a>
                   </div>
                 </div>
@@ -733,7 +735,7 @@ export default function Schedule() {
                   className="flex-1 inline-flex items-center justify-center gap-2 bg-[#06C755] text-white font-bold px-6 py-3.5 rounded-full text-base transition-all duration-200 hover:bg-[#04A344] shadow-md"
                 >
                   <SiLine className="w-5 h-5" />
-                  LINEで体験予約（おすすめ）
+                  {t("LINEで体験予約（おすすめ）")}
                 </a>
                 <Link
                   href="/contact"
@@ -741,7 +743,7 @@ export default function Schedule() {
                   className="flex-1 inline-flex items-center justify-center gap-2 bg-white border-2 border-[#F2AC55] text-[#D99A40] font-medium px-6 py-3.5 rounded-full text-base transition-all duration-200 hover:bg-[#FFF8EC]"
                 >
                   <MessageCircle className="w-4 h-4" />
-                  お問い合わせフォーム
+                  {t("お問い合わせフォーム")}
                 </Link>
               </div>
             </div>
@@ -760,7 +762,7 @@ export default function Schedule() {
             className="text-center mb-12"
           >
             <p className="text-[#F2AC55] text-xs tracking-[0.3em] uppercase mb-3">Facility</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#4D5058]">充実の設備</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#4D5058]">{t("充実の設備")}</h2>
           </motion.div>
 
           {/* Smith Machine featured photo */}
@@ -773,15 +775,15 @@ export default function Schedule() {
           >
             <img
               src="/images/smith-machine.jpeg"
-              alt="DEEP.FITの個室スミスマシン設備（パワーラック・ケーブル完備）"
+              alt={t("DEEP.FITの個室スミスマシン設備（パワーラック・ケーブル完備）")}
               loading="lazy"
               className="w-full h-64 sm:h-80 object-cover object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-5">
               <p className="text-[#F2AC55] text-xs tracking-widest uppercase mb-1">Equipment</p>
-              <p className="text-white font-bold text-lg">オールインワン スミスマシン</p>
-              <p className="text-white/60 text-xs">パワーラック・ケーブル・プレート全て完備</p>
+              <p className="text-white font-bold text-lg">{t("オールインワン スミスマシン")}</p>
+              <p className="text-white/60 text-xs">{t("パワーラック・ケーブル・プレート全て完備")}</p>
             </div>
           </motion.div>
 
@@ -799,7 +801,7 @@ export default function Schedule() {
                 className="bg-white border border-gray-200 rounded-xl px-5 py-4 flex items-center gap-3 shadow-sm"
               >
                 <Dumbbell className="w-5 h-5 text-[#F2AC55] shrink-0" />
-                <span className="text-[#4D5058] text-sm font-medium">{item}</span>
+                <span className="text-[#4D5058] text-sm font-medium">{t(item)}</span>
               </motion.div>
             ))}
           </motion.div>
@@ -816,9 +818,9 @@ export default function Schedule() {
                 <MapPin className="w-5 h-5 text-[#F2AC55]" />
               </div>
               <div className="text-left">
-                <p className="text-[#4D5058] font-semibold text-sm">{gymConfig.addressShort}</p>
+                <p className="text-[#4D5058] font-semibold text-sm">{t(gymConfig.addressShort)}</p>
                 {gymConfig.access.map((a, i) => (
-                  <p key={i} className="text-[#4D5058]/50 text-xs">{a}</p>
+                  <p key={i} className="text-[#4D5058]/50 text-xs">{t(a)}</p>
                 ))}
               </div>
             </div>
@@ -827,9 +829,9 @@ export default function Schedule() {
                 <Zap className="w-5 h-5 text-[#F2AC55]" />
               </div>
               <div className="text-left">
-                <p className="text-[#4D5058] font-semibold text-sm">営業時間</p>
-                <p className="text-[#4D5058]/50 text-xs">{gymConfig.hours.weekday}</p>
-                <p className="text-[#4D5058]/50 text-xs">定休日：{gymConfig.hours.closed}</p>
+                <p className="text-[#4D5058] font-semibold text-sm">{t("営業時間")}</p>
+                <p className="text-[#4D5058]/50 text-xs">{t(gymConfig.hours.weekday)}</p>
+                <p className="text-[#4D5058]/50 text-xs">{t("定休日：")}{t(gymConfig.hours.closed)}</p>
               </div>
             </div>
           </motion.div>

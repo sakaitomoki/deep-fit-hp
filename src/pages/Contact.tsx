@@ -11,16 +11,19 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import SEO from "@/components/SEO";
 import { seoConfig, gymConfig } from "@/lib/gymConfig";
+import { useT } from "@/lib/i18n";
 
-const insertContactInquirySchema = z.object({
-  name: z.string().min(1, "お名前を入力してください"),
-  email: z.string().email("有効なメールアドレスを入力してください"),
-  phone: z.string().nullable().optional(),
-  inquiryType: z.string().min(1, "お問い合わせ種別を選択してください"),
-  message: z.string().min(1, "メッセージを入力してください"),
-});
+function createInsertContactInquirySchema(t: (ja: string) => string) {
+  return z.object({
+    name: z.string().min(1, t("お名前を入力してください")),
+    email: z.string().email(t("有効なメールアドレスを入力してください")),
+    phone: z.string().nullable().optional(),
+    inquiryType: z.string().min(1, t("お問い合わせ種別を選択してください")),
+    message: z.string().min(1, t("メッセージを入力してください")),
+  });
+}
 
-type InsertContactInquiry = z.infer<typeof insertContactInquirySchema>;
+type InsertContactInquiry = z.infer<ReturnType<typeof createInsertContactInquirySchema>>;
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -48,9 +51,10 @@ const inquiryTypes = ["体験レッスン予約", "入会について", "料金�
 
 export default function Contact() {
   const { toast } = useToast();
+  const t = useT();
 
   const form = useForm<InsertContactInquiry>({
-    resolver: zodResolver(insertContactInquirySchema),
+    resolver: zodResolver(createInsertContactInquirySchema(t)),
     defaultValues: {
       name: "",
       email: "",
@@ -62,8 +66,8 @@ export default function Contact() {
 
   function handleSubmit(_data: InsertContactInquiry) {
     toast({
-      title: "準備中",
-      description: "お問い合わせフォームは現在準備中です。お電話またはLINE公式アカウントよりお気軽にお問い合わせください。",
+      title: t("準備中"),
+      description: t("お問い合わせフォームは現在準備中です。お電話またはLINE公式アカウントよりお気軽にお問い合わせください。"),
     });
   }
 
@@ -90,7 +94,7 @@ export default function Contact() {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="text-4xl sm:text-5xl font-bold text-white"
           >
-            無料体験・お問い合わせ
+            {t("無料体験・お問い合わせ")}
           </motion.h1>
         </div>
       </div>
@@ -109,27 +113,29 @@ export default function Contact() {
             >
               <div className="mb-8">
                 <p className="text-[#F2AC55] text-xs tracking-[0.3em] uppercase mb-3">Get In Touch</p>
-                <h2 className="text-3xl font-bold text-[#4D5058]">連絡先</h2>
+                <h2 className="text-3xl font-bold text-[#4D5058]">{t("連絡先")}</h2>
                 <p className="text-[#4D5058]/60 text-sm mt-3 leading-relaxed">
-                  体験レッスンのご予約やご質問など、お気軽にお問い合わせください。
+                  {t("体験レッスンのご予約やご質問など、お気軽にお問い合わせください。")}
                 </p>
               </div>
 
               {contactInfo.map((item, i) => {
                 const Icon = item.icon;
+                const isRawContact = item.icon === Phone || item.icon === Mail;
+                const displayValue = isRawContact ? item.value : t(item.value);
                 return (
                   <div key={i} className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-md bg-[#F2AC55] flex items-center justify-center shrink-0">
                       <Icon className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <p className="text-[#4D5058]/50 text-xs mb-0.5">{item.label}</p>
+                      <p className="text-[#4D5058]/50 text-xs mb-0.5">{t(item.label)}</p>
                       {item.href ? (
                         <a href={item.href} className="text-[#4D5058] text-sm font-medium hover:text-[#F2AC55] transition-colors">
-                          {item.value}
+                          {displayValue}
                         </a>
                       ) : (
-                        <p className="text-[#4D5058] text-sm font-medium whitespace-pre-line">{item.value}</p>
+                        <p className="text-[#4D5058] text-sm font-medium whitespace-pre-line">{displayValue}</p>
                       )}
                     </div>
                   </div>
@@ -146,7 +152,7 @@ export default function Contact() {
               className="lg:col-span-3"
             >
               <div className="bg-[#FAF5EE] rounded-md p-7 sm:p-8">
-                <h3 className="text-xl font-bold text-[#4D5058] mb-6">お問い合わせフォーム</h3>
+                <h3 className="text-xl font-bold text-[#4D5058] mb-6">{t("お問い合わせフォーム")}</h3>
                 <Form {...form}>
                   <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-5">
                     <FormField
@@ -154,9 +160,9 @@ export default function Contact() {
                       name="name"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-[#4D5058] text-sm">お名前 <span className="text-red-500">*</span></FormLabel>
+                          <FormLabel className="text-[#4D5058] text-sm">{t("お名前")} <span className="text-red-500">*</span></FormLabel>
                           <FormControl>
-                            <Input data-testid="input-name" placeholder="山田 太郎" {...field} className="bg-white" />
+                            <Input data-testid="input-name" placeholder={t("山田 太郎")} {...field} className="bg-white" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -167,7 +173,7 @@ export default function Contact() {
                       name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-[#4D5058] text-sm">メールアドレス <span className="text-red-500">*</span></FormLabel>
+                          <FormLabel className="text-[#4D5058] text-sm">{t("メールアドレス")} <span className="text-red-500">*</span></FormLabel>
                           <FormControl>
                             <Input data-testid="input-email" type="email" placeholder="example@email.com" {...field} className="bg-white" />
                           </FormControl>
@@ -180,7 +186,7 @@ export default function Contact() {
                       name="phone"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-[#4D5058] text-sm">電話番号（任意）</FormLabel>
+                          <FormLabel className="text-[#4D5058] text-sm">{t("電話番号（任意）")}</FormLabel>
                           <FormControl>
                             <Input data-testid="input-phone" type="tel" placeholder="06-0000-0000" {...field} value={field.value ?? ""} className="bg-white" />
                           </FormControl>
@@ -193,16 +199,16 @@ export default function Contact() {
                       name="inquiryType"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-[#4D5058] text-sm">お問い合わせ種別 <span className="text-red-500">*</span></FormLabel>
+                          <FormLabel className="text-[#4D5058] text-sm">{t("お問い合わせ種別")} <span className="text-red-500">*</span></FormLabel>
                           <Select onValueChange={field.onChange} value={field.value}>
                             <FormControl>
                               <SelectTrigger data-testid="select-inquiry-type" className="bg-white">
-                                <SelectValue placeholder="選択してください" />
+                                <SelectValue placeholder={t("選択してください")} />
                               </SelectTrigger>
                             </FormControl>
                             <SelectContent>
                               {inquiryTypes.map((type) => (
-                                <SelectItem key={type} value={type}>{type}</SelectItem>
+                                <SelectItem key={type} value={type}>{t(type)}</SelectItem>
                               ))}
                             </SelectContent>
                           </Select>
@@ -215,11 +221,11 @@ export default function Contact() {
                       name="message"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-[#4D5058] text-sm">メッセージ <span className="text-red-500">*</span></FormLabel>
+                          <FormLabel className="text-[#4D5058] text-sm">{t("メッセージ")} <span className="text-red-500">*</span></FormLabel>
                           <FormControl>
                             <Textarea
                               data-testid="input-message"
-                              placeholder="お問い合わせ内容をご記入ください"
+                              placeholder={t("お問い合わせ内容をご記入ください")}
                               className="bg-white min-h-[120px]"
                               {...field}
                             />
@@ -233,7 +239,7 @@ export default function Contact() {
                       data-testid="button-submit"
                       className="w-full bg-[#F2AC55] hover:bg-[#D99A40] text-white rounded-full"
                     >
-                      送信する
+                      {t("送信する")}
                     </Button>
                   </form>
                 </Form>
@@ -253,7 +259,7 @@ export default function Contact() {
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="DEEP.FIT アクセス"
+          title={t("DEEP.FIT アクセス")}
         />
       </div>
     </>

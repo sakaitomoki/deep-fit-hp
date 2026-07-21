@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { gymConfig, seoConfig } from "@/lib/gymConfig";
+import { useLang, useT } from "@/lib/i18n";
 
 interface SEOProps {
   title: string;
@@ -9,12 +10,16 @@ interface SEOProps {
   noindex?: boolean;
 }
 
-export default function SEO({ title, description, path = "", type = "website", noindex = false }: SEOProps) {
+export default function SEO({ title: titleJa, description: descriptionJa, path = "", type = "website", noindex = false }: SEOProps) {
+  const { lang } = useLang();
+  const t = useT();
+  const title = t(titleJa);
+  const description = t(descriptionJa);
   const url = `${seoConfig.siteUrl}${path || "/"}`;
   const ogImage = `${seoConfig.siteUrl}${seoConfig.ogImage}`;
 
   return (
-    <Helmet>
+    <Helmet htmlAttributes={{ lang }}>
       <title>{title}</title>
       <meta name="description" content={description} />
       <meta name="keywords" content={seoConfig.keywords} />

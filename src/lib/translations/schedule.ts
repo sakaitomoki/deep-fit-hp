@@ -1,0 +1,142 @@
+// English translations for the schedule page. Keys are exact Japanese source strings.
+export const schedule: Record<string, string> = {
+  // SEO
+  "クラス紹介｜サーキットトレーニング・初心者向けフィットネス・パーソナル・キッズ｜DEEP.FIT 尼崎":
+    "Classes & Pricing | Circuit Training, Beginner Fitness, Personal Training & Kids | DEEP.FIT Amagasaki",
+  "DEEP.FITのクラス紹介ページです。30分のサーキットトレーニングを中心に、初心者向けフィットネス、パーソナルトレーニング、キッズクラスなど、目的に合わせて選べるクラスをご案内します。":
+    "This is DEEP.FIT's class introduction page. Centered on 30-minute circuit training, we offer beginner-friendly fitness, personal training, and kids classes to fit your goals.",
+
+  // Hero
+  "初心者向けフィットネス・パーソナル・キッズクラス": "Beginner-Friendly Fitness, Personal Training & Kids Classes",
+
+  // Class types
+  "クラス紹介": "Our Classes",
+  "フィットネスクラス": "Fitness Class",
+  "パーソナルトレーニング": "Personal Training",
+  "キッズクラス": "Kids Class",
+  "全レベル": "All Levels",
+  "お子様向け": "For Kids",
+  "通常営業時間内": "During regular hours",
+  "予約制": "By reservation",
+  "60分": "60 min",
+  "有酸素運動とキックボクシングの要素を組み合わせた人気クラス。楽しく体を動かしながら、ダイエットや体力向上を目指せます。":
+    "A popular class combining cardio with kickboxing elements. Move your body and have fun while working toward weight loss and better fitness.",
+  "マンツーマンで目標に合わせたプログラムを提供。ダイエット、筋力アップ、技術向上など、一人ひとりに最適な指導を行います。":
+    "One-on-one programs tailored to your goals. We provide the best guidance for each person, whether it's weight loss, strength gain, or skill improvement.",
+  "お子様向けの楽しいクラス。月・水・金曜15:00〜17:00、火曜15:00〜18:00に実施。土曜14:00〜15:00は保護者も一緒に参加できる「親子キッズクラス」も開催しています。":
+    "A fun class for kids. Held Mon/Wed/Fri 15:00–17:00 and Tue 15:00–18:00. On Sat 14:00–15:00 we also run a \"Parent & Kids Class\" that parents can join too.",
+
+  // Day labels
+  "月": "Mon",
+  "火": "Tue",
+  "水": "Wed",
+  "木": "Thu",
+  "金": "Fri",
+  "土": "Sat",
+  "日": "Sun",
+
+  // Schedule table
+  "タイムスケジュール": "Weekly Schedule",
+  "時間": "Time",
+  "フリー": "Free Time",
+  "フィットネス": "Fitness",
+  "パーソナル": "Personal",
+  "親子キッズクラス": "Parent & Kids Class",
+  "サーキット・対人": "Circuit / Sparring",
+  "ドロップイン可": "Drop-in OK",
+
+  // Legend
+  "フリー（会員様の同伴のみドロップイン可・1回1,100円）": "Free Time (drop-in with a member only, ¥1,100/visit)",
+  "パーソナル（予約制）": "Personal (by reservation)",
+  "対人クラス（ドロップイン可・1回1,100円）": "Sparring Class (drop-in OK, ¥1,100/visit)",
+  "定休日": "Closed",
+  "※ フリーは会員様の同伴のみドロップイン可能なジム開放時間です。対人クラスもドロップイン可（各1回1,100円）。パーソナルトレーニングは要予約。キッズクラスは月・水・金曜15:00〜17:00・火曜15:00〜18:00・土曜14:00〜15:00（親子キッズクラス）。祝日定休。":
+    "* Free Time is open-gym time available as a drop-in only when accompanied by a member. Sparring classes also allow drop-ins (¥1,100 each). Personal training requires a reservation. Kids classes run Mon/Wed/Fri 15:00–17:00, Tue 15:00–18:00, and Sat 14:00–15:00 (Parent & Kids Class). Closed on national holidays.",
+
+  // Summer campaign
+  "過去最大キャンペーン": "Our Biggest Campaign Ever",
+  "夏までに変わる。": "Change by summer.",
+  "4大特典": "4 Big Perks",
+  "5月7日〜7月31日の期間限定。まずは無料体験から気軽にどうぞ。": "Limited time from May 7 to July 31. Start with a free trial lesson.",
+  "特典①": "Perk 1",
+  "特典②": "Perk 2",
+  "特典③": "Perk 3",
+  "体験料": "Trial fee",
+  "入会金": "Enrollment fee",
+  "翌月会費": "Next month's dues",
+  "通常 2,000円": "Normally ¥2,000",
+  "通常 10,000円": "Normally ¥10,000",
+  "女性 11,000円 / 男性 13,200円": "Women ¥11,000 / Men ¥13,200",
+  "無料": "Free",
+  "特典④": "Perk 4",
+  "当日入会限定": "Same-day enrollment only",
+  "月会費が永久にOFF！！": "Monthly dues discounted forever!!",
+  "※先着50名限定": "* Limited to the first 50 people",
+  "女性フルタイム": "Women Full Time",
+  "通常": "Normally",
+  "が": "→",
+  "ずっと": "Always",
+  "で通い放題！": "unlimited visits!",
+  "男性フルタイム": "Men Full Time",
+  "継続縛りなし・いつでも退会可": "No minimum commitment — cancel anytime",
+  "入会月の節約額": "Savings in your enrollment month",
+  "最大": "Up to",
+  "＋月会費永久割引が継続します": "+ Your monthly dues discount continues forever",
+  "LINEで体験予約する": "Book a Trial via LINE",
+  "お問い合わせフォーム": "Contact Form",
+  "体験後、当日入会でキャンペーン適用　※キャンペーンは予告なく終了する場合があります":
+    "Campaign applies with same-day enrollment after your trial. * The campaign may end without notice.",
+
+  // Pricing
+  "（税込）　※税込み価格で表示": "(tax incl.)  * All prices shown include tax",
+  "女性会員": "Women's Membership",
+  "男性会員": "Men's Membership",
+  "フルタイム会員": "Full Time Member",
+  "月8回会員": "8 Times/Month Member",
+  "U-22会員": "U-22 Member",
+  "/ 月（税込）": "/ month (tax incl.)",
+  "DEEPプラス会員": "DEEP Plus Member",
+  "1年以上継続の方限定・通い放題": "Members of 1+ year only · Unlimited visits",
+  "1年以上継続": "1+ year member",
+  "全時間帯利用可能": "Available all hours",
+  "全クラス受け放題": "Unlimited classes",
+  "グローブ無料貸出": "Free glove rental",
+  "パワーラック使用可": "Power rack access",
+  "男性": "Men",
+  "女性": "Women",
+  "22歳以下限定・通い放題": "Ages 22 and under only · Unlimited visits",
+  "男女同額": "Same price for all",
+  "Under 22 / 通い放題": "Under 22 / Unlimited",
+  "小学1年生〜中学3年生まで": "1st grade elementary to 3rd grade junior high",
+  "月4回": "4 Times/Month",
+  "通い放題": "Unlimited",
+  "親子キック会員": "Parent & Kids Member",
+  "2名まで / 月（税込）": "up to 2 people / month (tax incl.)",
+  "完全マンツーマン・予約制": "Fully one-on-one, by reservation",
+  "/ 1セッション": "/ session",
+  "ペアでも同料金（税込）": "Same price for pairs (tax incl.)",
+  "（税込）": "(tax incl.)",
+  "体験レッスン": "Trial Lesson",
+  "Trial Lesson　※初回限り・要予約": "Trial Lesson  * First time only, reservation required",
+  "インスタフォロワー限定": "Instagram followers only",
+  "LINEで体験予約（おすすめ）": "Book a Trial via LINE (Recommended)",
+
+  // Equipment & Access
+  "充実の設備": "Well-Equipped Facility",
+  "DEEP.FITの個室スミスマシン設備（パワーラック・ケーブル完備）": "DEEP.FIT's private Smith machine room (power rack & cables included)",
+  "オールインワン スミスマシン": "All-in-One Smith Machine",
+  "パワーラック・ケーブル・プレート全て完備": "Power rack, cables, and plates all included",
+  "オールインパワーラック": "All-in-one power rack",
+  "サンドバック 4本": "4 sandbags",
+  "更衣室完備": "Changing rooms available",
+  "近隣駐車場": "Nearby parking",
+  "営業時間": "Hours",
+  "10:00 - 13:00 / 17:00 - 22:00（パーソナル 13:00 - 17:00）": "10:00 - 13:00 / 17:00 - 22:00 (Personal 13:00 - 17:00)",
+  "定休日：": "Closed: ",
+  "兵庫県尼崎市長洲東通1–9-25 2F": "2F, 1-9-25 Nagasu-higashidori, Amagasaki, Hyogo",
+  "11,000円": "¥11,000",
+  "9,900円": "¥9,900",
+  "13,200円": "¥13,200",
+  "12,100円": "¥12,100",
+  "23,000円〜": "¥23,000+",
+};

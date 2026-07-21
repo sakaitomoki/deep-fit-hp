@@ -1,0 +1,220 @@
+// English translations for the home page. Keys are exact Japanese source strings.
+export const home: Record<string, string> = {
+  // SEO (seoMeta.json "/")
+  "JR尼崎のサーキットトレーニング×キックボクシングジム｜DEEP.FIT 初心者・女性歓迎・無料体験":
+    "Circuit Training × Kickboxing Gym Near JR Amagasaki | DEEP.FIT — Beginners & Women Welcome, Free Trial",
+  "DEEP.FITはJR尼崎駅徒歩10分のサーキットトレーニング×キックボクシングジムです。初心者・女性・一人参加でも通いやすく、綺麗で広い空間と個室スミスマシンも完備。無料体験受付中。":
+    "DEEP.FIT is a circuit training and kickboxing gym just a 10-minute walk from JR Amagasaki Station. Welcoming for beginners, women, and solo visitors alike, with a clean, spacious space and a private Smith machine room. Free trial now available.",
+
+  // Hero
+  "DEEP.FIT｜JR尼崎駅徒歩10分のサーキットトレーニング×キックボクシングジム":
+    "DEEP.FIT | Circuit Training × Kickboxing Gym, 10 min walk from JR Amagasaki Station",
+  "はじめてでも安心": "Beginner-friendly",
+  "女性が多く通うジム": "Popular with women",
+  "まずは気楽に体験から": "Start with an easy trial",
+  "DEEP.FIT（ディープフィット）｜JR尼崎駅徒歩10分のキックボクシング・サーキットトレーニングジム":
+    "DEEP.FIT | Kickboxing & Circuit Training Gym, 10 min walk from JR Amagasaki Station",
+  "楽しいから続く。": "Fun keeps you coming back.",
+  "続くから変わる。": "Coming back is what changes you.",
+  "運動が久しぶりの方も多く通っています。": "Many members are returning to exercise after a long break.",
+  "体を動かして、気分まで軽くなる時間を。": "Move your body, and lighten your mind.",
+  "LINEで無料体験予約": "Book Free Trial via LINE",
+  "見学・体験だけでも大歓迎です！": "Just visiting or trying it out is welcome too!",
+
+  // Opening Offer Section
+  "過去最大キャンペーン": "Our Biggest Campaign Ever",
+  "夏までに変わる。": "Change before summer.",
+  "4大特典": "4 Big Perks",
+  "5月7日〜7月31日の期間限定。": "Limited-time offer: May 7 – July 31.",
+  "まずは無料体験から気軽にどうぞ。": "Start with a free trial, no pressure.",
+  "特典①": "Perk 1",
+  "体験料": "Trial Fee",
+  "通常 2,000円": "Usually ¥2,000",
+  "無料": "Free",
+  "特典②": "Perk 2",
+  "入会金": "Registration Fee",
+  "通常 10,000円": "Usually ¥10,000",
+  "特典③": "Perk 3",
+  "翌月会費": "Next Month's Fee",
+  "女性 11,000円 / 男性 13,200円": "Women ¥11,000 / Men ¥13,200",
+  "特典④": "Perk 4",
+  "当日入会限定": "Same-day sign-up only",
+  "🔥 先着50名限定": "🔥 First 50 members only",
+  "月会費が永久にOFF！！": "Your monthly fee, discounted forever!!",
+  "女性フルタイム": "Women, Full-Time",
+  "通常": "Usually",
+  "11,000円": "¥11,000",
+  "が": "",
+  "ずっと": "Forever",
+  "9,900円": "¥9,900",
+  "で通い放題！": "unlimited!",
+  "男性フルタイム": "Men, Full-Time",
+  "13,200円": "¥13,200",
+  "12,100円": "¥12,100",
+  "継続縛りなし・いつでも退会可": "No contract, cancel anytime",
+  "入会月の節約額": "Savings in your first month",
+  "最大 23,000円〜": "Up to ¥23,000+",
+  "＋月会費永久割引が継続します": "+ Your discounted monthly fee continues forever",
+  "体験料 2,000円 → 無料": "Trial fee ¥2,000 → Free",
+  "入会金 10,000円 → 無料": "Registration fee ¥10,000 → Free",
+  "縛りなし・いつでも退会可": "No contract, cancel anytime",
+  "運動初心者の方も歓迎": "Beginners welcome",
+  "LINEで無料体験を予約する": "Book a free trial via LINE",
+  "ご不安な点などを相談する": "Ask us anything via chat",
+  "返信は営業時間内に順次対応": "Replies sent in order during business hours",
+
+  // LINE Consult Section
+  "自分に合うか不安な方は、": "Not sure if it's right for you?",
+  "まずはLINEでご相談ください": "Talk to us first on LINE",
+  "見学だけ、体験だけ、空き枠確認だけでも大丈夫です。": "A quick tour, a trial, or just checking availability — all welcome.",
+  "運動が久しぶりの方もお気軽にご相談ください。": "Feel free to reach out, even if it's been a while since you exercised.",
+  "無理な勧誘なし": "No pushy sales",
+  "見学だけでもOK": "Just a tour is fine too",
+  "初心者歓迎": "Beginners welcome",
+  "一人参加OK": "Solo participants OK",
+  "見学・体験を相談する": "Ask About a Tour or Trial",
+  "公式アカウント": "Official Account",
+  "体験希望": "I'd like to try a trial",
+  "○○さん": "Hi there,",
+  "はじめまして！DEEP.FITです。": "Nice to meet you! This is DEEP.FIT.",
+  "友だち追加ありがとうございます😉": "Thanks for adding us as a friend 😉",
+  "当ジムはダイエット・運動不足などが目的のジムです！😆": "Our gym is for anyone aiming to lose weight or get back into shape! 😆",
+  "20歳から70歳までの会員様が在籍しております": "We have members ranging from their 20s to 70s",
+  "女性の方でも気軽にご利用できます😇": "Women can feel comfortable joining too 😇",
+  "運動経験なくてもスタートできるようになってますので、お気軽にご連絡ください😆": "No exercise experience needed to get started, so feel free to contact us 😆",
+  "📸 インスタフォローで体験無料！": "📸 Follow us on Instagram for a free trial!",
+  "体験・見学希望の方は↓": "For a trial or tour, please send us ↓",
+  "📅 体験予約希望日": "📅 Preferred trial date",
+  "👤 性別 / 年齢（任意）": "👤 Gender / Age (optional)",
+  "🏃 スポーツ経験": "🏃 Sports experience",
+  "近隣に駐車場あり🅿️": "Parking available nearby 🅿️",
+  "メッセージを入力...": "Type a message...",
+
+  // Gym Identity (About) Section
+  "DEEP.FITって": "So what kind of gym",
+  "どんなジム？": "is DEEP.FIT?",
+  "綺麗で広い空間、通いやすい雰囲気、目的に合わせた設備。": "A clean, spacious environment, a welcoming atmosphere, and equipment suited to your goals.",
+  "初めての方でも、自分のペースで続けやすいジムです。": "A gym where beginners can keep going at their own pace.",
+  "綺麗で広いから、\n気持ちよく通い続けやすい": "Clean and spacious,\nso it's easy to keep coming back",
+  "清潔感のある広い空間で、初めての方でも入りやすい環境です。圧迫感が少なく、落ち着いてトレーニングに取り組めます。":
+    "A clean, spacious environment that's easy for first-timers to walk into. With plenty of room to breathe, you can train at your own pace.",
+  "DEEP.FITのキックボクシングトレーニング": "Kickboxing training at DEEP.FIT",
+  "個室のスミスマシンで、\n一人で集中した補強もできます": "A private Smith machine room\nfor focused solo training",
+  "キックボクシングやサーキットトレーニングだけでなく、\n個室で自分の目的に合わせた補強トレーニングも可能です。\n引き締め、筋力強化、体力づくりまで、幅広く対応できます。":
+    "Beyond kickboxing and circuit training,\nyou can also do private supplemental training suited to your own goals.\nFrom toning to strength building to overall fitness, we cover it all.",
+  "DEEP.FITの個室スミスマシン設備": "DEEP.FIT's private Smith machine facility",
+  "会員さんの雰囲気が良く、\n一人でも馴染みやすいジムです": "A friendly member atmosphere\nthat's easy to fit into, even solo",
+  "和気藹々とした空気があり、初めてでも居心地よく通いやすい環境です。\nただ賑やかなだけでなく、自分のペースも大切にできます。":
+    "A warm, friendly atmosphere that's comfortable even for first-timers.\nIt's lively, but you can still keep your own pace.",
+  "会員同士が楽しくトレーニングするDEEP.FITの雰囲気": "The friendly atmosphere at DEEP.FIT, with members training together",
+  "集中したい日も、\n楽しく動きたい日も、どちらも選べます": "Days you want to focus,\nand days you want to move and have fun — you can choose either",
+  "一人で黙々と打ち込みたい日も、\n他のメンバーと楽しく身体を動かしたい日も、\nその日の気分や目的に合わせて通いやすいジムです。":
+    "Whether you want to train quietly on your own,\nor move and have fun with other members,\nthis gym fits your mood and goals on any given day.",
+  "DEEP.FITのサーキットトレーニングクラスの様子": "A circuit training class at DEEP.FIT",
+  "女性会員も多く、通いやすい雰囲気": "Many women members, welcoming atmosphere",
+  "一人参加でも馴染みやすい": "Easy to fit in, even solo",
+  "個室設備あり": "Private room facilities available",
+  "目的に合わせて使い分け可能": "Flexible use to match your goals",
+  "まずは実際の雰囲気を、無料体験や見学でお確かめください": "See the real atmosphere for yourself with a free trial or tour.",
+  "見学・無料体験を予約する": "Book a free trial or tour",
+  "ご不安な点などの相談はこちら →": "Have concerns? Get in touch here →",
+
+  // FAQ Section
+  "はじめてでも大丈夫？ よくあるご質問": "New to this? Frequently Asked Questions",
+  "体験前に気になることを、よくある質問からまとめました。": "Here are answers to common questions before your trial.",
+  "運動経験がなくても大丈夫ですか？": "Is it okay if I have no exercise experience?",
+  "はい。むしろ未経験から始める方が多いです。": "Yes. In fact, most members start as complete beginners.",
+  "DEEP.FITでは、運動が久しぶりの方や未経験の方も多く通われています。メニューは一人ひとりのレベルに合わせて調整できるので、体力に自信がない方も安心して始められます。":
+    "Many DEEP.FIT members are new to exercise or returning after a long break. Since the menu can be adjusted to each person's level, you can start with confidence even if you're not in great shape yet.",
+  "サーキットトレーニングとはどんな内容ですか？": "What is circuit training like?",
+  "有酸素運動とキックボクシングの動きを組み合わせた、30分で全身を動かすトレーニングです。": "It's a 30-minute full-body workout that combines cardio with kickboxing movements.",
+  "DEEP.FITのサーキットトレーニングは、楽しみながらダイエットや体力アップを目指せる内容になっています。初心者や運動が久しぶりの方でも自分のペースで取り組めるので、無理なく続けやすいのが特徴です。":
+    "DEEP.FIT's circuit training lets you work toward weight loss and better fitness while having fun. Beginners and those returning to exercise can go at their own pace, making it easy to keep up without overdoing it.",
+  "女性一人でも通いやすいですか？": "Is it easy for women to attend alone?",
+  "はい。女性一人でも通いやすい雰囲気です。": "Yes. The atmosphere is welcoming for women coming alone.",
+  "実際におひとりで通われている方も多く、和気藹々としながらも無理に人に合わせすぎない空気があります。「格闘技ジムは少し不安」という方にも入りやすい環境です。":
+    "Many members actually come by themselves. It's a friendly atmosphere, but no one feels pressured to match everyone else. It's also welcoming for those who feel a bit anxious about \"combat sport gyms.\"",
+  "体験当日は何を持っていけばいいですか？": "What should I bring on the day of my trial?",
+  "動きやすい服装だけで大丈夫です。": "Just comfortable clothes to move in.",
+  "タオル・飲み物があると快適ですが、手ぶらでも対応できます。グローブなどの道具は不要ですが、ミットやサンドバックを打つ際は、バンテージや軍手などを持参いただくことをお勧めします。":
+    "A towel and drink are nice to have, but you can also come empty-handed. No gloves or gear needed, though we recommend bringing hand wraps or work gloves if you'll be hitting mitts or a sandbag.",
+  "どれくらいで効果を実感できますか？": "How soon will I feel results?",
+  "目安としては、1〜3か月ほどで何らかの変化を感じる方が多いです。": "As a general guide, most people notice some kind of change within 1 to 3 months.",
+  "まずは「疲れにくくなった」「気分が軽くなった」といった変化を感じやすく、見た目の変化はその後少しずつ出てきます。DEEP.FITでは、それぞれのペースで無理なく楽しく続けられることを大切にしています。":
+    "You'll likely first notice things like feeling less tired or lighter in mood, with visible changes following gradually after that. At DEEP.FIT, we value everyone continuing at their own pace, without pressure, and enjoying it along the way.",
+  "子どもを連れて行っても大丈夫ですか？": "Can I bring my child along?",
+  "はい、お子さま連れについてもお気軽にご相談ください。": "Yes, please feel free to ask us about bringing your child.",
+  "お子さま同伴のみならず、キッズクラスのご用意もあり、ご家庭の状況に合わせて通い方をご案内しています。気になることがあれば事前にLINEでご相談いただけます。":
+    "Beyond bringing your child along, we also offer a kids class, and we can suggest a schedule that fits your family's situation. Feel free to ask us in advance via LINE if anything is on your mind.",
+  "退会はいつでもできますか？": "Can I cancel my membership anytime?",
+  "はい。継続縛りなし・いつでも月単位で退会できます。": "Yes. There's no minimum commitment — you can cancel on a monthly basis anytime.",
+  "違約金や解約手数料は一切ありません。なお、休会制度はご用意しておりませんのでご了承ください。ライフスタイルの変化があっても、退会のご連絡をいただければスムーズに対応します。":
+    "There are no penalty fees or cancellation charges. Please note that we don't offer a pause/suspension option. If your lifestyle changes, just let us know and we'll handle your cancellation smoothly.",
+
+  // Instagram Atmosphere Section
+  "実際の雰囲気は、Instagramで見られます": "See the real atmosphere on Instagram",
+  "練習風景や日常の様子を通じて、ジムの空気感や通いやすさが分かります。": "Training moments and everyday scenes show what the gym is really like.",
+  "キックボクシングトレーニングの様子": "A kickboxing training session",
+  "初心者向けキックボクシングレッスン": "A beginner kickboxing lesson",
+  "サーキットトレーニングクラス": "A circuit training class",
+  "DEEP.FITのトレーニング風景": "Training scenes at DEEP.FIT",
+  "キッズクラスの様子": "A kids class in session",
+  "個室スミスマシンでのトレーニング": "Training in the private Smith machine room",
+  "練習風景・日常を公開中！！": "Training and everyday life, shared daily!!",
+  "期間限定特典": "Limited-Time Offer",
+  "インスタをフォローして": "Follow us on Instagram",
+  "体験料2,000円→無料": "Trial fee ¥2,000 → Free",
+  "① @deep.amagasaki をフォロー": "① Follow @deep.amagasaki",
+  "② DMまたはLINEで「フォローしました」と送るだけ": "② Just send us \"Followed!\" via DM or LINE",
+  "@deep.amagasaki をフォローする": "Follow @deep.amagasaki",
+
+  // Testimonials Grid Section
+  "実際に通っている方の声": "Voices From Our Members",
+  "はじめての方や、運動が久しぶりの方からも、通いやすさについての声をいただいています。": "Feedback from beginners and those returning to exercise after a long break.",
+  "会員の声 01": "Member Voice 01",
+  "いつも楽しく通わせてもらっています！トレーナーさんも丁寧に教えてくれるし、会員さんたちも優しいかたばっかりで一緒にトレーニングしていてとても楽しいです！その人に合ったトレーニングを提案してくれるので運動苦手なかたでも続けやすいと思います(^-^) これからもみんなで楽しく運動しましょう♪":
+    "I always enjoy coming here! The trainers teach carefully, and the other members are so kind — training together is a lot of fun! They suggest training suited to each person, so even people who aren't good at exercise find it easy to keep going. Let's keep having fun exercising together!",
+  "会員の声 02": "Member Voice 02",
+  "妻と2人で通っていますが、こちらのジムのおかげで夫婦共に趣味が増えました！トレーナーさんがキックボクシングミットからサーキットトレーニングまで幅広く教えて下さるので、すべてが新鮮で毎回楽しませてもらっています！他の会員さんも優しい方が多いので、みんなで励まし合いながらトレーニング出来たりと、ジムの雰囲気もとても良くジムに行くのが凄く楽しいです！":
+    "My wife and I go together, and thanks to this gym we've both gained a new hobby! The trainers teach everything from kickboxing mitts to circuit training, so every session feels fresh and enjoyable. The other members are kind too, and we encourage each other while training — the gym's atmosphere is great, and going there is a lot of fun!",
+  "会員の声 03": "Member Voice 03",
+  "指導が的確で、初心者から経験者まで安心して通えるジムです。ミット練習が充実しているのが嬉しいです。会員さんの雰囲気もよく、苦手な筋トレもみんなで楽しくできるので頑張れます。トレーナーさんの人柄も素晴らしく、とてもおすすめのジムです。":
+    "The coaching is precise, making it a gym that both beginners and experienced people can attend with confidence. I love that there's plenty of mitt practice. The members have a great vibe, and even strength training I'm not good at becomes fun to do with everyone — which keeps me motivated. The trainers are wonderful people too, and I'd highly recommend this gym.",
+
+  // Classes Section
+  "目的に合わせて選べるクラス": "Classes to Match Your Goals",
+  "どんな目的でも、合うトレーニングが見つかります": "Whatever your goal, you'll find training that fits",
+  "初心者向け": "Beginner Friendly",
+  "フィットネス": "Fitness",
+  "有酸素運動とキックボクシングを組み合わせた30分のサーキットトレーニング。楽しみながらダイエットや体力アップを目指せます。":
+    "A 30-minute circuit combining cardio and kickboxing. A fun way to work toward weight loss and better fitness.",
+  "運動不足解消・ダイエット": "Get active / Weight loss",
+  "30分": "30 min",
+  "DEEP.FITの初心者向けフィットネスキックボクシングクラス": "A beginner-friendly fitness kickboxing class at DEEP.FIT",
+  "全レベル": "All Levels",
+  "パーソナルトレーニング": "Personal Training",
+  "マンツーマンで目標に合わせた特別プログラム。フォーム重視で、引き締め・筋力強化を確実に。":
+    "A one-on-one program tailored to your goals. Focused on form, for reliable toning and strength gains.",
+  "引き締め・筋力強化": "Toning / Strength building",
+  "60分": "60 min",
+  "DEEP.FITのパーソナルトレーニング指導の様子": "Personal training guidance at DEEP.FIT",
+  "お子様向け": "For Kids",
+  "キッズクラス": "Kids Class",
+  "楽しみながら体を動かすキッズ向けプログラム。礼儀やスポーツの基礎も学べます。":
+    "A program for kids to move and have fun, while learning manners and sports basics.",
+  "基礎体力・礼儀": "Basic fitness / Manners",
+  "DEEP.FITのキッズクラスでお子さまが楽しくトレーニング": "Kids enjoying training in DEEP.FIT's kids class",
+  "初心者OK": "Beginners OK",
+  "強度": "Intensity",
+  "全てのクラスを見る": "View All Classes",
+
+  // Final Trial CTA Section
+  "まずは無料体験からお試しください": "Start With a Free Trial",
+  "ジムの雰囲気や通いやすさを、実際に見てから判断していただけます。": "See the atmosphere and how easy it is to join for yourself before deciding.",
+  "持ち物": "What to Bring",
+  "動きやすい服装だけ": "Just wear comfortable clothes",
+  "見学": "Tour",
+  "おひとり様歓迎": "Solo visitors welcome",
+  "運動初心者の方も安心": "Exercise beginners welcome too",
+  "無料体験を予約する": "Book a Free Trial",
+};

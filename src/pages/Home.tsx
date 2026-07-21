@@ -5,6 +5,7 @@ import { ArrowRight, MessageCircle } from "lucide-react";
 import { SiInstagram, SiLine } from "react-icons/si";
 import SEO from "@/components/SEO";
 import { gymConfig, seoConfig } from "@/lib/gymConfig";
+import { useT } from "@/lib/i18n";
 
 const deepFitLogo = "/images/deepfit-logo-asset.webp";
 const kidsClassImg = "/images/kids-class.webp";
@@ -103,26 +104,28 @@ const reasonsEvidenceChips = [
 ];
 
 function ReasonCard({ card }: { card: typeof reasonCards[0] }) {
+  const t = useT();
   return (
     <motion.div className="reasons-card" variants={scaleIn} data-testid={`card-reason-${card.id}`}>
       <div className="reasons-card__img-wrap">
-        <img src={card.image} alt={card.alt} className="reasons-card__img" loading="lazy" />
+        <img src={card.image} alt={t(card.alt)} className="reasons-card__img" loading="lazy" />
         <div className="reasons-card__overlay" />
       </div>
       <div className="reasons-card__content">
         <span className="reasons-card__tag">{card.tag}</span>
         <h3 className="reasons-card__title">
-          {card.title.split("\n").map((line, i) => (
+          {t(card.title).split("\n").map((line, i) => (
             <span key={i}>{line}</span>
           ))}
         </h3>
-        <p className="reasons-card__body">{card.body}</p>
+        <p className="reasons-card__body">{t(card.body)}</p>
       </div>
     </motion.div>
   );
 }
 
 function GymIdentitySection() {
+  const t = useT();
   return (
     <section className="reasons-section">
       <div className="reasons-section__inner">
@@ -135,11 +138,11 @@ function GymIdentitySection() {
         >
           <span className="reasons-section__eyebrow">ABOUT</span>
           <h2 className="reasons-section__title">
-            DEEP.FITって<br />どんなジム？
+            {t("DEEP.FITって")}<br />{t("どんなジム？")}
           </h2>
           <p className="reasons-section__lead">
-            綺麗で広い空間、通いやすい雰囲気、目的に合わせた設備。<br />
-            初めての方でも、自分のペースで続けやすいジムです。
+            {t("綺麗で広い空間、通いやすい雰囲気、目的に合わせた設備。")}<br />
+            {t("初めての方でも、自分のペースで続けやすいジムです。")}
           </p>
         </motion.div>
 
@@ -164,7 +167,7 @@ function GymIdentitySection() {
         >
           {reasonsEvidenceChips.map((chip, i) => (
             <span key={i} className="reasons-chip" data-testid={`chip-reason-${i}`}>
-              {chip}
+              {t(chip)}
             </span>
           ))}
         </motion.div>
@@ -176,7 +179,7 @@ function GymIdentitySection() {
           viewport={{ once: true }}
           variants={fadeInUp}
         >
-          <p className="reasons-cta__lead">まずは実際の雰囲気を、無料体験や見学でお確かめください</p>
+          <p className="reasons-cta__lead">{t("まずは実際の雰囲気を、無料体験や見学でお確かめください")}</p>
           <a
             href={gymConfig.sns.line}
             target="_blank"
@@ -185,9 +188,9 @@ function GymIdentitySection() {
             data-testid="button-reasons-line"
           >
             <SiLine className="w-5 h-5" />
-            見学・無料体験を予約する
+            {t("見学・無料体験を予約する")}
           </a>
-          <Link href="/contact" className="reasons-cta__text-link" data-testid="link-reasons-contact">ご不安な点などの相談はこちら →</Link>
+          <Link href="/contact" className="reasons-cta__text-link" data-testid="link-reasons-contact">{t("ご不安な点などの相談はこちら →")}</Link>
         </motion.div>
       </div>
     </section>
@@ -239,6 +242,7 @@ const faqItems = [
 ];
 
 function FAQSection() {
+  const t = useT();
   return (
     <section className="faq-section">
       <div className="faq-section__inner">
@@ -249,8 +253,8 @@ function FAQSection() {
           variants={fadeInUp}
           className="faq-section__header"
         >
-          <h2 className="faq-section__title">はじめてでも大丈夫？ よくあるご質問</h2>
-          <p className="faq-section__lead">体験前に気になることを、よくある質問からまとめました。</p>
+          <h2 className="faq-section__title">{t("はじめてでも大丈夫？ よくあるご質問")}</h2>
+          <p className="faq-section__lead">{t("体験前に気になることを、よくある質問からまとめました。")}</p>
         </motion.div>
 
         <motion.div
@@ -264,14 +268,14 @@ function FAQSection() {
             <motion.div key={i} variants={fadeInUp} className="faq-card" data-testid={`card-faq-${i}`}>
               <div className="faq-card__question">
                 <span className="faq-card__q-label">Q</span>
-                <p className="faq-card__q-text">{item.q}</p>
+                <p className="faq-card__q-text">{t(item.q)}</p>
               </div>
               <div className="faq-card__divider" />
               <div className="faq-card__answer">
                 <span className="faq-card__a-label">A</span>
                 <div className="faq-card__a-content">
-                  <p className="faq-card__a-lead">{item.aLead}</p>
-                  <p className="faq-card__a-text">{item.aBody}</p>
+                  <p className="faq-card__a-lead">{t(item.aLead)}</p>
+                  <p className="faq-card__a-text">{t(item.aBody)}</p>
                 </div>
               </div>
             </motion.div>
@@ -283,6 +287,7 @@ function FAQSection() {
 }
 
 function InstagramAtmosphereSection() {
+  const t = useT();
   const igThumbs = [
     { image: "/images/gym-kickboxing-woman.webp", alt: "キックボクシングトレーニングの様子" },
     { image: "/images/class-kickboxing.webp", alt: "初心者向けキックボクシングレッスン" },
@@ -303,8 +308,8 @@ function InstagramAtmosphereSection() {
           className="ig-atmosphere-section__header"
         >
           <SiInstagram className="w-8 h-8 text-[#F0A93A] mx-auto mb-4" />
-          <h2 className="ig-atmosphere-section__title">実際の雰囲気は、Instagramで見られます</h2>
-          <p className="ig-atmosphere-section__lead">練習風景や日常の様子を通じて、ジムの空気感や通いやすさが分かります。</p>
+          <h2 className="ig-atmosphere-section__title">{t("実際の雰囲気は、Instagramで見られます")}</h2>
+          <p className="ig-atmosphere-section__lead">{t("練習風景や日常の様子を通じて、ジムの空気感や通いやすさが分かります。")}</p>
         </motion.div>
 
         <motion.div
@@ -324,7 +329,7 @@ function InstagramAtmosphereSection() {
               className="ig-atmosphere-section__thumb"
               data-testid={`link-ig-thumb-${i}`}
             >
-              <img src={thumb.image} alt={thumb.alt} loading="lazy" className="ig-atmosphere-section__thumb-img" />
+              <img src={thumb.image} alt={t(thumb.alt)} loading="lazy" className="ig-atmosphere-section__thumb-img" />
               <div className="ig-atmosphere-section__thumb-overlay">
                 <SiInstagram className="w-5 h-5 text-white" />
               </div>
@@ -345,7 +350,7 @@ function InstagramAtmosphereSection() {
             </div>
             <div>
               <p className="ig-atmosphere-section__banner-follow">FOLLOW US</p>
-              <p className="ig-atmosphere-section__banner-heading">練習風景・日常を公開中！！</p>
+              <p className="ig-atmosphere-section__banner-heading">{t("練習風景・日常を公開中！！")}</p>
               <p className="ig-atmosphere-section__banner-handle">@deep.amagasaki</p>
             </div>
           </div>
@@ -353,15 +358,15 @@ function InstagramAtmosphereSection() {
             <div className="ig-atmosphere-section__banner-promo">
               <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 6 }}>
                 <SiInstagram className="w-4 h-4 text-[#F0A93A]" />
-                <span style={{ color: "#F0A93A", fontSize: 11, fontWeight: 900, letterSpacing: "0.14em" }}>期間限定特典</span>
+                <span style={{ color: "#F0A93A", fontSize: 11, fontWeight: 900, letterSpacing: "0.14em" }}>{t("期間限定特典")}</span>
               </div>
               <p style={{ fontSize: "clamp(15px,2vw,18px)", fontWeight: 900, lineHeight: 1.25, marginBottom: 4 }}>
-                インスタをフォローして<br />
-                <span style={{ color: "#F0A93A", fontSize: "clamp(18px,2.5vw,22px)" }}>体験料2,000円→無料</span>
+                {t("インスタをフォローして")}<br />
+                <span style={{ color: "#F0A93A", fontSize: "clamp(18px,2.5vw,22px)" }}>{t("体験料2,000円→無料")}</span>
               </p>
               <span className="ig-atmosphere-section__banner-promo-sub" style={{ fontSize: 11 }}>
-                ① @deep.amagasaki をフォロー<br />
-                ② DMまたはLINEで「フォローしました」と送るだけ
+                {t("① @deep.amagasaki をフォロー")}<br />
+                {t("② DMまたはLINEで「フォローしました」と送るだけ")}
               </span>
             </div>
             <a
@@ -372,7 +377,7 @@ function InstagramAtmosphereSection() {
               className="ig-atmosphere-section__btn"
             >
               <SiInstagram className="w-4 h-4" />
-              @deep.amagasaki をフォローする
+              {t("@deep.amagasaki をフォローする")}
             </a>
           </div>
         </motion.div>
@@ -382,6 +387,7 @@ function InstagramAtmosphereSection() {
 }
 
 function TestimonialsGridSection() {
+  const t = useT();
   return (
     <section className="testimonials-grid-section">
       <div className="testimonials-grid-section__inner">
@@ -392,8 +398,8 @@ function TestimonialsGridSection() {
           variants={fadeInUp}
           className="testimonials-grid-section__header"
         >
-          <h2 className="testimonials-grid-section__title">実際に通っている方の声</h2>
-          <p className="testimonials-grid-section__lead">はじめての方や、運動が久しぶりの方からも、通いやすさについての声をいただいています。</p>
+          <h2 className="testimonials-grid-section__title">{t("実際に通っている方の声")}</h2>
+          <p className="testimonials-grid-section__lead">{t("はじめての方や、運動が久しぶりの方からも、通いやすさについての声をいただいています。")}</p>
         </motion.div>
 
         <motion.div
@@ -403,10 +409,10 @@ function TestimonialsGridSection() {
           viewport={{ once: true }}
           variants={staggerContainer}
         >
-          {testimonials.map((t, i) => (
+          {testimonials.map((item, i) => (
             <motion.div key={i} variants={scaleIn} className="testimonial-card" data-testid={`card-testimonial-${i}`}>
-              <p className="testimonial-card__meta">{t.meta}</p>
-              <p className="testimonial-card__text">「{t.text}」</p>
+              <p className="testimonial-card__meta">{t(item.meta)}</p>
+              <p className="testimonial-card__text">「{t(item.text)}」</p>
             </motion.div>
           ))}
         </motion.div>
@@ -435,6 +441,7 @@ const openingOfferItems = [
 ];
 
 function OpeningOfferSection() {
+  const t = useT();
   return (
     <section className="opening-offer-section">
       <div className="opening-offer-section__inner">
@@ -445,14 +452,14 @@ function OpeningOfferSection() {
           variants={fadeInUp}
           className="opening-offer-section__header"
         >
-          <p className="opening-offer-section__eyebrow text-[24px]">過去最大キャンペーン</p>
+          <p className="opening-offer-section__eyebrow text-[24px]">{t("過去最大キャンペーン")}</p>
           <h2 className="opening-offer-section__title">
-            夏までに変わる。
-            <span>4大特典</span>
+            {t("夏までに変わる。")}
+            <span>{t("4大特典")}</span>
           </h2>
           <p className="opening-offer-section__lead">
-            5月7日〜7月31日の期間限定。<br />
-            まずは無料体験から気軽にどうぞ。
+            {t("5月7日〜7月31日の期間限定。")}<br />
+            {t("まずは無料体験から気軽にどうぞ。")}
           </p>
         </motion.div>
 
@@ -466,11 +473,11 @@ function OpeningOfferSection() {
         >
           {openingOfferItems.map((item) => (
             <motion.div key={item.id} variants={scaleIn} className="opening-offer-card">
-              <div className="opening-offer-card__label">{item.label}</div>
+              <div className="opening-offer-card__label">{t(item.label)}</div>
               <div className="opening-offer-card__body">
                 <div>
-                  <p className="opening-offer-card__title">{item.title}</p>
-                  <p className="opening-offer-card__original">{item.originalPrice}</p>
+                  <p className="opening-offer-card__title">{t(item.title)}</p>
+                  <p className="opening-offer-card__original">{t(item.originalPrice)}</p>
                 </div>
                 <div style={{ textAlign: "right", lineHeight: 1 }}>
                   <p style={{
@@ -488,7 +495,7 @@ function OpeningOfferSection() {
                     fontWeight: 800,
                     letterSpacing: "0.12em",
                     color: "#8C7B72",
-                  }}>{item.benefit}</p>
+                  }}>{t(item.benefit)}</p>
                 </div>
               </div>
             </motion.div>
@@ -515,14 +522,14 @@ function OpeningOfferSection() {
           >
             {/* 特典④ラベル */}
             <div className="px-5 pt-4 pb-0 flex items-center gap-2">
-              <span style={{ background: "rgba(234,165,59,0.18)", color: "#EAA53B", fontSize: 11, fontWeight: 900, padding: "3px 12px", borderRadius: 999, letterSpacing: "0.1em" }}>特典④</span>
-              <span style={{ color: "rgba(255,255,255,0.4)", fontSize: 11, letterSpacing: "0.12em" }}>当日入会限定</span>
+              <span style={{ background: "rgba(234,165,59,0.18)", color: "#EAA53B", fontSize: 11, fontWeight: 900, padding: "3px 12px", borderRadius: 999, letterSpacing: "0.1em" }}>{t("特典④")}</span>
+              <span style={{ color: "rgba(255,255,255,0.4)", fontSize: 11, letterSpacing: "0.12em" }}>{t("当日入会限定")}</span>
             </div>
 
             {/* メインコピー */}
             <div className="px-5 pt-3 pb-3 text-center" style={{ borderBottom: "1px solid rgba(234,165,59,0.15)" }}>
               <div style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "linear-gradient(90deg,#EAA53B,#F5C96A)", borderRadius: 999, padding: "4px 16px", marginBottom: 8 }}>
-                <span style={{ color: "#0B0F15", fontSize: 13, fontWeight: 900, letterSpacing: "0.08em" }}>🔥 先着50名限定</span>
+                <span style={{ color: "#0B0F15", fontSize: 13, fontWeight: 900, letterSpacing: "0.08em" }}>{t("🔥 先着50名限定")}</span>
               </div>
               <p style={{
                 color: "#EAA53B",
@@ -533,7 +540,7 @@ function OpeningOfferSection() {
                 fontFamily: "Oswald, sans-serif",
                 letterSpacing: "0.02em",
               }}>
-                月会費が永久にOFF！！
+                {t("月会費が永久にOFF！！")}
               </p>
             </div>
 
@@ -541,35 +548,35 @@ function OpeningOfferSection() {
             <div className="px-5 pt-4 pb-5">
               {/* 女性 */}
               <div className="mb-4">
-                <p style={{ color: "rgba(234,165,59,0.7)", fontSize: 11, fontWeight: 800, letterSpacing: "0.14em", marginBottom: 3 }}>女性フルタイム</p>
+                <p style={{ color: "rgba(234,165,59,0.7)", fontSize: 11, fontWeight: 800, letterSpacing: "0.14em", marginBottom: 3 }}>{t("女性フルタイム")}</p>
                 <div className="flex items-baseline gap-2">
-                  <span style={{ color: "rgba(255,255,255,0.35)", fontSize: "clamp(15px,1.8vw,20px)", fontWeight: 700 }}>通常</span>
-                  <span style={{ color: "rgba(255,255,255,0.35)", fontSize: "clamp(18px,2.2vw,26px)", fontWeight: 800, textDecoration: "line-through" }}>11,000円</span>
-                  <span style={{ color: "rgba(255,255,255,0.35)", fontSize: "clamp(15px,1.8vw,20px)", fontWeight: 700 }}>が</span>
+                  <span style={{ color: "rgba(255,255,255,0.35)", fontSize: "clamp(15px,1.8vw,20px)", fontWeight: 700 }}>{t("通常")}</span>
+                  <span style={{ color: "rgba(255,255,255,0.35)", fontSize: "clamp(18px,2.2vw,26px)", fontWeight: 800, textDecoration: "line-through" }}>{t("11,000円")}</span>
+                  <span style={{ color: "rgba(255,255,255,0.35)", fontSize: "clamp(15px,1.8vw,20px)", fontWeight: 700 }}>{t("が")}</span>
                 </div>
                 <div className="flex items-baseline gap-2 mt-0.5">
-                  <span style={{ color: "#FFFFFF", fontSize: "clamp(16px,1.8vw,20px)", fontWeight: 700 }}>ずっと</span>
-                  <span style={{ color: "#EAA53B", fontSize: "clamp(32px,4.2vw,50px)", fontWeight: 900, lineHeight: 1, fontFamily: "Oswald, sans-serif" }}>9,900円</span>
-                  <span style={{ color: "#FFFFFF", fontSize: "clamp(14px,1.4vw,17px)", fontWeight: 700 }}>で通い放題！</span>
+                  <span style={{ color: "#FFFFFF", fontSize: "clamp(16px,1.8vw,20px)", fontWeight: 700 }}>{t("ずっと")}</span>
+                  <span style={{ color: "#EAA53B", fontSize: "clamp(32px,4.2vw,50px)", fontWeight: 900, lineHeight: 1, fontFamily: "Oswald, sans-serif" }}>{t("9,900円")}</span>
+                  <span style={{ color: "#FFFFFF", fontSize: "clamp(14px,1.4vw,17px)", fontWeight: 700 }}>{t("で通い放題！")}</span>
                 </div>
               </div>
 
               {/* 男性 */}
               <div style={{ borderTop: "1px solid rgba(234,165,59,0.12)", paddingTop: 14 }}>
-                <p style={{ color: "rgba(234,165,59,0.7)", fontSize: 11, fontWeight: 800, letterSpacing: "0.14em", marginBottom: 3 }}>男性フルタイム</p>
+                <p style={{ color: "rgba(234,165,59,0.7)", fontSize: 11, fontWeight: 800, letterSpacing: "0.14em", marginBottom: 3 }}>{t("男性フルタイム")}</p>
                 <div className="flex items-baseline gap-2">
-                  <span style={{ color: "rgba(255,255,255,0.35)", fontSize: "clamp(15px,1.8vw,20px)", fontWeight: 700 }}>通常</span>
-                  <span style={{ color: "rgba(255,255,255,0.35)", fontSize: "clamp(18px,2.2vw,26px)", fontWeight: 800, textDecoration: "line-through" }}>13,200円</span>
-                  <span style={{ color: "rgba(255,255,255,0.35)", fontSize: "clamp(15px,1.8vw,20px)", fontWeight: 700 }}>が</span>
+                  <span style={{ color: "rgba(255,255,255,0.35)", fontSize: "clamp(15px,1.8vw,20px)", fontWeight: 700 }}>{t("通常")}</span>
+                  <span style={{ color: "rgba(255,255,255,0.35)", fontSize: "clamp(18px,2.2vw,26px)", fontWeight: 800, textDecoration: "line-through" }}>{t("13,200円")}</span>
+                  <span style={{ color: "rgba(255,255,255,0.35)", fontSize: "clamp(15px,1.8vw,20px)", fontWeight: 700 }}>{t("が")}</span>
                 </div>
                 <div className="flex items-baseline gap-2 mt-0.5">
-                  <span style={{ color: "#FFFFFF", fontSize: "clamp(16px,1.8vw,20px)", fontWeight: 700 }}>ずっと</span>
-                  <span style={{ color: "#EAA53B", fontSize: "clamp(32px,4.2vw,50px)", fontWeight: 900, lineHeight: 1, fontFamily: "Oswald, sans-serif" }}>12,100円</span>
-                  <span style={{ color: "#FFFFFF", fontSize: "clamp(14px,1.4vw,17px)", fontWeight: 700 }}>で通い放題！</span>
+                  <span style={{ color: "#FFFFFF", fontSize: "clamp(16px,1.8vw,20px)", fontWeight: 700 }}>{t("ずっと")}</span>
+                  <span style={{ color: "#EAA53B", fontSize: "clamp(32px,4.2vw,50px)", fontWeight: 900, lineHeight: 1, fontFamily: "Oswald, sans-serif" }}>{t("12,100円")}</span>
+                  <span style={{ color: "#FFFFFF", fontSize: "clamp(14px,1.4vw,17px)", fontWeight: 700 }}>{t("で通い放題！")}</span>
                 </div>
               </div>
 
-              <p style={{ color: "rgba(255,255,255,0.25)", fontSize: 11, marginTop: 14, textAlign: "center" }}>継続縛りなし・いつでも退会可</p>
+              <p style={{ color: "rgba(255,255,255,0.25)", fontSize: 11, marginTop: 14, textAlign: "center" }}>{t("継続縛りなし・いつでも退会可")}</p>
             </div>
           </motion.div>
 
@@ -582,9 +589,9 @@ function OpeningOfferSection() {
           variants={fadeInUp}
           className="opening-offer-section__value"
         >
-          <p className="opening-offer-section__value-label">入会月の節約額</p>
-          <p className="opening-offer-section__value-main">最大 23,000円〜</p>
-          <p className="opening-offer-section__value-sub">＋月会費永久割引が継続します</p>
+          <p className="opening-offer-section__value-label">{t("入会月の節約額")}</p>
+          <p className="opening-offer-section__value-main">{t("最大 23,000円〜")}</p>
+          <p className="opening-offer-section__value-sub">{t("＋月会費永久割引が継続します")}</p>
         </motion.div>
 
         <motion.div
@@ -594,10 +601,10 @@ function OpeningOfferSection() {
           variants={fadeInUp}
           className="opening-offer-section__assurance"
         >
-          <span>体験料 2,000円 → 無料</span>
-          <span>入会金 10,000円 → 無料</span>
-          <span>縛りなし・いつでも退会可</span>
-          <span>運動初心者の方も歓迎</span>
+          <span>{t("体験料 2,000円 → 無料")}</span>
+          <span>{t("入会金 10,000円 → 無料")}</span>
+          <span>{t("縛りなし・いつでも退会可")}</span>
+          <span>{t("運動初心者の方も歓迎")}</span>
         </motion.div>
 
         <motion.div
@@ -615,14 +622,14 @@ function OpeningOfferSection() {
             className="opening-offer-section__cta-primary"
           >
             <SiLine className="w-5 h-5" />
-            LINEで無料体験を予約する
+            {t("LINEで無料体験を予約する")}
           </a>
           <Link
             href="/contact"
             data-testid="button-home-offer-contact"
             className="opening-offer-section__cta-secondary"
-          >ご不安な点などを相談する</Link>
-          <p className="opening-offer-section__cta-note">返信は営業時間内に順次対応</p>
+          >{t("ご不安な点などを相談する")}</Link>
+          <p className="opening-offer-section__cta-note">{t("返信は営業時間内に順次対応")}</p>
         </motion.div>
       </div>
     </section>
@@ -630,6 +637,7 @@ function OpeningOfferSection() {
 }
 
 export default function Home() {
+  const t = useT();
   const heroRef = useRef<HTMLDivElement>(null);
   const videoRefA = useRef<HTMLVideoElement>(null);
   const videoRefB = useRef<HTMLVideoElement>(null);
@@ -746,7 +754,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
           >
-            <span className="hero-v2__logo text-[16px]">DEEP.FIT｜JR尼崎駅徒歩10分のサーキットトレーニング×キックボクシングジム</span>
+            <span className="hero-v2__logo text-[16px]">{t("DEEP.FIT｜JR尼崎駅徒歩10分のサーキットトレーニング×キックボクシングジム")}</span>
           </motion.div>
 
           <motion.div
@@ -755,9 +763,9 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.18, duration: 0.6, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
           >
-            <span className="hero-v2__label">はじめてでも安心</span>
-            <span className="hero-v2__label">女性が多く通うジム</span>
-            <span className="hero-v2__label">まずは気楽に体験から</span>
+            <span className="hero-v2__label">{t("はじめてでも安心")}</span>
+            <span className="hero-v2__label">{t("女性が多く通うジム")}</span>
+            <span className="hero-v2__label">{t("まずは気楽に体験から")}</span>
           </motion.div>
 
           <motion.div
@@ -767,9 +775,9 @@ export default function Home() {
             transition={{ delay: 0.28, duration: 0.7, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
           >
             <h1 data-testid="text-hero-headline">
-              <span className="sr-only">DEEP.FIT（ディープフィット）｜JR尼崎駅徒歩10分のキックボクシング・サーキットトレーニングジム</span>
-              <span aria-hidden="true">楽しいから続く。</span>
-              <span aria-hidden="true">続くから変わる。</span>
+              <span className="sr-only">{t("DEEP.FIT（ディープフィット）｜JR尼崎駅徒歩10分のキックボクシング・サーキットトレーニングジム")}</span>
+              <span aria-hidden="true">{t("楽しいから続く。")}</span>
+              <span aria-hidden="true">{t("続くから変わる。")}</span>
             </h1>
           </motion.div>
 
@@ -782,8 +790,8 @@ export default function Home() {
               data-testid="text-hero-subheadline"
             >
               <p>
-                運動が久しぶりの方も多く通っています。<br />
-                体を動かして、気分まで軽くなる時間を。
+                {t("運動が久しぶりの方も多く通っています。")}<br />
+                {t("体を動かして、気分まで軽くなる時間を。")}
               </p>
             </motion.div>
           </div>
@@ -802,9 +810,9 @@ export default function Home() {
               data-testid="button-line-cta"
             >
               <SiLine style={{ width: 18, height: 18, flexShrink: 0 }} />
-              LINEで無料体験予約
+              {t("LINEで無料体験予約")}
             </a>
-            <p className="hero-v2__cta-note ml-[0px] mr-[0px]">見学・体験だけでも大歓迎です！</p>
+            <p className="hero-v2__cta-note ml-[0px] mr-[0px]">{t("見学・体験だけでも大歓迎です！")}</p>
           </motion.div>
         </div>
       </section>
@@ -828,16 +836,16 @@ export default function Home() {
                 <p className="text-white/70 text-xs tracking-[0.3em] uppercase">Official LINE</p>
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 leading-tight">
-                自分に合うか不安な方は、<br />まずはLINEでご相談ください
+                {t("自分に合うか不安な方は、")}<br />{t("まずはLINEでご相談ください")}
               </h2>
               <p className="text-white/80 mb-6 leading-relaxed text-sm sm:text-base">
-                見学だけ、体験だけ、空き枠確認だけでも大丈夫です。<br />
-                運動が久しぶりの方もお気軽にご相談ください。
+                {t("見学だけ、体験だけ、空き枠確認だけでも大丈夫です。")}<br />
+                {t("運動が久しぶりの方もお気軽にご相談ください。")}
               </p>
 
               <div className="flex flex-wrap gap-2 mb-6">
                 {["無理な勧誘なし", "見学だけでもOK", "初心者歓迎", "一人参加OK"].map((chip, i) => (
-                  <span key={i} className="bg-white/15 border border-white/20 text-white/90 text-xs px-3 py-1.5 rounded-full">{chip}</span>
+                  <span key={i} className="bg-white/15 border border-white/20 text-white/90 text-xs px-3 py-1.5 rounded-full">{t(chip)}</span>
                 ))}
               </div>
 
@@ -850,14 +858,14 @@ export default function Home() {
                   className="inline-flex items-center justify-center gap-2 bg-white text-[#06C755] font-bold px-7 py-3 rounded-full text-sm transition-all duration-200 hover:scale-105 shadow-lg"
                 >
                   <SiLine className="w-5 h-5" />
-                  LINEで無料体験を予約する
+                  {t("LINEで無料体験を予約する")}
                 </a>
                 <Link
                   href="/contact"
                   className="inline-flex items-center justify-center gap-2 bg-white/15 border border-white/25 text-white font-medium px-6 py-3 rounded-full text-sm transition-all duration-200 hover:bg-white/25"
                   data-testid="link-line-contact"
                 >
-                  見学・体験を相談する
+                  {t("見学・体験を相談する")}
                 </Link>
               </div>
             </motion.div>
@@ -877,13 +885,13 @@ export default function Home() {
                     </div>
                     <div>
                       <p className="text-white font-bold text-sm">DEEP.FIT</p>
-                      <p className="text-white/70 text-xs">公式アカウント</p>
+                      <p className="text-white/70 text-xs">{t("公式アカウント")}</p>
                     </div>
                   </div>
                   <div className="space-y-3 px-1 max-h-80 overflow-hidden">
                     <div className="flex justify-end">
                       <div className="bg-[#06C755] text-white text-xs px-3 py-2 rounded-2xl rounded-tr-sm max-w-[70%]">
-                        体験希望
+                        {t("体験希望")}
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
@@ -891,13 +899,13 @@ export default function Home() {
                         <img src={deepFitLogo} alt="DEEP.FIT" className="w-full h-full object-contain p-0.5" />
                       </div>
                       <div className="bg-white text-[#333] text-xs px-3 py-2.5 rounded-2xl rounded-tl-sm max-w-[85%] leading-relaxed shadow-sm space-y-1">
-                        <p>○○さん</p>
-                        <p>はじめまして！DEEP.FITです。</p>
-                        <p>友だち追加ありがとうございます😉</p>
-                        <p className="mt-1">当ジムはダイエット・運動不足などが目的のジムです！😆</p>
-                        <p>20歳から70歳までの会員様が在籍しております</p>
-                        <p>女性の方でも気軽にご利用できます😇</p>
-                        <p className="mt-1">運動経験なくてもスタートできるようになってますので、お気軽にご連絡ください😆</p>
+                        <p>{t("○○さん")}</p>
+                        <p>{t("はじめまして！DEEP.FITです。")}</p>
+                        <p>{t("友だち追加ありがとうございます😉")}</p>
+                        <p className="mt-1">{t("当ジムはダイエット・運動不足などが目的のジムです！😆")}</p>
+                        <p>{t("20歳から70歳までの会員様が在籍しております")}</p>
+                        <p>{t("女性の方でも気軽にご利用できます😇")}</p>
+                        <p className="mt-1">{t("運動経験なくてもスタートできるようになってますので、お気軽にご連絡ください😆")}</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
@@ -905,18 +913,18 @@ export default function Home() {
                         <img src={deepFitLogo} alt="DEEP.FIT" className="w-full h-full object-contain p-0.5" />
                       </div>
                       <div className="bg-white text-[#333] text-xs px-3 py-2.5 rounded-2xl rounded-tl-sm max-w-[85%] leading-relaxed shadow-sm space-y-1">
-                        <p className="font-semibold text-[#06C755]">📸 インスタフォローで体験無料！</p>
-                        <p>体験・見学希望の方は↓</p>
-                        <p>📅 体験予約希望日</p>
-                        <p>👤 性別 / 年齢（任意）</p>
-                        <p>🏃 スポーツ経験</p>
-                        <p className="text-[#4D5058]/50 mt-1">近隣に駐車場あり🅿️</p>
+                        <p className="font-semibold text-[#06C755]">{t("📸 インスタフォローで体験無料！")}</p>
+                        <p>{t("体験・見学希望の方は↓")}</p>
+                        <p>{t("📅 体験予約希望日")}</p>
+                        <p>{t("👤 性別 / 年齢（任意）")}</p>
+                        <p>{t("🏃 スポーツ経験")}</p>
+                        <p className="text-[#4D5058]/50 mt-1">{t("近隣に駐車場あり🅿️")}</p>
                       </div>
                     </div>
                   </div>
                   <div className="mt-3 bg-white/60 rounded-full px-4 py-2 flex items-center gap-2">
                     <MessageCircle className="w-4 h-4 text-[#06C755]/60" />
-                    <p className="text-[#333]/40 text-xs">メッセージを入力...</p>
+                    <p className="text-[#333]/40 text-xs">{t("メッセージを入力...")}</p>
                   </div>
                 </div>
               </div>
@@ -941,8 +949,8 @@ export default function Home() {
             className="text-center mb-14"
           >
             <p className="text-[#F0A93A] text-xs tracking-[0.3em] uppercase mb-3">Classes</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#4D5058]">目的に合わせて選べるクラス</h2>
-            <p className="text-[#4D5058]/60 text-sm mt-3">どんな目的でも、合うトレーニングが見つかります</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#4D5058]">{t("目的に合わせて選べるクラス")}</h2>
+            <p className="text-[#4D5058]/60 text-sm mt-3">{t("どんな目的でも、合うトレーニングが見つかります")}</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -961,7 +969,7 @@ export default function Home() {
                   <div className="absolute inset-0 overflow-hidden">
                     <img
                       src={cls.image}
-                      alt={cls.alt}
+                      alt={t(cls.alt)}
                       loading="lazy"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 brightness-[1.06]"
                     />
@@ -969,23 +977,23 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#4D5058]/28 to-[#4D5058]/82" />
                   <div className="absolute top-4 left-4 flex flex-wrap gap-1.5">
                     <span className="text-[10px] tracking-wider font-medium bg-[#F0A93A] text-white px-3 py-1 rounded-full uppercase">
-                      {cls.level}
+                      {t(cls.level)}
                     </span>
                     {cls.beginnerOk && (
                       <span className="text-[10px] tracking-wider font-medium bg-white/20 text-white px-2.5 py-1 rounded-full backdrop-blur-sm">
-                        初心者OK
+                        {t("初心者OK")}
                       </span>
                     )}
                   </div>
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <p className="text-white/50 text-xs tracking-[0.2em] uppercase mb-1">{cls.subtitle}</p>
-                    <h3 className="text-white font-bold text-xl mb-2">{cls.title}</h3>
-                    <p className="text-white/70 text-xs leading-relaxed mb-3">{cls.description}</p>
+                    <h3 className="text-white font-bold text-xl mb-2">{t(cls.title)}</h3>
+                    <p className="text-white/70 text-xs leading-relaxed mb-3">{t(cls.description)}</p>
                     <div className="flex flex-wrap gap-2">
-                      <span className="text-[10px] bg-white/10 text-white/80 px-2 py-0.5 rounded-full border border-white/10">{cls.target}</span>
-                      <span className="text-[10px] bg-white/10 text-white/80 px-2 py-0.5 rounded-full border border-white/10">{cls.duration}</span>
+                      <span className="text-[10px] bg-white/10 text-white/80 px-2 py-0.5 rounded-full border border-white/10">{t(cls.target)}</span>
+                      <span className="text-[10px] bg-white/10 text-white/80 px-2 py-0.5 rounded-full border border-white/10">{t(cls.duration)}</span>
                       <span className="text-[10px] bg-white/10 text-white/80 px-2 py-0.5 rounded-full border border-white/10">
-                        強度{"★".repeat(cls.intensity)}{"☆".repeat(3 - cls.intensity)}
+                        {t("強度")}{"★".repeat(cls.intensity)}{"☆".repeat(3 - cls.intensity)}
                       </span>
                     </div>
                   </div>
@@ -1006,7 +1014,7 @@ export default function Home() {
               data-testid="button-view-all-classes"
               className="inline-flex items-center gap-2 bg-[#F2AC55] text-white px-8 py-3 rounded-full text-sm font-bold hover:bg-[#D99A40] transition-colors duration-200 shadow-md"
             >
-              全てのクラスを見る <ArrowRight className="w-4 h-4" />
+              {t("全てのクラスを見る")} <ArrowRight className="w-4 h-4" />
             </Link>
           </motion.div>
         </div>
@@ -1023,29 +1031,29 @@ export default function Home() {
           className="relative z-10 max-w-3xl mx-auto px-4 text-center"
         >
           <p className="text-white/70 text-xs tracking-[0.3em] uppercase mb-3">Trial</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">まずは無料体験からお試しください</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">{t("まずは無料体験からお試しください")}</h2>
           <p className="text-white/80 mb-8 leading-relaxed text-sm sm:text-base">
-            ジムの雰囲気や通いやすさを、実際に見てから判断していただけます。
+            {t("ジムの雰囲気や通いやすさを、実際に見てから判断していただけます。")}
           </p>
 
           <div className="final-cta-section__info">
             <div className="final-cta-section__info-item">
-              <span className="final-cta-section__info-label">体験料</span>
-              <span className="final-cta-section__info-value">無料</span>
+              <span className="final-cta-section__info-label">{t("体験料")}</span>
+              <span className="final-cta-section__info-value">{t("無料")}</span>
             </div>
             <div className="final-cta-section__info-item">
-              <span className="final-cta-section__info-label">持ち物</span>
-              <span className="final-cta-section__info-value">動きやすい服装だけ</span>
+              <span className="final-cta-section__info-label">{t("持ち物")}</span>
+              <span className="final-cta-section__info-value">{t("動きやすい服装だけ")}</span>
             </div>
             <div className="final-cta-section__info-item">
-              <span className="final-cta-section__info-label">見学</span>
-              <span className="final-cta-section__info-value">見学だけでもOK</span>
+              <span className="final-cta-section__info-label">{t("見学")}</span>
+              <span className="final-cta-section__info-value">{t("見学だけでもOK")}</span>
             </div>
           </div>
 
           <div className="flex flex-wrap justify-center gap-2 mb-8">
             {["無理な勧誘なし", "おひとり様歓迎", "運動初心者の方も安心"].map((chip, i) => (
-              <span key={i} className="bg-white/15 border border-white/25 text-white/90 text-xs px-3 py-1.5 rounded-full">{chip}</span>
+              <span key={i} className="bg-white/15 border border-white/25 text-white/90 text-xs px-3 py-1.5 rounded-full">{t(chip)}</span>
             ))}
           </div>
 
@@ -1058,14 +1066,14 @@ export default function Home() {
               className="inline-flex items-center gap-2 bg-white text-[#D99A40] font-bold px-8 py-3 rounded-full text-base transition-all duration-200 hover:scale-105 shadow-lg"
             >
               <SiLine className="w-5 h-5 text-[#06C755]" />
-              無料体験を予約する
+              {t("無料体験を予約する")}
             </a>
             <Link
               href="/contact"
               data-testid="button-contact-cta"
               className="border-2 border-white/60 text-white px-8 py-3 rounded-full text-base font-medium hover:bg-white/10 transition-all duration-200"
             >
-              見学・体験を相談する
+              {t("見学・体験を相談する")}
             </Link>
           </div>
         </motion.div>

@@ -3,6 +3,7 @@ import { Award, Medal } from "lucide-react";
 import { Link } from "wouter";
 import SEO from "@/components/SEO";
 import { seoConfig } from "@/lib/gymConfig";
+import { useT } from "@/lib/i18n";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -66,6 +67,7 @@ const instructors = [
 ];
 
 export default function Instructors() {
+  const t = useT();
   return (
     <>
       <SEO title={seoConfig.pages.instructors.title} description={seoConfig.pages.instructors.description} path="/instructors" />
@@ -96,7 +98,7 @@ export default function Instructors() {
             transition={{ delay: 0.3, duration: 0.65 }}
             className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight"
           >
-            インストラクター紹介
+            {t("インストラクター紹介")}
           </motion.h1>
           <motion.div
             initial={{ scaleX: 0 }}
@@ -126,13 +128,13 @@ export default function Instructors() {
                     <div className={`relative rounded-md overflow-hidden ${inst.aspect ?? "aspect-[4/3]"}`}>
                       <img
                         src={inst.image}
-                        alt={`DEEP.FITインストラクター ${inst.nameJa}（${inst.role}）`}
+                        alt={`${t("DEEP.FITインストラクター")} ${t(inst.nameJa)}（${t(inst.role)}）`}
                         loading="lazy"
                         className="w-full h-full object-cover object-top"
                       />
                       <div className="absolute bottom-0 left-0 right-0 bg-[#4D5058]/80 backdrop-blur-sm px-5 py-4">
                         <p className="text-[#F2AC55] text-xs tracking-wider font-medium">{inst.nameEn}</p>
-                        <p className="text-white/60 text-xs">{inst.role}</p>
+                        <p className="text-white/60 text-xs">{t(inst.role)}</p>
                       </div>
                     </div>
                   </motion.div>
@@ -147,27 +149,27 @@ export default function Instructors() {
                     <div className="flex flex-wrap gap-2 mb-4">
                       {inst.specialties.map((s, j) => (
                         <span key={j} className="bg-[#F2AC55]/10 text-[#D99A40] text-xs px-3 py-1 rounded-full font-medium">
-                          {s}
+                          {t(s)}
                         </span>
                       ))}
                     </div>
-                    <h2 className="text-2xl sm:text-3xl font-bold text-[#4D5058] mb-1">{inst.nameJa}</h2>
-                    <p className="text-[#4D5058]/60 text-sm mb-2">{inst.role}</p>
+                    <h2 className="text-2xl sm:text-3xl font-bold text-[#4D5058] mb-1">{t(inst.nameJa)}</h2>
+                    <p className="text-[#4D5058]/60 text-sm mb-2">{t(inst.role)}</p>
                     <div className="flex items-center gap-2 mb-5">
                       <Medal className="w-4 h-4 text-[#F2AC55]" />
-                      <span className="text-[#4D5058]/70 text-sm">{inst.record}</span>
+                      <span className="text-[#4D5058]/70 text-sm">{t(inst.record)}</span>
                     </div>
-                    <p className="text-[#4D5058]/70 text-sm leading-relaxed mb-6">{inst.bio}</p>
+                    <p className="text-[#4D5058]/70 text-sm leading-relaxed mb-6">{t(inst.bio)}</p>
                     <div className="bg-[#FAF5EE] rounded-md p-5">
                       <h3 className="flex items-center gap-2 font-bold text-[#4D5058] text-sm mb-3">
                         <Award className="w-4 h-4 text-[#F2AC55]" />
-                        主な実績
+                        {t("主な実績")}
                       </h3>
                       <ul className="space-y-2">
                         {inst.achievements.map((a, j) => (
                           <li key={j} className="flex items-center gap-2 text-sm text-[#4D5058]/70">
                             <span className="w-1.5 h-1.5 rounded-full bg-[#F2AC55] shrink-0" />
-                            {a}
+                            {t(a)}
                           </li>
                         ))}
                       </ul>
@@ -195,17 +197,17 @@ export default function Instructors() {
         >
           <p className="text-white/80 text-xs tracking-[0.3em] uppercase mb-3">Join Us</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            一緒にトレーニングしませんか？
+            {t("一緒にトレーニングしませんか？")}
           </h2>
           <p className="text-white/80 text-sm mb-8">
-            経験豊富なインストラクターが、あなたの目標達成を全力でサポートします。
+            {t("経験豊富なインストラクターが、あなたの目標達成を全力でサポートします。")}
           </p>
           <Link
             href="/contact"
             data-testid="button-cta-instructors"
             className="inline-block bg-white text-[#D99A40] font-bold px-8 py-3 rounded-full text-base transition-all duration-200 shadow-lg hover:scale-105"
           >
-            無料体験を予約する
+            {t("無料体験を予約する")}
           </Link>
         </motion.div>
       </section>

@@ -3,6 +3,7 @@ import { Phone, Mail, MapPin, Instagram } from "lucide-react";
 import { SiX, SiLine } from "react-icons/si";
 import GymLogo from "./GymLogo";
 import { gymConfig } from "@/lib/gymConfig";
+import { useT } from "@/lib/i18n";
 
 const pageLinks = [
   { href: "/", label: "ホーム" },
@@ -14,6 +15,7 @@ const pageLinks = [
 ];
 
 export default function Footer() {
+  const t = useT();
   return (
     <footer className="bg-[#2C1F10] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
@@ -21,7 +23,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <GymLogo size="md" />
             <p className="mt-4 text-white/60 text-sm leading-relaxed">
-              兵庫県尼崎市のサーキット×キックボクシングジム。初心者から上級者まで、あなたの目標をサポートします。
+              {t("兵庫県尼崎市のサーキット×キックボクシングジム。初心者から上級者まで、あなたの目標をサポートします。")}
             </p>
             <div className="flex items-center gap-3 mt-5">
               <a
@@ -66,7 +68,7 @@ export default function Footer() {
                     href={link.href}
                     className="text-white/60 text-sm hover:text-[#F2AC55] transition-colors duration-200"
                   >
-                    {link.label}
+                    {t(link.label)}
                   </Link>
                 </li>
               ))}
@@ -90,15 +92,15 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-[#F2AC55] mt-0.5 shrink-0" />
-                <span className="text-white/70 text-sm">{gymConfig.address}</span>
+                <span className="text-white/70 text-sm">{t(gymConfig.address)}</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-[#F2AC55] mt-0.5 shrink-0 text-sm">🚲</span>
-                <span className="text-white/70 text-sm">駐輪スペースあり（バイクも可）</span>
+                <span className="text-white/70 text-sm">{t("駐輪スペースあり（バイクも可）")}</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-[#F2AC55] mt-0.5 shrink-0 text-sm">🚗</span>
-                <span className="text-white/70 text-sm">近隣にコインパーキングあり。お車でお越しの方はご利用ください。</span>
+                <span className="text-white/70 text-sm">{t("近隣にコインパーキングあり。お車でお越しの方はご利用ください。")}</span>
               </li>
             </ul>
           </div>
@@ -108,8 +110,8 @@ export default function Footer() {
             <ul className="space-y-2">
               {gymConfig.hoursDisplay.map((item, i) => (
                 <li key={i} className="flex justify-between gap-2 text-sm">
-                  <span className="text-white/50 shrink-0">{item.label}</span>
-                  <span className="text-white/80 text-right">{item.time}</span>
+                  <span className="text-white/50 shrink-0">{t(item.label)}</span>
+                  <span className="text-white/80 text-right">{t(item.time)}</span>
                 </li>
               ))}
             </ul>

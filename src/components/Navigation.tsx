@@ -3,6 +3,7 @@ import { Link, useLocation } from "wouter";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
 import { gymConfig } from "@/lib/gymConfig";
+import { useLang, useT } from "@/lib/i18n";
 
 const deepFitLogo = "/images/deepfit-logo.webp";
 
@@ -15,10 +16,35 @@ const navLinks = [
   { href: "/contact", label: "お問い合わせ" },
 ];
 
+function LangToggle({ className = "" }: { className?: string }) {
+  const { lang, setLang } = useLang();
+  return (
+    <div className={`flex items-center rounded-full border border-white/20 overflow-hidden text-xs font-semibold ${className}`}>
+      <button
+        type="button"
+        data-testid="lang-ja"
+        onClick={() => setLang("ja")}
+        className={`px-2.5 py-1 transition-colors ${lang === "ja" ? "bg-[#F2AC55] text-white" : "text-white/60 hover:text-white"}`}
+      >
+        JP
+      </button>
+      <button
+        type="button"
+        data-testid="lang-en"
+        onClick={() => setLang("en")}
+        className={`px-2.5 py-1 transition-colors ${lang === "en" ? "bg-[#F2AC55] text-white" : "text-white/60 hover:text-white"}`}
+      >
+        EN
+      </button>
+    </div>
+  );
+}
+
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [location] = useLocation();
+  const t = useT();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -70,13 +96,14 @@ export default function Navigation() {
                       : "text-white/60 hover:text-white/90"
                   }`}
                 >
-                  {link.label}
+                  {t(link.label)}
                 </Link>
               );
             })}
           </nav>
 
           <div className="flex items-center gap-2">
+            <LangToggle className="hidden lg:flex" />
             <a
               href={`tel:${gymConfig.phone}`}
               data-testid="button-phone"
@@ -88,7 +115,7 @@ export default function Navigation() {
 
             <button
               data-testid="button-mobile-menu"
-              aria-label="メニュー"
+              aria-label={t("メニュー")}
               onClick={() => setMobileOpen(!mobileOpen)}
               className="lg:hidden text-white/70 hover:text-white p-1.5 rounded"
             >
@@ -121,7 +148,7 @@ export default function Navigation() {
                         : "text-white/65 hover:text-white"
                     }`}
                   >
-                    {link.label}
+                    {t(link.label)}
                   </Link>
                 );
               })}
@@ -132,6 +159,9 @@ export default function Navigation() {
                 <Phone className="w-3.5 h-3.5" />
                 {gymConfig.phone}
               </a>
+              <div className="pt-2 flex justify-center">
+                <LangToggle />
+              </div>
             </div>
           </motion.div>
         )}
