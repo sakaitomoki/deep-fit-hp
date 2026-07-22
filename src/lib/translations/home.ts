@@ -147,9 +147,9 @@ export const home: Record<string, string> = {
   "お子さま同伴のみならず、キッズクラスのご用意もあり、ご家庭の状況に合わせて通い方をご案内しています。気になることがあれば事前にLINEでご相談いただけます。":
     "Beyond bringing your child along, we also offer a kids class, and we can suggest a schedule that fits your family's situation. Feel free to ask us in advance via LINE if anything is on your mind.",
   "退会はいつでもできますか？": "Can I cancel my membership anytime?",
-  "はい。継続縛りなし・いつでも月単位で退会できます。": "Yes. There's no minimum commitment — you can cancel on a monthly basis anytime.",
-  "違約金や解約手数料は一切ありません。なお、休会制度はご用意しておりませんのでご了承ください。ライフスタイルの変化があっても、退会のご連絡をいただければスムーズに対応します。":
-    "There are no penalty fees or cancellation charges. Please note that we don't offer a pause/suspension option. If your lifestyle changes, just let us know and we'll handle your cancellation smoothly.",
+  "はい。月単位でいつでも退会でき、違約金や解約手数料もありません。": "Yes. You can cancel on a monthly basis anytime, with no penalty or cancellation fee.",
+  "なお、割引価格の「DEEPプラス会員」は1年以上の継続を前提としたプランです。休会制度はご用意しておりませんのでご了承ください。ライフスタイルの変化があっても、退会のご連絡をいただければスムーズに対応します。":
+    "Note that the discounted “DEEP+ Membership” is a plan that assumes at least one year of continued membership. Please note we don't offer a pause/suspension option. If your lifestyle changes, just let us know and we'll handle your cancellation smoothly.",
 
   // Instagram Atmosphere Section
   "実際の雰囲気は、Instagramで見られます": "See the real atmosphere on Instagram",
