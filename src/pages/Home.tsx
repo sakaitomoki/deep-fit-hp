@@ -312,30 +312,42 @@ function InstagramAtmosphereSection() {
           <p className="ig-atmosphere-section__lead">{t("練習風景や日常の様子を通じて、ジムの空気感や通いやすさが分かります。")}</p>
         </motion.div>
 
-        <motion.div
-          className="ig-atmosphere-section__grid"
+        <motion.a
+          href={gymConfig.sns.instagram}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-testid="link-ig-reel-banner"
+          className="ig-reel-banner"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          variants={staggerContainer}
+          variants={fadeInUp}
         >
-          {igThumbs.map((thumb, i) => (
-            <motion.a
-              key={i}
-              variants={scaleIn}
-              href={gymConfig.sns.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ig-atmosphere-section__thumb"
-              data-testid={`link-ig-thumb-${i}`}
-            >
-              <img src={thumb.image} alt={t(thumb.alt)} loading="lazy" className="ig-atmosphere-section__thumb-img" />
-              <div className="ig-atmosphere-section__thumb-overlay">
-                <SiInstagram className="w-5 h-5 text-white" />
-              </div>
-            </motion.a>
-          ))}
-        </motion.div>
+          <div className="ig-reel-banner__text">
+            <div className="ig-reel-banner__logo">
+              <SiInstagram className="w-7 h-7" />
+              <span>Instagram</span>
+            </div>
+            <h3 className="ig-reel-banner__headline">
+              <span className="ig-reel-banner__hl">{t("練習風景動画")}</span>{t("を公開中！！")}
+            </h3>
+            <span className="ig-reel-banner__cta">
+              {t("詳しくはこちら")}
+              <ArrowRight className="w-4 h-4" />
+            </span>
+          </div>
+          <div className="ig-reel-banner__phone" aria-hidden="true">
+            <span className="ig-reel-banner__phone-notch" />
+            <div className="ig-reel-banner__reels">
+              {igThumbs.map((thumb, i) => (
+                <div key={i} className="ig-reel-banner__reel">
+                  <img src={thumb.image} alt="" loading="lazy" />
+                  <span className="ig-reel-banner__reel-play" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.a>
 
         <motion.div
           initial="hidden"

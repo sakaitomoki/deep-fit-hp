@@ -217,4 +217,7 @@ export const home: Record<string, string> = {
   "おひとり様歓迎": "Solo visitors welcome",
   "運動初心者の方も安心": "Exercise beginners welcome too",
   "無料体験を予約する": "Book a Free Trial",
+  "練習風景動画": "Training videos",
+  "を公開中！！": " now live!!",
+  "詳しくはこちら": "See more",
 };
