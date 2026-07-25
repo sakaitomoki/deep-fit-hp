@@ -220,4 +220,11 @@ export const home: Record<string, string> = {
   "練習風景動画": "Training videos",
   "を公開中！！": " now live!!",
   "詳しくはこちら": "See more",
+  "1番お得！": "Best Value!",
+  "＼ 1年以上継続するなら ／": "If you continue for 1+ year",
+  "DEEPプラス会員": "DEEP+ Membership",
+  "円/月": " /mo",
+  "（税込 9,900円/月）": "(incl. tax ¥9,900/mo)",
+  "（税込 8,800円/月）": "(incl. tax ¥8,800/mo)",
+  "※1年以上の継続を前提としたプランです。": "* This plan assumes at least one year of continued membership.",
 };

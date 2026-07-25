@@ -475,6 +475,50 @@ function OpeningOfferSection() {
           </p>
         </motion.div>
 
+        {/* DEEPプラス会員 — 1番お得なプランを打ち出し */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          className="rounded-3xl overflow-hidden mb-6 w-full"
+          style={{ background: "linear-gradient(160deg, #0B0F15 0%, #1a1206 100%)", border: "2.5px solid #EAA53B" }}
+        >
+          <div className="flex flex-col sm:flex-row">
+            {/* 左：プラン名 */}
+            <div
+              className="px-6 py-6 flex flex-col items-center justify-center text-center sm:w-[42%]"
+              style={{ background: "linear-gradient(160deg, rgba(234,165,59,0.12), rgba(234,165,59,0.02))" }}
+            >
+              <span style={{ background: "#EAA53B", color: "#0B0F15", fontSize: 12, fontWeight: 900, padding: "4px 16px", borderRadius: 7, letterSpacing: "0.06em" }}>{t("1番お得！")}</span>
+              <p style={{ color: "rgba(255,255,255,0.72)", fontSize: 13, fontWeight: 700, marginTop: 14, letterSpacing: "0.04em" }}>{t("＼ 1年以上継続するなら ／")}</p>
+              <p style={{ color: "#EAA53B", fontSize: "clamp(34px,5vw,50px)", fontWeight: 900, fontFamily: "Oswald, sans-serif", lineHeight: 1, marginTop: 4, letterSpacing: "0.01em" }}>DEEP+</p>
+              <p style={{ color: "#ffffff", fontSize: "clamp(18px,2.4vw,22px)", fontWeight: 900, marginTop: 2 }}>{t("DEEPプラス会員")}</p>
+            </div>
+
+            {/* 右：料金 */}
+            <div className="flex-1 px-6 py-6" style={{ borderTop: "1px solid rgba(234,165,59,0.15)" }}>
+              <div className="mb-3">
+                <p style={{ color: "rgba(234,165,59,0.75)", fontSize: 11, fontWeight: 800, letterSpacing: "0.14em", marginBottom: 2 }}>{t("男性フルタイム")}</p>
+                <div className="flex items-baseline gap-1.5">
+                  <span style={{ color: "#EAA53B", fontSize: "clamp(40px,5.5vw,58px)", fontWeight: 900, fontFamily: "Oswald, sans-serif", lineHeight: 0.9 }}>9,000</span>
+                  <span style={{ color: "#ffffff", fontSize: 16, fontWeight: 700 }}>{t("円/月")}</span>
+                </div>
+                <p style={{ color: "rgba(255,255,255,0.5)", fontSize: 12, marginTop: 2 }}>{t("（税込 9,900円/月）")}</p>
+              </div>
+              <div style={{ borderTop: "1px solid rgba(234,165,59,0.12)", paddingTop: 12 }}>
+                <p style={{ color: "rgba(234,165,59,0.75)", fontSize: 11, fontWeight: 800, letterSpacing: "0.14em", marginBottom: 2 }}>{t("女性フルタイム")}</p>
+                <div className="flex items-baseline gap-1.5">
+                  <span style={{ color: "#EAA53B", fontSize: "clamp(40px,5.5vw,58px)", fontWeight: 900, fontFamily: "Oswald, sans-serif", lineHeight: 0.9 }}>8,000</span>
+                  <span style={{ color: "#ffffff", fontSize: 16, fontWeight: 700 }}>{t("円/月")}</span>
+                </div>
+                <p style={{ color: "rgba(255,255,255,0.5)", fontSize: 12, marginTop: 2 }}>{t("（税込 8,800円/月）")}</p>
+              </div>
+              <p style={{ color: "rgba(255,255,255,0.35)", fontSize: 11, marginTop: 12, lineHeight: 1.5 }}>{t("※1年以上の継続を前提としたプランです。")}</p>
+            </div>
+          </div>
+        </motion.div>
+
         {/* 3大無料特典カード */}
         <motion.div
           initial="hidden"
