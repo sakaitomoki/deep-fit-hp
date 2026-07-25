@@ -464,13 +464,13 @@ function OpeningOfferSection() {
           variants={fadeInUp}
           className="opening-offer-section__header"
         >
-          <p className="opening-offer-section__eyebrow text-[24px]">{t("過去最大キャンペーン")}</p>
+          <p className="opening-offer-section__eyebrow text-[24px]">{t("夏の大キャンペーン")}</p>
           <h2 className="opening-offer-section__title">
             {t("夏までに変わる。")}
             <span>{t("4大特典")}</span>
           </h2>
           <p className="opening-offer-section__lead">
-            {t("5月7日〜7月31日の期間限定。")}<br />
+            {t("8月末までの期間限定。")}<br />
             {t("まずは無料体験から気軽にどうぞ。")}
           </p>
         </motion.div>

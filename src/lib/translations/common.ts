@@ -12,6 +12,7 @@ export const common: Record<string, string> = {
 
   // Mobile contact bar
   "電話": "Call",
+  "体験予約": "Book a Trial",
 
   // Footer
   "ページ": "Pages",

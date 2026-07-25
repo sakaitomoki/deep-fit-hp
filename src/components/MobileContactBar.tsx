@@ -16,7 +16,7 @@ export default function MobileContactBar() {
         className="flex-1 flex flex-col items-center justify-center gap-1 bg-[#06C755] text-white py-3 text-center active:brightness-90 transition-all"
       >
         <SiLine className="w-6 h-6" />
-        <span className="text-[10px] font-medium tracking-wide">LINE</span>
+        <span className="text-[10px] font-medium tracking-wide">{t("体験予約")}</span>
       </a>
 
       <a
