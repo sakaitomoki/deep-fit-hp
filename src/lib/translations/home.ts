@@ -227,4 +227,6 @@ export const home: Record<string, string> = {
   "（税込 9,900円/月）": "(incl. tax ¥9,900/mo)",
   "（税込 8,800円/月）": "(incl. tax ¥8,800/mo)",
   "※1年以上の継続を前提としたプランです。": "* This plan assumes at least one year of continued membership.",
+  "入会金無料": "No enrollment fee",
+  "翌月会費無料": "Next month's fee free",
 };
