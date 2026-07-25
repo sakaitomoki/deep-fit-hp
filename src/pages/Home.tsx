@@ -466,7 +466,7 @@ function OpeningOfferSection() {
         >
           <p className="opening-offer-section__eyebrow text-[24px]">{t("夏の大キャンペーン")}</p>
           <h2 className="opening-offer-section__title">
-            {t("夏までに変わる。")}
+            {t("本気の夏、始めよう。")}
             <span>{t("4大特典")}</span>
           </h2>
           <p className="opening-offer-section__lead">

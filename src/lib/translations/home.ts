@@ -230,6 +230,7 @@ export const home: Record<string, string> = {
   "入会金無料": "No enrollment fee",
   "翌月会費無料": "Next month's fee free",
   "夏の大キャンペーン": "Summer Mega Campaign",
+  "本気の夏、始めよう。": "Get serious this summer.",
   "8月末までの期間限定。": "Limited time — until the end of August.",
   "今だけ": "Now Only",
   "🔥 先着30名限定": "🔥 First 30 members only",
