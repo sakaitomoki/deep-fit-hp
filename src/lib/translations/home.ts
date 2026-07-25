@@ -229,4 +229,7 @@ export const home: Record<string, string> = {
   "※1年以上の継続を前提としたプランです。": "* This plan assumes at least one year of continued membership.",
   "入会金無料": "No enrollment fee",
   "翌月会費無料": "Next month's fee free",
+  "今だけ": "Now Only",
+  "🔥 先着30名限定": "🔥 First 30 members only",
+  "⏰ 8月末まで": "⏰ Until end of August",
 };
