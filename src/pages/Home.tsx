@@ -957,7 +957,7 @@ export default function Home() {
                     </div>
                     <div className="flex justify-end">
                       <div className="bg-[#06C755] text-white text-xs px-3 py-2 rounded-2xl rounded-tr-sm max-w-[78%]">
-                        {t("土曜17時に体験予約したいです！")}
+                        {t("体験予約したいです！")}
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
@@ -965,9 +965,35 @@ export default function Home() {
                         <img src={deepFitLogo} alt="DEEP.FIT" className="w-full h-full object-contain p-0.5" />
                       </div>
                       <div className="bg-white text-[#333] text-xs px-3 py-2.5 rounded-2xl rounded-tl-sm max-w-[85%] leading-relaxed shadow-sm space-y-1">
-                        <p>{t("ありがとうございます😊 土曜17時〜で承りました✨")}</p>
-                        <p>{t("運動が苦手な方や初めての女性がほとんどなので、安心してお越しくださいね🙆‍♀️")}</p>
-                        <p>{t("持ち物は動きやすい服装とお飲み物だけでOK！お待ちしています🥊")}</p>
+                        <p>{t("ありがとうございます😊 ご希望の日時はありますか？")}</p>
+                      </div>
+                    </div>
+                    <div className="flex justify-end">
+                      <div className="bg-[#06C755] text-white text-xs px-3 py-2 rounded-2xl rounded-tr-sm max-w-[78%]">
+                        {t("土曜の17時は空いてますか？")}
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <div className="w-7 h-7 rounded-full bg-white flex items-center justify-center shrink-0 mt-1 shadow-sm overflow-hidden">
+                        <img src={deepFitLogo} alt="DEEP.FIT" className="w-full h-full object-contain p-0.5" />
+                      </div>
+                      <div className="bg-white text-[#333] text-xs px-3 py-2.5 rounded-2xl rounded-tl-sm max-w-[85%] leading-relaxed shadow-sm space-y-1">
+                        <p>{t("土曜17時〜、空いております✨")}</p>
+                        <p>{t("そちらでご予約承りますね！お名前を教えていただけますか？")}</p>
+                      </div>
+                    </div>
+                    <div className="flex justify-end">
+                      <div className="bg-[#06C755] text-white text-xs px-3 py-2 rounded-2xl rounded-tr-sm max-w-[78%]">
+                        {t("よろしくお願いします🙇‍♀️")}
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <div className="w-7 h-7 rounded-full bg-white flex items-center justify-center shrink-0 mt-1 shadow-sm overflow-hidden">
+                        <img src={deepFitLogo} alt="DEEP.FIT" className="w-full h-full object-contain p-0.5" />
+                      </div>
+                      <div className="bg-white text-[#333] text-xs px-3 py-2.5 rounded-2xl rounded-tl-sm max-w-[85%] leading-relaxed shadow-sm space-y-1">
+                        <p>{t("土曜17時でご予約承りました😊 体験は無料です！")}</p>
+                        <p>{t("当日は動きやすい服装とお飲み物だけでOK。お待ちしています🥊")}</p>
                       </div>
                     </div>
                   </div>
