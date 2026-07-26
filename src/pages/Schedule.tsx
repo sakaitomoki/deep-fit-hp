@@ -382,45 +382,53 @@ export default function Schedule() {
             className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8"
           >
             {/* 特典④ */}
-            <motion.div variants={fadeInUp} className="rounded-2xl overflow-hidden" style={{ background: "linear-gradient(160deg, #0D1118 0%, #161C28 100%)", border: "2px solid #EAA53B" }}>
-              <div className="px-5 pt-4 pb-0 flex items-center gap-2">
-                <span style={{ background: "rgba(234,165,59,0.18)", color: "#EAA53B", fontSize: 11, fontWeight: 900, padding: "3px 12px", borderRadius: 999, letterSpacing: "0.1em" }}>{t("特典④")}</span>
-                <span style={{ color: "rgba(255,255,255,0.4)", fontSize: 11, letterSpacing: "0.12em" }}>{t("当日入会限定")}</span>
+            <motion.div variants={fadeInUp} className="rounded-2xl overflow-hidden" style={{ background: "#ffffff", border: "2px solid #EAA53B", boxShadow: "0 14px 40px -16px rgba(234,165,59,0.5)", position: "relative" }}>
+              {/* 今だけ コーナーリボン */}
+              <div style={{ position: "absolute", top: 14, right: -40, transform: "rotate(45deg)", background: "linear-gradient(90deg,#E0492B,#F2762F)", color: "#fff", fontSize: 10, fontWeight: 900, letterSpacing: "0.1em", padding: "4px 42px", boxShadow: "0 4px 10px -3px rgba(0,0,0,0.3)", zIndex: 2 }}>
+                {t("今だけ")}
               </div>
-              <div className="px-5 pt-3 pb-3 text-center" style={{ borderBottom: "1px solid rgba(234,165,59,0.15)" }}>
-                <p style={{ color: "#EAA53B", fontSize: "clamp(22px,3.5vw,36px)", fontWeight: 900, lineHeight: 1.05, margin: "4px 0 2px", fontFamily: "Oswald, sans-serif", letterSpacing: "0.02em" }}>
+              {/* ヘッダーバンド（オレンジ） */}
+              <div className="px-5 pt-4 pb-4 text-center" style={{ background: "linear-gradient(135deg, #EAA53B 0%, #F5C96A 100%)" }}>
+                <div className="flex items-center justify-center gap-2 mb-2">
+                  <span style={{ background: "rgba(255,255,255,0.28)", color: "#ffffff", fontSize: 11, fontWeight: 900, padding: "3px 12px", borderRadius: 999, letterSpacing: "0.1em" }}>{t("特典④")}</span>
+                  <span style={{ color: "rgba(255,255,255,0.9)", fontSize: 11, letterSpacing: "0.12em", fontWeight: 700 }}>{t("当日入会限定")}</span>
+                </div>
+                <div className="flex flex-wrap items-center justify-center gap-2 mb-2">
+                  <span style={{ background: "#ffffff", color: "#C0392B", fontSize: 11, fontWeight: 900, padding: "4px 12px", borderRadius: 999, letterSpacing: "0.04em" }}>{t("🔥 先着30名限定")}</span>
+                  <span style={{ background: "#ffffff", color: "#B9791B", fontSize: 11, fontWeight: 900, padding: "4px 12px", borderRadius: 999, letterSpacing: "0.04em" }}>{t("⏰ 8月末まで")}</span>
+                </div>
+                <p style={{ color: "#ffffff", fontSize: "clamp(22px,3.5vw,36px)", fontWeight: 900, lineHeight: 1.05, margin: "2px 0 0", fontFamily: "Oswald, sans-serif", letterSpacing: "0.02em", textShadow: "0 2px 8px rgba(120,70,0,0.22)" }}>
                   {t("月会費が永久にOFF！！")}
                 </p>
-                <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 12, margin: 0 }}>{t("※先着50名限定")}</p>
               </div>
-              <div className="px-5 pt-3 pb-5">
+              <div className="px-5 pt-4 pb-5">
                 <div className="mb-3">
-                  <p style={{ color: "rgba(234,165,59,0.7)", fontSize: 10, fontWeight: 800, letterSpacing: "0.14em", marginBottom: 2 }}>{t("女性フルタイム")}</p>
+                  <p style={{ color: "#D99A40", fontSize: 10, fontWeight: 800, letterSpacing: "0.14em", marginBottom: 2 }}>{t("女性フルタイム")}</p>
                   <div className="flex items-baseline gap-1.5">
-                    <span style={{ color: "rgba(255,255,255,0.3)", fontSize: 14, fontWeight: 700 }}>{t("通常")}</span>
-                    <span style={{ color: "rgba(255,255,255,0.3)", fontSize: 16, fontWeight: 800, textDecoration: "line-through" }}>{t("11,000円")}</span>
-                    <span style={{ color: "rgba(255,255,255,0.3)", fontSize: 14, fontWeight: 700 }}>{t("が")}</span>
+                    <span style={{ color: "#A99C92", fontSize: 14, fontWeight: 700 }}>{t("通常")}</span>
+                    <span style={{ color: "#A99C92", fontSize: 16, fontWeight: 800, textDecoration: "line-through" }}>{t("11,000円")}</span>
+                    <span style={{ color: "#A99C92", fontSize: 14, fontWeight: 700 }}>{t("が")}</span>
                   </div>
                   <div className="flex items-baseline gap-1.5 mt-0.5">
-                    <span style={{ color: "#fff", fontSize: 14, fontWeight: 700 }}>{t("ずっと")}</span>
-                    <span style={{ color: "#EAA53B", fontSize: "clamp(26px,3.5vw,40px)", fontWeight: 900, lineHeight: 1, fontFamily: "Oswald, sans-serif" }}>{t("9,900円")}</span>
-                    <span style={{ color: "#fff", fontSize: 13, fontWeight: 700 }}>{t("で通い放題！")}</span>
+                    <span style={{ color: "#3D3530", fontSize: 14, fontWeight: 700 }}>{t("ずっと")}</span>
+                    <span style={{ color: "#D99A40", fontSize: "clamp(26px,3.5vw,40px)", fontWeight: 900, lineHeight: 1, fontFamily: "Oswald, sans-serif" }}>{t("9,900円")}</span>
+                    <span style={{ color: "#3D3530", fontSize: 13, fontWeight: 700 }}>{t("で通い放題！")}</span>
                   </div>
                 </div>
-                <div style={{ borderTop: "1px solid rgba(234,165,59,0.12)", paddingTop: 10 }}>
-                  <p style={{ color: "rgba(234,165,59,0.7)", fontSize: 10, fontWeight: 800, letterSpacing: "0.14em", marginBottom: 2 }}>{t("男性フルタイム")}</p>
+                <div style={{ borderTop: "1px solid rgba(234,165,59,0.25)", paddingTop: 10 }}>
+                  <p style={{ color: "#D99A40", fontSize: 10, fontWeight: 800, letterSpacing: "0.14em", marginBottom: 2 }}>{t("男性フルタイム")}</p>
                   <div className="flex items-baseline gap-1.5">
-                    <span style={{ color: "rgba(255,255,255,0.3)", fontSize: 14, fontWeight: 700 }}>{t("通常")}</span>
-                    <span style={{ color: "rgba(255,255,255,0.3)", fontSize: 16, fontWeight: 800, textDecoration: "line-through" }}>{t("13,200円")}</span>
-                    <span style={{ color: "rgba(255,255,255,0.3)", fontSize: 14, fontWeight: 700 }}>{t("が")}</span>
+                    <span style={{ color: "#A99C92", fontSize: 14, fontWeight: 700 }}>{t("通常")}</span>
+                    <span style={{ color: "#A99C92", fontSize: 16, fontWeight: 800, textDecoration: "line-through" }}>{t("13,200円")}</span>
+                    <span style={{ color: "#A99C92", fontSize: 14, fontWeight: 700 }}>{t("が")}</span>
                   </div>
                   <div className="flex items-baseline gap-1.5 mt-0.5">
-                    <span style={{ color: "#fff", fontSize: 14, fontWeight: 700 }}>{t("ずっと")}</span>
-                    <span style={{ color: "#EAA53B", fontSize: "clamp(26px,3.5vw,40px)", fontWeight: 900, lineHeight: 1, fontFamily: "Oswald, sans-serif" }}>{t("12,100円")}</span>
-                    <span style={{ color: "#fff", fontSize: 13, fontWeight: 700 }}>{t("で通い放題！")}</span>
+                    <span style={{ color: "#3D3530", fontSize: 14, fontWeight: 700 }}>{t("ずっと")}</span>
+                    <span style={{ color: "#D99A40", fontSize: "clamp(26px,3.5vw,40px)", fontWeight: 900, lineHeight: 1, fontFamily: "Oswald, sans-serif" }}>{t("12,100円")}</span>
+                    <span style={{ color: "#3D3530", fontSize: 13, fontWeight: 700 }}>{t("で通い放題！")}</span>
                   </div>
                 </div>
-                <p style={{ color: "rgba(255,255,255,0.2)", fontSize: 11, marginTop: 10, textAlign: "center" }}>{t("継続縛りなし・いつでも退会可")}</p>
+                <p style={{ color: "#A99C92", fontSize: 11, marginTop: 10, textAlign: "center" }}>{t("継続縛りなし・いつでも退会可")}</p>
               </div>
             </motion.div>
 
