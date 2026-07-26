@@ -233,7 +233,7 @@ export const home: Record<string, string> = {
   "体験予約したいです！": "I'd like to book a trial!",
   "ありがとうございます😊 ご希望の日時はありますか？": "Thank you 😊 Do you have a preferred date and time?",
   "土曜17時〜、空いております✨": "Saturday from 17:00 is open ✨",
-  "そちらでご予約承りますね！お名前を教えていただけますか？": "We'll book you in for that! Could you tell us your name?",
+  "そちらでご予約承りますね！": "We'll book you in for that!",
   "よろしくお願いします🙇‍♀️": "Thank you, looking forward to it 🙇‍♀️",
   "土曜17時でご予約承りました😊 体験は無料です！": "You're booked for Saturday at 17:00 😊 The trial is free!",
   "当日は動きやすい服装とお飲み物だけでOK。お待ちしています🥊": "On the day, just comfortable clothes and a drink. See you there 🥊",

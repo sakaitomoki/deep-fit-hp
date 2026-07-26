@@ -979,7 +979,7 @@ export default function Home() {
                       </div>
                       <div className="bg-white text-[#333] text-xs px-3 py-2.5 rounded-2xl rounded-tl-sm max-w-[85%] leading-relaxed shadow-sm space-y-1">
                         <p>{t("土曜17時〜、空いております✨")}</p>
-                        <p>{t("そちらでご予約承りますね！お名前を教えていただけますか？")}</p>
+                        <p>{t("そちらでご予約承りますね！")}</p>
                       </div>
                     </div>
                     <div className="flex justify-end">
