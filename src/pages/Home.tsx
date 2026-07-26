@@ -956,8 +956,8 @@ export default function Home() {
                       <span className="bg-black/10 text-[#333]/50 text-[10px] px-3 py-0.5 rounded-full">{t("今日")}</span>
                     </div>
                     <div className="flex justify-end">
-                      <div className="bg-[#06C755] text-white text-xs px-3 py-2 rounded-2xl rounded-tr-sm max-w-[75%]">
-                        {t("土曜日17時から体験可能ですか？")}
+                      <div className="bg-[#06C755] text-white text-xs px-3 py-2 rounded-2xl rounded-tr-sm max-w-[78%]">
+                        {t("運動がとても苦手なのですが、女性でも通えますか？")}
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
@@ -965,8 +965,13 @@ export default function Home() {
                         <img src={deepFitLogo} alt="DEEP.FIT" className="w-full h-full object-contain p-0.5" />
                       </div>
                       <div className="bg-white text-[#333] text-xs px-3 py-2.5 rounded-2xl rounded-tl-sm max-w-[85%] leading-relaxed shadow-sm space-y-1">
-                        <p>{t("ありがとうございます😊")}</p>
-                        <p>{t("土曜日17時〜、体験予約承ります✨")}</p>
+                        <p>{t("もちろんです😊 女性の会員さんもたくさん通われています✨")}</p>
+                        <p>{t("運動が苦手な方や初めての方がほとんどなので、安心してくださいね🙆‍♀️")}</p>
+                      </div>
+                    </div>
+                    <div className="flex justify-end">
+                      <div className="bg-[#06C755] text-white text-xs px-3 py-2 rounded-2xl rounded-tr-sm max-w-[78%]">
+                        {t("体力に自信がなくて、続けられるか不安です💦")}
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
@@ -974,8 +979,13 @@ export default function Home() {
                         <img src={deepFitLogo} alt="DEEP.FIT" className="w-full h-full object-contain p-0.5" />
                       </div>
                       <div className="bg-white text-[#333] text-xs px-3 py-2.5 rounded-2xl rounded-tl-sm max-w-[85%] leading-relaxed shadow-sm space-y-1">
-                        <p>{t("運動不慣れな方も多く通われてるので、体力に自信なくても全然大丈夫です🙆‍♀️")}</p>
-                        <p>{t("スタッフが一からサポートするのでご安心ください✨")}</p>
+                        <p>{t("大丈夫です！お一人おひとりのペースに合わせるので無理はありません😊")}</p>
+                        <p>{t("きつすぎない範囲で、スタッフが一からサポートします✨")}</p>
+                      </div>
+                    </div>
+                    <div className="flex justify-end">
+                      <div className="bg-[#06C755] text-white text-xs px-3 py-2 rounded-2xl rounded-tr-sm max-w-[78%]">
+                        {t("持ち物は何が必要ですか？")}
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
@@ -983,8 +993,13 @@ export default function Home() {
                         <img src={deepFitLogo} alt="DEEP.FIT" className="w-full h-full object-contain p-0.5" />
                       </div>
                       <div className="bg-white text-[#333] text-xs px-3 py-2.5 rounded-2xl rounded-tl-sm max-w-[85%] leading-relaxed shadow-sm space-y-1">
-                        <p>{t("当日の持ち物は動きやすい服装・お飲み物だけでOKです！")}</p>
-                        <p>{t("シューズ等は不要です🙆")}</p>
+                        <p>{t("動きやすい服装とお飲み物だけでOKです！")}</p>
+                        <p>{t("シューズも不要なので、手ぶら感覚でお越しいただけます👟")}</p>
+                      </div>
+                    </div>
+                    <div className="flex justify-end">
+                      <div className="bg-[#06C755] text-white text-xs px-3 py-2 rounded-2xl rounded-tr-sm max-w-[78%]">
+                        {t("それなら私でもできそう…体験してみたいです！")}
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
@@ -992,9 +1007,8 @@ export default function Home() {
                         <img src={deepFitLogo} alt="DEEP.FIT" className="w-full h-full object-contain p-0.5" />
                       </div>
                       <div className="bg-white text-[#333] text-xs px-3 py-2.5 rounded-2xl rounded-tl-sm max-w-[85%] leading-relaxed shadow-sm space-y-1">
-                        <p>{t("初めては緊張しますよね💦")}</p>
-                        <p>{t("分からないことは当日何でも聞いてください🥊✨")}</p>
-                        <p>{t("ご質問等ありましたらお気軽にお声掛けくださいね😊")}</p>
+                        <p>{t("ありがとうございます😊 体験は無料です！")}</p>
+                        <p>{t("ご希望の日時をこのままLINEで送ってくださいね✨ お待ちしています🥊")}</p>
                       </div>
                     </div>
                   </div>
