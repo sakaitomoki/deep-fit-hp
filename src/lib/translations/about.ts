@@ -52,6 +52,17 @@ export const about: Record<string, string> = {
   "更衣室完備": "Changing rooms available",
   "ウォーターサーバー": "Water server",
   "駐車場あり": "Parking available",
+  "バトルロープ": "Battle ropes",
+  "自走式ランニングマシン": "Self-powered (curved) treadmill",
+  "エアロバイク": "Exercise bike",
+  "オールインワンパワーラック": "All-in-one power rack",
+  "ケトルベル": "Kettlebells",
+  "各種ダンベル": "Dumbbells (various weights)",
+  "メディシンボール": "Medicine balls",
+  "バーンマシン": "The Burn Machine",
+  "キックミット": "Kick pads",
+  "パンチミット": "Punch mitts",
+  "駐輪場ありバイク可": "Bicycle & motorbike parking available",
   "DEEP.FITのトレーニング施設と設備の全景": "An overview of DEEP.FIT's training facility and equipment",
 
   // Access
