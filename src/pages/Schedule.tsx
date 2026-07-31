@@ -448,7 +448,7 @@ export default function Schedule() {
           >
             <p className="text-[#4D5058]/60 text-sm mb-1">{t("入会月の節約額")}</p>
             <p className="font-heading font-bold text-[#4D5058]" style={{ fontSize: "clamp(36px,6vw,64px)", lineHeight: 1 }}>
-              {t("最大")} <span style={{ color: "#D99A40" }}>{t("23,000円〜")}</span>
+              {t("最大")} <span style={{ color: "#D99A40" }}>{t("28,200円〜")}</span>
             </p>
             <p className="text-[#4D5058]/50 text-xs mt-2">{t("＋月会費永久割引が継続します")}</p>
           </motion.div>

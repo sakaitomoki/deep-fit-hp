@@ -611,7 +611,7 @@ function OpeningOfferSection() {
           className="opening-offer-section__value"
         >
           <p className="opening-offer-section__value-label">{t("入会月の節約額")}</p>
-          <p className="opening-offer-section__value-main">{t("最大 23,000円〜")}</p>
+          <p className="opening-offer-section__value-main">{t("最大 28,200円〜")}</p>
           <p className="opening-offer-section__value-sub">{t("＋月会費永久割引が継続します")}</p>
         </motion.div>
 

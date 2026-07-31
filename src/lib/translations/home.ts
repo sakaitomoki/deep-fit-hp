@@ -58,7 +58,7 @@ export const home: Record<string, string> = {
   "12,100円": "¥12,100",
   "継続縛りなし・いつでも退会可": "No contract, cancel anytime",
   "入会月の節約額": "Savings in your first month",
-  "最大 23,000円〜": "Up to ¥23,000+",
+  "最大 28,200円〜": "Up to ¥28,200+",
   "＋月会費永久割引が継続します": "+ Your discounted monthly fee continues forever",
   "体験料 2,000円 → 無料": "Trial fee ¥2,000 → Free",
   "入会金 10,000円 → 無料": "Registration fee ¥10,000 → Free",
