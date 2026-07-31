@@ -206,6 +206,7 @@ export default function Kids() {
                 <p className="text-[#B5306A] font-bold text-lg mb-2">{t(oyakoPlan.name)}</p>
                 <p className="font-heading font-bold text-4xl text-[#B5306A] mb-1">{oyakoPlan.price}</p>
                 <p className="text-[#B5306A]/70 text-sm">{t(oyakoPlan.note)}</p>
+                <p className="text-[#B5306A]/50 text-xs mt-0.5">{t(oyakoPlan.priceTaxNote)}</p>
               </motion.div>
             )}
           </div>
@@ -243,6 +244,7 @@ export default function Kids() {
                   <div className="text-right">
                     <p className="font-heading font-bold text-2xl text-[#1F7A3A]">{plan.price}</p>
                     <p className="text-[#4D5058]/40 text-xs">{t(plan.note)}</p>
+                    <p className="text-[#4D5058]/30 text-[10px] mt-0.5">{t(plan.priceTaxNote)}</p>
                   </div>
                 </div>
               ))}

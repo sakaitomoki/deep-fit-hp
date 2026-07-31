@@ -493,7 +493,7 @@ export default function Schedule() {
           >
             <p className="text-[#F2AC55] text-xs tracking-[0.3em] uppercase mb-3">Pricing</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-[#4D5058]">PRICE LIST</h2>
-            <p className="text-[#4D5058]/50 text-sm mt-3">{t("入会金")} {gymConfig.joinFee}{t("（税込）　※税込み価格で表示")}</p>
+            <p className="text-[#4D5058]/50 text-sm mt-3">{t("入会金")} {gymConfig.joinFee} <span className="text-[#4D5058]/40">{t(gymConfig.joinFeeTaxNote)}</span>{t("　※価格は税抜表記です")}</p>
           </motion.div>
 
           {/* Category Cards */}
@@ -518,7 +518,8 @@ export default function Schedule() {
                     </div>
                     <div className="text-right">
                       <p className="font-heading font-bold text-2xl text-[#D99A40]">{plan.femalePrice}</p>
-                      <p className="text-[#4D5058]/40 text-xs">{t("/ 月（税込）")}</p>
+                      <p className="text-[#4D5058]/40 text-xs">{t(plan.priceNote)}</p>
+                      <p className="text-[#4D5058]/30 text-[10px] mt-0.5">{t(plan.femalePriceTaxNote)}</p>
                     </div>
                   </div>
                 ))}
@@ -539,7 +540,8 @@ export default function Schedule() {
                     </div>
                     <div className="text-right">
                       <p className="font-heading font-bold text-2xl text-[#4D5058]">{plan.malePrice}</p>
-                      <p className="text-[#4D5058]/40 text-xs">{t("/ 月（税込）")}</p>
+                      <p className="text-[#4D5058]/40 text-xs">{t(plan.priceNote)}</p>
+                      <p className="text-[#4D5058]/30 text-[10px] mt-0.5">{t(plan.malePriceTaxNote)}</p>
                     </div>
                   </div>
                 ))}
@@ -584,6 +586,7 @@ export default function Schedule() {
                       <div className="text-right">
                         <p className="font-heading font-bold text-2xl text-[#D99A40] leading-none">{premium.malePrice}</p>
                         <p className="text-[#4D5058]/40 text-[10px] mt-0.5">{t(premium.priceNote)}</p>
+                        <p className="text-[#4D5058]/30 text-[10px]">{t(premium.malePriceTaxNote)}</p>
                       </div>
                     </div>
                     <div className="rounded-lg bg-[#FDF6EC] px-4 py-3 flex items-center justify-between">
@@ -591,6 +594,7 @@ export default function Schedule() {
                       <div className="text-right">
                         <p className="font-heading font-bold text-2xl text-[#D99A40] leading-none">{premium.femalePrice}</p>
                         <p className="text-[#4D5058]/40 text-[10px] mt-0.5">{t(premium.priceNote)}</p>
+                        <p className="text-[#4D5058]/30 text-[10px]">{t(premium.femalePriceTaxNote)}</p>
                       </div>
                     </div>
                   </div>
@@ -632,7 +636,8 @@ export default function Schedule() {
                   </div>
                   <div className="text-right shrink-0 ml-4">
                     <p className="font-heading font-bold text-3xl text-[#2563A8]">{u22.femalePrice}</p>
-                    <p className="text-[#4D5058]/40 text-xs">{t("/ 月（税込）")}</p>
+                    <p className="text-[#4D5058]/40 text-xs">{t(u22.priceNote)}</p>
+                    <p className="text-[#4D5058]/30 text-[10px] mt-0.5">{t(u22.femalePriceTaxNote)}</p>
                   </div>
                 </div>
               </motion.div>
@@ -676,6 +681,7 @@ export default function Schedule() {
                     <div className="text-right">
                       <p className="font-heading font-bold text-2xl text-[#1F7A3A]">{plan.price}</p>
                       <p className="text-[#4D5058]/40 text-xs">{t(plan.note)}</p>
+                      <p className="text-[#4D5058]/30 text-[10px] mt-0.5">{t(plan.priceTaxNote)}</p>
                     </div>
                   </div>
                 ))}
@@ -695,7 +701,7 @@ export default function Schedule() {
                 </div>
                 <div className="text-right">
                   <p className="font-heading font-bold text-2xl text-[#2563A8]">{gymConfig.personalTraining.price}</p>
-                  <p className="text-[#4D5058]/40 text-xs">{t("（税込）")}</p>
+                  <p className="text-[#4D5058]/30 text-[10px] mt-0.5">{t(gymConfig.personalTraining.priceTaxNote)}</p>
                 </div>
               </div>
             </motion.div>
