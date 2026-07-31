@@ -672,7 +672,7 @@
 
 @media (min-width: 768px) {
   .opening-offer-section__cards {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
   .opening-offer-card {
     flex-direction: column;

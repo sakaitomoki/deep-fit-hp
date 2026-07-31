@@ -341,23 +341,24 @@ export default function Schedule() {
               {t("夏までに変わる。")}
             </h2>
             <p className="font-heading font-bold text-[#D99A40] mb-3" style={{ fontSize: "clamp(40px,8vw,80px)", lineHeight: 1 }}>
-              {t("4大特典")}
+              {t("5大特典")}
             </p>
             <p className="text-[#4D5058]/60 text-sm">{t("5月7日〜7月31日の期間限定。まずは無料体験から気軽にどうぞ。")}</p>
           </motion.div>
 
-          {/* 特典①②③ row */}
+          {/* 特典①②③④ row */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={staggerContainer}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5"
+            className="grid grid-cols-1 sm:grid-cols-4 gap-4 mb-5"
           >
             {[
               { label: "特典①", title: "体験料", original: "通常 2,000円" },
               { label: "特典②", title: "入会金", original: "通常 10,000円" },
-              { label: "特典③", title: "翌月会費", original: "女性 11,000円 / 男性 13,200円" },
+              { label: "特典③", title: "事務手数料", original: "通常 3,000円" },
+              { label: "特典④", title: "翌月会費", original: "女性 11,000円 / 男性 13,200円" },
             ].map((item) => (
               <motion.div key={item.label} variants={fadeInUp}
                 className="rounded-2xl px-5 py-4 flex flex-row sm:flex-col items-center sm:items-start gap-3 sm:gap-1 shadow-md"
@@ -390,7 +391,7 @@ export default function Schedule() {
               {/* ヘッダーバンド（オレンジ） */}
               <div className="px-5 pt-4 pb-4 text-center" style={{ background: "linear-gradient(135deg, #EAA53B 0%, #F5C96A 100%)" }}>
                 <div className="flex items-center justify-center gap-2 mb-2">
-                  <span style={{ background: "rgba(255,255,255,0.28)", color: "#ffffff", fontSize: 11, fontWeight: 900, padding: "3px 12px", borderRadius: 999, letterSpacing: "0.1em" }}>{t("特典④")}</span>
+                  <span style={{ background: "rgba(255,255,255,0.28)", color: "#ffffff", fontSize: 11, fontWeight: 900, padding: "3px 12px", borderRadius: 999, letterSpacing: "0.1em" }}>{t("特典⑤")}</span>
                   <span style={{ color: "rgba(255,255,255,0.9)", fontSize: 11, letterSpacing: "0.12em", fontWeight: 700 }}>{t("当日入会限定")}</span>
                 </div>
                 <div className="flex flex-wrap items-center justify-center gap-2 mb-2">
@@ -411,9 +412,10 @@ export default function Schedule() {
                   </div>
                   <div className="flex items-baseline gap-1.5 mt-0.5">
                     <span style={{ color: "#3D3530", fontSize: 14, fontWeight: 700 }}>{t("ずっと")}</span>
-                    <span style={{ color: "#D99A40", fontSize: "clamp(26px,3.5vw,40px)", fontWeight: 900, lineHeight: 1, fontFamily: "Oswald, sans-serif" }}>{t("9,900円")}</span>
+                    <span style={{ color: "#D99A40", fontSize: "clamp(26px,3.5vw,40px)", fontWeight: 900, lineHeight: 1, fontFamily: "Oswald, sans-serif" }}>{t("9,000円")}</span>
                     <span style={{ color: "#3D3530", fontSize: 13, fontWeight: 700 }}>{t("で通い放題！")}</span>
                   </div>
+                  <p style={{ color: "#8C7B72", fontSize: 11, marginTop: 2 }}>{t("（税込 9,900円/月）")}</p>
                 </div>
                 <div style={{ borderTop: "1px solid rgba(234,165,59,0.25)", paddingTop: 10 }}>
                   <p style={{ color: "#D99A40", fontSize: 10, fontWeight: 800, letterSpacing: "0.14em", marginBottom: 2 }}>{t("男性フルタイム")}</p>
@@ -424,9 +426,10 @@ export default function Schedule() {
                   </div>
                   <div className="flex items-baseline gap-1.5 mt-0.5">
                     <span style={{ color: "#3D3530", fontSize: 14, fontWeight: 700 }}>{t("ずっと")}</span>
-                    <span style={{ color: "#D99A40", fontSize: "clamp(26px,3.5vw,40px)", fontWeight: 900, lineHeight: 1, fontFamily: "Oswald, sans-serif" }}>{t("12,100円")}</span>
+                    <span style={{ color: "#D99A40", fontSize: "clamp(26px,3.5vw,40px)", fontWeight: 900, lineHeight: 1, fontFamily: "Oswald, sans-serif" }}>{t("11,000円")}</span>
                     <span style={{ color: "#3D3530", fontSize: 13, fontWeight: 700 }}>{t("で通い放題！")}</span>
                   </div>
+                  <p style={{ color: "#8C7B72", fontSize: 11, marginTop: 2 }}>{t("（税込 12,100円/月）")}</p>
                 </div>
                 <p style={{ color: "#A99C92", fontSize: 11, marginTop: 10, textAlign: "center" }}>{t("継続縛りなし・いつでも退会可")}</p>
               </div>
