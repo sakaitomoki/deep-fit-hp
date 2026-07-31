@@ -88,6 +88,17 @@ export const gymConfig = {
     priceNote: "/ 月",
     benefits: ["全時間帯利用可能", "全クラス受け放題", "グローブ無料貸出", "パワーラック使用可"],
   },
+  lightMembership: {
+    name: "DEEPライト会員",
+    subtitle: "半年以上継続の方限定・通い放題",
+    condition: "半年以上継続",
+    malePrice: "¥11,000",
+    malePriceTaxNote: "（税込 ¥12,100/月）",
+    femalePrice: "¥9,000",
+    femalePriceTaxNote: "（税込 ¥9,900/月）",
+    priceNote: "/ 月",
+    benefits: ["全時間帯利用可能", "全クラス受け放題", "グローブ無料貸出", "パワーラック使用可"],
+  },
   kidsMembership: [
     { name: "月4回", price: "¥6,000", priceTaxNote: "（税込 ¥6,600/月）", note: "/ 月" },
     { name: "通い放題", price: "¥8,000", priceTaxNote: "（税込 ¥8,800/月）", note: "/ 月" },

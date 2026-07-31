@@ -614,7 +614,77 @@ function OpeningOfferSection() {
           <p className="opening-offer-section__value-sub">{t("＋月会費永久割引が継続します")}</p>
         </motion.div>
 
-        {/* DEEPライト会員 — 半年継続でキャンペーン価格を維持 */}
+        {/* DEEPスタンダード会員 — 縛りなし・通常料金（銅） */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          className="rounded-3xl overflow-hidden mb-6 w-full"
+          style={{ background: "#ffffff", border: "2.5px solid #C08A55", boxShadow: "0 14px 40px -16px rgba(168,116,74,0.35)" }}
+        >
+          <div className="flex flex-col sm:flex-row">
+            {/* 左：プラン名 */}
+            <div
+              className="px-6 py-6 flex flex-col items-center justify-center text-center sm:w-[42%]"
+              style={{ background: "linear-gradient(160deg, #D9A873 0%, #A9744A 100%)" }}
+            >
+              <span style={{ background: "#ffffff", color: "#8B5E34", fontSize: 12, fontWeight: 900, padding: "4px 16px", borderRadius: 7, letterSpacing: "0.06em" }}>🥉 {t("スタンダードコース")}</span>
+              <p style={{ color: "#ffffff", fontSize: 13, fontWeight: 700, marginTop: 14, letterSpacing: "0.04em" }}>{t("＼ 縛りなしで気軽に ／")}</p>
+              <p style={{ color: "#ffffff", fontSize: "clamp(34px,5vw,50px)", fontWeight: 900, fontFamily: "Oswald, sans-serif", lineHeight: 1, marginTop: 4, letterSpacing: "0.01em", textShadow: "0 2px 8px rgba(80,50,20,0.25)" }}>DEEP Standard</p>
+              <p style={{ color: "#ffffff", fontSize: "clamp(18px,2.4vw,22px)", fontWeight: 900, marginTop: 2 }}>{t("DEEPスタンダード会員")}</p>
+            </div>
+
+            {/* 右：料金 */}
+            <div className="flex-1 px-6 py-6">
+              <div className="mb-3">
+                <p style={{ color: "#B08256", fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", marginBottom: 4 }}>{t("フルタイム")}</p>
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <p style={{ color: "#B08256", fontSize: 10, fontWeight: 700, marginBottom: 1 }}>{t("男性")}</p>
+                    <div className="flex items-baseline gap-1">
+                      <span style={{ color: "#3D3530", fontSize: "clamp(24px,3.2vw,32px)", fontWeight: 900, fontFamily: "Oswald, sans-serif", lineHeight: 0.9 }}>12,000</span>
+                      <span style={{ color: "#6B5D54", fontSize: 12, fontWeight: 700 }}>{t("円/月")}</span>
+                    </div>
+                    <p style={{ color: "#8C7B72", fontSize: 10, marginTop: 1 }}>{t("（税込 13,200円/月）")}</p>
+                  </div>
+                  <div>
+                    <p style={{ color: "#B08256", fontSize: 10, fontWeight: 700, marginBottom: 1 }}>{t("女性")}</p>
+                    <div className="flex items-baseline gap-1">
+                      <span style={{ color: "#3D3530", fontSize: "clamp(24px,3.2vw,32px)", fontWeight: 900, fontFamily: "Oswald, sans-serif", lineHeight: 0.9 }}>10,000</span>
+                      <span style={{ color: "#6B5D54", fontSize: 12, fontWeight: 700 }}>{t("円/月")}</span>
+                    </div>
+                    <p style={{ color: "#8C7B72", fontSize: 10, marginTop: 1 }}>{t("（税込 11,000円/月）")}</p>
+                  </div>
+                </div>
+              </div>
+              <div style={{ borderTop: "1px solid rgba(192,138,85,0.3)", paddingTop: 12 }}>
+                <p style={{ color: "#B08256", fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", marginBottom: 4 }}>{t("月8回")}</p>
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <p style={{ color: "#B08256", fontSize: 10, fontWeight: 700, marginBottom: 1 }}>{t("男性")}</p>
+                    <div className="flex items-baseline gap-1">
+                      <span style={{ color: "#3D3530", fontSize: "clamp(24px,3.2vw,32px)", fontWeight: 900, fontFamily: "Oswald, sans-serif", lineHeight: 0.9 }}>10,000</span>
+                      <span style={{ color: "#6B5D54", fontSize: 12, fontWeight: 700 }}>{t("円/月")}</span>
+                    </div>
+                    <p style={{ color: "#8C7B72", fontSize: 10, marginTop: 1 }}>{t("（税込 11,000円/月）")}</p>
+                  </div>
+                  <div>
+                    <p style={{ color: "#B08256", fontSize: 10, fontWeight: 700, marginBottom: 1 }}>{t("女性")}</p>
+                    <div className="flex items-baseline gap-1">
+                      <span style={{ color: "#3D3530", fontSize: "clamp(24px,3.2vw,32px)", fontWeight: 900, fontFamily: "Oswald, sans-serif", lineHeight: 0.9 }}>8,000</span>
+                      <span style={{ color: "#6B5D54", fontSize: 12, fontWeight: 700 }}>{t("円/月")}</span>
+                    </div>
+                    <p style={{ color: "#8C7B72", fontSize: 10, marginTop: 1 }}>{t("（税込 8,800円/月）")}</p>
+                  </div>
+                </div>
+              </div>
+              <p style={{ color: "#A99C92", fontSize: 11, marginTop: 12, lineHeight: 1.5 }}>{t("※継続の縛りはありません。いつでも退会可能です。")}</p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* DEEPライト会員 — 半年継続でキャンペーン価格を維持（銀） */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -629,7 +699,7 @@ function OpeningOfferSection() {
               className="px-6 py-6 flex flex-col items-center justify-center text-center sm:w-[42%]"
               style={{ background: "linear-gradient(160deg, #C4CBD1 0%, #97A1AA 100%)" }}
             >
-              <span style={{ background: "#ffffff", color: "#5C6670", fontSize: 12, fontWeight: 900, padding: "4px 16px", borderRadius: 7, letterSpacing: "0.06em" }}>{t("続けやすい！")}</span>
+              <span style={{ background: "#ffffff", color: "#5C6670", fontSize: 12, fontWeight: 900, padding: "4px 16px", borderRadius: 7, letterSpacing: "0.06em" }}>🥈 {t("続けやすい！")}</span>
               <p style={{ color: "#ffffff", fontSize: 13, fontWeight: 700, marginTop: 14, letterSpacing: "0.04em" }}>{t("＼ 半年以上継続するなら ／")}</p>
               <p style={{ color: "#ffffff", fontSize: "clamp(34px,5vw,50px)", fontWeight: 900, fontFamily: "Oswald, sans-serif", lineHeight: 1, marginTop: 4, letterSpacing: "0.01em", textShadow: "0 2px 8px rgba(50,60,70,0.2)" }}>DEEP Light</p>
               <p style={{ color: "#ffffff", fontSize: "clamp(18px,2.4vw,22px)", fontWeight: 900, marginTop: 2 }}>{t("DEEPライト会員")}</p>
@@ -666,7 +736,7 @@ function OpeningOfferSection() {
           </div>
         </motion.div>
 
-        {/* DEEPプラス会員 — 1番お得なプランを打ち出し */}
+        {/* DEEPプラス会員 — 1番お得なプランを打ち出し（金） */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -681,7 +751,7 @@ function OpeningOfferSection() {
               className="px-6 py-6 flex flex-col items-center justify-center text-center sm:w-[42%]"
               style={{ background: "linear-gradient(160deg, #F5C96A 0%, #EAA53B 100%)" }}
             >
-              <span style={{ background: "#ffffff", color: "#B9791B", fontSize: 12, fontWeight: 900, padding: "4px 16px", borderRadius: 7, letterSpacing: "0.06em" }}>{t("1番お得！")}</span>
+              <span style={{ background: "#ffffff", color: "#B9791B", fontSize: 12, fontWeight: 900, padding: "4px 16px", borderRadius: 7, letterSpacing: "0.06em" }}>🥇 {t("1番お得！")}</span>
               <p style={{ color: "#ffffff", fontSize: 13, fontWeight: 700, marginTop: 14, letterSpacing: "0.04em" }}>{t("＼ 1年以上継続するなら ／")}</p>
               <p style={{ color: "#ffffff", fontSize: "clamp(34px,5vw,50px)", fontWeight: 900, fontFamily: "Oswald, sans-serif", lineHeight: 1, marginTop: 4, letterSpacing: "0.01em", textShadow: "0 2px 8px rgba(120,70,0,0.18)" }}>DEEP+</p>
               <p style={{ color: "#ffffff", fontSize: "clamp(18px,2.4vw,22px)", fontWeight: 900, marginTop: 2 }}>{t("DEEPプラス会員")}</p>

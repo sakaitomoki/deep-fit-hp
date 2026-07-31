@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Heart, Flame, Users, CheckCircle2, Star, Dumbbell, Zap, MapPin, MessageCircle, Crown } from "lucide-react";
+import { Heart, Flame, Users, CheckCircle2, Star, Dumbbell, Zap, MapPin, MessageCircle } from "lucide-react";
 import { SiLine, SiInstagram } from "react-icons/si";
 import { Link } from "wouter";
 import SEO from "@/components/SEO";
@@ -496,60 +496,128 @@ export default function Schedule() {
             <p className="text-[#4D5058]/50 text-sm mt-3">{t("入会金")} {gymConfig.joinFee} <span className="text-[#4D5058]/40">{t(gymConfig.joinFeeTaxNote)}</span>{t("　※価格は税抜表記です")}</p>
           </motion.div>
 
-          {/* Category Cards */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="grid sm:grid-cols-2 gap-6 mb-8"
-          >
-            {/* Female */}
-            <motion.div variants={fadeInUp} className="rounded-xl overflow-hidden border border-gray-200 shadow-sm">
-              <div className="bg-[#4D5058] px-6 py-4">
-                <p className="text-white text-lg font-bold tracking-wide">{t("女性会員")}</p>
-              </div>
-              <div className="bg-white divide-y divide-gray-100">
-                {gymConfig.membership.filter(p => p.name !== "U-22会員").map((plan, i) => (
-                  <div key={i} className="flex items-center justify-between px-6 py-4">
-                    <div>
-                      <p className="font-medium text-[#4D5058]">{t(plan.name)}</p>
-                      <p className="text-xs text-[#4D5058]/40 mt-0.5">{t(plan.subtitle)}</p>
+          {/* DEEPスタンダード会員（月8回も内包）— 銅 */}
+          {(() => {
+            const standard = gymConfig.membership.find(p => p.name === "DEEPスタンダード会員");
+            const eightTimes = gymConfig.membership.find(p => p.name === "月8回会員");
+            if (!standard) return null;
+            return (
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+                className="rounded-3xl overflow-hidden mb-6 w-full"
+                style={{ background: "#ffffff", border: "2.5px solid #C08A55", boxShadow: "0 14px 40px -16px rgba(168,116,74,0.35)" }}
+              >
+                <div className="flex flex-col sm:flex-row">
+                  <div
+                    className="px-6 py-6 flex flex-col items-center justify-center text-center sm:w-[42%]"
+                    style={{ background: "linear-gradient(160deg, #D9A873 0%, #A9744A 100%)" }}
+                  >
+                    <span style={{ background: "#ffffff", color: "#8B5E34", fontSize: 12, fontWeight: 900, padding: "4px 16px", borderRadius: 7, letterSpacing: "0.06em" }}>🥉 {t("スタンダードコース")}</span>
+                    <p style={{ color: "#ffffff", fontSize: 13, fontWeight: 700, marginTop: 14, letterSpacing: "0.04em" }}>{t("＼ 縛りなしで気軽に ／")}</p>
+                    <p style={{ color: "#ffffff", fontSize: "clamp(34px,5vw,50px)", fontWeight: 900, fontFamily: "Oswald, sans-serif", lineHeight: 1, marginTop: 4, letterSpacing: "0.01em", textShadow: "0 2px 8px rgba(80,50,20,0.25)" }}>DEEP Standard</p>
+                    <p style={{ color: "#ffffff", fontSize: "clamp(18px,2.4vw,22px)", fontWeight: 900, marginTop: 2 }}>{t("DEEPスタンダード会員")}</p>
+                  </div>
+                  <div className="flex-1 px-6 py-6">
+                    <div className="mb-3">
+                      <p style={{ color: "#B08256", fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", marginBottom: 4 }}>{t("フルタイム")}</p>
+                      <div className="grid grid-cols-2 gap-3">
+                        <div>
+                          <p style={{ color: "#B08256", fontSize: 10, fontWeight: 700, marginBottom: 1 }}>{t("男性")}</p>
+                          <p style={{ color: "#3D3530", fontSize: "clamp(22px,3vw,30px)", fontWeight: 900, fontFamily: "Oswald, sans-serif", lineHeight: 1 }}>{standard.malePrice}<span style={{ color: "#6B5D54", fontSize: 12, fontWeight: 700 }}> {t(standard.priceNote)}</span></p>
+                          <p style={{ color: "#8C7B72", fontSize: 10, marginTop: 2 }}>{t(standard.malePriceTaxNote)}</p>
+                        </div>
+                        <div>
+                          <p style={{ color: "#B08256", fontSize: 10, fontWeight: 700, marginBottom: 1 }}>{t("女性")}</p>
+                          <p style={{ color: "#3D3530", fontSize: "clamp(22px,3vw,30px)", fontWeight: 900, fontFamily: "Oswald, sans-serif", lineHeight: 1 }}>{standard.femalePrice}<span style={{ color: "#6B5D54", fontSize: 12, fontWeight: 700 }}> {t(standard.priceNote)}</span></p>
+                          <p style={{ color: "#8C7B72", fontSize: 10, marginTop: 2 }}>{t(standard.femalePriceTaxNote)}</p>
+                        </div>
+                      </div>
                     </div>
-                    <div className="text-right">
-                      <p className="font-heading font-bold text-2xl text-[#D99A40]">{plan.femalePrice}</p>
-                      <p className="text-[#4D5058]/40 text-xs">{t(plan.priceNote)}</p>
-                      <p className="text-[#4D5058]/30 text-[10px] mt-0.5">{t(plan.femalePriceTaxNote)}</p>
+                    {eightTimes && (
+                      <div style={{ borderTop: "1px solid rgba(192,138,85,0.3)", paddingTop: 12 }}>
+                        <p style={{ color: "#B08256", fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", marginBottom: 4 }}>{t("月8回")}</p>
+                        <div className="grid grid-cols-2 gap-3">
+                          <div>
+                            <p style={{ color: "#B08256", fontSize: 10, fontWeight: 700, marginBottom: 1 }}>{t("男性")}</p>
+                            <p style={{ color: "#3D3530", fontSize: "clamp(22px,3vw,30px)", fontWeight: 900, fontFamily: "Oswald, sans-serif", lineHeight: 1 }}>{eightTimes.malePrice}<span style={{ color: "#6B5D54", fontSize: 12, fontWeight: 700 }}> {t(eightTimes.priceNote)}</span></p>
+                            <p style={{ color: "#8C7B72", fontSize: 10, marginTop: 2 }}>{t(eightTimes.malePriceTaxNote)}</p>
+                          </div>
+                          <div>
+                            <p style={{ color: "#B08256", fontSize: 10, fontWeight: 700, marginBottom: 1 }}>{t("女性")}</p>
+                            <p style={{ color: "#3D3530", fontSize: "clamp(22px,3vw,30px)", fontWeight: 900, fontFamily: "Oswald, sans-serif", lineHeight: 1 }}>{eightTimes.femalePrice}<span style={{ color: "#6B5D54", fontSize: 12, fontWeight: 700 }}> {t(eightTimes.priceNote)}</span></p>
+                            <p style={{ color: "#8C7B72", fontSize: 10, marginTop: 2 }}>{t(eightTimes.femalePriceTaxNote)}</p>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                    <div className="flex flex-wrap gap-x-4 gap-y-1.5 mt-3">
+                      {standard.benefits.map((b, i) => (
+                        <span key={i} className="flex items-center gap-1 text-xs text-[#4D5058]/60">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#B08256] shrink-0" />
+                          {t(b)}
+                        </span>
+                      ))}
+                    </div>
+                    <p style={{ color: "#A99C92", fontSize: 11, marginTop: 12, lineHeight: 1.5 }}>{t("※継続の縛りはありません。いつでも退会可能です。")}</p>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })()}
+
+          {/* DEEPライト会員 — 銀 */}
+          {(() => {
+            const light = gymConfig.lightMembership;
+            if (!light) return null;
+            return (
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+                className="rounded-3xl overflow-hidden mb-6 w-full"
+                style={{ background: "#ffffff", border: "2.5px solid #ABB4BC", boxShadow: "0 14px 40px -16px rgba(91,107,122,0.35)" }}
+              >
+                <div className="flex flex-col sm:flex-row">
+                  <div
+                    className="px-6 py-6 flex flex-col items-center justify-center text-center sm:w-[42%]"
+                    style={{ background: "linear-gradient(160deg, #C4CBD1 0%, #97A1AA 100%)" }}
+                  >
+                    <span style={{ background: "#ffffff", color: "#5C6670", fontSize: 12, fontWeight: 900, padding: "4px 16px", borderRadius: 7, letterSpacing: "0.06em" }}>🥈 {t(light.condition)}</span>
+                    <p style={{ color: "#ffffff", fontSize: "clamp(34px,5vw,50px)", fontWeight: 900, fontFamily: "Oswald, sans-serif", lineHeight: 1, marginTop: 14, letterSpacing: "0.01em", textShadow: "0 2px 8px rgba(50,60,70,0.2)" }}>DEEP Light</p>
+                    <p style={{ color: "#ffffff", fontSize: "clamp(18px,2.4vw,22px)", fontWeight: 900, marginTop: 2 }}>{t(light.name)}</p>
+                  </div>
+                  <div className="flex-1 px-6 py-6">
+                    <div className="grid grid-cols-2 gap-3 mb-3">
+                      <div>
+                        <p style={{ color: "#7B8894", fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", marginBottom: 2 }}>{t("男性")}</p>
+                        <p style={{ color: "#3D3530", fontSize: "clamp(26px,3.5vw,36px)", fontWeight: 900, fontFamily: "Oswald, sans-serif", lineHeight: 1 }}>{light.malePrice}<span style={{ color: "#6B5D54", fontSize: 13, fontWeight: 700 }}> {t(light.priceNote)}</span></p>
+                        <p style={{ color: "#8C7B72", fontSize: 11, marginTop: 2 }}>{t(light.malePriceTaxNote)}</p>
+                      </div>
+                      <div>
+                        <p style={{ color: "#7B8894", fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", marginBottom: 2 }}>{t("女性")}</p>
+                        <p style={{ color: "#3D3530", fontSize: "clamp(26px,3.5vw,36px)", fontWeight: 900, fontFamily: "Oswald, sans-serif", lineHeight: 1 }}>{light.femalePrice}<span style={{ color: "#6B5D54", fontSize: 13, fontWeight: 700 }}> {t(light.priceNote)}</span></p>
+                        <p style={{ color: "#8C7B72", fontSize: 11, marginTop: 2 }}>{t(light.femalePriceTaxNote)}</p>
+                      </div>
+                    </div>
+                    <div className="flex flex-wrap gap-x-4 gap-y-1.5">
+                      {light.benefits.map((b, i) => (
+                        <span key={i} className="flex items-center gap-1 text-xs text-[#4D5058]/60">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#97A1AA] shrink-0" />
+                          {t(b)}
+                        </span>
+                      ))}
                     </div>
                   </div>
-                ))}
-              </div>
-            </motion.div>
+                </div>
+              </motion.div>
+            );
+          })()}
 
-            {/* Male */}
-            <motion.div variants={fadeInUp} className="rounded-xl overflow-hidden border border-gray-200 shadow-sm">
-              <div className="bg-[#4D5058] px-6 py-4">
-                <p className="text-white text-lg font-bold tracking-wide">{t("男性会員")}</p>
-              </div>
-              <div className="bg-white divide-y divide-gray-100">
-                {gymConfig.membership.filter(p => p.name !== "U-22会員").map((plan, i) => (
-                  <div key={i} className="flex items-center justify-between px-6 py-4">
-                    <div>
-                      <p className="font-medium text-[#4D5058]">{t(plan.name)}</p>
-                      <p className="text-xs text-[#4D5058]/40 mt-0.5">{t(plan.subtitle)}</p>
-                    </div>
-                    <div className="text-right">
-                      <p className="font-heading font-bold text-2xl text-[#4D5058]">{plan.malePrice}</p>
-                      <p className="text-[#4D5058]/40 text-xs">{t(plan.priceNote)}</p>
-                      <p className="text-[#4D5058]/30 text-[10px] mt-0.5">{t(plan.malePriceTaxNote)}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          </motion.div>
-
-          {/* Premium standalone card */}
+          {/* Premium standalone card — 金 */}
           {(() => {
             const premium = gymConfig.premiumMembership;
             if (!premium) return null;
@@ -559,43 +627,38 @@ export default function Schedule() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeInUp}
-                className="rounded-xl overflow-hidden border-2 border-[#F2AC55]/50 shadow-md mb-8"
+                className="rounded-3xl overflow-hidden mb-8 w-full"
+                style={{ background: "#ffffff", border: "2.5px solid #EAA53B", boxShadow: "0 14px 40px -16px rgba(234,165,59,0.5)" }}
               >
-                <div className="bg-gradient-to-r from-[#D99A40] to-[#F2AC55] px-6 py-4 flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <Crown className="w-5 h-5 text-white shrink-0" />
-                    <div>
-                      <p className="text-white text-lg font-bold tracking-wide">{t(premium.name)}</p>
-                      <p className="text-white/70 text-xs mt-0.5">{t(premium.subtitle)}</p>
-                    </div>
+                <div className="flex flex-col sm:flex-row">
+                  <div
+                    className="px-6 py-6 flex flex-col items-center justify-center text-center sm:w-[42%]"
+                    style={{ background: "linear-gradient(160deg, #F5C96A 0%, #EAA53B 100%)" }}
+                  >
+                    <span style={{ background: "#ffffff", color: "#B9791B", fontSize: 12, fontWeight: 900, padding: "4px 16px", borderRadius: 7, letterSpacing: "0.06em" }}>🥇 {t(premium.condition)}</span>
+                    <p style={{ color: "#ffffff", fontSize: "clamp(34px,5vw,50px)", fontWeight: 900, fontFamily: "Oswald, sans-serif", lineHeight: 1, marginTop: 14, letterSpacing: "0.01em", textShadow: "0 2px 8px rgba(120,70,0,0.18)" }}>DEEP+</p>
+                    <p style={{ color: "#ffffff", fontSize: "clamp(18px,2.4vw,22px)", fontWeight: 900, marginTop: 2 }}>{t(premium.name)}</p>
                   </div>
-                  <span className="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap">{t(premium.condition)}</span>
-                </div>
-                <div className="bg-white px-6 py-5">
-                  <div className="flex flex-wrap gap-x-6 gap-y-2 mb-4">
-                    {premium.benefits.map((b, i) => (
-                      <span key={i} className="flex items-center gap-1 text-xs text-[#4D5058]/60">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#D99A40] shrink-0" />
-                        {t(b)}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="grid grid-cols-2 gap-3">
-                    <div className="rounded-lg bg-[#FDF6EC] px-4 py-3 flex items-center justify-between">
-                      <span className="text-sm font-medium text-[#4D5058]">{t("男性")}</span>
-                      <div className="text-right">
-                        <p className="font-heading font-bold text-2xl text-[#D99A40] leading-none">{premium.malePrice}</p>
-                        <p className="text-[#4D5058]/40 text-[10px] mt-0.5">{t(premium.priceNote)}</p>
-                        <p className="text-[#4D5058]/30 text-[10px]">{t(premium.malePriceTaxNote)}</p>
+                  <div className="flex-1 px-6 py-6">
+                    <div className="grid grid-cols-2 gap-3 mb-3">
+                      <div>
+                        <p style={{ color: "#D99A40", fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", marginBottom: 2 }}>{t("男性")}</p>
+                        <p style={{ color: "#3D3530", fontSize: "clamp(26px,3.5vw,36px)", fontWeight: 900, fontFamily: "Oswald, sans-serif", lineHeight: 1 }}>{premium.malePrice}<span style={{ color: "#6B5D54", fontSize: 13, fontWeight: 700 }}> {t(premium.priceNote)}</span></p>
+                        <p style={{ color: "#8C7B72", fontSize: 11, marginTop: 2 }}>{t(premium.malePriceTaxNote)}</p>
+                      </div>
+                      <div>
+                        <p style={{ color: "#D99A40", fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", marginBottom: 2 }}>{t("女性")}</p>
+                        <p style={{ color: "#3D3530", fontSize: "clamp(26px,3.5vw,36px)", fontWeight: 900, fontFamily: "Oswald, sans-serif", lineHeight: 1 }}>{premium.femalePrice}<span style={{ color: "#6B5D54", fontSize: 13, fontWeight: 700 }}> {t(premium.priceNote)}</span></p>
+                        <p style={{ color: "#8C7B72", fontSize: 11, marginTop: 2 }}>{t(premium.femalePriceTaxNote)}</p>
                       </div>
                     </div>
-                    <div className="rounded-lg bg-[#FDF6EC] px-4 py-3 flex items-center justify-between">
-                      <span className="text-sm font-medium text-[#4D5058]">{t("女性")}</span>
-                      <div className="text-right">
-                        <p className="font-heading font-bold text-2xl text-[#D99A40] leading-none">{premium.femalePrice}</p>
-                        <p className="text-[#4D5058]/40 text-[10px] mt-0.5">{t(premium.priceNote)}</p>
-                        <p className="text-[#4D5058]/30 text-[10px]">{t(premium.femalePriceTaxNote)}</p>
-                      </div>
+                    <div className="flex flex-wrap gap-x-4 gap-y-1.5">
+                      {premium.benefits.map((b, i) => (
+                        <span key={i} className="flex items-center gap-1 text-xs text-[#4D5058]/60">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#D99A40] shrink-0" />
+                          {t(b)}
+                        </span>
+                      ))}
                     </div>
                   </div>
                 </div>
