@@ -44,6 +44,7 @@ export const home: Record<string, string> = {
   "女性フルタイム": "Women, Full-Time",
   "通常": "Usually",
   "11,000円": "¥11,000",
+  "9,000円": "¥9,000",
   "が": "",
   "ずっと": "Forever",
   "9,900円": "¥9,900",

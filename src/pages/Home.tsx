@@ -574,9 +574,10 @@ function OpeningOfferSection() {
                 </div>
                 <div className="flex items-baseline gap-2 mt-0.5">
                   <span style={{ color: "#3D3530", fontSize: "clamp(16px,1.8vw,20px)", fontWeight: 700 }}>{t("ずっと")}</span>
-                  <span style={{ color: "#D99A40", fontSize: "clamp(32px,4.2vw,50px)", fontWeight: 900, lineHeight: 1, fontFamily: "Oswald, sans-serif" }}>{t("9,900円")}</span>
+                  <span style={{ color: "#D99A40", fontSize: "clamp(32px,4.2vw,50px)", fontWeight: 900, lineHeight: 1, fontFamily: "Oswald, sans-serif" }}>{t("9,000円")}</span>
                   <span style={{ color: "#3D3530", fontSize: "clamp(14px,1.4vw,17px)", fontWeight: 700 }}>{t("で通い放題！")}</span>
                 </div>
+                <p style={{ color: "#8C7B72", fontSize: 12, marginTop: 2 }}>{t("（税込 9,900円/月）")}</p>
               </div>
 
               {/* 男性 */}
@@ -589,9 +590,10 @@ function OpeningOfferSection() {
                 </div>
                 <div className="flex items-baseline gap-2 mt-0.5">
                   <span style={{ color: "#3D3530", fontSize: "clamp(16px,1.8vw,20px)", fontWeight: 700 }}>{t("ずっと")}</span>
-                  <span style={{ color: "#D99A40", fontSize: "clamp(32px,4.2vw,50px)", fontWeight: 900, lineHeight: 1, fontFamily: "Oswald, sans-serif" }}>{t("12,100円")}</span>
+                  <span style={{ color: "#D99A40", fontSize: "clamp(32px,4.2vw,50px)", fontWeight: 900, lineHeight: 1, fontFamily: "Oswald, sans-serif" }}>{t("11,000円")}</span>
                   <span style={{ color: "#3D3530", fontSize: "clamp(14px,1.4vw,17px)", fontWeight: 700 }}>{t("で通い放題！")}</span>
                 </div>
+                <p style={{ color: "#8C7B72", fontSize: 12, marginTop: 2 }}>{t("（税込 12,100円/月）")}</p>
               </div>
 
               <p style={{ color: "#A99C92", fontSize: 11, marginTop: 14, textAlign: "center" }}>{t("継続縛りなし・いつでも退会可")}</p>
