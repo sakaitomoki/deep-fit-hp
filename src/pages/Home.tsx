@@ -638,14 +638,26 @@ function OpeningOfferSection() {
               <div className="mb-3">
                 <p style={{ color: "#7B8894", fontSize: 11, fontWeight: 800, letterSpacing: "0.14em", marginBottom: 2 }}>{t("男性フルタイム")}</p>
                 <div className="flex items-baseline gap-1.5">
-                  <span style={{ color: "#3D3530", fontSize: "clamp(40px,5.5vw,58px)", fontWeight: 900, fontFamily: "Oswald, sans-serif", lineHeight: 0.9 }}>{t("12,100円/月")}</span>
+                  <span style={{ color: "#3D3530", fontSize: "clamp(40px,5.5vw,58px)", fontWeight: 900, fontFamily: "Oswald, sans-serif", lineHeight: 0.9 }}>11,000</span>
+                  <span style={{ color: "#6B5D54", fontSize: 16, fontWeight: 700 }}>{t("円/月")}</span>
                 </div>
+                <p style={{ color: "#8C7B72", fontSize: 12, marginTop: 2 }}>{t("（税込 12,100円/月）")}</p>
               </div>
               <div style={{ borderTop: "1px solid rgba(151,161,170,0.3)", paddingTop: 12 }}>
                 <p style={{ color: "#7B8894", fontSize: 11, fontWeight: 800, letterSpacing: "0.14em", marginBottom: 2 }}>{t("女性フルタイム")}</p>
                 <div className="flex items-baseline gap-1.5">
-                  <span style={{ color: "#3D3530", fontSize: "clamp(40px,5.5vw,58px)", fontWeight: 900, fontFamily: "Oswald, sans-serif", lineHeight: 0.9 }}>{t("9,900円/月")}</span>
+                  <span style={{ color: "#3D3530", fontSize: "clamp(40px,5.5vw,58px)", fontWeight: 900, fontFamily: "Oswald, sans-serif", lineHeight: 0.9 }}>9,000</span>
+                  <span style={{ color: "#6B5D54", fontSize: 16, fontWeight: 700 }}>{t("円/月")}</span>
                 </div>
+                <p style={{ color: "#8C7B72", fontSize: 12, marginTop: 2 }}>{t("（税込 9,900円/月）")}</p>
+              </div>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 16 }}>
+                <span style={{ display: "inline-flex", alignItems: "center", gap: 5, background: "#97A1AA", color: "#ffffff", fontSize: 13, fontWeight: 800, padding: "6px 14px", borderRadius: 999 }}>
+                  <span style={{ fontSize: 12 }}>✓</span>{t("入会金無料")}
+                </span>
+                <span style={{ display: "inline-flex", alignItems: "center", gap: 5, background: "#97A1AA", color: "#ffffff", fontSize: 13, fontWeight: 800, padding: "6px 14px", borderRadius: 999 }}>
+                  <span style={{ fontSize: 12 }}>✓</span>{t("翌月会費無料")}
+                </span>
               </div>
               <p style={{ color: "#A99C92", fontSize: 11, marginTop: 12, lineHeight: 1.5 }}>{t("※半年以上の継続を前提としたプランです。")}</p>
             </div>
