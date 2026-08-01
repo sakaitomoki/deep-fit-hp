@@ -12,6 +12,7 @@ const navLinks = [
   { href: "/about", label: "ジムについて" },
   { href: "/schedule", label: "クラス・料金" },
   { href: "/kids", label: "キッズクラス" },
+  { href: "/program", label: "プログラム" },
   { href: "/instructors", label: "インストラクター" },
   { href: "/contact", label: "お問い合わせ" },
 ];

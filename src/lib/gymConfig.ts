@@ -104,6 +104,17 @@ export const gymConfig = {
     { name: "通い放題", price: "¥8,000", priceTaxNote: "（税込 ¥8,800/月）", note: "/ 月" },
     { name: "親子キック会員", price: "¥6,000", priceTaxNote: "（税込 ¥6,600/月）", note: "2名まで / 月" },
   ],
+  programs: [
+    { name: "ヨガ", subtitle: "Yoga", description: "呼吸と共にゆっくりと体をほぐし、心身のバランスを整えるプログラムです。" },
+    { name: "キックボクササイズ", subtitle: "Kickboxercise", description: "キックボクシングの動きを取り入れた、楽しく汗を流せるエクササイズです。" },
+    { name: "アニマルフロー", subtitle: "Animal Flow", description: "動物の動きを模した全身運動で、柔軟性や体幹を鍛えるトレーニングです。" },
+  ],
+  programPricing: {
+    memberPrice: "¥1,500",
+    nonMemberPrice: "¥2,000",
+    note: "1レッスン",
+    schedule: "各プログラム月1回開催。開催日はInstagramでご案内いたします。",
+  },
   personalTraining: {
     duration: "60分",
     price: "¥5,000",
@@ -138,6 +149,7 @@ export const seoConfig = {
     about: seoMeta["/about"],
     schedule: seoMeta["/schedule"],
     kids: seoMeta["/kids"],
+    program: seoMeta["/program"],
     instructors: seoMeta["/instructors"],
     contact: seoMeta["/contact"],
   },
