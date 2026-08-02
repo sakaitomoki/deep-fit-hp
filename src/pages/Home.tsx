@@ -450,7 +450,6 @@ const openingOfferItems = [
   { id: 1, label: "特典①", title: "体験料", originalPrice: "通常 2,000円", benefit: "無料" },
   { id: 2, label: "特典②", title: "入会金", originalPrice: "通常 10,000円", benefit: "無料" },
   { id: 3, label: "特典③", title: "事務手数料", originalPrice: "通常 3,000円", benefit: "無料" },
-  { id: 4, label: "特典④", title: "翌月会費", originalPrice: "女性 11,000円 / 男性 13,200円", benefit: "無料" },
 ];
 
 function OpeningOfferSection() {
@@ -468,7 +467,7 @@ function OpeningOfferSection() {
           <p className="opening-offer-section__eyebrow text-[24px]">{t("夏の大キャンペーン")}</p>
           <h2 className="opening-offer-section__title">
             {t("本気の夏、始めよう。")}
-            <span>{t("5大特典")}</span>
+            <span>{t("4大特典")}</span>
           </h2>
           <p className="opening-offer-section__lead">
             {t("8月末までの期間限定。")}<br />
@@ -523,7 +522,7 @@ function OpeningOfferSection() {
           variants={staggerContainer}
           className="flex flex-col sm:flex-row gap-5 w-full mt-2 mb-2"
         >
-          {/* 特典⑤ 先着30名限定・月会費永久割引 — 明るい今だけキャンペーン */}
+          {/* 特典④ 先着30名限定・月会費永久割引 — 明るい今だけキャンペーン */}
           <motion.div
             variants={scaleIn}
             className="flex-1 rounded-3xl overflow-hidden"
@@ -542,7 +541,7 @@ function OpeningOfferSection() {
             {/* ヘッダーバンド（オレンジ） */}
             <div className="px-5 pt-4 pb-4 text-center" style={{ background: "linear-gradient(135deg, #EAA53B 0%, #F5C96A 100%)" }}>
               <div className="flex items-center justify-center gap-2 mb-2">
-                <span style={{ background: "rgba(255,255,255,0.28)", color: "#ffffff", fontSize: 11, fontWeight: 900, padding: "3px 12px", borderRadius: 999, letterSpacing: "0.1em" }}>{t("特典⑤")}</span>
+                <span style={{ background: "rgba(255,255,255,0.28)", color: "#ffffff", fontSize: 11, fontWeight: 900, padding: "3px 12px", borderRadius: 999, letterSpacing: "0.1em" }}>{t("特典④")}</span>
                 <span style={{ color: "rgba(255,255,255,0.9)", fontSize: 11, letterSpacing: "0.12em", fontWeight: 700 }}>{t("当日入会限定")}</span>
               </div>
               <div className="flex flex-wrap items-center justify-center gap-2 mb-2">
@@ -611,7 +610,7 @@ function OpeningOfferSection() {
           className="opening-offer-section__value"
         >
           <p className="opening-offer-section__value-label">{t("入会月の節約額")}</p>
-          <p className="opening-offer-section__value-main">{t("最大 28,200円〜")}</p>
+          <p className="opening-offer-section__value-main">{t("最大 15,000円〜")}</p>
           <p className="opening-offer-section__value-sub">{t("＋月会費永久割引が継続します")}</p>
         </motion.div>
 
