@@ -11,6 +11,7 @@ import { about } from "./translations/about";
 import { schedule } from "./translations/schedule";
 import { kids } from "./translations/kids";
 import { program } from "./translations/program";
+import { personalTraining } from "./translations/personalTraining";
 import { instructors } from "./translations/instructors";
 import { contact } from "./translations/contact";
 
@@ -21,6 +22,7 @@ export const en: Record<string, string> = {
   ...schedule,
   ...kids,
   ...program,
+  ...personalTraining,
   ...instructors,
   ...contact,
 };

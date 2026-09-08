@@ -116,10 +116,27 @@ export const gymConfig = {
     schedule: "各プログラム月1回開催。開催日はInstagramでご案内いたします。",
   },
   personalTraining: {
-    duration: "60分",
-    price: "¥5,000",
-    priceTaxNote: "（税込 ¥5,500）",
-    note: "ペアでも同料金",
+    duration: "50分",
+    price: "¥8,500",
+    note: "回数券プランは詳しくはこちら",
+  },
+  personalTrainingPlans: {
+    individual: {
+      label: "1名",
+      tiers: [
+        { sessions: "1回", price: "¥8,500", perSession: "", validity: "" },
+        { sessions: "5回", price: "¥40,000", perSession: "（1回 ¥7,500）", validity: "有効期間2ヶ月" },
+        { sessions: "10回", price: "¥72,500", perSession: "（1回 ¥7,250）", validity: "有効期間3ヶ月" },
+      ],
+    },
+    pair: {
+      label: "2名",
+      tiers: [
+        { sessions: "1回", price: "¥11,000", perSession: "", validity: "" },
+        { sessions: "5回", price: "¥52,500", perSession: "（1回 ¥10,500）", validity: "有効期間2ヶ月" },
+        { sessions: "10回", price: "¥100,000", perSession: "（1回 ¥10,000）", validity: "有効期間3ヶ月" },
+      ],
+    },
   },
   equipment: [
     "オールインパワーラック",
@@ -150,6 +167,7 @@ export const seoConfig = {
     schedule: seoMeta["/schedule"],
     kids: seoMeta["/kids"],
     program: seoMeta["/program"],
+    personalTraining: seoMeta["/personal-training"],
     instructors: seoMeta["/instructors"],
     contact: seoMeta["/contact"],
   },
