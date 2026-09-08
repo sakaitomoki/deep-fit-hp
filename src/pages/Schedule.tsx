@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Heart, Flame, Users, CheckCircle2, Star, Dumbbell, Zap, MapPin, MessageCircle } from "lucide-react";
+import { Heart, Flame, Users, CheckCircle2, Star, Dumbbell, Zap, MapPin, MessageCircle, ArrowRight } from "lucide-react";
 import { SiLine, SiInstagram } from "react-icons/si";
 import { Link } from "wouter";
 import SEO from "@/components/SEO";
@@ -487,6 +487,12 @@ export default function Schedule() {
                   <span style={{ fontSize: 12 }}>✓</span>{t("翌月会費無料")}
                 </span>
               </div>
+              <Link
+                href="/gym-switch"
+                style={{ display: "inline-flex", alignItems: "center", gap: 4, marginTop: 16, background: "#ffffff", color: "#2563A8", fontSize: 13, fontWeight: 900, padding: "8px 18px", borderRadius: 999 }}
+              >
+                {t("詳しくはこちら")} <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
             </div>
             <p style={{ color: "#A99C92", fontSize: 11, padding: "14px 20px", textAlign: "center" }}>{t("※ご入会時に他ジムの会員証またはアプリ画面をご提示ください。")}</p>
           </motion.div>

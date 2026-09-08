@@ -14,6 +14,7 @@ const navLinks = [
   { href: "/kids", label: "キッズクラス" },
   { href: "/program", label: "プログラム" },
   { href: "/personal-training", label: "女性専用パーソナル" },
+  { href: "/gym-switch", label: "ジム乗り換え" },
   { href: "/instructors", label: "インストラクター" },
   { href: "/contact", label: "お問い合わせ" },
 ];
