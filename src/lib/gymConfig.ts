@@ -116,11 +116,15 @@ export const gymConfig = {
     schedule: "各プログラム月1回開催。開催日はInstagramでご案内いたします。",
   },
   personalTraining: {
-    duration: "50分",
-    price: "¥8,500",
-    note: "回数券プランは詳しくはこちら",
+    duration: "60分",
+    price: "¥5,000",
+    priceTaxNote: "（税込 ¥5,500）",
+    note: "ペアでも同料金",
   },
-  personalTrainingPlans: {
+  womensPersonalTraining: {
+    name: "女性専用パーソナルトレーニング",
+    subtitle: "Women's Personal Training",
+    duration: "50分",
     individual: {
       label: "1名",
       tiers: [

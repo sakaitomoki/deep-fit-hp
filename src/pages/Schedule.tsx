@@ -762,11 +762,11 @@ export default function Schedule() {
               <div className="bg-white px-6 py-6 flex items-center justify-between">
                 <div>
                   <p className="font-medium text-[#4D5058]">{t(gymConfig.personalTraining.duration)} {t("/ 1セッション")}</p>
-                  <Link href="/personal-training" className="text-xs text-[#2563A8] underline underline-offset-2 mt-1 inline-block">{t("回数券プランなど詳しくはこちら")}</Link>
+                  <p className="text-xs text-[#4D5058]/50 mt-1">👥 {t(gymConfig.personalTraining.note)}</p>
                 </div>
                 <div className="text-right">
                   <p className="font-heading font-bold text-2xl text-[#2563A8]">{gymConfig.personalTraining.price}</p>
-                  <p className="text-[#4D5058]/40 text-xs">{t("/ 1回")}</p>
+                  <p className="text-[#4D5058]/30 text-[10px] mt-0.5">{t(gymConfig.personalTraining.priceTaxNote)}</p>
                 </div>
               </div>
             </motion.div>

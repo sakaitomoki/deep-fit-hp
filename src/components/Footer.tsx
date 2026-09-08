@@ -11,7 +11,7 @@ const pageLinks = [
   { href: "/schedule", label: "クラス・料金" },
   { href: "/kids", label: "キッズクラス" },
   { href: "/program", label: "プログラム" },
-  { href: "/personal-training", label: "パーソナルトレーニング" },
+  { href: "/personal-training", label: "女性専用パーソナル" },
   { href: "/instructors", label: "インストラクター" },
   { href: "/contact", label: "お問い合わせ" },
 ];
