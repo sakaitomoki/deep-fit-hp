@@ -16,6 +16,8 @@ export const home: Record<string, string> = {
     "DEEP.FIT | Kickboxing & Circuit Training Gym, 10 min walk from JR Amagasaki Station",
   "楽しいから続く。": "Fun keeps you coming back.",
   "続くから変わる。": "Coming back is what changes you.",
+  "マシンジムが続かなかったあなたへ。": "For you, who couldn't stick with a machine gym.",
+  "私でも続けられた、そう思える場所です。": "A place where even I could say, \"I kept going.\"",
   "運動が久しぶりの方も多く通っています。": "Many members are returning to exercise after a long break.",
   "体を動かして、気分まで軽くなる時間を。": "Move your body, and lighten your mind.",
   "LINEで無料体験予約": "Book Free Trial via LINE",

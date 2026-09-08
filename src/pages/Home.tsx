@@ -1038,6 +1038,10 @@ export default function Home() {
               transition={{ delay: 0.42, duration: 0.6, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
               data-testid="text-hero-subheadline"
             >
+              <p style={{ color: "#ffffff", fontWeight: 700, marginBottom: 8 }}>
+                {t("マシンジムが続かなかったあなたへ。")}<br />
+                {t("私でも続けられた、そう思える場所です。")}
+              </p>
               <p>
                 {t("運動が久しぶりの方も多く通っています。")}<br />
                 {t("体を動かして、気分まで軽くなる時間を。")}
