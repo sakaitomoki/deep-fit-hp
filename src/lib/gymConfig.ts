@@ -105,7 +105,7 @@ export const gymConfig = {
     { name: "親子キック会員", price: "¥6,000", priceTaxNote: "（税込 ¥6,600/月）", note: "2名まで / 月" },
   ],
   programs: [
-    { name: "ヨガ", subtitle: "Yoga", description: "呼吸と共にゆっくりと体をほぐし、心身のバランスを整えるプログラムです。", image: "/images/program-hero-yoga.webp" },
+    { name: "ヨガ", subtitle: "Yoga", description: "呼吸と共にゆっくりと体をほぐし、心身のバランスを整えるプログラムです。", image: "/images/program-card-yoga.webp" },
     { name: "キックボクササイズ", subtitle: "Kickboxercise", description: "キックボクシングの動きを取り入れた、楽しく汗を流せるエクササイズです。" },
     { name: "アニマルフロー", subtitle: "Animal Flow", description: "動物の動きを模した全身運動で、柔軟性や体幹を鍛えるトレーニングです。" },
   ],
