@@ -395,7 +395,7 @@ export default function Schedule() {
                 </div>
                 <div className="flex flex-wrap items-center justify-center gap-2 mb-2">
                   <span style={{ background: "#ffffff", color: "#C0392B", fontSize: 11, fontWeight: 900, padding: "4px 12px", borderRadius: 999, letterSpacing: "0.04em" }}>{t("🔥 先着30名限定")}</span>
-                  <span style={{ background: "#ffffff", color: "#B9791B", fontSize: 11, fontWeight: 900, padding: "4px 12px", borderRadius: 999, letterSpacing: "0.04em" }}>{t("⏰ 8月末まで")}</span>
+                  <span style={{ background: "#ffffff", color: "#B9791B", fontSize: 11, fontWeight: 900, padding: "4px 12px", borderRadius: 999, letterSpacing: "0.04em" }}>{t("⏰ 9月末まで")}</span>
                 </div>
                 <p style={{ color: "#ffffff", fontSize: "clamp(22px,3.5vw,36px)", fontWeight: 900, lineHeight: 1.05, margin: "2px 0 0", fontFamily: "Oswald, sans-serif", letterSpacing: "0.02em", textShadow: "0 2px 8px rgba(120,70,0,0.22)" }}>
                   {t("月会費が永久にOFF！！")}

@@ -470,7 +470,7 @@ function OpeningOfferSection() {
             <span>{t("4大特典")}</span>
           </h2>
           <p className="opening-offer-section__lead">
-            {t("8月末までの期間限定。")}<br />
+            {t("9月末までの期間限定。")}<br />
             {t("まずは無料体験から気軽にどうぞ。")}
           </p>
         </motion.div>
@@ -546,7 +546,7 @@ function OpeningOfferSection() {
               </div>
               <div className="flex flex-wrap items-center justify-center gap-2 mb-2">
                 <span style={{ background: "#ffffff", color: "#C0392B", fontSize: 12, fontWeight: 900, padding: "4px 14px", borderRadius: 999, letterSpacing: "0.04em" }}>{t("🔥 先着30名限定")}</span>
-                <span style={{ background: "#ffffff", color: "#B9791B", fontSize: 12, fontWeight: 900, padding: "4px 14px", borderRadius: 999, letterSpacing: "0.04em" }}>{t("⏰ 8月末まで")}</span>
+                <span style={{ background: "#ffffff", color: "#B9791B", fontSize: 12, fontWeight: 900, padding: "4px 14px", borderRadius: 999, letterSpacing: "0.04em" }}>{t("⏰ 9月末まで")}</span>
               </div>
               <p style={{
                 color: "#ffffff",

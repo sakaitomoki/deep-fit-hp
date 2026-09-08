@@ -282,8 +282,8 @@ export const home: Record<string, string> = {
   "ご質問等ありましたらお気軽にお声掛けくださいね😊": "If you have any questions, feel free to reach out anytime 😊",
   "夏の大キャンペーン": "Summer Mega Campaign",
   "本気の夏、始めよう。": "Get serious this summer.",
-  "8月末までの期間限定。": "Limited time — until the end of August.",
+  "9月末までの期間限定。": "Limited time — until the end of September.",
   "今だけ": "Now Only",
   "🔥 先着30名限定": "🔥 First 30 members only",
-  "⏰ 8月末まで": "⏰ Until end of August",
+  "⏰ 9月末まで": "⏰ Until end of September",
 };
