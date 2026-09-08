@@ -602,6 +602,33 @@ function OpeningOfferSection() {
 
         </motion.div>
 
+        {/* 女性限定 3回体験キャンペーン */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          className="rounded-3xl overflow-hidden mb-6 w-full"
+          style={{ background: "#ffffff", border: "2.5px solid #C9457A", boxShadow: "0 14px 40px -16px rgba(155,44,85,0.4)", position: "relative" }}
+        >
+          <div style={{ position: "absolute", top: 16, right: -42, transform: "rotate(45deg)", background: "linear-gradient(90deg,#9B2C55,#C9457A)", color: "#fff", fontSize: 11, fontWeight: 900, letterSpacing: "0.1em", padding: "5px 44px", boxShadow: "0 4px 10px -3px rgba(0,0,0,0.3)", zIndex: 2 }}>
+            {t("女性限定")}
+          </div>
+          <div className="px-6 pt-6 pb-6 text-center" style={{ background: "linear-gradient(135deg, #9B2C55 0%, #C9457A 100%)" }}>
+            <div className="flex flex-wrap items-center justify-center gap-2 mb-3">
+              <span style={{ background: "#ffffff", color: "#9B2C55", fontSize: 12, fontWeight: 900, padding: "4px 14px", borderRadius: 999, letterSpacing: "0.04em" }}>{t("🗓 9月・10月限定")}</span>
+              <span style={{ background: "#ffffff", color: "#9B2C55", fontSize: 12, fontWeight: 900, padding: "4px 14px", borderRadius: 999, letterSpacing: "0.04em" }}>{t("👩 女性限定")}</span>
+            </div>
+            <p style={{ color: "#ffffff", fontSize: "clamp(20px,3vw,26px)", fontWeight: 800, letterSpacing: "0.02em" }}>{t("じっくり通える")}</p>
+            <div className="flex items-baseline justify-center gap-2" style={{ marginTop: 4 }}>
+              <span style={{ color: "#ffffff", fontSize: "clamp(28px,4vw,38px)", fontWeight: 900, fontFamily: "Oswald, sans-serif" }}>{t("3回体験")}</span>
+              <span style={{ color: "#ffffff", fontSize: "clamp(38px,6vw,58px)", fontWeight: 900, fontFamily: "Oswald, sans-serif", textShadow: "0 2px 8px rgba(80,20,45,0.3)" }}>¥3,300</span>
+            </div>
+            <p style={{ color: "#ffffff", fontSize: "clamp(15px,2vw,18px)", fontWeight: 800, marginTop: 10 }}>{t("ご入会いただくと全額返金！")}</p>
+          </div>
+          <p style={{ color: "#A99C92", fontSize: 11, padding: "14px 20px", textAlign: "center" }}>{t("※入会後、体験料3,300円を全額返金いたします。")}</p>
+        </motion.div>
+
         <motion.div
           initial="hidden"
           whileInView="visible"
