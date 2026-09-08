@@ -90,7 +90,7 @@ export default function Program() {
                       loading="lazy"
                       width={600}
                       height={400}
-                      className="w-full aspect-[3/2] object-cover"
+                      className="w-full aspect-[2/3] object-cover"
                     />
                   ) : (
                     <div className={`w-14 h-14 rounded-full ${color.bg} flex items-center justify-center mx-auto mt-6`}>
