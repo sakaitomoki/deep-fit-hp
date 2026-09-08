@@ -464,9 +464,10 @@ function OpeningOfferSection() {
           variants={fadeInUp}
           className="opening-offer-section__header"
         >
-          <p className="opening-offer-section__eyebrow text-[24px]">{t("夏の大キャンペーン")}</p>
+          <p className="opening-offer-section__eyebrow text-[24px]">{t("秋のキャンペーン")}</p>
           <h2 className="opening-offer-section__title">
-            {t("夏の終わりが、カラダ作りの始まり。")}
+            {t("夏の終わりが、")}<br />
+            {t("カラダ作りの始まり。")}
             <span>{t("4大特典")}</span>
           </h2>
           <p className="opening-offer-section__lead">

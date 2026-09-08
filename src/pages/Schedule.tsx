@@ -334,11 +334,12 @@ export default function Schedule() {
           >
             <div className="inline-flex items-center gap-2 mb-4" style={{ background: "rgba(242,172,85,0.12)", border: "1px solid rgba(242,172,85,0.4)", borderRadius: 999, padding: "6px 20px" }}>
               <Star className="w-3.5 h-3.5 fill-[#F2AC55] text-[#F2AC55]" />
-              <span style={{ color: "#D99A40", fontSize: 12, fontWeight: 800, letterSpacing: "0.18em" }}>{t("夏の大キャンペーン")}</span>
+              <span style={{ color: "#D99A40", fontSize: 12, fontWeight: 800, letterSpacing: "0.18em" }}>{t("秋のキャンペーン")}</span>
               <Star className="w-3.5 h-3.5 fill-[#F2AC55] text-[#F2AC55]" />
             </div>
             <h2 className="text-[#4D5058] font-bold leading-tight mb-2" style={{ fontSize: "clamp(28px,5vw,52px)" }}>
-              {t("夏の終わりが、カラダ作りの始まり。")}
+              {t("夏の終わりが、")}<br />
+              {t("カラダ作りの始まり。")}
             </h2>
             <p className="font-heading font-bold text-[#D99A40] mb-3" style={{ fontSize: "clamp(40px,8vw,80px)", lineHeight: 1 }}>
               {t("4大特典")}
