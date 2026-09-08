@@ -463,6 +463,34 @@ export default function Schedule() {
             <p style={{ color: "#A99C92", fontSize: 11, padding: "14px 20px", textAlign: "center" }}>{t("※入会後、体験料3,300円を全額返金いたします。")}</p>
           </motion.div>
 
+          {/* ジム乗り換えキャンペーン */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="rounded-3xl overflow-hidden mb-6 w-full"
+            style={{ background: "#ffffff", border: "2.5px solid #2563A8", boxShadow: "0 14px 40px -16px rgba(37,99,168,0.4)", position: "relative" }}
+          >
+            <div style={{ position: "absolute", top: 16, right: -42, transform: "rotate(45deg)", background: "linear-gradient(90deg,#1F4E86,#2563A8)", color: "#fff", fontSize: 11, fontWeight: 900, letterSpacing: "0.1em", padding: "5px 44px", boxShadow: "0 4px 10px -3px rgba(0,0,0,0.3)", zIndex: 2 }}>
+              {t("乗り換え限定")}
+            </div>
+            <div className="px-6 pt-6 pb-6 text-center" style={{ background: "linear-gradient(135deg, #1F4E86 0%, #2563A8 100%)" }}>
+              <span style={{ background: "#ffffff", color: "#2563A8", fontSize: 12, fontWeight: 900, padding: "4px 14px", borderRadius: 999, letterSpacing: "0.04em" }}>{t("🔄 他ジムご利用中の方へ")}</span>
+              <p style={{ color: "#ffffff", fontSize: "clamp(24px,3.5vw,32px)", fontWeight: 900, marginTop: 14, letterSpacing: "0.02em" }}>{t("ジム乗り換えキャンペーン")}</p>
+              <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 13, fontWeight: 700, marginTop: 8 }}>{t("会員証・アプリ画面のご提示で")}</p>
+              <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 8, marginTop: 12 }}>
+                <span style={{ display: "inline-flex", alignItems: "center", gap: 5, background: "rgba(255,255,255,0.2)", color: "#ffffff", fontSize: 14, fontWeight: 900, padding: "7px 16px", borderRadius: 999, border: "1px solid rgba(255,255,255,0.5)" }}>
+                  <span style={{ fontSize: 12 }}>✓</span>{t("入会金無料")}
+                </span>
+                <span style={{ display: "inline-flex", alignItems: "center", gap: 5, background: "rgba(255,255,255,0.2)", color: "#ffffff", fontSize: 14, fontWeight: 900, padding: "7px 16px", borderRadius: 999, border: "1px solid rgba(255,255,255,0.5)" }}>
+                  <span style={{ fontSize: 12 }}>✓</span>{t("翌月会費無料")}
+                </span>
+              </div>
+            </div>
+            <p style={{ color: "#A99C92", fontSize: 11, padding: "14px 20px", textAlign: "center" }}>{t("※ご入会時に他ジムの会員証またはアプリ画面をご提示ください。")}</p>
+          </motion.div>
+
           {/* Saving summary */}
           <motion.div
             initial="hidden"
