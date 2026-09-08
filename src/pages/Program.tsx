@@ -81,14 +81,27 @@ export default function Program() {
                 <motion.div
                   key={program.name}
                   variants={fadeInUp}
-                  className="bg-[#FAF5EE] rounded-md p-6 text-center border border-gray-100"
+                  className="bg-[#FAF5EE] rounded-md text-center border border-gray-100 overflow-hidden"
                 >
-                  <div className={`w-14 h-14 rounded-full ${color.bg} flex items-center justify-center mx-auto mb-4`}>
-                    <Icon className={`w-7 h-7 ${color.text}`} />
+                  {program.image ? (
+                    <img
+                      src={program.image}
+                      alt={t(program.name)}
+                      loading="lazy"
+                      width={600}
+                      height={400}
+                      className="w-full aspect-[3/2] object-cover"
+                    />
+                  ) : (
+                    <div className={`w-14 h-14 rounded-full ${color.bg} flex items-center justify-center mx-auto mt-6`}>
+                      <Icon className={`w-7 h-7 ${color.text}`} />
+                    </div>
+                  )}
+                  <div className="p-6">
+                    <h3 className="font-bold text-[#4D5058] text-xl mb-1">{t(program.name)}</h3>
+                    <p className="text-[#4D5058]/40 text-xs mb-3">{program.subtitle}</p>
+                    <p className="text-[#4D5058]/60 text-sm leading-relaxed">{t(program.description)}</p>
                   </div>
-                  <h3 className="font-bold text-[#4D5058] text-xl mb-1">{t(program.name)}</h3>
-                  <p className="text-[#4D5058]/40 text-xs mb-3">{program.subtitle}</p>
-                  <p className="text-[#4D5058]/60 text-sm leading-relaxed">{t(program.description)}</p>
                 </motion.div>
               );
             })}
