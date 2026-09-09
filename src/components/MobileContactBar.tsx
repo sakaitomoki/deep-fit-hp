@@ -32,9 +32,15 @@ export default function MobileContactBar() {
         target="_blank"
         rel="noopener noreferrer"
         data-testid="mobile-bar-instagram"
-        className="flex-1 flex flex-col items-center justify-center gap-1 bg-[#EAA53B] text-[#111111] py-3 text-center active:brightness-90 transition-all"
+        className="flex-1 flex flex-col items-center justify-center gap-1 text-white py-3 text-center active:brightness-90 transition-all"
+        style={{ background: "#E1306C" }}
       >
-        <SiInstagram className="w-6 h-6" />
+        <span
+          className="w-6 h-6 rounded-[7px] flex items-center justify-center"
+          style={{ background: "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)" }}
+        >
+          <SiInstagram className="w-4 h-4 text-white" />
+        </span>
         <span className="text-[10px] font-medium tracking-wide">Instagram</span>
       </a>
     </div>
