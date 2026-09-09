@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 import { motion, useScroll, useSpring } from "framer-motion";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight, MessageCircle, CheckCircle2, Smartphone } from "lucide-react";
 import { SiInstagram, SiLine } from "react-icons/si";
 import SEO from "@/components/SEO";
 import { gymConfig, seoConfig } from "@/lib/gymConfig";
@@ -393,6 +393,67 @@ function InstagramAtmosphereSection() {
             </a>
           </div>
         </motion.div>
+      </div>
+    </section>
+  );
+}
+
+const appFeatures = [
+  "来訪予定人数から、時間帯ごとの混雑を予測",
+  "空いている時間を選んで、快適にトレーニング",
+  "入館キーやスケジュール確認もアプリ内で完結",
+];
+
+function AppFeatureSection() {
+  const t = useT();
+  return (
+    <section className="py-20 lg:py-28 bg-[#FAF5EE]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+          >
+            <div className="flex items-center gap-2 mb-3">
+              <Smartphone className="w-5 h-5 text-[#F2AC55]" />
+              <p className="text-[#F2AC55] text-xs tracking-[0.3em] uppercase">Member App</p>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#4D5058] mb-6">
+              {t("アプリで、")}<br />
+              {t("ジムの混雑具合がわかります。")}
+            </h2>
+            <p className="text-[#4D5058]/70 leading-relaxed text-sm sm:text-base mb-6">
+              {t("来訪予定人数をもとに、時間帯ごとの混雑状況をアプリでチェックできます。空いている時間を選んで、快適にトレーニングしましょう。")}
+            </p>
+            <ul className="space-y-3">
+              {appFeatures.map((item) => (
+                <li key={item} className="flex items-start gap-3 text-sm sm:text-base text-[#4D5058]/80">
+                  <CheckCircle2 className="w-5 h-5 text-[#F2AC55] shrink-0 mt-0.5" />
+                  {t(item)}
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="flex justify-center"
+          >
+            <img
+              src="/images/app-congestion-screenshot.webp"
+              alt={t("会員アプリの混雑見込み画面")}
+              loading="lazy"
+              width={350}
+              height={400}
+              className="rounded-2xl shadow-xl w-full max-w-[340px] border border-black/5"
+            />
+          </motion.div>
+        </div>
       </div>
     </section>
   );
@@ -1207,6 +1268,7 @@ export default function Home() {
       <GymIdentitySection />
       <FAQSection />
       <InstagramAtmosphereSection />
+      <AppFeatureSection />
       <TestimonialsGridSection />
 
       {/* Classes */}

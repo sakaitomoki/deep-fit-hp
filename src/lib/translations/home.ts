@@ -187,6 +187,16 @@ export const home: Record<string, string> = {
   "② DMまたはLINEで「フォローしました」と送るだけ": "② Just send us \"Followed!\" via DM or LINE",
   "@deep.amagasaki をフォローする": "Follow @deep.amagasaki",
 
+  // App Feature Section
+  "アプリで、": "With our app,",
+  "ジムの混雑具合がわかります。": "you can see how crowded the gym is.",
+  "来訪予定人数をもとに、時間帯ごとの混雑状況をアプリでチェックできます。空いている時間を選んで、快適にトレーニングしましょう。":
+    "Based on planned visits, you can check how crowded each time slot is right in the app. Pick a quieter time and train comfortably.",
+  "来訪予定人数から、時間帯ごとの混雑を予測": "Predicts congestion by time slot from planned visits",
+  "空いている時間を選んで、快適にトレーニング": "Choose a quieter time and train comfortably",
+  "入館キーやスケジュール確認もアプリ内で完結": "Entry key and schedule checks are all in the app",
+  "会員アプリの混雑見込み画面": "The member app's expected-congestion screen",
+
   // Testimonials Grid Section
   "実際に通っている方の声": "Voices From Our Members",
   "はじめての方や、運動が久しぶりの方からも、通いやすさについての声をいただいています。": "Feedback from beginners and those returning to exercise after a long break.",
