@@ -155,6 +155,7 @@ export const schedule: Record<string, string> = {
   "サンドバック 4本": "4 sandbags",
   "更衣室完備": "Changing rooms available",
   "近隣駐車場": "Nearby parking",
+  "駐輪場・バイク置き場あり": "Bicycle & motorbike parking available",
   "営業時間": "Hours",
   "10:00 - 13:00 / 17:00 - 22:00（パーソナル 13:00 - 17:00）": "10:00 - 13:00 / 17:00 - 22:00 (Personal 13:00 - 17:00)",
   "定休日：": "Closed: ",

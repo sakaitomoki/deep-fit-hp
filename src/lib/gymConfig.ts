@@ -148,6 +148,7 @@ export const gymConfig = {
     "グローブ無料貸出",
     "更衣室完備",
     "近隣駐車場",
+    "駐輪場・バイク置き場あり",
   ],
   joinFee: "¥10,000",
   joinFeeTaxNote: "（税込 ¥11,000）",
