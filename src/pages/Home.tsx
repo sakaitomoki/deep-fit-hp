@@ -91,7 +91,7 @@ const reasonCards = [
     tag: "STYLE",
     title: "集中したい日も、\n楽しく動きたい日も、どちらも選べます",
     body: "一人で黙々と打ち込みたい日も、\n他のメンバーと楽しく身体を動かしたい日も、\nその日の気分や目的に合わせて通いやすいジムです。",
-    image: "/images/class-circuit.webp",
+    image: "/images/class-circuit-kick.webp",
     alt: "DEEP.FITのサーキットトレーニングクラスの様子",
   },
 ];
