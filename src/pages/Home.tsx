@@ -653,6 +653,9 @@ function OpeningOfferSection() {
               <span style={{ display: "inline-flex", alignItems: "center", gap: 5, background: "rgba(255,255,255,0.2)", color: "#ffffff", fontSize: 14, fontWeight: 900, padding: "7px 16px", borderRadius: 999, border: "1px solid rgba(255,255,255,0.5)" }}>
                 <span style={{ fontSize: 12 }}>✓</span>{t("翌月会費無料")}
               </span>
+              <span style={{ display: "inline-flex", alignItems: "center", gap: 5, background: "rgba(255,255,255,0.2)", color: "#ffffff", fontSize: 14, fontWeight: 900, padding: "7px 16px", borderRadius: 999, border: "1px solid rgba(255,255,255,0.5)" }}>
+                <span style={{ fontSize: 12 }}>✓</span>{t("解約違約金 最大6,600円サポート")}
+              </span>
             </div>
             <Link
               href="/gym-switch"

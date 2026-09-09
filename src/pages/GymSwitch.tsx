@@ -16,8 +16,9 @@ const staggerContainer = {
 };
 
 const benefits = [
-  { title: "入会金", original: "通常 10,000円" },
-  { title: "翌月会費", original: "女性 11,000円 / 男性 13,200円" },
+  { title: "入会金", original: "通常 10,000円", highlight: "無料" },
+  { title: "翌月会費", original: "女性 11,000円 / 男性 13,200円", highlight: "無料" },
+  { title: "解約違約金サポート", original: "", highlight: "最大6,600円" },
 ];
 
 export default function GymSwitch() {
@@ -79,7 +80,7 @@ export default function GymSwitch() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={staggerContainer}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10"
           >
             {benefits.map((item) => (
               <motion.div
@@ -89,11 +90,25 @@ export default function GymSwitch() {
                 style={{ background: "#F0F5FB", border: "1.5px solid rgba(37,99,168,0.25)" }}
               >
                 <p className="text-[#4D5058] font-bold text-lg mb-1">{t(item.title)}</p>
-                <p className="text-[#4D5058]/45 text-sm mb-3 line-through">{t(item.original)}</p>
-                <p className="font-heading font-bold text-3xl" style={{ color: "#2563A8" }}>{t("無料")}</p>
+                {item.original ? (
+                  <p className="text-[#4D5058]/45 text-sm mb-3 line-through">{t(item.original)}</p>
+                ) : (
+                  <p className="text-[#4D5058]/45 text-sm mb-3">{t("他ジム解約時の違約金を")}</p>
+                )}
+                <p className="font-heading font-bold text-3xl" style={{ color: "#2563A8" }}>{t(item.highlight)}</p>
               </motion.div>
             ))}
           </motion.div>
+
+          <motion.p
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="text-[#4D5058]/50 text-xs text-center mb-10"
+          >
+            {t("※解約違約金サポートは、他ジム解約時に発生した違約金の実費を上限6,600円までサポートするものです。")}
+          </motion.p>
 
           <motion.div
             initial="hidden"
