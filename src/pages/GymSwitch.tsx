@@ -45,6 +45,7 @@ const beginnerVoices = [
 const conditions = [
   "※9月中のご入会が対象です。",
   "※他フィットネスジム等からの乗り換えが対象です。",
+  "※本キャンペーンはDEEPライト会員・DEEPプラス会員としてご契約いただいた方が対象です。",
   "※解約金・違約金等が確認できる明細・画面等をご提示ください。",
   "※実際に発生した解約金等を上限6,600円として、DEEP.FITの月会費から割引いたします。",
   "※その他の条件・詳細はスタッフまで。",
@@ -320,6 +321,17 @@ export default function GymSwitch() {
               </motion.div>
             ))}
           </motion.div>
+
+          <motion.p
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="text-center text-sm font-bold mb-10 rounded-full px-5 py-3 inline-block w-full"
+            style={{ background: "#FBF3F6", color: "#9B2C55", border: "1.5px solid rgba(155,44,85,0.3)" }}
+          >
+            {t("※解約違約金サポートは、DEEPライト会員・DEEPプラス会員としてご契約いただいた方が対象です。")}
+          </motion.p>
 
           <motion.div
             initial="hidden"

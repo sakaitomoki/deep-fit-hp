@@ -501,7 +501,8 @@ export default function Schedule() {
                 {t("詳しくはこちら")} <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
-            <p style={{ color: "#A99C92", fontSize: 11, padding: "14px 20px", textAlign: "center" }}>{t("※ご入会時に他ジムの会員証またはアプリ画面をご提示ください。")}</p>
+            <p style={{ color: "#A99C92", fontSize: 11, padding: "14px 20px 4px", textAlign: "center" }}>{t("※ご入会時に他ジムの会員証またはアプリ画面をご提示ください。")}</p>
+            <p style={{ color: "#A99C92", fontSize: 11, padding: "0 20px 14px", textAlign: "center" }}>{t("※DEEPライト会員・DEEPプラス会員としてご契約いただいた方が対象です。")}</p>
           </motion.div>
 
           {/* Saving summary */}

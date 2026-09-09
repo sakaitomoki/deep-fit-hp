@@ -68,6 +68,12 @@ export const gymSwitch: Record<string, string> = {
     "When you enroll, please show our staff your other gym's membership card or member app screen.",
   "※9月中のご入会が対象です。": "* Applies to enrollments made during September.",
   "※他フィットネスジム等からの乗り換えが対象です。": "* Applies to those switching from another fitness gym.",
+  "※本キャンペーンはDEEPライト会員・DEEPプラス会員としてご契約いただいた方が対象です。":
+    "* This campaign is only available to those who contract as a DEEP Light or DEEP+ member.",
+  "※解約違約金サポートは、DEEPライト会員・DEEPプラス会員としてご契約いただいた方が対象です。":
+    "* Cancellation fee support is only available to those who contract as a DEEP Light or DEEP+ member.",
+  "※DEEPライト会員・DEEPプラス会員としてご契約いただいた方が対象です。":
+    "* Only available to those who contract as a DEEP Light or DEEP+ member.",
   "※解約金・違約金等が確認できる明細・画面等をご提示ください。":
     "* Please show a statement or screen confirming your cancellation/penalty fee.",
   "※実際に発生した解約金等を上限6,600円として、DEEP.FITの月会費から割引いたします。":
