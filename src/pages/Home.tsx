@@ -591,6 +591,18 @@ function OpeningOfferSection() {
           ))}
         </motion.div>
 
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          className="opening-offer-section__value"
+        >
+          <p className="opening-offer-section__value-label">{t("入会月の節約額")}</p>
+          <p className="opening-offer-section__value-main">{t("最大 15,000円〜")}</p>
+          <p className="opening-offer-section__value-sub">{t("＋月会費永久割引が継続します")}</p>
+        </motion.div>
+
         {/* 追加特典 ④⑤ — 大きく目立つカード */}
         <motion.div
           initial="hidden"
@@ -745,18 +757,6 @@ function OpeningOfferSection() {
           <p style={{ color: "#A99C92", fontSize: 11, padding: "14px 20px 4px", textAlign: "center" }}>{t("※ご入会時に他ジムの会員証またはアプリ画面をご提示ください。")}</p>
           <p style={{ color: "#A99C92", fontSize: 11, padding: "0 20px 4px", textAlign: "center" }}>{t("※DEEPライト会員・DEEPプラス会員としてご契約いただいた方が対象です。")}</p>
           <div style={{ padding: "0 20px 20px" }}><PlanLineButton /></div>
-        </motion.div>
-
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInUp}
-          className="opening-offer-section__value"
-        >
-          <p className="opening-offer-section__value-label">{t("入会月の節約額")}</p>
-          <p className="opening-offer-section__value-main">{t("最大 15,000円〜")}</p>
-          <p className="opening-offer-section__value-sub">{t("＋月会費永久割引が継続します")}</p>
         </motion.div>
 
         {/* DEEPスタンダード会員 — 縛りなし・通常料金（銅） */}

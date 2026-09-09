@@ -392,6 +392,22 @@ export default function Schedule() {
             ))}
           </motion.div>
 
+          {/* Saving summary */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="rounded-3xl px-8 py-6 text-center mb-8 shadow-lg"
+            style={{ background: "rgba(255,255,255,0.88)", border: "1.5px solid rgba(255,255,255,0.6)" }}
+          >
+            <p className="text-[#4D5058]/60 text-sm mb-1">{t("入会月の節約額")}</p>
+            <p className="font-heading font-bold text-[#4D5058]" style={{ fontSize: "clamp(36px,6vw,64px)", lineHeight: 1 }}>
+              {t("最大")} <span style={{ color: "#D99A40" }}>{t("15,000円〜")}</span>
+            </p>
+            <p className="text-[#4D5058]/50 text-xs mt-2">{t("＋月会費永久割引が継続します")}</p>
+          </motion.div>
+
           {/* 特典④ row */}
           <motion.div
             initial="hidden"
@@ -521,22 +537,6 @@ export default function Schedule() {
             <p style={{ color: "#A99C92", fontSize: 11, padding: "14px 20px 4px", textAlign: "center" }}>{t("※ご入会時に他ジムの会員証またはアプリ画面をご提示ください。")}</p>
             <p style={{ color: "#A99C92", fontSize: 11, padding: "0 20px 4px", textAlign: "center" }}>{t("※DEEPライト会員・DEEPプラス会員としてご契約いただいた方が対象です。")}</p>
             <div style={{ padding: "0 20px 20px" }}><PlanLineButton /></div>
-          </motion.div>
-
-          {/* Saving summary */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            className="rounded-3xl px-8 py-6 text-center mb-8 shadow-lg"
-            style={{ background: "rgba(255,255,255,0.88)", border: "1.5px solid rgba(255,255,255,0.6)" }}
-          >
-            <p className="text-[#4D5058]/60 text-sm mb-1">{t("入会月の節約額")}</p>
-            <p className="font-heading font-bold text-[#4D5058]" style={{ fontSize: "clamp(36px,6vw,64px)", lineHeight: 1 }}>
-              {t("最大")} <span style={{ color: "#D99A40" }}>{t("15,000円〜")}</span>
-            </p>
-            <p className="text-[#4D5058]/50 text-xs mt-2">{t("＋月会費永久割引が継続します")}</p>
           </motion.div>
 
           {/* CTAs */}
