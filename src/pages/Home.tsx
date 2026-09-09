@@ -920,19 +920,6 @@ function OpeningOfferSection() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInUp}
-          className="opening-offer-section__assurance"
-        >
-          <span>{t("体験料 2,000円 → 無料")}</span>
-          <span>{t("入会金 10,000円 → 無料")}</span>
-          <span>{t("縛りなし・いつでも退会可")}</span>
-          <span>{t("運動初心者の方も歓迎")}</span>
-        </motion.div>
-
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInUp}
           className="opening-offer-section__cta"
         >
           <a
