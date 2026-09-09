@@ -1,6 +1,5 @@
-import { Link } from "wouter";
-import { Phone, MessageSquare } from "lucide-react";
-import { SiLine } from "react-icons/si";
+import { Phone } from "lucide-react";
+import { SiLine, SiInstagram } from "react-icons/si";
 import { gymConfig } from "@/lib/gymConfig";
 import { useT } from "@/lib/i18n";
 
@@ -28,14 +27,16 @@ export default function MobileContactBar() {
         <span className="text-[10px] font-medium tracking-wide">{t("電話")}</span>
       </a>
 
-      <Link
-        href="/contact"
-        data-testid="mobile-bar-contact"
+      <a
+        href={gymConfig.sns.instagram}
+        target="_blank"
+        rel="noopener noreferrer"
+        data-testid="mobile-bar-instagram"
         className="flex-1 flex flex-col items-center justify-center gap-1 bg-[#EAA53B] text-[#111111] py-3 text-center active:brightness-90 transition-all"
       >
-        <MessageSquare className="w-6 h-6" />
-        <span className="text-[10px] font-medium tracking-wide">{t("お問い合わせ")}</span>
-      </Link>
+        <SiInstagram className="w-6 h-6" />
+        <span className="text-[10px] font-medium tracking-wide">Instagram</span>
+      </a>
     </div>
   );
 }
