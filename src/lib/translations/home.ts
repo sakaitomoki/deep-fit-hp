@@ -79,6 +79,7 @@ export const home: Record<string, string> = {
   "縛りなし・いつでも退会可": "No contract, cancel anytime",
   "運動初心者の方も歓迎": "Beginners welcome",
   "LINEで無料体験を予約する": "Book a free trial via LINE",
+  "LINEで簡単予約": "Quick Booking via LINE",
   "ご不安な点などを相談する": "Ask us anything via chat",
   "返信は営業時間内に順次対応": "Replies sent in order during business hours",
 

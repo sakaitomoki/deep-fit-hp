@@ -16,6 +16,21 @@ const staggerContainer = {
   visible: { transition: { staggerChildren: 0.15 } },
 };
 
+function PlanLineButton() {
+  const t = useT();
+  return (
+    <a
+      href={gymConfig.sns.line}
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 6, marginTop: 14, background: "#06C755", color: "#ffffff", fontWeight: 900, fontSize: 14, padding: "11px 20px", borderRadius: 999 }}
+    >
+      <SiLine style={{ width: 18, height: 18 }} />
+      {t("LINEで簡単予約")}
+    </a>
+  );
+}
+
 const classTypes = [
   {
     icon: Heart,
@@ -435,6 +450,7 @@ export default function Schedule() {
                   <p style={{ color: "#8C7B72", fontSize: 11, marginTop: 2 }}>{t("（税込 12,100円/月）")}</p>
                 </div>
                 <p style={{ color: "#A99C92", fontSize: 11, marginTop: 10, textAlign: "center" }}>{t("継続縛りなし・いつでも退会可")}</p>
+                <PlanLineButton />
               </div>
             </motion.div>
 
@@ -464,7 +480,8 @@ export default function Schedule() {
               </div>
               <p style={{ color: "#ffffff", fontSize: "clamp(15px,2vw,18px)", fontWeight: 800, marginTop: 10 }}>{t("ご入会いただくと全額返金！")}</p>
             </div>
-            <p style={{ color: "#A99C92", fontSize: 11, padding: "14px 20px", textAlign: "center" }}>{t("※入会後、体験料3,300円を全額返金いたします。")}</p>
+            <p style={{ color: "#A99C92", fontSize: 11, padding: "14px 20px 0", textAlign: "center" }}>{t("※入会後、体験料3,300円を全額返金いたします。")}</p>
+            <div style={{ padding: "0 20px 20px" }}><PlanLineButton /></div>
           </motion.div>
 
           {/* ジム乗り換えキャンペーン */}
@@ -502,7 +519,8 @@ export default function Schedule() {
               </Link>
             </div>
             <p style={{ color: "#A99C92", fontSize: 11, padding: "14px 20px 4px", textAlign: "center" }}>{t("※ご入会時に他ジムの会員証またはアプリ画面をご提示ください。")}</p>
-            <p style={{ color: "#A99C92", fontSize: 11, padding: "0 20px 14px", textAlign: "center" }}>{t("※DEEPライト会員・DEEPプラス会員としてご契約いただいた方が対象です。")}</p>
+            <p style={{ color: "#A99C92", fontSize: 11, padding: "0 20px 4px", textAlign: "center" }}>{t("※DEEPライト会員・DEEPプラス会員としてご契約いただいた方が対象です。")}</p>
+            <div style={{ padding: "0 20px 20px" }}><PlanLineButton /></div>
           </motion.div>
 
           {/* Saving summary */}
@@ -633,6 +651,7 @@ export default function Schedule() {
                       ))}
                     </div>
                     <p style={{ color: "#A99C92", fontSize: 11, marginTop: 12, lineHeight: 1.5 }}>{t("※継続の縛りはありません。いつでも退会可能です。")}</p>
+                    <PlanLineButton />
                   </div>
                 </div>
               </motion.div>
@@ -682,6 +701,7 @@ export default function Schedule() {
                         </span>
                       ))}
                     </div>
+                    <PlanLineButton />
                   </div>
                 </div>
               </motion.div>
@@ -731,6 +751,7 @@ export default function Schedule() {
                         </span>
                       ))}
                     </div>
+                    <PlanLineButton />
                   </div>
                 </div>
               </motion.div>
