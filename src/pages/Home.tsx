@@ -93,6 +93,7 @@ const reasonCards = [
     body: "一人で黙々と打ち込みたい日も、\n他のメンバーと楽しく身体を動かしたい日も、\nその日の気分や目的に合わせて通いやすいジムです。",
     image: "/images/class-circuit-kick.webp",
     alt: "DEEP.FITのサーキットトレーニングクラスの様子",
+    imagePosition: "50% 0%",
   },
 ];
 
@@ -108,7 +109,13 @@ function ReasonCard({ card }: { card: typeof reasonCards[0] }) {
   return (
     <motion.div className="reasons-card" variants={scaleIn} data-testid={`card-reason-${card.id}`}>
       <div className="reasons-card__img-wrap">
-        <img src={card.image} alt={t(card.alt)} className="reasons-card__img" loading="lazy" />
+        <img
+          src={card.image}
+          alt={t(card.alt)}
+          className="reasons-card__img"
+          loading="lazy"
+          style={"imagePosition" in card ? { objectPosition: (card as { imagePosition: string }).imagePosition } : undefined}
+        />
         <div className="reasons-card__overlay" />
       </div>
       <div className="reasons-card__content">
