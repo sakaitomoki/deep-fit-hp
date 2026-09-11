@@ -53,9 +53,11 @@ export default function PersonalTraining() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="text-4xl sm:text-5xl font-bold text-white"
+            className="text-3xl sm:text-5xl font-bold text-white"
           >
-            {t("女性専用パーソナルトレーニング")}
+            {t("natukiトレーナーの")}<br />
+            {t("女性専用")}<br />
+            {t("パーソナルトレーニング")}
           </motion.h1>
         </div>
       </div>

@@ -8,6 +8,8 @@ export const personalTraining: Record<string, string> = {
 
   // Hero
   "女性専用": "Women Only",
+  "natukiトレーナーの": "Trainer Natuki's",
+  "パーソナルトレーニング": "Personal Training",
   "女性専用パーソナルトレーニング": "Women's Personal Training",
 
   // About
