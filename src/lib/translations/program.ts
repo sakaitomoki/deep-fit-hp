@@ -7,7 +7,7 @@ export const program: Record<string, string> = {
     "DEEP.FIT's rotating special programs. Yoga, Kickboxercise, and Animal Flow are each held once a month, with dates announced on Instagram. ¥1,500 for members, ¥2,000 for non-members.",
 
   // Hero
-  "月替わりの特別プログラム": "Special Programs, Every Month",
+  "イベントクラス": "Event Class",
 
   // Intro
   "プログラム紹介": "Our Programs",

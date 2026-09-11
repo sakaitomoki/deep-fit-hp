@@ -54,7 +54,7 @@ export default function Program() {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="text-4xl sm:text-5xl font-bold text-white"
           >
-            {t("月替わりの特別プログラム")}
+            {t("イベントクラス")}
           </motion.h1>
         </div>
       </div>
