@@ -10,6 +10,9 @@ export const about: Record<string, string> = {
   "綺麗で広い空間・女性も通いやすい尼崎のキックボクシングジム":
     "A spacious, welcoming kickboxing gym in Amagasaki for women and beginners alike",
 
+  // Why DEEP.FIT (reasons section, moved from Home)
+  "選ばれる": "Why", "理由": "DEEP.FIT?",
+
   // Our Story
   "ジムの歩み": "Our Journey",
   "DEEP.FITは、2026年4月に尼崎市長洲東通りにオープンしたキックボクシングフィットネスジムです。":

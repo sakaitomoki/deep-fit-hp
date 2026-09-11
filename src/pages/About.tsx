@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 import { Shield, Heart, Target, Flame, CheckCircle2 } from "lucide-react";
+import { SiLine } from "react-icons/si";
 import SEO from "@/components/SEO";
 import { seoConfig, gymConfig } from "@/lib/gymConfig";
 import { useT } from "@/lib/i18n";
@@ -23,6 +25,237 @@ const staggerContainer = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.15 } },
 };
+
+const scaleIn = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } },
+};
+
+const reasonCards = [
+  {
+    id: 1,
+    tag: "SPACE",
+    title: "綺麗で広いから、\n気持ちよく通い続けやすい",
+    body: "清潔感のある広い空間で、初めての方でも入りやすい環境です。圧迫感が少なく、落ち着いてトレーニングに取り組めます。",
+    image: "/images/gym-kickboxing-woman.webp",
+    alt: "DEEP.FITのキックボクシングトレーニング",
+  },
+  {
+    id: 2,
+    tag: "EQUIPMENT",
+    title: "個室のスミスマシンで、\n一人で集中した補強もできます",
+    body: "キックボクシングやサーキットトレーニングだけでなく、\n個室で自分の目的に合わせた補強トレーニングも可能です。\n引き締め、筋力強化、体力づくりまで、幅広く対応できます。",
+    image: "/images/smith-machine.webp",
+    alt: "DEEP.FITの個室スミスマシン設備",
+  },
+  {
+    id: 3,
+    tag: "ATMOSPHERE",
+    title: "会員さんの雰囲気が良く、\n一人でも馴染みやすいジムです",
+    body: "和気藹々とした空気があり、初めてでも居心地よく通いやすい環境です。\nただ賑やかなだけでなく、自分のペースも大切にできます。",
+    image: "/images/gym-atmosphere-ropes.webp",
+    alt: "会員同士が楽しくトレーニングするDEEP.FITの雰囲気",
+  },
+  {
+    id: 4,
+    tag: "STYLE",
+    title: "集中したい日も、\n楽しく動きたい日も、どちらも選べます",
+    body: "一人で黙々と打ち込みたい日も、\n他のメンバーと楽しく身体を動かしたい日も、\nその日の気分や目的に合わせて通いやすいジムです。",
+    image: "/images/class-circuit-kick.webp",
+    alt: "DEEP.FITのサーキットトレーニングクラスの様子",
+    imagePosition: "50% 0%",
+  },
+];
+
+const reasonsEvidenceChips = [
+  "女性会員も多く、通いやすい雰囲気",
+  "一人参加でも馴染みやすい",
+  "個室設備あり",
+  "目的に合わせて使い分け可能",
+];
+
+function ReasonCard({ card }: { card: typeof reasonCards[0] }) {
+  const t = useT();
+  return (
+    <motion.div className="reasons-card" variants={scaleIn} data-testid={`card-reason-${card.id}`}>
+      <div className="reasons-card__img-wrap">
+        <img
+          src={card.image}
+          alt={t(card.alt)}
+          className="reasons-card__img"
+          loading="lazy"
+          style={"imagePosition" in card ? { objectPosition: (card as { imagePosition: string }).imagePosition } : undefined}
+        />
+        <div className="reasons-card__overlay" />
+      </div>
+      <div className="reasons-card__content">
+        <span className="reasons-card__tag">{card.tag}</span>
+        <h3 className="reasons-card__title">
+          {t(card.title).split("\n").map((line, i) => (
+            <span key={i}>{line}</span>
+          ))}
+        </h3>
+        <p className="reasons-card__body">{t(card.body)}</p>
+      </div>
+    </motion.div>
+  );
+}
+
+function GymIdentitySection() {
+  const t = useT();
+  return (
+    <section className="reasons-section">
+      <div className="reasons-section__inner">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          className="reasons-section__header"
+        >
+          <span className="reasons-section__eyebrow">WHY DEEP.FIT</span>
+          <h2 className="reasons-section__title">
+            {t("選ばれる")}<br />{t("理由")}
+          </h2>
+          <p className="reasons-section__lead">
+            {t("綺麗で広い空間、通いやすい雰囲気、目的に合わせた設備。")}<br />
+            {t("初めての方でも、自分のペースで続けやすいジムです。")}
+          </p>
+        </motion.div>
+
+        <motion.div
+          className="reasons-cards"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+        >
+          {reasonCards.map((card) => (
+            <ReasonCard key={card.id} card={card} />
+          ))}
+        </motion.div>
+
+        <motion.div
+          className="reasons-chips"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+        >
+          {reasonsEvidenceChips.map((chip, i) => (
+            <span key={i} className="reasons-chip" data-testid={`chip-reason-${i}`}>
+              {t(chip)}
+            </span>
+          ))}
+        </motion.div>
+
+        <motion.div
+          className="reasons-cta"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+        >
+          <p className="reasons-cta__lead">{t("まずは実際の雰囲気を、無料体験や見学でお確かめください")}</p>
+          <a
+            href={gymConfig.sns.line}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="reasons-cta__btn"
+            data-testid="button-reasons-line"
+          >
+            <SiLine className="w-5 h-5" />
+            {t("見学・無料体験を予約する")}
+          </a>
+          <Link href="/contact" className="reasons-cta__text-link" data-testid="link-reasons-contact">{t("ご不安な点などの相談はこちら →")}</Link>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+const faqItems = [
+  {
+    q: "運動経験がなくても大丈夫ですか？",
+    aLead: "はい。むしろ未経験から始める方が多いです。",
+    aBody: "DEEP.FITでは、運動が久しぶりの方や未経験の方も多く通われています。メニューは一人ひとりのレベルに合わせて調整できるので、体力に自信がない方も安心して始められます。",
+  },
+  {
+    q: "サーキットトレーニングとはどんな内容ですか？",
+    aLead: "有酸素運動とキックボクシングの動きを組み合わせた、30分で全身を動かすトレーニングです。",
+    aBody: "DEEP.FITのサーキットトレーニングは、楽しみながらダイエットや体力アップを目指せる内容になっています。初心者や運動が久しぶりの方でも自分のペースで取り組めるので、無理なく続けやすいのが特徴です。",
+  },
+  {
+    q: "女性一人でも通いやすいですか？",
+    aLead: "はい。女性一人でも通いやすい雰囲気です。",
+    aBody: "実際におひとりで通われている方も多く、和気藹々としながらも無理に人に合わせすぎない空気があります。「格闘技ジムは少し不安」という方にも入りやすい環境です。",
+  },
+  {
+    q: "体験当日は何を持っていけばいいですか？",
+    aLead: "動きやすい服装だけで大丈夫です。",
+    aBody: "タオル・飲み物があると快適ですが、手ぶらでも対応できます。グローブなどの道具は不要ですが、ミットやサンドバックを打つ際は、バンテージや軍手などを持参いただくことをお勧めします。",
+  },
+  {
+    q: "どれくらいで効果を実感できますか？",
+    aLead: "目安としては、1〜3か月ほどで何らかの変化を感じる方が多いです。",
+    aBody: "まずは「疲れにくくなった」「気分が軽くなった」といった変化を感じやすく、見た目の変化はその後少しずつ出てきます。DEEP.FITでは、それぞれのペースで無理なく楽しく続けられることを大切にしています。",
+  },
+  {
+    q: "子どもを連れて行っても大丈夫ですか？",
+    aLead: "はい、お子さま連れについてもお気軽にご相談ください。",
+    aBody: "お子さま同伴のみならず、キッズクラスのご用意もあり、ご家庭の状況に合わせて通い方をご案内しています。気になることがあれば事前にLINEでご相談いただけます。",
+  },
+  {
+    q: "退会はいつでもできますか？",
+    aLead: "はい。月単位でいつでも退会でき、違約金や解約手数料もありません。",
+    aBody: "なお、割引価格の「DEEPプラス会員」は1年以上の継続を前提としたプランです。休会制度はご用意しておりませんのでご了承ください。ライフスタイルの変化があっても、退会のご連絡をいただければスムーズに対応します。",
+  },
+];
+
+function FAQSection() {
+  const t = useT();
+  return (
+    <section className="faq-section">
+      <div className="faq-section__inner">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          className="faq-section__header"
+        >
+          <h2 className="faq-section__title">{t("はじめてでも大丈夫？ よくあるご質問")}</h2>
+          <p className="faq-section__lead">{t("体験前に気になることを、よくある質問からまとめました。")}</p>
+        </motion.div>
+
+        <motion.div
+          className="faq-section__grid"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+        >
+          {faqItems.map((item, i) => (
+            <motion.div key={i} variants={fadeInUp} className="faq-card" data-testid={`card-faq-${i}`}>
+              <div className="faq-card__question">
+                <span className="faq-card__q-label">Q</span>
+                <p className="faq-card__q-text">{t(item.q)}</p>
+              </div>
+              <div className="faq-card__divider" />
+              <div className="faq-card__answer">
+                <span className="faq-card__a-label">A</span>
+                <div className="faq-card__a-content">
+                  <p className="faq-card__a-lead">{t(item.aLead)}</p>
+                  <p className="faq-card__a-text">{t(item.aBody)}</p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
 
 const values = [
   { icon: Shield, title: "安全第一", text: "怪我のない安全なトレーニング環境を最優先に。インストラクターが常に適切な指導を行います。" },
@@ -75,6 +308,9 @@ export default function About() {
           </motion.h1>
         </div>
       </div>
+
+      <GymIdentitySection />
+
       {/* Our Story */}
       <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -269,6 +505,8 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      <FAQSection />
     </>
   );
 }
