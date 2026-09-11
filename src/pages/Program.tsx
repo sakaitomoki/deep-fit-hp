@@ -98,8 +98,7 @@ export default function Program() {
                     </div>
                   )}
                   <div className="p-6">
-                    <h3 className="font-bold text-[#4D5058] text-xl mb-1">{t(program.name)}</h3>
-                    <p className="text-[#4D5058]/40 text-xs mb-3">{program.subtitle}</p>
+                    <h3 className="font-bold text-[#4D5058] text-xl mb-3">{program.subtitle}</h3>
                     <p className="text-[#4D5058]/60 text-sm leading-relaxed">{t(program.description)}</p>
                   </div>
                 </motion.div>
