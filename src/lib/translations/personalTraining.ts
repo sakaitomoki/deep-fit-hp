@@ -35,6 +35,7 @@ export const personalTraining: Record<string, string> = {
   // CTA
   "お申し込み・お問い合わせ": "Apply / Contact Us",
   "natukiトレーナーのInstagram": "Trainer Natuki's Instagram",
+  "natukiトレーナーへLINEで問い合わせる": "Ask Trainer Natuki via LINE",
   "回数券プランなど詳しくはこちら": "See session packages & full pricing",
   "/ 1回": "/ session",
 };

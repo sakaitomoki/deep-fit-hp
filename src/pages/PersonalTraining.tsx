@@ -139,7 +139,7 @@ export default function PersonalTraining() {
                   className="flex-1 inline-flex items-center justify-center gap-2 bg-[#06C755] text-white font-bold px-6 py-3.5 rounded-full text-base transition-all duration-200 hover:bg-[#04A344] shadow-md"
                 >
                   <SiLine className="w-5 h-5" />
-                  {t("LINEで問い合わせる")}
+                  {t("natukiトレーナーへLINEで問い合わせる")}
                 </a>
               </div>
               <a
