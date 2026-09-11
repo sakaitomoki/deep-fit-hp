@@ -7,6 +7,7 @@ export const common: Record<string, string> = {
   "クラス・料金": "Classes & Pricing",
   "キッズクラス": "Kids Class",
   "プログラム": "Program",
+  "ヨガ・ボクササイズ・アニマルフロー": "Yoga, Boxercise & Animal Flow",
   "女性専用パーソナル": "Women's Personal Training",
   "ジム乗り換え": "Gym Switch",
   "インストラクター": "Instructors",

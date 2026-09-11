@@ -12,7 +12,7 @@ const navLinks = [
   { href: "/about", label: "ジムについて" },
   { href: "/schedule", label: "クラス・料金" },
   { href: "/kids", label: "キッズクラス" },
-  { href: "/program", label: "プログラム" },
+  { href: "/program", label: "ヨガ・ボクササイズ・アニマルフロー" },
   { href: "/personal-training", label: "女性専用パーソナル" },
   { href: "/gym-switch", label: "ジム乗り換え" },
   { href: "/instructors", label: "インストラクター" },
