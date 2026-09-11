@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Users, User, Phone, Sparkles } from "lucide-react";
+import { Users, User, Sparkles } from "lucide-react";
 import { SiLine, SiInstagram } from "react-icons/si";
 import SEO from "@/components/SEO";
 import { seoConfig, gymConfig } from "@/lib/gymConfig";
@@ -132,7 +132,7 @@ export default function PersonalTraining() {
             <div className="bg-white px-6 py-6">
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
-                  href={gymConfig.sns.line}
+                  href="https://lin.ee/pNcV0uK"
                   target="_blank"
                   rel="noopener noreferrer"
                   data-testid="button-pt-line"
@@ -140,15 +140,6 @@ export default function PersonalTraining() {
                 >
                   <SiLine className="w-5 h-5" />
                   {t("LINEで問い合わせる")}
-                </a>
-                <a
-                  href={`tel:${gymConfig.phone}`}
-                  data-testid="button-pt-phone"
-                  className="flex-1 inline-flex items-center justify-center gap-2 bg-white border-2 text-[#9B2C55] font-medium px-6 py-3.5 rounded-full text-base transition-all duration-200 hover:bg-[#FBF3F6]"
-                  style={{ borderColor: "#C9457A" }}
-                >
-                  <Phone className="w-4 h-4" />
-                  {gymConfig.phone}
                 </a>
               </div>
               <a
