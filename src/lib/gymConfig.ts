@@ -106,7 +106,7 @@ export const gymConfig = {
   ],
   programs: [
     { name: "ヨガ", subtitle: "Yoga", description: "呼吸と共にゆっくりと体をほぐし、心身のバランスを整えるプログラムです。", image: "/images/program-card-yoga.webp" },
-    { name: "キックボクササイズ", subtitle: "Kickboxercise", description: "キックボクシングの動きを取り入れた、楽しく汗を流せるエクササイズです。" },
+    { name: "キックボクササイズ", subtitle: "Kickboxercise", description: "キックボクシングの動きを取り入れた、楽しく汗を流せるエクササイズです。", image: "/images/program-card-kickboxercise.webp" },
     { name: "アニマルフロー", subtitle: "Animal Flow", description: "動物の動きを模した全身運動で、柔軟性や体幹を鍛えるトレーニングです。", image: "/images/program-card-animalflow.webp" },
   ],
   programPricing: {
