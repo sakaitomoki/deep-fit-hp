@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 import { Users, User, Sparkles } from "lucide-react";
 import { SiLine, SiInstagram } from "react-icons/si";
 import SEO from "@/components/SEO";
@@ -76,6 +77,11 @@ export default function PersonalTraining() {
             <h2 className="text-3xl sm:text-4xl font-bold text-[#4D5058] mb-6">{t("女性専用パーソナルトレーニングについて")}</h2>
             <p className="text-[#4D5058]/70 leading-relaxed text-sm sm:text-base max-w-2xl mx-auto">
               {t("女性専用の安心できる空間で、完全予約制・50分のマンツーマン指導を受けられます。ダイエット、ボディメイク、筋力アップなど、一人ひとりの目標に合わせたプログラムをご提案。お友達との2名でのご参加も可能です。")}
+            </p>
+            <p className="text-[#4D5058]/50 text-xs sm:text-sm mt-4 max-w-2xl mx-auto">
+              {t("※こちらはnatukiトレーナーを指名した場合の料金です。トレーナーを指定しない通常のパーソナルトレーニング（¥5,000・ペアでも同料金・女性の方もご利用いただけます）は")}
+              <Link href="/schedule#personal-training" className="underline font-medium" style={{ color: "#9B2C55" }}>{t("こちら")}</Link>
+              {t("をご覧ください。")}
             </p>
           </motion.div>
 

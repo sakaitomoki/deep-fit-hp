@@ -16,6 +16,10 @@ export const personalTraining: Record<string, string> = {
   "女性専用パーソナルトレーニングについて": "About Women's Personal Training",
   "女性専用の安心できる空間で、完全予約制・50分のマンツーマン指導を受けられます。ダイエット、ボディメイク、筋力アップなど、一人ひとりの目標に合わせたプログラムをご提案。お友達との2名でのご参加も可能です。":
     "In a comfortable, women-only space, receive fully reservation-based, 50-minute one-on-one coaching. We tailor a program to your goals — whether that's weight loss, body sculpting, or strength building. You can also join as a pair with a friend.",
+  "※こちらはnatukiトレーナーを指名した場合の料金です。トレーナーを指定しない通常のパーソナルトレーニング（¥5,000・ペアでも同料金・女性の方もご利用いただけます）は":
+    "※ This pricing applies when you request Trainer Natuki specifically. For regular personal training with no trainer request (¥5,000, same price for pairs, also available to women), see",
+  "こちら": "here",
+  "をご覧ください。": ".",
 
   // Plans
   "50分": "50 min",
