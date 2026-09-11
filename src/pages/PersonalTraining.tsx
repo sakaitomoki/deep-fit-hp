@@ -27,7 +27,7 @@ export default function PersonalTraining() {
     <>
       <SEO title={seoConfig.pages.personalTraining.title} description={seoConfig.pages.personalTraining.description} path="/personal-training" />
       <div className="relative" style={{ height: "50vh", minHeight: "400px" }}>
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/class-personal.webp')" }} />
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/personal-training-hero-natuki.webp')" }} />
         <div className="absolute inset-0 bg-[#4D1B33]/75" />
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
           <motion.div
