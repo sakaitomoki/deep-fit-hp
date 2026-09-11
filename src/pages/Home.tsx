@@ -83,7 +83,7 @@ const reasonCards = [
     tag: "ATMOSPHERE",
     title: "会員さんの雰囲気が良く、\n一人でも馴染みやすいジムです",
     body: "和気藹々とした空気があり、初めてでも居心地よく通いやすい環境です。\nただ賑やかなだけでなく、自分のペースも大切にできます。",
-    image: "/images/gym-about.webp",
+    image: "/images/gym-atmosphere-ropes.webp",
     alt: "会員同士が楽しくトレーニングするDEEP.FITの雰囲気",
   },
   {
