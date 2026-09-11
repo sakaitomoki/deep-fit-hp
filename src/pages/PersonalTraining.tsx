@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Users, User, Phone, Sparkles } from "lucide-react";
-import { SiLine } from "react-icons/si";
+import { SiLine, SiInstagram } from "react-icons/si";
 import SEO from "@/components/SEO";
 import { seoConfig, gymConfig } from "@/lib/gymConfig";
 import { useT } from "@/lib/i18n";
@@ -151,6 +151,17 @@ export default function PersonalTraining() {
                   {gymConfig.phone}
                 </a>
               </div>
+              <a
+                href="https://www.instagram.com/natukick.5296/"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="button-pt-instagram"
+                className="mt-3 inline-flex w-full items-center justify-center gap-2 text-white font-bold px-6 py-3.5 rounded-full text-base transition-all duration-200 shadow-md"
+                style={{ background: "linear-gradient(45deg,#F9CE34,#EE2A7B,#6228D7)" }}
+              >
+                <SiInstagram className="w-5 h-5" />
+                {t("natukiトレーナーのInstagram")}
+              </a>
             </div>
           </motion.div>
         </div>
