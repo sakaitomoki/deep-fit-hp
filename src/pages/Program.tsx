@@ -29,7 +29,15 @@ export default function Program() {
     <>
       <SEO title={seoConfig.pages.program.title} description={seoConfig.pages.program.description} path="/program" />
       <div className="relative" style={{ height: "50vh", minHeight: "400px" }}>
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/program-hero-yoga.webp')" }} />
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          src="/video/program-hero-yoga.mp4"
+          poster="/images/program-hero-yoga.webp"
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
         <div className="absolute inset-0 bg-[#4D5058]/75" />
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
           <motion.p
