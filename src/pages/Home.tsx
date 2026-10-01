@@ -73,9 +73,9 @@ function InstagramAtmosphereSection() {
     { image: "/images/ig-reel-kick-yellow.webp", alt: "キックボクシングトレーニングの様子" },
     { image: "/images/ig-reel-rope-blue.webp", alt: "バトルロープトレーニングの様子" },
     { image: "/images/ig-reel-medball-pink.webp", alt: "メディシンボールを使ったトレーニングの様子" },
-    { image: "/images/ig-reel-kick-redbag.webp", alt: "サンドバッグを使ったキックボクシングの様子" },
-    { image: "/images/ig-reel-medball-gym.webp", alt: "ファンクショナルトレーニングの様子" },
-    { image: "/images/ig-reel-yoga.webp", alt: "ヨガクラスの様子" },
+    { image: "/images/ig-reel-yoga-stretch.webp", alt: "ヨガクラスの様子" },
+    { image: "/images/ig-reel-box-puma.webp", alt: "ボクササイズクラスの様子" },
+    { image: "/images/ig-reel-animalflow-strap.webp", alt: "アニマルフロークラスの様子" },
   ];
 
   return (
