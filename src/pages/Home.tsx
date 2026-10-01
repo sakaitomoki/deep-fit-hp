@@ -270,6 +270,24 @@ function TestimonialsGridSection() {
             </motion.div>
           ))}
         </motion.div>
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          style={{ textAlign: "center", marginTop: 32 }}
+        >
+          <a
+            href="https://share.google/1zfUwy6IddgxUQffi"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-testid="link-google-reviews"
+            style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#ffffff", color: "#4D5058", fontWeight: 700, fontSize: 14, padding: "12px 24px", borderRadius: 999 }}
+          >
+            ⭐ 4.9（{t("Googleの口コミを見る")}）
+          </a>
+        </motion.div>
       </div>
     </section>
   );

@@ -200,6 +200,7 @@ export const home: Record<string, string> = {
 
   // Testimonials Grid Section
   "実際に通っている方の声": "Voices From Our Members",
+  "Googleの口コミを見る": "See our Google reviews",
   "はじめての方や、運動が久しぶりの方からも、通いやすさについての声をいただいています。": "Feedback from beginners and those returning to exercise after a long break.",
   "会員の声 01": "Member Voice 01",
   "いつも楽しく通わせてもらっています！トレーナーさんも丁寧に教えてくれるし、会員さんたちも優しいかたばっかりで一緒にトレーニングしていてとても楽しいです！その人に合ったトレーニングを提案してくれるので運動苦手なかたでも続けやすいと思います(^-^) これからもみんなで楽しく運動しましょう♪":
