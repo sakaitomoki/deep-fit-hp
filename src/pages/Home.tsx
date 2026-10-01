@@ -62,7 +62,7 @@ const testimonials = [
 ];
 
 const classes = [
-  { title: "フィットネス", subtitle: "Fitness Class", level: "初心者向け", description: "有酸素運動とキックボクシングを組み合わせた30分のサーキットトレーニング。楽しみながらダイエットや体力アップを目指せます。", image: "/images/class-fitness-kick.webp", alt: "DEEP.FITの初心者向けフィットネスキックボクシングクラス", animation: "left", target: "運動不足解消・ダイエット", intensity: 1, duration: "30分", beginnerOk: true },
+  { title: "フィットネス", subtitle: "Fitness Class", level: "初心者向け", description: "ファンクショナルサーキットトレーニングとキックボクシングを組み合わせた新感覚フィットネス。楽しみながらダイエットや体力アップを目指せます。", image: "/images/class-fitness-kick.webp", alt: "DEEP.FITの初心者向けフィットネスキックボクシングクラス", animation: "left", target: "運動不足解消・ダイエット", intensity: 1, beginnerOk: true },
   { title: "パーソナルトレーニング", subtitle: "Personal Training", level: "全レベル", description: "マンツーマンで目標に合わせた特別プログラム。フォーム重視で、引き締め・筋力強化を確実に。", image: "/images/class-personal-squat.webp", alt: "DEEP.FITのパーソナルトレーニング指導の様子", animation: "up", target: "引き締め・筋力強化", intensity: 2, duration: "60分", beginnerOk: true },
   { title: "キッズクラス", subtitle: "Kids Class", level: "お子様向け", description: "楽しみながら体を動かすキッズ向けプログラム。礼儀やスポーツの基礎も学べます。", image: kidsClassImg, alt: "DEEP.FITのキッズクラスでお子さまが楽しくトレーニング", animation: "right", target: "基礎体力・礼儀", intensity: 1, duration: "60分", beginnerOk: true },
 ];
@@ -1129,7 +1129,9 @@ export default function Home() {
                     <p className="text-white/70 text-xs leading-relaxed mb-3">{t(cls.description)}</p>
                     <div className="flex flex-wrap gap-2">
                       <span className="text-[10px] bg-white/10 text-white/80 px-2 py-0.5 rounded-full border border-white/10">{t(cls.target)}</span>
-                      <span className="text-[10px] bg-white/10 text-white/80 px-2 py-0.5 rounded-full border border-white/10">{t(cls.duration)}</span>
+                      {cls.duration && (
+                        <span className="text-[10px] bg-white/10 text-white/80 px-2 py-0.5 rounded-full border border-white/10">{t(cls.duration)}</span>
+                      )}
                       <span className="text-[10px] bg-white/10 text-white/80 px-2 py-0.5 rounded-full border border-white/10">
                         {t("強度")}{"★".repeat(cls.intensity)}{"☆".repeat(3 - cls.intensity)}
                       </span>

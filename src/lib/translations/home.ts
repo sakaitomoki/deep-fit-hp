@@ -217,8 +217,8 @@ export const home: Record<string, string> = {
   "どんな目的でも、合うトレーニングが見つかります": "Whatever your goal, you'll find training that fits",
   "初心者向け": "Beginner Friendly",
   "フィットネス": "Fitness",
-  "有酸素運動とキックボクシングを組み合わせた30分のサーキットトレーニング。楽しみながらダイエットや体力アップを目指せます。":
-    "A 30-minute circuit combining cardio and kickboxing. A fun way to work toward weight loss and better fitness.",
+  "ファンクショナルサーキットトレーニングとキックボクシングを組み合わせた新感覚フィットネス。楽しみながらダイエットや体力アップを目指せます。":
+    "A new kind of fitness combining functional circuit training and kickboxing. A fun way to work toward weight loss and better fitness.",
   "運動不足解消・ダイエット": "Get active / Weight loss",
   "30分": "30 min",
   "DEEP.FITの初心者向けフィットネスキックボクシングクラス": "A beginner-friendly fitness kickboxing class at DEEP.FIT",
