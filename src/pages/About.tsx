@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Link } from "wouter";
 import { Shield, Heart, Target, Flame, CheckCircle2 } from "lucide-react";
 import { SiLine } from "react-icons/si";
 import SEO from "@/components/SEO";
@@ -167,7 +166,7 @@ function GymIdentitySection() {
             <SiLine className="w-5 h-5" />
             {t("見学・無料体験を予約する")}
           </a>
-          <Link href="/contact" className="reasons-cta__text-link" data-testid="link-reasons-contact">{t("ご不安な点などの相談はこちら →")}</Link>
+          <a href={gymConfig.sns.line} target="_blank" rel="noopener noreferrer" className="reasons-cta__text-link" data-testid="link-reasons-contact">{t("ご不安な点などの相談はこちら →")}</a>
         </motion.div>
       </div>
     </section>

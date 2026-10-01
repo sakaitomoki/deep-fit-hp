@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import { Award, Medal } from "lucide-react";
-import { Link } from "wouter";
 import SEO from "@/components/SEO";
-import { seoConfig } from "@/lib/gymConfig";
+import { seoConfig, gymConfig } from "@/lib/gymConfig";
 import { useT } from "@/lib/i18n";
 
 const fadeInUp = {
@@ -202,13 +201,15 @@ export default function Instructors() {
           <p className="text-white/80 text-sm mb-8">
             {t("経験豊富なインストラクターが、あなたの目標達成を全力でサポートします。")}
           </p>
-          <Link
-            href="/contact"
+          <a
+            href={gymConfig.sns.line}
+            target="_blank"
+            rel="noopener noreferrer"
             data-testid="button-cta-instructors"
             className="inline-block bg-white text-[#D99A40] font-bold px-8 py-3 rounded-full text-base transition-all duration-200 shadow-lg hover:scale-105"
           >
             {t("無料体験を予約する")}
-          </Link>
+          </a>
         </motion.div>
       </section>
     </>

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import { Heart, Flame, Users, CheckCircle2, Star, Dumbbell, Zap, MapPin, MessageCircle, ArrowRight } from "lucide-react";
+import { Heart, Flame, Users, CheckCircle2, Star, Dumbbell, Zap, MapPin, ArrowRight } from "lucide-react";
 import { SiLine, SiInstagram } from "react-icons/si";
 import { Link } from "wouter";
 import SEO from "@/components/SEO";
@@ -565,14 +565,16 @@ export default function Schedule() {
               <SiLine className="w-5 h-5" />
               {t("LINEで体験予約する")}
             </a>
-            <Link
-              href="/contact"
+            <a
+              href={gymConfig.sns.line}
+              target="_blank"
+              rel="noopener noreferrer"
               data-testid="button-campaign-contact"
               className="inline-flex items-center gap-2 bg-white text-[#D99A40] font-medium px-7 py-4 rounded-full text-base transition-all duration-200 shadow-md hover:scale-105"
             >
-              <MessageCircle className="w-4 h-4" />
-              {t("お問い合わせフォーム")}
-            </Link>
+              <SiLine className="w-4 h-4" />
+              {t("LINEで相談する")}
+            </a>
           </motion.div>
           <p className="text-center text-[#4D5058]/40 text-xs mt-4">{t("体験後、当日入会でキャンペーン適用　※キャンペーンは予告なく終了する場合があります")}</p>
         </div>
@@ -914,14 +916,16 @@ export default function Schedule() {
                   <SiLine className="w-5 h-5" />
                   {t("LINEで体験予約（おすすめ）")}
                 </a>
-                <Link
-                  href="/contact"
+                <a
+                  href={gymConfig.sns.line}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   data-testid="button-contact-schedule"
                   className="flex-1 inline-flex items-center justify-center gap-2 bg-white border-2 border-[#F2AC55] text-[#D99A40] font-medium px-6 py-3.5 rounded-full text-base transition-all duration-200 hover:bg-[#FFF8EC]"
                 >
-                  <MessageCircle className="w-4 h-4" />
-                  {t("お問い合わせフォーム")}
-                </Link>
+                  <SiLine className="w-4 h-4" />
+                  {t("LINEで相談する")}
+                </a>
               </div>
             </div>
           </motion.div>

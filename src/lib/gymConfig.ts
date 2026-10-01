@@ -175,6 +175,5 @@ export const seoConfig = {
     personalTraining: seoMeta["/personal-training"],
     gymSwitch: seoMeta["/gym-switch"],
     instructors: seoMeta["/instructors"],
-    contact: seoMeta["/contact"],
   },
 };

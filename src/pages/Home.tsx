@@ -779,11 +779,13 @@ function OpeningOfferSection() {
             <SiLine className="w-5 h-5" />
             {t("LINEで無料体験を予約する")}
           </a>
-          <Link
-            href="/contact"
+          <a
+            href={gymConfig.sns.line}
+            target="_blank"
+            rel="noopener noreferrer"
             data-testid="button-home-offer-contact"
             className="opening-offer-section__cta-secondary"
-          >{t("ご不安な点などを相談する")}</Link>
+          >{t("ご不安な点などを相談する")}</a>
           <p className="opening-offer-section__cta-note">{t("返信は営業時間内に順次対応")}</p>
         </motion.div>
       </div>
@@ -1235,13 +1237,15 @@ export default function Home() {
               <SiLine className="w-5 h-5 text-[#06C755]" />
               {t("無料体験を予約する")}
             </a>
-            <Link
-              href="/contact"
+            <a
+              href={gymConfig.sns.line}
+              target="_blank"
+              rel="noopener noreferrer"
               data-testid="button-contact-cta"
               className="border-2 border-white/60 text-white px-8 py-3 rounded-full text-base font-medium hover:bg-white/10 transition-all duration-200"
             >
               {t("見学・体験を相談する")}
-            </Link>
+            </a>
           </div>
         </motion.div>
       </section>

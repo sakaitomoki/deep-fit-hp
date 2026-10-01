@@ -87,7 +87,7 @@ export const schedule: Record<string, string> = {
   "最大": "Up to",
   "＋月会費永久割引が継続します": "+ Your monthly dues discount continues forever",
   "LINEで体験予約する": "Book a Trial via LINE",
-  "お問い合わせフォーム": "Contact Form",
+  "LINEで相談する": "Chat with us on LINE",
   "体験後、当日入会でキャンペーン適用　※キャンペーンは予告なく終了する場合があります":
     "Campaign applies with same-day enrollment after your trial. * The campaign may end without notice.",
 

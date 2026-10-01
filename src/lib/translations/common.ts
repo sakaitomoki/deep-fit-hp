@@ -11,7 +11,6 @@ export const common: Record<string, string> = {
   "女性専用パーソナル（natukiトレーナー）": "Women's Personal Training (Trainer Natuki)",
   "ジム乗り換え": "Gym Switch",
   "インストラクター": "Instructors",
-  "お問い合わせ": "Contact",
   "メニュー": "Menu",
 
   // Mobile contact bar

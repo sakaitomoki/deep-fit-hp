@@ -17,7 +17,6 @@ const Kids = lazy(() => import("@/pages/Kids"));
 const Program = lazy(() => import("@/pages/Program"));
 const PersonalTraining = lazy(() => import("@/pages/PersonalTraining"));
 const GymSwitch = lazy(() => import("@/pages/GymSwitch"));
-const Contact = lazy(() => import("@/pages/Contact"));
 const NotFound = lazy(() => import("@/pages/not-found"));
 
 const queryClient = new QueryClient({
@@ -49,7 +48,6 @@ function Router() {
         <Route path="/personal-training" component={PersonalTraining} />
         <Route path="/gym-switch" component={GymSwitch} />
         <Route path="/instructors" component={Instructors} />
-        <Route path="/contact" component={Contact} />
         <Route component={NotFound} />
       </Switch>
     </Suspense>

@@ -302,7 +302,6 @@ const sitemapRoutes = [
   { loc: `${siteUrl}/program`, changefreq: "monthly", priority: "0.7" },
   { loc: `${siteUrl}/personal-training`, changefreq: "monthly", priority: "0.7" },
   { loc: `${siteUrl}/gym-switch`, changefreq: "monthly", priority: "0.7" },
-  { loc: `${siteUrl}/contact`, changefreq: "monthly", priority: "0.9" },
 ];
 
 const today = new Date().toISOString().slice(0, 10);
