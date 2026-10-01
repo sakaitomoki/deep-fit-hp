@@ -70,12 +70,12 @@ const classes = [
 function InstagramAtmosphereSection() {
   const t = useT();
   const igThumbs = [
-    { image: "/images/gym-kickboxing-woman.webp", alt: "キックボクシングトレーニングの様子" },
-    { image: "/images/class-kickboxing.webp", alt: "初心者向けキックボクシングレッスン" },
-    { image: "/images/class-circuit.webp", alt: "サーキットトレーニングクラス" },
-    { image: "/images/gym-about.webp", alt: "DEEP.FITのトレーニング風景" },
-    { image: "/images/kids-class.webp", alt: "キッズクラスの様子" },
-    { image: "/images/smith-machine.webp", alt: "個室スミスマシンでのトレーニング" },
+    { image: "/images/ig-reel-kick-yellow.webp", alt: "キックボクシングトレーニングの様子" },
+    { image: "/images/ig-reel-rope-blue.webp", alt: "バトルロープトレーニングの様子" },
+    { image: "/images/ig-reel-medball-pink.webp", alt: "メディシンボールを使ったトレーニングの様子" },
+    { image: "/images/ig-reel-kick-redbag.webp", alt: "サンドバッグを使ったキックボクシングの様子" },
+    { image: "/images/ig-reel-medball-gym.webp", alt: "ファンクショナルトレーニングの様子" },
+    { image: "/images/ig-reel-yoga.webp", alt: "ヨガクラスの様子" },
   ];
 
   return (
