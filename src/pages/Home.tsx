@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 import { motion, useScroll, useSpring } from "framer-motion";
-import { ArrowRight, MessageCircle, CheckCircle2, Smartphone } from "lucide-react";
+import { ArrowRight, MessageCircle, CheckCircle2, Smartphone, Star, User } from "lucide-react";
 import { SiInstagram, SiLine } from "react-icons/si";
 import SEO from "@/components/SEO";
 import { gymConfig, seoConfig } from "@/lib/gymConfig";
@@ -240,6 +240,29 @@ function AppFeatureSection() {
   );
 }
 
+function GoogleGIcon({ size = 20 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 48 48" aria-hidden="true">
+      <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z" />
+      <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z" />
+      <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z" />
+      <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z" />
+    </svg>
+  );
+}
+
+function StarRow({ count = 5 }: { count?: number }) {
+  return (
+    <div style={{ display: "flex", gap: 2 }} aria-hidden="true">
+      {Array.from({ length: count }).map((_, i) => (
+        <Star key={i} className="w-3.5 h-3.5" style={{ fill: "#FBBC05", color: "#FBBC05" }} />
+      ))}
+    </div>
+  );
+}
+
+const avatarColors = ["#4285F4", "#EA4335", "#34A853"];
+
 function TestimonialsGridSection() {
   const t = useT();
   return (
@@ -254,6 +277,19 @@ function TestimonialsGridSection() {
         >
           <h2 className="testimonials-grid-section__title">{t("実際に通っている方の声")}</h2>
           <p className="testimonials-grid-section__lead">{t("はじめての方や、運動が久しぶりの方からも、通いやすさについての声をいただいています。")}</p>
+
+          <a
+            href="https://share.google/1zfUwy6IddgxUQffi"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-testid="link-google-reviews"
+            className="testimonials-grid-section__google-badge"
+          >
+            <GoogleGIcon size={22} />
+            <span className="testimonials-grid-section__google-score">4.9</span>
+            <StarRow />
+            <span className="testimonials-grid-section__google-count">{t("Googleの口コミを見る")} →</span>
+          </a>
         </motion.div>
 
         <motion.div
@@ -265,28 +301,19 @@ function TestimonialsGridSection() {
         >
           {testimonials.map((item, i) => (
             <motion.div key={i} variants={scaleIn} className="testimonial-card" data-testid={`card-testimonial-${i}`}>
-              <p className="testimonial-card__meta">{t(item.meta)}</p>
+              <div className="testimonial-card__head">
+                <span className="testimonial-card__avatar" style={{ background: avatarColors[i % avatarColors.length] }}>
+                  <User className="w-4 h-4" style={{ color: "#ffffff" }} />
+                </span>
+                <div className="testimonial-card__head-text">
+                  <p className="testimonial-card__meta">{t(item.meta)}</p>
+                  <StarRow />
+                </div>
+                <GoogleGIcon size={18} />
+              </div>
               <p className="testimonial-card__text">「{t(item.text)}」</p>
             </motion.div>
           ))}
-        </motion.div>
-
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInUp}
-          style={{ textAlign: "center", marginTop: 32 }}
-        >
-          <a
-            href="https://share.google/1zfUwy6IddgxUQffi"
-            target="_blank"
-            rel="noopener noreferrer"
-            data-testid="link-google-reviews"
-            style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#ffffff", color: "#4D5058", fontWeight: 700, fontSize: 14, padding: "12px 24px", borderRadius: 999 }}
-          >
-            ⭐ 4.9（{t("Googleの口コミを見る")}）
-          </a>
         </motion.div>
       </div>
     </section>

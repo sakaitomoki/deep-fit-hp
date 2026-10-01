@@ -1305,7 +1305,7 @@
 
 /* ─── Testimonials Grid Section ─────────────────────────────── */
 .testimonials-grid-section {
-  background: #2C1F10;
+  background: #F8F9FA;
   padding: 80px 0 72px;
 }
 .testimonials-grid-section__inner {
@@ -1320,15 +1320,37 @@
 .testimonials-grid-section__title {
   font-size: clamp(22px, 4vw, 32px);
   font-weight: 700;
-  color: #ffffff;
+  color: #202124;
   margin-bottom: 12px;
 }
 .testimonials-grid-section__lead {
-  color: rgba(255, 255, 255, 0.6);
+  color: #5F6368;
   font-size: 14px;
   line-height: 1.7;
   max-width: 600px;
   margin: 0 auto;
+}
+.testimonials-grid-section__google-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  background: #ffffff;
+  border: 1px solid #DADCE0;
+  border-radius: 999px;
+  padding: 10px 20px;
+  box-shadow: 0 1px 3px rgba(60, 64, 67, 0.15);
+}
+.testimonials-grid-section__google-score {
+  font-size: 18px;
+  font-weight: 700;
+  color: #202124;
+}
+.testimonials-grid-section__google-count {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1A73E8;
+  margin-left: 2px;
 }
 .testimonials-grid-section__cards {
   display: grid;
@@ -1336,28 +1358,50 @@
   gap: 16px;
 }
 .testimonial-card {
-  background: #1F140A;
-  border: 1px solid rgba(240, 169, 58, 0.18);
-  border-radius: 16px;
-  padding: 26px 24px;
+  background: #ffffff;
+  border: 1px solid #DADCE0;
+  border-radius: 12px;
+  padding: 22px 22px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
+  box-shadow: 0 1px 2px rgba(60, 64, 67, 0.1);
+}
+.testimonial-card__head {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.testimonial-card__avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.testimonial-card__head-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 .testimonial-card__meta {
-  font-size: 12px;
-  color: #F0A93A;
+  font-size: 13px;
+  color: #202124;
   font-weight: 600;
 }
 .testimonial-card__text {
   font-size: 13px;
   line-height: 1.85;
-  color: rgba(255, 255, 255, 0.82);
+  color: #3C4043;
 }
 
 @media (max-width: 767px) {
   .testimonials-grid-section { padding: 56px 0 48px; }
   .testimonials-grid-section__cards { grid-template-columns: 1fr; gap: 12px; }
+  .testimonials-grid-section__google-badge { flex-wrap: wrap; justify-content: center; }
 }
 
 /* ─── Class Guide Section ───────────────────────────────────── */
