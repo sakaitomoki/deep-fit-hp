@@ -308,8 +308,8 @@ export const home: Record<string, string> = {
   "秋のキャンペーン": "Autumn Campaign",
   "夏の終わりが、": "The end of summer is",
   "カラダ作りの始まり。": "the start of building your body.",
-  "9月末までの期間限定。": "Limited time — until the end of September.",
+  "10月末までの期間限定。": "Limited time — until the end of October.",
   "今だけ": "Now Only",
   "🔥 先着30名限定": "🔥 First 30 members only",
-  "⏰ 9月末まで": "⏰ Until end of September",
+  "⏰ 10月末まで": "⏰ Until end of October",
 };
