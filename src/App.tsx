@@ -2,7 +2,6 @@ import { Switch, Route, useLocation, Router as WouterRouter } from "wouter";
 import { useEffect, lazy, Suspense } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { HelmetProvider } from "react-helmet-async";
-import { LanguageProvider } from "@/lib/i18n";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Navigation from "@/components/Navigation";
@@ -57,7 +56,6 @@ function Router() {
 function App() {
   return (
     <HelmetProvider>
-      <LanguageProvider>
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
           <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
@@ -72,7 +70,6 @@ function App() {
           <Toaster />
         </TooltipProvider>
       </QueryClientProvider>
-      </LanguageProvider>
     </HelmetProvider>
   );
 }
