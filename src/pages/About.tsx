@@ -275,10 +275,10 @@ const features = [
 ];
 
 const worries = [
-  { title: "運動が続かなくて…", text: "動きに変化があるサーキットとミット打ちで、飽きずに通えます。『楽しい』が続ける理由になります。" },
-  { title: "格闘技って怖そう…", text: "ミットやサンドバッグを打つ爽快なトレーニングが中心です。グローブは無料でお貸しします。" },
-  { title: "ひとりで行くのは心細い…", text: "おひとりで通う方がたくさんいます。会員さん同士の雰囲気が良く、初めてでも馴染みやすいジムです。" },
-  { title: "体力に自信がない…", text: "一人ひとりのレベルに合わせて動きを調整できます。無理のない強度から、少しずつステップアップ。" },
+  { image: "/images/ig-reel-rope-blue.webp", position: "center 18%", alt: "笑顔でバトルロープに取り組む女性", title: "運動が続かなくて…", text: "動きに変化があるサーキットとミット打ちで、飽きずに通えます。『楽しい』が続ける理由になります。" },
+  { image: "/images/gym-kickboxing-woman.webp", position: "center", alt: "グローブをつけてミット打ちをする女性", title: "格闘技って怖そう…", text: "ミットやサンドバッグを打つ爽快なトレーニングが中心です。グローブは無料でお貸しします。" },
+  { image: "/images/ig-reel-box-puma.webp", position: "center 20%", alt: "笑顔で構える会員さん", title: "ひとりで行くのは心細い…", text: "おひとりで通う方がたくさんいます。会員さん同士の雰囲気が良く、初めてでも馴染みやすいジムです。" },
+  { image: "/images/ig-reel-yoga-stretch.webp", position: "center 28%", alt: "ゆったりとストレッチをする女性", title: "体力に自信がない…", text: "一人ひとりのレベルに合わせて動きを調整できます。無理のない強度から、少しずつステップアップ。" },
 ];
 
 const conceptCards = [
@@ -401,9 +401,18 @@ export default function About() {
           </motion.div>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {worries.map((worry) => (
-              <motion.div key={worry.title} variants={fadeInUp} className="bg-white rounded-md p-6 border border-gray-100">
-                <h3 className="relative bg-[#FAF5EE] rounded-md p-4 mb-6 font-bold text-[#4D5058] after:absolute after:left-6 after:-bottom-2 after:w-4 after:h-4 after:rotate-45 after:bg-[#FAF5EE]">{t(worry.title)}</h3>
-                <p className="text-[#4D5058]/70 text-sm sm:text-base leading-relaxed">{t(worry.text)}</p>
+              <motion.div key={worry.title} variants={fadeInUp} className="bg-white rounded-md overflow-hidden border border-gray-100 shadow-sm">
+                <img
+                  src={worry.image}
+                  alt={t(worry.alt)}
+                  loading="lazy"
+                  className="w-full aspect-[4/3] object-cover"
+                  style={{ objectPosition: worry.position }}
+                />
+                <div className="p-6">
+                  <h3 className="relative bg-[#FAF5EE] rounded-md p-4 mb-6 font-bold text-[#4D5058] after:absolute after:left-6 after:-bottom-2 after:w-4 after:h-4 after:rotate-45 after:bg-[#FAF5EE]">{t(worry.title)}</h3>
+                  <p className="text-[#4D5058]/70 text-sm sm:text-base leading-relaxed">{t(worry.text)}</p>
+                </div>
               </motion.div>
             ))}
           </motion.div>
