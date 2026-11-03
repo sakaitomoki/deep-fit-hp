@@ -61,7 +61,7 @@ function App() {
           <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
             <ScrollToTop />
             <Navigation />
-            <main className="pb-16 lg:pb-0">
+            <main className="pb-16 lg:pb-0 overflow-x-clip">
               <Router />
             </main>
             <Footer />
