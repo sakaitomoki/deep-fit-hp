@@ -300,10 +300,10 @@ const planChecks = [
 ];
 
 const flowSteps = [
-  { title: "LINEで体験予約", text: "ご希望の日時をLINEで送るだけ。見学・相談だけでもOKです。" },
-  { title: "動きやすい服装でご来店", text: "タオル・飲み物があると快適です。グローブは無料でお貸しします。" },
-  { title: "体験レッスン", text: "サーキットやミット打ちを、ご自分のペースで体験できます。" },
-  { title: "ご入会（任意）", text: "体験後、当日入会でキャンペーンが適用されます。無理な勧誘はありません。" },
+  { image: "/images/class-circuit.webp", position: "center 22%", alt: "ミットに向かってパンチを打つ女性", title: "LINEで体験予約", text: "ご希望の日時をLINEで送るだけ。見学・相談だけでもOKです。" },
+  { image: "/images/gym-interior.webp", position: "center", alt: "サンドバッグが並ぶDEEP.FITの店内", title: "動きやすい服装でご来店", text: "タオル・飲み物があると快適です。グローブは無料でお貸しします。" },
+  { image: "/images/class-circuit-kick.webp", position: "center 8%", alt: "サーキットトレーニングで蹴りを出す女性", title: "体験レッスン", text: "サーキットやミット打ちを、ご自分のペースで体験できます。" },
+  { image: "/images/class-personal-squat.webp", position: "center 30%", alt: "バーベルスクワットに取り組む女性", title: "ご入会（任意）", text: "体験後、当日入会でキャンペーンが適用されます。無理な勧誘はありません。" },
 ];
 
 const equipment = [
@@ -518,10 +518,19 @@ export default function About() {
           </motion.div>
           <motion.ol initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {flowSteps.map((step, i) => (
-              <motion.li key={step.title} variants={fadeInUp} className="bg-white rounded-md p-6 border border-gray-100">
-                <span className="flex items-center justify-center w-12 h-12 rounded-full bg-[#F2AC55]/10 text-[#D99A40] text-xl font-bold mb-5">{i + 1}</span>
-                <h3 className="font-bold text-[#4D5058] text-lg mb-3">{t(step.title)}</h3>
-                <p className="text-[#4D5058]/70 text-sm sm:text-base leading-relaxed">{t(step.text)}</p>
+              <motion.li key={step.title} variants={fadeInUp} className="bg-white rounded-md overflow-hidden border border-gray-100 shadow-sm">
+                <img
+                  src={step.image}
+                  alt={t(step.alt)}
+                  loading="lazy"
+                  className="w-full aspect-[4/3] object-cover"
+                  style={{ objectPosition: step.position }}
+                />
+                <div className="p-6">
+                  <span className="flex items-center justify-center w-10 h-10 rounded-full bg-[#F2AC55]/10 text-[#D99A40] text-lg font-bold mb-4">{i + 1}</span>
+                  <h3 className="font-bold text-[#4D5058] text-lg mb-3">{t(step.title)}</h3>
+                  <p className="text-[#4D5058]/70 text-sm sm:text-base leading-relaxed">{t(step.text)}</p>
+                </div>
               </motion.li>
             ))}
           </motion.ol>
