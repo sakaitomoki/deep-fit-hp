@@ -216,6 +216,10 @@
     @apply font-sans antialiased bg-background text-foreground;
   }
 
+  .font-display-jp {
+    font-family: "Dela Gothic One", "Noto Sans JP", sans-serif;
+    font-weight: 400;
+  }
   .font-heading {
     font-family: var(--app-font-heading);
   }

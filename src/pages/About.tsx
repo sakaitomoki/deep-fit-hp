@@ -344,10 +344,11 @@ export default function About() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="text-[22px] sm:text-4xl lg:text-5xl font-bold text-white leading-snug"
+            className="font-display-jp text-[24px] sm:text-[28px] lg:text-[40px] text-white leading-tight"
           >
-            <span className="inline-block whitespace-nowrap">{t("キックボクシング×")}</span><br />
-            <span className="inline-block whitespace-nowrap">{t("ファンクショナルトレーニング")}</span>
+            <span className="block">{t("キックボクシングフィットネス")}</span>
+            <span className="block text-[#F2AC55] text-[0.75em] leading-none my-1.5">×</span>
+            <span className="block">{t("ファンクショナルサーキット")}<br className="sm:hidden" />{t("トレーニング")}</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
