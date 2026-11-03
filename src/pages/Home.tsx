@@ -373,7 +373,7 @@ function OpeningOfferSection() {
             <span>{t("4大特典")}</span>
           </h2>
           <p className="opening-offer-section__lead">
-            {t("10月末までの期間限定。")}<br />
+            {t("11月末までの期間限定。")}<br />
             {t("まずは無料体験から気軽にどうぞ。")}
           </p>
         </motion.div>
@@ -437,7 +437,7 @@ function OpeningOfferSection() {
           variants={staggerContainer}
           className="flex flex-col sm:flex-row gap-5 w-full mt-2 mb-2"
         >
-          {/* 特典④ 先着30名限定・月会費永久割引 — 明るい今だけキャンペーン */}
+          {/* 特典④ 先着15名限定・月会費永久割引 — 明るい今だけキャンペーン */}
           <motion.div
             variants={scaleIn}
             className="flex-1 rounded-3xl overflow-hidden"
@@ -460,8 +460,8 @@ function OpeningOfferSection() {
                 <span style={{ color: "rgba(255,255,255,0.9)", fontSize: 11, letterSpacing: "0.12em", fontWeight: 700 }}>{t("当日入会限定")}</span>
               </div>
               <div className="flex flex-wrap items-center justify-center gap-2 mb-2">
-                <span style={{ background: "#ffffff", color: "#C0392B", fontSize: 12, fontWeight: 900, padding: "4px 14px", borderRadius: 999, letterSpacing: "0.04em" }}>{t("🔥 先着30名限定")}</span>
-                <span style={{ background: "#ffffff", color: "#B9791B", fontSize: 12, fontWeight: 900, padding: "4px 14px", borderRadius: 999, letterSpacing: "0.04em" }}>{t("⏰ 10月末まで")}</span>
+                <span style={{ background: "#ffffff", color: "#C0392B", fontSize: 12, fontWeight: 900, padding: "4px 14px", borderRadius: 999, letterSpacing: "0.04em" }}>{t("🔥 先着15名限定")}</span>
+                <span style={{ background: "#ffffff", color: "#B9791B", fontSize: 12, fontWeight: 900, padding: "4px 14px", borderRadius: 999, letterSpacing: "0.04em" }}>{t("⏰ 11月末まで")}</span>
               </div>
               <p style={{
                 color: "#ffffff",
