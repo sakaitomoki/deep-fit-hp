@@ -282,8 +282,8 @@ const worries = [
 ];
 
 const conceptCards = [
-  { title: "キックボクシング", text: "パンチ・キックをミットやサンドバッグに打ち込む爽快感。ストレス発散にも。" },
-  { title: "ファンクショナルトレーニング", text: "バトルロープやメディシンボールなどを使い、日常動作につながる全身の動きを鍛えます。" },
+  { image: "/images/ig-reel-kick-yellow.webp", position: "center 28%", alt: "グローブをつけてパンチを打ち込む女性", title: "キックボクシング", text: "パンチ・キックをミットやサンドバッグに打ち込む爽快感。ストレス発散にも。" },
+  { image: "/images/ig-reel-medball-pink.webp", position: "center 18%", alt: "メディシンボールを持ってトレーニングする女性", title: "ファンクショナルトレーニング", text: "バトルロープやメディシンボールなどを使い、日常動作につながる全身の動きを鍛えます。" },
 ];
 
 const whoCards = [
@@ -434,9 +434,18 @@ export default function About() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="flex flex-col md:flex-row gap-6 items-stretch">
             {conceptCards.map((card, i) => (
               <Fragment key={card.title}>
-                <motion.div variants={fadeInUp} className="flex-1 min-w-0 bg-white rounded-md p-6 border border-gray-100">
-                  <h3 className="font-bold text-[#4D5058] text-xl mb-4">{t(card.title)}</h3>
-                  <p className="text-[#4D5058]/70 text-sm sm:text-base leading-relaxed">{t(card.text)}</p>
+                <motion.div variants={fadeInUp} className="flex-1 min-w-0 bg-white rounded-md overflow-hidden border border-gray-100 shadow-sm">
+                  <img
+                    src={card.image}
+                    alt={t(card.alt)}
+                    loading="lazy"
+                    className="w-full aspect-[4/3] object-cover"
+                    style={{ objectPosition: card.position }}
+                  />
+                  <div className="p-6">
+                    <h3 className="font-bold text-[#4D5058] text-xl mb-4">{t(card.title)}</h3>
+                    <p className="text-[#4D5058]/70 text-sm sm:text-base leading-relaxed">{t(card.text)}</p>
+                  </div>
                 </motion.div>
                 {i === 0 && <motion.span variants={scaleIn} className="self-center text-5xl font-bold text-[#F2AC55]">×</motion.span>}
               </Fragment>
