@@ -609,10 +609,9 @@ function OpeningOfferSection() {
             {/* 右：料金 */}
             <div className="flex-1 px-6 py-6">
               <div className="mb-3">
-                <p style={{ color: "#B08256", fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", marginBottom: 4 }}>{t("フルタイム")}</p>
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <p style={{ color: "#B08256", fontSize: 10, fontWeight: 700, marginBottom: 1 }}>{t("男性")}</p>
+                    <p style={{ color: "#B08256", fontSize: 10, fontWeight: 700, marginBottom: 1 }}>{t("男性")}・{t("フルタイム")}</p>
                     <div className="flex items-baseline gap-1">
                       <span style={{ color: "#3D3530", fontSize: "clamp(24px,3.2vw,32px)", fontWeight: 900, fontFamily: "Oswald, sans-serif", lineHeight: 0.9 }}>12,000</span>
                       <span style={{ color: "#6B5D54", fontSize: 12, fontWeight: 700 }}>{t("円/月")}</span>
@@ -620,7 +619,7 @@ function OpeningOfferSection() {
                     <p style={{ color: "#8C7B72", fontSize: 10, marginTop: 1 }}>{t("（税込 13,200円/月）")}</p>
                   </div>
                   <div>
-                    <p style={{ color: "#B08256", fontSize: 10, fontWeight: 700, marginBottom: 1 }}>{t("女性")}</p>
+                    <p style={{ color: "#B08256", fontSize: 10, fontWeight: 700, marginBottom: 1 }}>{t("女性")}・{t("フルタイム")}</p>
                     <div className="flex items-baseline gap-1">
                       <span style={{ color: "#3D3530", fontSize: "clamp(24px,3.2vw,32px)", fontWeight: 900, fontFamily: "Oswald, sans-serif", lineHeight: 0.9 }}>10,000</span>
                       <span style={{ color: "#6B5D54", fontSize: 12, fontWeight: 700 }}>{t("円/月")}</span>
@@ -630,10 +629,9 @@ function OpeningOfferSection() {
                 </div>
               </div>
               <div style={{ borderTop: "1px solid rgba(192,138,85,0.3)", paddingTop: 12 }}>
-                <p style={{ color: "#B08256", fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", marginBottom: 4 }}>{t("月8回")}</p>
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <p style={{ color: "#B08256", fontSize: 10, fontWeight: 700, marginBottom: 1 }}>{t("男性")}</p>
+                    <p style={{ color: "#B08256", fontSize: 10, fontWeight: 700, marginBottom: 1 }}>{t("男性")}・{t("月8回")}</p>
                     <div className="flex items-baseline gap-1">
                       <span style={{ color: "#3D3530", fontSize: "clamp(24px,3.2vw,32px)", fontWeight: 900, fontFamily: "Oswald, sans-serif", lineHeight: 0.9 }}>10,000</span>
                       <span style={{ color: "#6B5D54", fontSize: 12, fontWeight: 700 }}>{t("円/月")}</span>
@@ -641,7 +639,7 @@ function OpeningOfferSection() {
                     <p style={{ color: "#8C7B72", fontSize: 10, marginTop: 1 }}>{t("（税込 11,000円/月）")}</p>
                   </div>
                   <div>
-                    <p style={{ color: "#B08256", fontSize: 10, fontWeight: 700, marginBottom: 1 }}>{t("女性")}</p>
+                    <p style={{ color: "#B08256", fontSize: 10, fontWeight: 700, marginBottom: 1 }}>{t("女性")}・{t("月8回")}</p>
                     <div className="flex items-baseline gap-1">
                       <span style={{ color: "#3D3530", fontSize: "clamp(24px,3.2vw,32px)", fontWeight: 900, fontFamily: "Oswald, sans-serif", lineHeight: 0.9 }}>8,000</span>
                       <span style={{ color: "#6B5D54", fontSize: 12, fontWeight: 700 }}>{t("円/月")}</span>
