@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import { motion } from "framer-motion";
-import { Clock, HeartHandshake, Users, CheckCircle2 } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import { SiLine } from "react-icons/si";
 import { Link } from "wouter";
 import SEO from "@/components/SEO";
@@ -269,9 +269,9 @@ function FAQSection() {
 }
 
 const features = [
-  { icon: Clock, title: "予約不要の通い放題", text: "フィットネスクラスは事前予約なしで通えます。フルタイム会員は通い放題で、その日の気分で好きなだけ。" },
-  { icon: HeartHandshake, title: "女性・初心者も安心", text: "運動が久しぶりの方、はじめての方も多数。ペースに合わせて無理なく始められます。" },
-  { icon: Users, title: "60代の方も通っています", text: "幅広い世代の方が通っていて、60代の方も一緒に汗を流しています。" },
+  { image: "/images/class-fitness-poster.webp", position: "center 40%", alt: "ジムでバトルロープトレーニングをする会員さん", title: "予約不要の通い放題", text: "フィットネスクラスは事前予約なしで通えます。フルタイム会員は通い放題で、その日の気分で好きなだけ。" },
+  { image: "/images/gym-atmosphere-ropes.webp", position: "center", alt: "真剣な表情でトレーニングに取り組む女性", title: "女性・初心者も安心", text: "運動が久しぶりの方、はじめての方も多数。ペースに合わせて無理なく始められます。" },
+  { image: "/images/program-card-yoga.webp", position: "center 25%", alt: "笑顔でストレッチをする女性", title: "60代の方も通っています", text: "幅広い世代の方が通っていて、60代の方も一緒に汗を流しています。" },
 ];
 
 const worries = [
@@ -371,16 +371,22 @@ export default function About() {
             variants={staggerContainer}
             className="grid grid-cols-1 md:grid-cols-3 gap-6"
           >
-            {features.map((feature) => {
-              const Icon = feature.icon;
-              return (
-                <motion.div key={feature.title} variants={fadeInUp} className="bg-white rounded-md p-6 border border-gray-100">
-                  <Icon className="w-8 h-8 text-[#F2AC55] mb-4" aria-hidden="true" />
+            {features.map((feature, i) => (
+              <motion.div key={feature.title} variants={fadeInUp} className="bg-white rounded-md overflow-hidden border border-gray-100 shadow-sm">
+                <img
+                  src={feature.image}
+                  alt={t(feature.alt)}
+                  loading="lazy"
+                  className="w-full aspect-[4/3] object-cover"
+                  style={{ objectPosition: feature.position }}
+                />
+                <div className="p-6">
+                  <p className="font-heading text-[#F2AC55] text-sm tracking-[0.2em] mb-2">{String(i + 1).padStart(2, "0")}</p>
                   <h2 className="font-bold text-[#4D5058] text-lg mb-3">{t(feature.title)}</h2>
                   <p className="text-[#4D5058]/70 text-sm sm:text-base leading-relaxed">{t(feature.text)}</p>
-                </motion.div>
-              );
-            })}
+                </div>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </section>
