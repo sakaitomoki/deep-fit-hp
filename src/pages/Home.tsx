@@ -62,7 +62,7 @@ const testimonials = [
 ];
 
 const classes = [
-  { title: "フィットネス", subtitle: "Fitness Class", level: "初心者向け", description: "ファンクショナルサーキットトレーニングとキックボクシングを組み合わせた新感覚フィットネス。楽しみながらダイエットや体力アップを目指せます。", image: "/images/class-fitness-kick.webp", alt: "DEEP.FITの初心者向けフィットネスキックボクシングクラス", animation: "left", target: "運動不足解消・ダイエット", intensity: 1, beginnerOk: true },
+  { title: "フィットネス", subtitle: "Fitness Class", level: "初心者向け", description: "ファンクショナルサーキットトレーニングとキックボクシングを組み合わせた新感覚フィットネス。楽しみながらダイエットや体力アップを目指せます。", image: "/images/class-fitness-poster.webp", video: "/video/class-fitness.mp4", alt: "DEEP.FITの初心者向けフィットネスキックボクシングクラス", animation: "left", target: "運動不足解消・ダイエット", intensity: 1, beginnerOk: true },
   { title: "パーソナルトレーニング", subtitle: "Personal Training", level: "全レベル", description: "マンツーマンで目標に合わせた特別プログラム。フォーム重視で、引き締め・筋力強化を確実に。", image: "/images/class-personal-squat.webp", alt: "DEEP.FITのパーソナルトレーニング指導の様子", animation: "up", target: "引き締め・筋力強化", intensity: 2, duration: "60分", beginnerOk: true },
   { title: "キッズクラス", subtitle: "Kids Class", level: "お子様向け", description: "楽しみながら体を動かすキッズ向けプログラム。礼儀やスポーツの基礎も学べます。", image: kidsClassImg, alt: "DEEP.FITのキッズクラスでお子さまが楽しくトレーニング", animation: "right", target: "基礎体力・礼儀", intensity: 1, duration: "60分", beginnerOk: true },
 ];
@@ -1132,12 +1132,26 @@ export default function Home() {
                   data-testid={`card-class-${i}`}
                 >
                   <div className="absolute inset-0 overflow-hidden">
-                    <img
-                      src={cls.image}
-                      alt={t(cls.alt)}
-                      loading="lazy"
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 brightness-[1.06]"
-                    />
+                    {cls.video ? (
+                      <video
+                        src={cls.video}
+                        poster={cls.image}
+                        aria-label={t(cls.alt)}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        preload="metadata"
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 brightness-[1.06]"
+                      />
+                    ) : (
+                      <img
+                        src={cls.image}
+                        alt={t(cls.alt)}
+                        loading="lazy"
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 brightness-[1.06]"
+                      />
+                    )}
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#4D5058]/28 to-[#4D5058]/82" />
                   <div className="absolute top-4 left-4 flex flex-wrap gap-1.5">
