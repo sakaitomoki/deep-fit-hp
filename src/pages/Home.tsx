@@ -8,7 +8,6 @@ import { gymConfig, seoConfig } from "@/lib/gymConfig";
 import { useT } from "@/lib/i18n";
 
 const deepFitLogo = "/images/deepfit-logo-asset.webp";
-const kidsClassImg = "/images/kids-class.webp";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -64,7 +63,7 @@ const testimonials = [
 const classes = [
   { title: "フィットネス", subtitle: "Fitness Class", level: "初心者向け", description: "ファンクショナルサーキットトレーニングとキックボクシングを組み合わせた新感覚フィットネス。楽しみながらダイエットや体力アップを目指せます。", image: "/images/class-fitness-poster.webp", video: "/video/class-fitness.mp4", alt: "DEEP.FITの初心者向けフィットネスキックボクシングクラス", animation: "left", target: "運動不足解消・ダイエット", intensity: 1, beginnerOk: true },
   { title: "パーソナルトレーニング", subtitle: "Personal Training", level: "全レベル", description: "マンツーマンで目標に合わせた特別プログラム。フォーム重視で、引き締め・筋力強化を確実に。", image: "/images/class-personal-squat.webp", alt: "DEEP.FITのパーソナルトレーニング指導の様子", animation: "up", target: "引き締め・筋力強化", intensity: 2, duration: "60分", beginnerOk: true },
-  { title: "キッズクラス", subtitle: "Kids Class", level: "お子様向け", description: "楽しみながら体を動かすキッズ向けプログラム。礼儀やスポーツの基礎も学べます。", image: kidsClassImg, alt: "DEEP.FITのキッズクラスでお子さまが楽しくトレーニング", animation: "right", target: "基礎体力・礼儀", intensity: 1, duration: "60分", beginnerOk: true },
+  { title: "キッズクラス", subtitle: "Kids Class", level: "お子様向け", description: "楽しみながら体を動かすキッズ向けプログラム。礼儀やスポーツの基礎も学べます。", image: "/images/class-kids-poster.webp", video: "/video/class-kids.mp4", alt: "DEEP.FITのキッズクラスでお子さまが楽しくトレーニング", animation: "right", target: "基礎体力・礼儀", intensity: 1, duration: "60分", beginnerOk: true },
 ];
 
 function InstagramAtmosphereSection() {
