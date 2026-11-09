@@ -494,7 +494,6 @@ export default function Schedule() {
             </div>
             <div className="px-6 pt-6 pb-6 text-center" style={{ background: "linear-gradient(135deg, #9B2C55 0%, #C9457A 100%)" }}>
               <div className="flex flex-wrap items-center justify-center gap-2 mb-3">
-                <span style={{ background: "#ffffff", color: "#9B2C55", fontSize: 12, fontWeight: 900, padding: "4px 14px", borderRadius: 999, letterSpacing: "0.04em" }}>{t("🗓 9月・10月限定")}</span>
                 <span style={{ background: "#ffffff", color: "#9B2C55", fontSize: 12, fontWeight: 900, padding: "4px 14px", borderRadius: 999, letterSpacing: "0.04em" }}>{t("👩 女性限定")}</span>
               </div>
               <p style={{ color: "#ffffff", fontSize: "clamp(20px,3vw,26px)", fontWeight: 800, letterSpacing: "0.02em" }}>{t("じっくり通える")}</p>
