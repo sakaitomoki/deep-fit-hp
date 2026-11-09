@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Sparkles, CheckCircle2, Smartphone, Phone, MapPin } from "lucide-react";
+import { CheckCircle2, Smartphone, Phone, MapPin } from "lucide-react";
 import { SiLine } from "react-icons/si";
 import SEO from "@/components/SEO";
 import { seoConfig, gymConfig } from "@/lib/gymConfig";
@@ -43,7 +43,6 @@ const beginnerVoices = [
 ];
 
 const conditions = [
-  "※9月中のご入会が対象です。",
   "※他フィットネスジム等からの乗り換えが対象です。",
   "※本キャンペーンはDEEPライト会員・DEEPプラス会員としてご契約いただいた方が対象です。",
   "※解約金・違約金等が確認できる明細・画面等をご提示ください。",
@@ -60,16 +59,6 @@ export default function GymSwitch() {
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/gym-interior.webp')" }} />
         <div className="absolute inset-0" style={{ background: "rgba(91,30,55,0.82)" }} />
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.15, duration: 0.6 }}
-            className="inline-flex items-center gap-2 mb-4"
-            style={{ background: "rgba(201,69,122,0.25)", border: "1px solid rgba(255,255,255,0.4)", borderRadius: 999, padding: "6px 18px" }}
-          >
-            <Sparkles className="w-3.5 h-3.5 text-white" />
-            <span style={{ color: "#ffffff", fontSize: 12, fontWeight: 800, letterSpacing: "0.18em" }}>{t("＼ 9月限定 ／")}</span>
-          </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -254,7 +243,7 @@ export default function GymSwitch() {
             className="text-white/90 text-sm sm:text-base leading-relaxed mb-2"
           >
             {t("今のジムを辞めるきっかけがなかった方も、")}<br />
-            {t("この9月にDEEP.FITで")}<br />
+            {t("この機会にDEEP.FITで")}<br />
             {t("新しいフィットネスを始めませんか？")}
           </motion.p>
           <motion.p
