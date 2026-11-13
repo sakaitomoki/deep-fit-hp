@@ -32,99 +32,6 @@ const scaleIn = {
   visible: { opacity: 1, scale: 1, transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } },
 };
 
-const faqItems = [
-  {
-    q: "予約は必要ですか？",
-    aLead: "フィットネスクラスは、事前予約なしで通えます。",
-    aBody: "体験レッスンとパーソナルトレーニングはご予約制です。LINEからお気軽にご連絡ください。",
-  },
-  {
-    q: "60代でも通えますか？",
-    aLead: "はい。60代の方も通っています。",
-    aBody: "ご自分のペースで動けるよう、強度を調整しながら進められます。体調面で心配なことがあれば、事前にLINEでご相談ください。",
-  },
-  {
-    q: "運動経験がなくても大丈夫ですか？",
-    aLead: "はい。むしろ未経験から始める方が多いです。",
-    aBody: "DEEP.FITでは、運動が久しぶりの方や未経験の方も多く通われています。メニューは一人ひとりのレベルに合わせて調整できるので、体力に自信がない方も安心して始められます。",
-  },
-  {
-    q: "サーキットトレーニングとはどんな内容ですか？",
-    aLead: "有酸素運動とキックボクシングの動きを組み合わせた、30分で全身を動かすトレーニングです。",
-    aBody: "DEEP.FITのサーキットトレーニングは、楽しみながらダイエットや体力アップを目指せる内容になっています。初心者や運動が久しぶりの方でも自分のペースで取り組めるので、無理なく続けやすいのが特徴です。",
-  },
-  {
-    q: "女性一人でも通いやすいですか？",
-    aLead: "はい。女性一人でも通いやすい雰囲気です。",
-    aBody: "実際におひとりで通われている方も多く、和気藹々としながらも無理に人に合わせすぎない空気があります。「格闘技ジムは少し不安」という方にも入りやすい環境です。",
-  },
-  {
-    q: "体験当日は何を持っていけばいいですか？",
-    aLead: "動きやすい服装だけで大丈夫です。",
-    aBody: "タオル・飲み物があると快適ですが、手ぶらでも対応できます。グローブなどの道具は不要ですが、ミットやサンドバックを打つ際は、バンテージや軍手などを持参いただくことをお勧めします。",
-  },
-  {
-    q: "どれくらいで効果を実感できますか？",
-    aLead: "目安としては、1〜3か月ほどで何らかの変化を感じる方が多いです。",
-    aBody: "まずは「疲れにくくなった」「気分が軽くなった」といった変化を感じやすく、見た目の変化はその後少しずつ出てきます。DEEP.FITでは、それぞれのペースで無理なく楽しく続けられることを大切にしています。",
-  },
-  {
-    q: "子どもを連れて行っても大丈夫ですか？",
-    aLead: "はい、お子さま連れについてもお気軽にご相談ください。",
-    aBody: "お子さま同伴のみならず、キッズクラスのご用意もあり、ご家庭の状況に合わせて通い方をご案内しています。気になることがあれば事前にLINEでご相談いただけます。",
-  },
-  {
-    q: "退会はいつでもできますか？",
-    aLead: "はい。月単位でいつでも退会でき、違約金や解約手数料もありません。",
-    aBody: "なお、割引価格の「DEEPプラス会員」は1年以上の継続を前提としたプランです。休会制度はご用意しておりませんのでご了承ください。ライフスタイルの変化があっても、退会のご連絡をいただければスムーズに対応します。",
-  },
-];
-
-function FAQSection() {
-  const t = useT();
-  return (
-    <section className="faq-section">
-      <div className="faq-section__inner">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInUp}
-          className="faq-section__header"
-        >
-          <h2 className="faq-section__title">{t("はじめてでも大丈夫？ よくあるご質問")}</h2>
-          <p className="faq-section__lead">{t("体験前に気になることを、よくある質問からまとめました。")}</p>
-        </motion.div>
-
-        <motion.div
-          className="faq-section__grid"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={staggerContainer}
-        >
-          {faqItems.map((item, i) => (
-            <motion.div key={i} variants={fadeInUp} className="faq-card" data-testid={`card-faq-${i}`}>
-              <div className="faq-card__question">
-                <span className="faq-card__q-label">Q</span>
-                <p className="faq-card__q-text">{t(item.q)}</p>
-              </div>
-              <div className="faq-card__divider" />
-              <div className="faq-card__answer">
-                <span className="faq-card__a-label">A</span>
-                <div className="faq-card__a-content">
-                  <p className="faq-card__a-lead">{t(item.aLead)}</p>
-                  <p className="faq-card__a-text">{t(item.aBody)}</p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
-    </section>
-  );
-}
-
 const features = [
   { image: "/images/class-fitness-poster.webp", position: "center 40%", alt: "ジムでバトルロープトレーニングをする会員さん", title: "予約不要の通い放題", text: "フィットネスクラスは事前予約なしで通えます。フルタイム会員は通い放題で、その日の気分で好きなだけ。" },
   { image: "/images/gym-atmosphere-ropes.webp", position: "center", alt: "真剣な表情でトレーニングに取り組む女性", title: "女性・初心者も安心", text: "運動が久しぶりの方、はじめての方も多数。ペースに合わせて無理なく始められます。" },
@@ -521,8 +428,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
-      <FAQSection />
     </>
   );
 }
