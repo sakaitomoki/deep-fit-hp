@@ -542,7 +542,7 @@ export default function Schedule() {
               </Link>
             </div>
             <p style={{ color: "#A99C92", fontSize: 11, padding: "14px 20px 4px", textAlign: "center" }}>{t("※ご入会時に他ジムの会員証またはアプリ画面をご提示ください。")}</p>
-            <p style={{ color: "#A99C92", fontSize: 11, padding: "0 20px 4px", textAlign: "center" }}>{t("※DEEPライト会員・DEEPプラス会員としてご契約いただいた方が対象です。")}</p>
+            <p style={{ color: "#A99C92", fontSize: 11, padding: "0 20px 4px", textAlign: "center" }}>{t("※DEEPライト会員・DEEPプラス会員としてご契約いただき、3ヶ月継続後に適用となります。")}</p>
             <div style={{ padding: "0 20px 20px" }}><PlanLineButton /></div>
           </motion.div>
 
