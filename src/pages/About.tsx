@@ -35,7 +35,7 @@ const scaleIn = {
 const features = [
   { image: "/images/class-fitness-poster.webp", position: "center 40%", alt: "ジムでバトルロープトレーニングをする会員さん", title: "予約不要の通い放題", text: "フィットネスクラスは事前予約なしで通えます。フルタイム会員は通い放題で、その日の気分で好きなだけ。" },
   { image: "/images/gym-atmosphere-ropes.webp", position: "center", alt: "真剣な表情でトレーニングに取り組む女性", title: "女性・初心者も安心", text: "運動が久しぶりの方、はじめての方も多数。ペースに合わせて無理なく始められます。" },
-  { title: "20代〜70代の方が通っています", text: "幅広い世代の方が、それぞれのペースで一緒に汗を流しています。" },
+  { image: "/images/class-personal.webp", position: "center 40%", alt: "トレーナーとミット練習をする会員さん", title: "20代〜70代の方が通っています", text: "幅広い世代の方が、それぞれのペースで一緒に汗を流しています。" },
 ];
 
 const worries = [
