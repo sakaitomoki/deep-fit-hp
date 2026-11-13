@@ -65,7 +65,6 @@ const planChecks = [
 
 const flowSteps = [
   { image: "/images/class-circuit.webp", position: "center 22%", alt: "ミットに向かってパンチを打つ女性", title: "LINEで体験予約", text: "ご希望の日時をLINEで送るだけ。見学・相談だけでもOKです。" },
-  { title: "動きやすい服装でご来店", text: "タオル・飲み物があると快適です。グローブは無料でお貸しします。" },
   { image: "/images/class-circuit-kick.webp", position: "center 8%", alt: "サーキットトレーニングで蹴りを出す女性", title: "体験レッスン", text: "サーキットやミット打ちを、ご自分のペースで体験できます。" },
   { image: "/images/class-personal-squat.webp", position: "center 30%", alt: "バーベルスクワットに取り組む女性", title: "ご入会（任意）", text: "体験後、当日入会でキャンペーンが適用されます。無理な勧誘はありません。" },
 ];
@@ -285,7 +284,7 @@ export default function About() {
             <p className="text-[#F2AC55] text-xs tracking-[0.3em] uppercase mb-3">Flow</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-[#4D5058]">{t("体験レッスンの流れ")}</h2>
           </motion.div>
-          <motion.ol initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <motion.ol initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {flowSteps.map((step, i) => (
               <motion.li key={step.title} variants={fadeInUp} className="bg-white rounded-md overflow-hidden border border-gray-100 shadow-sm">
                 {step.image && (
