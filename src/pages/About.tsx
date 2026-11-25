@@ -40,7 +40,7 @@ const features = [
 
 const worries = [
   { image: "/images/about-worry-pace.webp", natural: true, alt: "「今日は軽めでいきましょう」とインストラクターに声をかけられ、笑顔でバイクを漕ぐ女性のイラスト", title: "運動が続かなくて…", text: "動きに変化があるサーキットとミット打ちで、飽きずに通えます。『楽しい』が続ける理由になります。" },
-  { image: "/images/ig-reel-box-puma.webp", position: "center 20%", alt: "笑顔で構える会員さん", title: "ひとりで行くのは心細い…", text: "おひとりで通う方がたくさんいます。会員さん同士の雰囲気が良く、初めてでも馴染みやすいジムです。" },
+  { image: "/images/about-worry-alone.webp", natural: true, alt: "「1人で行くのは心細い」と話す女性を、インストラクターが「こんにちは！ご案内しますね」と迎えるイラスト", title: "ひとりで行くのは心細い…", text: "おひとりで通う方がたくさんいます。会員さん同士の雰囲気が良く、初めてでも馴染みやすいジムです。" },
   { image: "/images/ig-reel-yoga-stretch.webp", position: "center 28%", alt: "ゆったりとストレッチをする女性", title: "体力に自信がない…", text: "一人ひとりのレベルに合わせて動きを調整できます。無理のない強度から、少しずつステップアップ。" },
 ];
 
