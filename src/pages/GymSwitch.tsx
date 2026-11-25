@@ -55,29 +55,18 @@ export default function GymSwitch() {
   return (
     <>
       <SEO title={seoConfig.pages.gymSwitch.title} description={seoConfig.pages.gymSwitch.description} path="/gym-switch" />
-      <div className="relative" style={{ height: "55vh", minHeight: "440px" }}>
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/gym-interior.webp')" }} />
-        <div className="absolute inset-0" style={{ background: "rgba(91,30,55,0.82)" }} />
-        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-            className="text-3xl sm:text-5xl font-bold text-white mb-4"
-          >
-            {t("女性のフィットネス乗り換え応援キャンペーン")}
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.45, duration: 0.6 }}
-            className="text-white font-bold"
-            style={{ fontSize: "clamp(18px,2.6vw,24px)" }}
-          >
-            {t("他ジムの解約金を")}<br />
-            {t("最大6,600円分サポート！")}
-          </motion.p>
-        </div>
+      <div className="bg-[#0b0b10]">
+        <h1 className="sr-only">{t("女性のフィットネス乗り換え応援キャンペーン")}</h1>
+        <motion.img
+          src="/images/gym-switch-hero-poster.webp"
+          alt={t("女性のフィットネス乗り換え応援キャンペーン｜他ジムの解約金を最大6,600円分サポート")}
+          width={1157}
+          height={1359}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          className="block w-full max-w-xl mx-auto h-auto"
+        />
       </div>
 
       {/* 悩みに共感 */}
