@@ -63,7 +63,7 @@ const planChecks = [
 ];
 
 const flowSteps = [
-  { image: "/images/class-circuit.webp", position: "center 22%", alt: "ミットに向かってパンチを打つ女性", title: "LINEで体験予約", text: "ご希望の日時をLINEで送るだけ。見学・相談だけでもOKです。" },
+  { image: "/images/about-flow-line.webp", natural: true, alt: "スマホのLINEで「体験希望」と送るだけで体験予約できるイラスト", title: "LINEで体験予約", text: "ご希望の日時をLINEで送るだけ。見学・相談だけでもOKです。" },
   { image: "/images/class-circuit-kick.webp", position: "center 8%", alt: "サーキットトレーニングで蹴りを出す女性", title: "体験レッスン", text: "サーキットやミット打ちを、ご自分のペースで体験できます。" },
   { image: "/images/class-personal-squat.webp", position: "center 30%", alt: "バーベルスクワットに取り組む女性", title: "ご入会（任意）", text: "体験後、当日入会でキャンペーンが適用されます。無理な勧誘はありません。" },
 ];
@@ -292,8 +292,8 @@ export default function About() {
                     src={step.image}
                     alt={t(step.alt)}
                     loading="lazy"
-                    className="w-full aspect-[4/3] object-cover"
-                    style={{ objectPosition: step.position }}
+                    className={step.natural ? "w-full h-auto" : "w-full aspect-[4/3] object-cover"}
+                    style={step.natural ? undefined : { objectPosition: step.position }}
                   />
                 )}
                 <div className="p-6">
