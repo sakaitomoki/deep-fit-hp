@@ -64,7 +64,7 @@ const planChecks = [
 
 const flowSteps = [
   { image: "/images/about-flow-line.webp", natural: true, alt: "スマホのLINEで「体験希望」と送るだけで体験予約できるイラスト", title: "LINEで体験予約", text: "ご希望の日時をLINEで送るだけ。見学・相談だけでもOKです。" },
-  { image: "/images/class-circuit-kick.webp", position: "center 8%", alt: "サーキットトレーニングで蹴りを出す女性", title: "体験レッスン", text: "サーキットやミット打ちを、ご自分のペースで体験できます。" },
+  { image: "/images/class-circuit-kick.webp", position: "center 8%", alt: "サーキットトレーニングで蹴りを出す女性", title: "体験レッスン", text: "動きやすい服装と水分のみで体験できます。グローブは無料で貸し出します。" },
   { image: "/images/class-personal-squat.webp", position: "center 30%", alt: "バーベルスクワットに取り組む女性", title: "ご入会（任意）", text: "体験後、当日入会でキャンペーンが適用されます。無理な勧誘はありません。" },
 ];
 
