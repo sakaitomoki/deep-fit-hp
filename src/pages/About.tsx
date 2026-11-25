@@ -49,12 +49,6 @@ const conceptCards = [
   { image: "/images/ig-reel-medball-pink.webp", position: "center 18%", alt: "メディシンボールを持ってトレーニングする女性", title: "ファンクショナルトレーニング", text: "バトルロープやメディシンボールなどを使い、日常動作につながる全身の動きを鍛えます。" },
 ];
 
-const whoCards = [
-  { title: "ダイエット・ボディメイク中の方", text: "サーキットで全身を動かして、メリハリのあるカラダづくりを。" },
-  { title: "仕事や育児で忙しい方", text: "フィットネスクラスは予約不要だから、空いた時間にふらっと。ストレス発散にもぴったり。" },
-  { title: "シニアの方", text: "フォームや動きを確認しながら、ご自分のペースで。体力づくり・運動習慣づくりに。", note: "※体調に不安のある方は、事前にご相談ください。" },
-];
-
 const planChecks = [
   "フィットネスクラスは事前予約なしで通えます",
   "フルタイム会員は全時間帯・全クラス受け放題",
@@ -223,25 +217,6 @@ export default function About() {
           </motion.div>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="mt-8 bg-[#FAF5EE] rounded-md p-6 sm:p-8 text-center text-[#4D5058] font-medium leading-relaxed">
             {t("ふたつを組み合わせたサーキットで、楽しく全身を動かす。新感覚フィットネスです。ダイエット・体力づくり・運動不足の解消に。")}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Who */}
-      <section className="py-20 lg:py-28 bg-[#FAF5EE]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center mb-14">
-            <p className="text-[#F2AC55] text-xs tracking-[0.3em] uppercase mb-3">Who</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#4D5058]">{t("いろんな方が、")}<br className="sm:hidden" />{t("それぞれのペースで")}</h2>
-          </motion.div>
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {whoCards.map((card) => (
-              <motion.div key={card.title} variants={fadeInUp} className="bg-white rounded-md p-6 border border-gray-100">
-                <h3 className="font-bold text-[#4D5058] text-lg mb-4">{t(card.title)}</h3>
-                <p className="text-[#4D5058]/70 text-sm sm:text-base leading-relaxed">{t(card.text)}</p>
-                {card.note && <p className="mt-4 text-xs text-[#4D5058]/60 leading-relaxed">{t(card.note)}</p>}
-              </motion.div>
-            ))}
           </motion.div>
         </div>
       </section>
