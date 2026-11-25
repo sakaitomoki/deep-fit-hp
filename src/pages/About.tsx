@@ -40,7 +40,6 @@ const features = [
 
 const worries = [
   { image: "/images/about-worry-pace.webp", natural: true, alt: "「今日は軽めでいきましょう」とインストラクターに声をかけられ、笑顔でバイクを漕ぐ女性のイラスト", title: "運動が続かなくて…", text: "動きに変化があるサーキットとミット打ちで、飽きずに通えます。『楽しい』が続ける理由になります。" },
-  { title: "格闘技って怖そう…", text: "ミットやサンドバッグを打つ爽快なトレーニングが中心です。グローブは無料でお貸しします。" },
   { image: "/images/ig-reel-box-puma.webp", position: "center 20%", alt: "笑顔で構える会員さん", title: "ひとりで行くのは心細い…", text: "おひとりで通う方がたくさんいます。会員さん同士の雰囲気が良く、初めてでも馴染みやすいジムです。" },
   { image: "/images/ig-reel-yoga-stretch.webp", position: "center 28%", alt: "ゆったりとストレッチをする女性", title: "体力に自信がない…", text: "一人ひとりのレベルに合わせて動きを調整できます。無理のない強度から、少しずつステップアップ。" },
 ];
@@ -168,7 +167,7 @@ export default function About() {
             <h2 className="text-3xl sm:text-4xl font-bold text-[#4D5058]">{t("こんな気持ち、")}<br className="sm:hidden" />{t("ありませんか？")}</h2>
             <p className="mt-5 text-[#4D5058]/70 text-sm sm:text-base leading-relaxed">{t("はじめの不安は、みなさん同じです。")}</p>
           </motion.div>
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {worries.map((worry) => (
               <motion.div key={worry.title} variants={fadeInUp} className="bg-white rounded-md overflow-hidden border border-gray-100 shadow-sm">
                 {worry.image && (
