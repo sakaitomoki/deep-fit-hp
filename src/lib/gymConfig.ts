@@ -121,27 +121,6 @@ export const gymConfig = {
     priceTaxNote: "（税込 ¥5,500）",
     note: "ペアでも同料金",
   },
-  womensPersonalTraining: {
-    name: "女性専用パーソナルトレーニング",
-    subtitle: "Women's Personal Training",
-    duration: "50分",
-    individual: {
-      label: "1名",
-      tiers: [
-        { sessions: "1回", price: "¥8,500", perSession: "", validity: "" },
-        { sessions: "5回", price: "¥40,000", perSession: "（1回 ¥7,500）", validity: "有効期間2ヶ月" },
-        { sessions: "10回", price: "¥72,500", perSession: "（1回 ¥7,250）", validity: "有効期間3ヶ月" },
-      ],
-    },
-    pair: {
-      label: "2名",
-      tiers: [
-        { sessions: "1回", price: "¥11,000", perSession: "", validity: "" },
-        { sessions: "5回", price: "¥52,500", perSession: "（1回 ¥10,500）", validity: "有効期間2ヶ月" },
-        { sessions: "10回", price: "¥100,000", perSession: "（1回 ¥10,000）", validity: "有効期間3ヶ月" },
-      ],
-    },
-  },
   equipment: [
     "オールインパワーラック",
     "サンドバック 4本",
@@ -172,7 +151,6 @@ export const seoConfig = {
     schedule: seoMeta["/schedule"],
     kids: seoMeta["/kids"],
     program: seoMeta["/program"],
-    personalTraining: seoMeta["/personal-training"],
     gymSwitch: seoMeta["/gym-switch"],
     instructors: seoMeta["/instructors"],
   },

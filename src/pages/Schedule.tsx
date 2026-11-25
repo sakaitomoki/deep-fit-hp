@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Heart, Flame, Users, CheckCircle2, Star, Dumbbell, Zap, MapPin, ArrowRight } from "lucide-react";
 import { SiLine, SiInstagram } from "react-icons/si";
@@ -165,12 +164,6 @@ function formatTime(h: number) {
 
 export default function Schedule() {
   const t = useT();
-
-  useEffect(() => {
-    if (!window.location.hash) return;
-    const el = document.getElementById(window.location.hash.slice(1));
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  }, []);
 
   return (
     <>
@@ -851,7 +844,7 @@ export default function Schedule() {
             </motion.div>
 
             {/* Personal Training */}
-            <motion.div id="personal-training" variants={fadeInUp} className="rounded-xl overflow-hidden border border-gray-200 shadow-sm" style={{ scrollMarginTop: 100 }}>
+            <motion.div variants={fadeInUp} className="rounded-xl overflow-hidden border border-gray-200 shadow-sm">
               <div className="bg-[#4D5058] px-6 py-4">
                 <p className="text-white text-lg font-bold tracking-wide">{t("パーソナルトレーニング")}</p>
                 <p className="text-white/50 text-xs mt-0.5">{t("完全マンツーマン・予約制")}</p>
