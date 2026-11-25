@@ -39,7 +39,7 @@ const features = [
 ];
 
 const worries = [
-  { image: "/images/ig-reel-rope-blue.webp", position: "center 18%", alt: "笑顔でバトルロープに取り組む女性", title: "運動が続かなくて…", text: "動きに変化があるサーキットとミット打ちで、飽きずに通えます。『楽しい』が続ける理由になります。" },
+  { image: "/images/about-worry-pace.webp", natural: true, alt: "「今日は軽めでいきましょう」とインストラクターに声をかけられ、笑顔でバイクを漕ぐ女性のイラスト", title: "運動が続かなくて…", text: "動きに変化があるサーキットとミット打ちで、飽きずに通えます。『楽しい』が続ける理由になります。" },
   { title: "格闘技って怖そう…", text: "ミットやサンドバッグを打つ爽快なトレーニングが中心です。グローブは無料でお貸しします。" },
   { image: "/images/ig-reel-box-puma.webp", position: "center 20%", alt: "笑顔で構える会員さん", title: "ひとりで行くのは心細い…", text: "おひとりで通う方がたくさんいます。会員さん同士の雰囲気が良く、初めてでも馴染みやすいジムです。" },
   { image: "/images/ig-reel-yoga-stretch.webp", position: "center 28%", alt: "ゆったりとストレッチをする女性", title: "体力に自信がない…", text: "一人ひとりのレベルに合わせて動きを調整できます。無理のない強度から、少しずつステップアップ。" },
@@ -176,8 +176,8 @@ export default function About() {
                     src={worry.image}
                     alt={t(worry.alt)}
                     loading="lazy"
-                    className="w-full aspect-[4/3] object-cover"
-                    style={{ objectPosition: worry.position }}
+                    className={worry.natural ? "w-full h-auto" : "w-full aspect-[4/3] object-cover"}
+                    style={worry.natural ? undefined : { objectPosition: worry.position }}
                   />
                 )}
                 <div className="p-6">
