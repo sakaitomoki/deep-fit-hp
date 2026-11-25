@@ -97,8 +97,8 @@ export default function About() {
       <SEO title={seoConfig.pages.about.title} description={seoConfig.pages.about.description} path="/about" />
       {/* Hero */}
       <div className="relative" style={{ height: "50vh", minHeight: "400px" }}>
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/about-hero-boxing.webp')" }} />
-        <div className="absolute inset-0 bg-[#4D5058]/75" />
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/about-hero-triple.webp')", backgroundPosition: "center 30%" }} />
+        <div className="absolute inset-0 bg-black/55" />
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
