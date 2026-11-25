@@ -7,7 +7,7 @@ import { useT } from "@/lib/i18n";
 
 const pageLinks = [
   { href: "/", label: "ホーム" },
-  { href: "/about", label: "ジムについて" },
+  { href: "/about", label: "DEEP.FITについて" },
   { href: "/schedule", label: "クラス・料金" },
   { href: "/kids", label: "キッズクラス" },
   { href: "/program", label: "ヨガ・ボクササイズ・アニマルフロー" },

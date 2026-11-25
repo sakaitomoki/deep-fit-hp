@@ -9,7 +9,7 @@ const deepFitLogo = "/images/deepfit-logo.webp";
 
 const navLinks = [
   { href: "/", label: "ホーム" },
-  { href: "/about", label: "ジムについて" },
+  { href: "/about", label: "DEEP.FITについて" },
   { href: "/schedule", label: "クラス・料金" },
   { href: "/kids", label: "キッズクラス" },
   { href: "/program", label: "ヨガ・ボクササイズ・アニマルフロー" },
