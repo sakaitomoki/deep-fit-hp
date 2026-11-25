@@ -22,7 +22,7 @@ export default function MobileContactBar() {
       <Link
         href="/schedule#price-plans"
         data-testid="mobile-bar-plans"
-        className="flex-1 flex flex-col items-center justify-center gap-1 bg-[#4D5058] text-white py-3 text-center active:brightness-90 transition-all"
+        className="flex-1 flex flex-col items-center justify-center gap-1 bg-[#F6E9CF] text-[#6B4F2A] py-3 text-center active:brightness-90 transition-all"
       >
         <JapaneseYen className="w-6 h-6" />
         <span className="text-[10px] font-medium tracking-wide">{t("料金プラン")}</span>
