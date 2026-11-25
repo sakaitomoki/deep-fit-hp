@@ -57,9 +57,9 @@ const planChecks = [
 ];
 
 const flowSteps = [
-  { image: "/images/about-flow-line.webp", natural: true, alt: "スマホのLINEで「体験希望」と送るだけで体験予約できるイラスト", title: "LINEで体験予約", text: "「体験希望」と送るだけ。スタッフが返信します。" },
-  { image: "/images/about-flow-trial.webp", natural: true, alt: "インストラクターの持つミットにパンチを打つ女性のイラスト", title: "体験レッスン", text: "動きやすい服装と水分のみで体験できます。グローブは無料で貸し出します。" },
-  { image: "/images/class-personal-squat.webp", position: "center 30%", alt: "バーベルスクワットに取り組む女性", title: "ご入会（任意）", text: "体験後、当日入会でキャンペーンが適用されます。無理な勧誘はありません。" },
+  { image: "/images/about-flow-line.webp", alt: "スマホのLINEで「体験希望」と送るだけで体験予約できるイラスト", title: "LINEで体験予約", text: "「体験希望」と送るだけ。スタッフが返信します。" },
+  { image: "/images/about-flow-trial.webp", alt: "インストラクターの持つミットにパンチを打つ女性のイラスト", title: "体験レッスン", text: "動きやすい服装と水分のみで体験できます。グローブは無料で貸し出します。" },
+  { image: "/images/about-flow-join.webp", alt: "「ゆっくりご検討くださいね」とインストラクターが案内するイラスト", title: "ご入会（任意）", text: "体験後、当日入会でキャンペーンが適用されます。無理な勧誘はありません。" },
 ];
 
 const equipment = [
@@ -266,8 +266,7 @@ export default function About() {
                     src={step.image}
                     alt={t(step.alt)}
                     loading="lazy"
-                    className={step.natural ? "w-full h-auto" : "w-full aspect-[4/3] object-cover"}
-                    style={step.natural ? undefined : { objectPosition: step.position }}
+                    className="w-full h-auto"
                   />
                 )}
                 <div className="p-6">
