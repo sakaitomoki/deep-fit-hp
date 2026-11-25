@@ -573,7 +573,7 @@ export default function Schedule() {
       </section>
 
       {/* Pricing */}
-      <section className="py-20 lg:py-28 bg-white">
+      <section id="price-plans" className="py-20 lg:py-28 bg-white" style={{ scrollMarginTop: 72 }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"

@@ -1,4 +1,5 @@
-import { Phone } from "lucide-react";
+import { Link } from "wouter";
+import { Phone, JapaneseYen } from "lucide-react";
 import { SiLine, SiInstagram } from "react-icons/si";
 import { gymConfig } from "@/lib/gymConfig";
 import { useT } from "@/lib/i18n";
@@ -17,6 +18,15 @@ export default function MobileContactBar() {
         <SiLine className="w-6 h-6" />
         <span className="text-[10px] font-medium tracking-wide">{t("体験予約")}</span>
       </a>
+
+      <Link
+        href="/schedule#price-plans"
+        data-testid="mobile-bar-plans"
+        className="flex-1 flex flex-col items-center justify-center gap-1 bg-[#4D5058] text-white py-3 text-center active:brightness-90 transition-all"
+      >
+        <JapaneseYen className="w-6 h-6" />
+        <span className="text-[10px] font-medium tracking-wide">{t("料金プラン")}</span>
+      </Link>
 
       <a
         href={`tel:${gymConfig.phone}`}

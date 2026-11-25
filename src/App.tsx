@@ -29,7 +29,22 @@ const queryClient = new QueryClient({
 function ScrollToTop() {
   const [location] = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0);
+    const id = window.location.hash.slice(1);
+    if (!id) {
+      window.scrollTo(0, 0);
+      return;
+    }
+    let tries = 0;
+    const timer = window.setInterval(() => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+        window.clearInterval(timer);
+      } else if (++tries >= 20) {
+        window.clearInterval(timer);
+      }
+    }, 100);
+    return () => window.clearInterval(timer);
   }, [location]);
   return null;
 }
